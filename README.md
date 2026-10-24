@@ -11,7 +11,7 @@ Em andamento. Os dados brutos já foram baixados; os scripts de preparação e d
 | Etapa | Situação |
 | --- | --- |
 | Dados do SINISA 2025 baixados | Concluída |
-| Dados do ABES 2026 para o Nordeste baixados | Parcial: falta a Bahia |
+| Dados do ABES 2026 para o Nordeste baixados | Concluída |
 | Matriz de decisão montada | A fazer |
 | PROMETHEE II com CRITIC e com pesos iguais | A fazer |
 | Robustez (SMAA, AHP Gaussiano, sensibilidade a q e p) e comparação com o ABES | A fazer |
@@ -50,7 +50,7 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 │   │   ├── esgotamento sanitário/   Idem para esgoto
 │   │   └── resíduos sólidos/        Planilhas de indicadores e de formulários; glossários e relatório
 │   └── ABES 2026/
-│       └── relatorio ABES 2026 NE.xlsx   Ranking ABES 2026 para 1.377 municípios do Nordeste (sem a Bahia)
+│       └── relatorio ABES 2026 NE.xlsx   Ranking ABES 2026 para os 1.794 municípios do Nordeste
 └── Rii2027 call for papers 2027-09-30.pdf   Chamada de trabalhos do Rii Forum 2027
 ```
 
@@ -63,10 +63,9 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 
 Cuidados ao usar os dados:
 
-- O arquivo do ABES cobre oito dos nove estados do Nordeste: a Bahia (417 municípios) não está nele e ainda precisa ser baixada.
-- Nesse arquivo, 1.023 dos 1.377 municípios aparecem como "Não habilitado", com grande variação entre estados (3% de habilitados no Piauí, 52% no Ceará). Dado ausente aparece como `0,00`, e não como célula vazia, então os zeros dos não habilitados não podem ser usados como valores.
+- Nesse arquivo, 1.289 dos 1.794 municípios aparecem como "Não habilitado", com grande variação entre estados (3% de habilitados no Piauí, 52% no Ceará). Dado ausente aparece como `0,00`, e não como célula vazia, então os zeros dos não habilitados não podem ser usados como valores.
 - Os números estão gravados como texto, com vírgula decimal e ponto de milhar (por exemplo, `10.220,55` na taxa de DRSAI).
-- As planilhas do SINISA são nacionais; filtre os municípios do Nordeste pela coluna `Macrorregião` (valor `Nordeste`). A Bahia está no SINISA, mesmo faltando no arquivo do ABES. Nem todo município aparece em todas as planilhas: a de indicadores de água traz 1.528 dos 1.794 municípios nordestinos, e só 36 dos 224 do Piauí.
+- As planilhas do SINISA são nacionais; filtre os municípios do Nordeste pela coluna `Macrorregião` (valor `Nordeste`). Nem todo município aparece em todas as planilhas: a de indicadores de água traz 1.528 dos 1.794 municípios nordestinos, e só 36 dos 224 do Piauí.
 - Para o abastecimento de água, use a versão retificada da planilha (`SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`).
 - As datas de extração de cada base devem ser registradas no `log_decisoes.md`, que ainda será criado.
 

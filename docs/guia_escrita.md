@@ -38,15 +38,15 @@ Não comece a redigir antes de fechar as sete decisões abaixo. Cada uma aparece
 | Conjunto de critérios | Fechada | Os cinco indicadores do Ranking ABES: IAG0001, IES0001, IES2003, IRS0001 e IRS3002 (adaptado) | Revisão, Metodologia, Resultados |
 | Pesos | Fechada | CRITIC (principal); AHP Gaussiano e pesos iguais (robustez); SMAA com 10.000 vetores | Metodologia, Resultados, Limitações |
 | Variante PROMETHEE | Fechada | PROMETHEE II + GAIA + SMAA; PROMETHEE I só como diagnóstico; FlowSort opcional | Revisão, Metodologia, Resultados |
-| Benchmark externo | Fechada | Ranking ABES da Universalização do Saneamento 2026 (mesma base, ano e critérios; soma com pesos iguais; 4 categorias nacionais, das quais 3 aparecem entre os habilitados do Nordeste, uma delas com só 3 municípios) | Introdução, Resultados, Discussão |
+| Benchmark externo | Fechada | Ranking ABES da Universalização do Saneamento 2026 (mesma base, ano e critérios; soma com pesos iguais; 4 categorias nacionais, das quais 3 aparecem entre os habilitados do Nordeste, uma delas com só 7 municípios) | Introdução, Resultados, Discussão |
 | Veículo | Fechada | Rii Forum 2027 (Roma; anais pela Springer, Scopus); texto em inglês | Todo o texto |
 
-**Decisão derivada: municípios sem dados completos.** O arquivo do ABES para o Nordeste (`dados/ABES 2026/relatorio ABES 2026 NE.xlsx`) traz 1.377 municípios de oito estados; **a Bahia (417 municípios) não está no arquivo** e precisa ser baixada e acrescentada antes da montagem da matriz. Dos 1.377, 1.023 aparecem como "Não habilitado" e 354 (26%) como habilitados: 275 em "Empenho para universalização", 76 em "Primeiros passos para a universalização" e 3 em "Compromisso com a universalização" (União dos Palmares/AL, Campina Grande/PB e Aracaju/SE); a categoria mais alta não aparece na região. A habilitação varia muito entre estados:
+**Decisão derivada: municípios sem dados completos.** O arquivo do ABES para o Nordeste (`dados/ABES 2026/relatorio ABES 2026 NE.xlsx`) traz os 1.794 municípios dos nove estados. Deles, 1.289 aparecem como "Não habilitado" e 505 (28%) como habilitados: 367 em "Empenho para universalização", 131 em "Primeiros passos para a universalização" e 7 em "Compromisso com a universalização" (Salvador, Vitória da Conquista, Jequié e Porto Seguro/BA, União dos Palmares/AL, Campina Grande/PB e Aracaju/SE); a categoria mais alta não aparece na região. A habilitação varia muito entre estados:
 
 | UF | Municípios | Habilitados | % |
 | --- | --- | --- | --- |
 | AL | 102 | 22 | 22% |
-| BA | 417 | não consta no arquivo | — |
+| BA | 417 | 151 | 36% |
 | CE | 184 | 95 | 52% |
 | MA | 217 | 11 | 5% |
 | PB | 223 | 65 | 29% |
@@ -55,9 +55,9 @@ Não comece a redigir antes de fechar as sete decisões abaixo. Cada uma aparece
 | RN | 167 | 55 | 33% |
 | SE | 75 | 23 | 31% |
 
-Usar só os completos excluiria três quartos da região e quase todo o Maranhão e o Piauí, provavelmente os pequenos municípios do interior com pior saneamento, o que enviesaria o ranking. A desigualdade de cobertura entre estados também é um achado: registre-a e teste se o ranking muda quando cada estado é retirado.
+Usar só os completos excluiria mais de dois terços da região e quase todo o Maranhão e o Piauí, provavelmente os pequenos municípios do interior com pior saneamento, o que enviesaria o ranking. A desigualdade de cobertura entre estados também é um achado: registre-a e teste se o ranking muda quando cada estado é retirado.
 
-**Armadilha do arquivo do ABES:** nele, dado ausente aparece como "0,00", e não como célula vazia. Não é possível distinguir ausência de zero verdadeiro: entre os 354 habilitados, 132 têm 0 em IRS3002, 109 em IES2003 e 1 em IES0001 e em IAG0001. Nunca use os zeros dos 1.023 não habilitados como valores no PROMETHEE, porque eles contariam como o pior desempenho possível. A taxa de DRSAI também vale 0,00 em 670 municípios, 115 deles habilitados; trate esses casos como ausentes na validação. Os números estão gravados como texto, com vírgula decimal e ponto de milhar (85 taxas de DRSAI passam de 1.000, como `10.220,55`), e precisam ser convertidos removendo o ponto antes de trocar a vírgula (no Calc: Dados → Texto para colunas, idioma Português do Brasil).
+**Armadilha do arquivo do ABES:** nele, dado ausente aparece como "0,00", e não como célula vazia. Não é possível distinguir ausência de zero verdadeiro: entre os 505 habilitados, 248 têm 0 em IRS3002, 154 em IES2003 e 1 em IES0001 e em IAG0001. Nunca use os zeros dos 1.289 não habilitados como valores no PROMETHEE, porque eles contariam como o pior desempenho possível. A taxa de DRSAI também vale 0,00 em 789 municípios, 145 deles habilitados; trate esses casos como ausentes na validação. Os números estão gravados como texto, com vírgula decimal e ponto de milhar (100 taxas de DRSAI passam de 1.000, como `10.220,55`), e precisam ser convertidos removendo o ponto antes de trocar a vírgula (no Calc: Dados → Texto para colunas, idioma Português do Brasil).
 
 **Regra adotada:**
 
@@ -66,9 +66,9 @@ Usar só os completos excluiria três quartos da região e quase todo o Maranhã
 3. **Amostra principal:** completos + os que têm só 1 indicador ausente, imputado pela mediana dos municípios de mesmo porte na região de saúde. Os que têm 2 ou mais ausentes ficam fora e são listados em apêndice.
 4. **Testes:** (a) só os completos; (b) imputação de todos os ausentes. Reporte o Kendall τ entre os rankings.
 5. Registrar no `log_decisoes.md` quantos municípios caem em cada classe e quais indicadores faltam com mais frequência.
-6. **Verificar** se os completos no SINISA coincidem com os habilitados no ABES (354 nos oito estados presentes, mais os da Bahia). É a hipótese de trabalho, mas a habilitação do ABES pode ter outras exigências e o arquivo do ABES grava ausência como 0,00. A subamostra de comparação com o ABES é sempre a dos habilitados; se as duas listas divergirem, registre quais municípios diferem e por quê.
+6. **Verificar** se os completos no SINISA coincidem com os 505 habilitados no ABES. É a hipótese de trabalho, mas a habilitação do ABES pode ter outras exigências e o arquivo do ABES grava ausência como 0,00. A subamostra de comparação com o ABES é sempre a dos habilitados; se as duas listas divergirem, registre quais municípios diferem e por quê.
 
-Daqui em diante, "amostra principal" designa os [c + k] municípios com dados suficientes (c completos e k com um único indicador ausente, imputado), e não os 1.794: quem tem 2 ou mais indicadores ausentes não entra no ranking. A diferença de cobertura entre o ABES (354 municípios nos oito estados presentes) e o seu estudo é um achado em si: o PROMETHEE ordena municípios que o ranking oficial descarta. Vale uma frase na Introdução e outra na Discussão.
+Daqui em diante, "amostra principal" designa os [c + k] municípios com dados suficientes (c completos e k com um único indicador ausente, imputado), e não os 1.794: quem tem 2 ou mais indicadores ausentes não entra no ranking. A diferença de cobertura entre o ABES (505 municípios) e o seu estudo é um achado em si: o PROMETHEE ordena municípios que o ranking oficial descarta. Vale uma frase na Introdução e outra na Discussão.
 
 **Consequência de usar os mesmos critérios do ABES.** Com base, ano e critérios idênticos, a comparação com pesos iguais isola completamente o efeito do método de agregação. Esse é o argumento central do artigo. Como o ABES traz a taxa de internações por DRSAI de cada município, ela pode servir de validação externa, sem entrar como critério: qual ordenação se associa mais fortemente à saúde, a do ABES ou a do PROMETHEE?
 
@@ -152,7 +152,7 @@ Exemplo (Ideia 1):
 
 | Dimensão | Como redigir | Exemplo (Ideia 1) |
 | --- | --- | --- |
-| Espacial | Nomeie a unidade e o universo | Os 1.794 municípios do Nordeste; amostra principal = completos + os que têm 1 indicador ausente (imputado); subamostra de comparação com o ABES = os habilitados (354 nos oito estados já baixados, mais os da Bahia) |
+| Espacial | Nomeie a unidade e o universo | Os 1.794 municípios do Nordeste; amostra principal = completos + os que têm 1 indicador ausente (imputado); subamostra de comparação com o ABES = os 505 habilitados |
 | Temporal | Ano-base e, se houver, série | Ano-base 2024 (SINISA 2025); SINISA 2024 (ano-base 2023) citado apenas na discussão de tendência |
 | Temática | Quais dimensões do problema entram | Os cinco indicadores do ABES, que cobrem três dos quatro componentes do saneamento: abastecimento de água, esgotamento sanitário (coleta e tratamento) e resíduos sólidos (coleta e disposição final); drenagem fora; DRSAI só como validação |
 | Metodológica | Família de métodos e o que não se compara | PROMETHEE II com pesos CRITIC, GAIA e SMAA; AHP Gaussiano e pesos iguais como testes |
@@ -210,13 +210,13 @@ Para cada base, informe em uma tabela: órgão, nome do sistema, ano-base, data 
 | SINISA 2025 — Água | Ministério das Cidades | 2024 | [data] | IAG0001 (planilha retificada) | [n de 1.794] | Regra definida em "Antes de escrever" |
 | SINISA 2025 — Esgoto | Ministério das Cidades | 2024 | [data] | IES0001, IES2003 | [n de 1.794] | Idem; IES2003 acima de 100% limitado a 100, como no ABES |
 | SINISA 2025 — Resíduos | Ministério das Cidades | 2024 | [data] | IRS0001, IRS3002 (invertido: 100 − disposição inadequada) | [n de 1.794] | Idem |
-| Ranking ABES 2026 | ABES | 2024 | [data] | Nota 0–500, categoria, taxa de DRSAI | [n] habilitados (354 sem a Bahia) | Comparação e validação restritas aos habilitados |
+| Ranking ABES 2026 | ABES | 2024 | [data] | Nota 0–500, categoria, taxa de DRSAI | 505 habilitados | Comparação e validação restritas aos habilitados |
 
 **Tratamento de ausentes é decisão metodológica, não nota de rodapé.** Diga o que fez e mostre, em Resultados, que a escolha não altera o ranking de forma relevante (rode com e sem imputação, reporte o Kendall τ).
 
 ### 4.2 Alternativas
 
-Uma frase com o universo e o critério de inclusão, seguindo a regra de dados ausentes definida em "Antes de escrever". Liste os excluídos em apêndice. Exemplo: *"Dos 1.794 municípios nordestinos, [c] dispunham dos cinco indicadores no SINISA 2025 e [k] tinham apenas um indicador ausente, imputado pela mediana de seu porte na região de saúde; esses [c + k] compõem a amostra principal. Os [n] municípios habilitados no Ranking ABES 2026 formam a subamostra de comparação."* Se a verificação da etapa 6 da regra mostrar que completos e habilitados não coincidem, ajuste a frase.
+Uma frase com o universo e o critério de inclusão, seguindo a regra de dados ausentes definida em "Antes de escrever". Liste os excluídos em apêndice. Exemplo: *"Dos 1.794 municípios nordestinos, [c] dispunham dos cinco indicadores no SINISA 2025 e [k] tinham apenas um indicador ausente, imputado pela mediana de seu porte na região de saúde; esses [c + k] compõem a amostra principal. Os 505 municípios habilitados no Ranking ABES 2026 formam a subamostra de comparação."* Se a verificação da etapa 6 da regra mostrar que completos e habilitados não coincidem, ajuste a frase.
 
 ### 4.3 Critérios
 
@@ -230,7 +230,7 @@ A tabela de critérios é a peça central da metodologia. Os critérios são exa
 | C4 | Cobertura da população total com coleta de resíduos sólidos domiciliares | IRS0001 | % | max | Componente de resíduos da Lei 11.445/2007 |
 | C5 | Disposição final adequada de resíduos sólidos urbanos | IRS3002 adaptado (100 − inadequada) | % | max | Fim dos lixões (Lei 14.026/2020) |
 
-**Atenção ao C5.** No ABES, esse indicador é quase binário: muitos municípios aparecem com 0 ou 100. O CRITIC tende a dar peso alto a critérios com essa dispersão, e o C5 pode dominar o ranking. Reporte os pesos, mostre o efeito no GAIA e compare com o cenário de pesos iguais. Para o C5, uma função de preferência do tipo nível (*level*) ou usual é mais coerente que a linear. A regra dos quartis da subseção 4.4 confirma isso: aplicada ao IRS3002 dos 354 habilitados no ABES dos oito estados presentes, ela dá q = 0 e p = 100 (só 19 valores distintos; 132 zeros e 205 valores 100), e a função linear vira, na prática, uma V-shape.
+**Atenção ao C5.** No ABES, esse indicador é quase binário: muitos municípios aparecem com 0 ou 100. O CRITIC tende a dar peso alto a critérios com essa dispersão, e o C5 pode dominar o ranking. Reporte os pesos, mostre o efeito no GAIA e compare com o cenário de pesos iguais. Para o C5, uma função de preferência do tipo nível (*level*) ou usual é mais coerente que a linear. A regra dos quartis da subseção 4.4 confirma isso: aplicada ao IRS3002 dos 505 habilitados no ABES, ela dá q = 0 e p = 100 (só 23 valores distintos; 248 zeros e 236 valores 100), e a função linear vira, na prática, uma V-shape.
 
 Regras: entre 5 e 10 critérios; verifique a correlação entre eles (matriz de Spearman em apêndice; pares com |ρ| > 0,8 exigem justificativa ou exclusão); mantenha critérios de resultado (saúde) separados dos de insumo (investimento) e diga isso no texto.
 
@@ -294,7 +294,7 @@ Os resultados respondem às perguntas de pesquisa na ordem em que foram feitas: 
 | F3 | Plano GAIA | PS1 | alternativas, eixos de critérios e o bastão de decisão; variância explicada (δ) no rodapé |
 | F4 | Índices de aceitabilidade SMAA | PS2 | mapa de calor alternativa × posição (ou faixa de posições com 90% de aceitabilidade) |
 | T3 | Testes de robustez | PS2 | intervalos de estabilidade, Kendall τ por variação de q/p, reversões de ordem |
-| F5/T4 | Comparação com o benchmark | PS3 | dispersão φ × nota ABES; matriz de transição categoria ABES (3 categorias no Nordeste, uma com só 3 municípios) × quartil PROMETHEE; tabela dos municípios que mais mudam |
+| F5/T4 | Comparação com o benchmark | PS3 | dispersão φ × nota ABES; matriz de transição categoria ABES (3 categorias no Nordeste, uma com só 7 municípios) × quartil PROMETHEE; tabela dos municípios que mais mudam |
 | F6 | Validação externa | PS4 | dispersão da taxa de DRSAI × φ e × nota ABES, com os Spearman ρ; em suplemento se faltar espaço |
 
 **Como escrever cada subseção:**
@@ -305,7 +305,7 @@ Os resultados respondem às perguntas de pesquisa na ordem em que foram feitas: 
 
 *5.3 Robustez (PS2).* É a subseção que converte um estudo de caso em contribuição. Reporte: (a) quantas alternativas têm a mesma posição em mais de 90% dos sorteios SMAA; (b) a faixa de variação de cada peso que preserva o top 10; (c) o Kendall τ entre os rankings com q/p ±50% (acima de 0,9 é estável); (d) o número de pares que trocam de ordem ao retirar alternativas. Conclua com uma frase de julgamento: *"O ranking é robusto nas posições extremas e instável no terço central, onde pequenas variações de peso trocam posições vizinhas."*
 
-*5.4 Comparação com o Ranking ABES (PS3).* Reporte o Spearman ρ entre φ e a nota ABES para os municípios habilitados, primeiro com pesos CRITIC e depois com pesos iguais. A versão com pesos iguais é o experimento central: como os dois métodos usam a mesma base, o mesmo ano e os mesmos pesos, toda diferença vem da regra de agregação (compensatória no ABES, de compensação limitada no PROMETHEE). Como só três categorias do ABES aparecem entre os habilitados do Nordeste, e uma delas tem apenas 3 municípios, a matriz de transição é pouco informativa; a comparação por quartis da nota ABES é mais útil. Em seguida, concentre-se nas divergências. Para cada município que muda de quartil ou de categoria, uma linha explicando o porquê. Quase sempre é desempenho muito desigual entre critérios, como um zero em disposição de resíduos ou em tratamento de esgoto compensado por bons índices nos demais. Esta é a parte que interessa ao gestor e ao editor de política pública.
+*5.4 Comparação com o Ranking ABES (PS3).* Reporte o Spearman ρ entre φ e a nota ABES para os municípios habilitados, primeiro com pesos CRITIC e depois com pesos iguais. A versão com pesos iguais é o experimento central: como os dois métodos usam a mesma base, o mesmo ano e os mesmos pesos, toda diferença vem da regra de agregação (compensatória no ABES, de compensação limitada no PROMETHEE). Como só três categorias do ABES aparecem entre os habilitados do Nordeste, e uma delas tem apenas 7 municípios, a matriz de transição é pouco informativa; a comparação por quartis da nota ABES é mais útil. Em seguida, concentre-se nas divergências. Para cada município que muda de quartil ou de categoria, uma linha explicando o porquê. Quase sempre é desempenho muito desigual entre critérios, como um zero em disposição de resíduos ou em tratamento de esgoto compensado por bons índices nos demais. Esta é a parte que interessa ao gestor e ao editor de política pública.
 
 *5.5 Validação externa com DRSAI (PS4).* Calcule a correlação de Spearman entre a taxa de internações por DRSAI e, de um lado, a nota ABES, do outro, o fluxo líquido φ. Se o φ se associar mais fortemente à saúde, há um argumento de validade a favor da compensação limitada. Se não, isso também é um achado e deve ser discutido. Use linguagem de associação: internações dependem de muitos fatores além do saneamento, e há municípios com taxas atípicas no apêndice do ABES.
 
@@ -327,7 +327,7 @@ Limitações bem escritas aumentam a credibilidade; mal escritas parecem desculp
 
 | Tipo | Exemplo (Ideia 1) | Mitigação já feita | Trabalho futuro |
 | --- | --- | --- | --- |
-| Dados: cobertura | 1.023 dos 1.377 municípios dos oito estados presentes não habilitados no ABES (Bahia a acrescentar), com cobertura de 3% no Piauí a 52% no Ceará; [n] sem os cinco indicadores no SINISA 2025 | Imputação de 1 indicador ausente; testes só com completos e com imputação total; Kendall τ reportado | Repetir com as próximas edições do SINISA |
+| Dados: cobertura | 1.289 dos 1.794 municípios não habilitados no ABES, com cobertura de 3% no Piauí a 52% no Ceará; [n] sem os cinco indicadores no SINISA 2025 | Imputação de 1 indicador ausente; testes só com completos e com imputação total; Kendall τ reportado | Repetir com as próximas edições do SINISA |
 | Dados: autodeclaração | Indicadores informados pelos prestadores, sem auditoria | Validação externa com DRSAI | Incorporar o módulo de regulação do SINISA quando publicado |
 | Dados: quebra de série | SNIS e SINISA têm definições distintas; a própria ABES pede cautela na comparação entre edições | Análise restrita a um ano-base | PROMETHEE temporal quando houver três ou mais edições do SINISA |
 | Critérios: só acesso | Os cinco indicadores medem cobertura e destinação, não qualidade, perdas ou investimento | Escolha justificada pela comparação controlada com o ABES | Modelo ampliado com perdas, investimento e qualidade da água |
@@ -336,7 +336,7 @@ Limitações bem escritas aumentam a credibilidade; mal escritas parecem desculp
 | Escopo: benchmark parcial | ABES só inclui municípios com todos os indicadores | Comparação restrita aos habilitados | Comparação com outros índices (IDSC-BR, ODS 6) |
 | Escopo: inferência | Ranking é descritivo; não identifica causas | Linguagem de associação na discussão | Modelo explicativo (ML + SHAP) sobre o fluxo líquido |
 
-**Como redigir cada parágrafo.** Modelo: *"A principal limitação decorre da cobertura do SINISA 2025: dos 1.794 municípios nordestinos, [n] não dispunham dos cinco indicadores, e o Ranking ABES exclui [m]. Este estudo manteve os que tinham apenas um indicador ausente, imputado pela mediana de seu porte na região de saúde; o ranking restrito aos municípios completos concorda com o principal em τ = [valor]. A repetição do estudo com as edições seguintes do SINISA é o desdobramento natural."*
+**Como redigir cada parágrafo.** Modelo: *"A principal limitação decorre da cobertura do SINISA 2025: dos 1.794 municípios nordestinos, [n] não dispunham dos cinco indicadores, e o Ranking ABES exclui 1.289. Este estudo manteve os que tinham apenas um indicador ausente, imputado pela mediana de seu porte na região de saúde; o ranking restrito aos municípios completos concorda com o principal em τ = [valor]. A repetição do estudo com as edições seguintes do SINISA é o desdobramento natural."*
 
 **Trabalhos futuros que valem a pena mencionar** (escolha dois ou três; os demais ficam implícitos na tabela):
 
