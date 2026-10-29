@@ -44,6 +44,10 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 ├── README.md
 ├── docs/
 │   └── guia_escrita.md              Guia de escrita do artigo e decisões metodológicas
+├── jupyter notebooks/
+│   └── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
+├── resultados/
+│   └── municipios_selecionados.csv  Saída do notebook de filtragem
 ├── dados/
 │   ├── SINISA/2025/                 SINISA 2025 (ano-base 2024), Ministério das Cidades; base nacional, filtrada para o Nordeste
 │   │   ├── abastecimento de água/   Planilhas por município, por prestador e consolidadas; glossário
