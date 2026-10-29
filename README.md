@@ -1,6 +1,6 @@
-# Rankeamento de Municípios Cearenses em Saneamento
+# Rankeamento de Municípios Nordestinos em Saneamento
 
-Este repositório ranqueia os 184 municípios do Ceará pelo desempenho em saneamento básico usando o método multicritério PROMETHEE II, com pesos objetivos CRITIC. O resultado é comparado ao [Ranking ABES da Universalização do Saneamento 2026](https://rankingabes.abes-dn.org.br/relatorio.php), que usa a mesma base, o mesmo ano e os mesmos cinco indicadores, mas soma os indicadores com pesos iguais. Com isso, a comparação isola o efeito da regra de agregação, que no ABES é compensatória e no PROMETHEE é de compensação limitada.
+Este repositório ranqueia os 1.794 municípios do Nordeste (AL, BA, CE, MA, PB, PE, PI, RN e SE) pelo desempenho em saneamento básico usando o método multicritério PROMETHEE II, com pesos objetivos CRITIC. O resultado é comparado ao [Ranking ABES da Universalização do Saneamento 2026](https://rankingabes.abes-dn.org.br/relatorio.php), que usa a mesma base, o mesmo ano e os mesmos cinco indicadores, mas soma os indicadores com pesos iguais. Com isso, a comparação isola o efeito da regra de agregação, que no ABES é compensatória e no PROMETHEE é de compensação limitada.
 
 O estudo será submetido como artigo ao [Rii Forum 2027](https://rii-forum.org) (Roma, 6 e 8–9 de abril de 2027), com anais publicados pela Springer.
 
@@ -10,7 +10,8 @@ Em andamento. Os dados brutos já foram baixados; os scripts de preparação e d
 
 | Etapa | Situação |
 | --- | --- |
-| Dados do SINISA 2025 e do ABES 2026 baixados | Concluída |
+| Dados do SINISA 2025 baixados | Concluída |
+| Dados do ABES 2026 para o Nordeste baixados | Concluída |
 | Matriz de decisão montada | A fazer |
 | PROMETHEE II com CRITIC e com pesos iguais | A fazer |
 | Robustez (SMAA, AHP Gaussiano, sensibilidade a q e p) e comparação com o ABES | A fazer |
@@ -19,7 +20,7 @@ Em andamento. Os dados brutos já foram baixados; os scripts de preparação e d
 
 ## Método
 
-- **Alternativas:** os municípios cearenses com dados suficientes no SINISA 2025. Entram os que têm os cinco indicadores e os que têm só um ausente, imputado pela mediana dos municípios de mesmo porte na região de saúde.
+- **Alternativas:** os municípios nordestinos com dados suficientes no SINISA 2025. Entram os que têm os cinco indicadores e os que têm só um ausente, imputado pela mediana dos municípios de mesmo porte na região de saúde.
 - **Critérios:** os cinco indicadores do Ranking ABES, todos a maximizar.
 
   | Código | Indicador SINISA | Descrição |
@@ -44,12 +45,12 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 ├── docs/
 │   └── guia_escrita.md              Guia de escrita do artigo e decisões metodológicas
 ├── dados/
-│   ├── SINISA/2025/                 SINISA 2025 (ano-base 2024), Ministério das Cidades
+│   ├── SINISA/2025/                 SINISA 2025 (ano-base 2024), Ministério das Cidades; base nacional, filtrada para o Nordeste
 │   │   ├── abastecimento de água/   Planilhas por município, por prestador e consolidadas; glossário
 │   │   ├── esgotamento sanitário/   Idem para esgoto
 │   │   └── resíduos sólidos/        Planilhas de indicadores e de formulários; glossários e relatório
 │   └── ABES 2026/
-│       └── relatorio ABES 2026 CE.xlsx   Ranking ABES 2026 para os 184 municípios do Ceará
+│       └── relatorio ABES 2026 NE.xlsx   Ranking ABES 2026 para os 1.794 municípios do Nordeste
 └── Rii2027 call for papers 2027-09-30.pdf   Chamada de trabalhos do Rii Forum 2027
 ```
 
@@ -62,7 +63,9 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 
 Cuidados ao usar os dados:
 
-- No arquivo do ABES, 89 dos 184 municípios aparecem como "Não habilitado". Nesse arquivo, dado ausente aparece como `0,00`, e não como célula vazia, então os zeros dos não habilitados não podem ser usados como valores. Os números estão gravados como texto.
+- Nesse arquivo, 1.289 dos 1.794 municípios aparecem como "Não habilitado", com grande variação entre estados (3% de habilitados no Piauí, 52% no Ceará). Dado ausente aparece como `0,00`, e não como célula vazia, então os zeros dos não habilitados não podem ser usados como valores.
+- Os números estão gravados como texto, com vírgula decimal e ponto de milhar (por exemplo, `10.220,55` na taxa de DRSAI).
+- As planilhas do SINISA são nacionais; filtre os municípios do Nordeste pela coluna `Macrorregião` (valor `Nordeste`). Nem todo município aparece em todas as planilhas: a de indicadores de água traz 1.528 dos 1.794 municípios nordestinos, e só 36 dos 224 do Piauí.
 - Para o abastecimento de água, use a versão retificada da planilha (`SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`).
 - As datas de extração de cada base devem ser registradas no `log_decisoes.md`, que ainda será criado.
 
@@ -70,7 +73,7 @@ Cuidados ao usar os dados:
 
 Os scripts ainda não existem. A estrutura prevista é:
 
-1. `01_preparar.py`: lê as planilhas em `dados/`, aplica a regra de dados ausentes e gera `matriz_decisao.csv`.
+1. `01_preparar.py`: lê as planilhas em `dados/`, filtra os municípios do Nordeste, aplica a regra de dados ausentes e gera `matriz_decisao.csv`.
 2. `02_promethee.py`: calcula os pesos e o ranking PROMETHEE II.
 3. `03_robustez.py`: roda SMAA, os esquemas de pesos alternativos, a sensibilidade a q e p e a comparação com o ABES.
 
