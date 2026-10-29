@@ -1,0 +1,107 @@
+﻿cod_IBGE,Município,Porte,Categoria,Nº faltantes,Indicador faltante,Situação do faltante,IAG0001,IES0001,IES2003,IRS0001,IRS3002,situação IAG0001,situação IES0001,situação IES2003,situação IRS0001,situação IRS3002
+2300150,Acarape,Pequeno e médio porte,Primeiros passos para a universalização,0,,,44.35,13.1,21.15,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2300200,Acaraú,Pequeno e médio porte,Primeiros passos para a universalização,0,,,47.92,5.0,8.16,84.2,0.0,declarado,declarado,declarado,declarado,declarado
+2300309,Acopiara,Pequeno e médio porte,Primeiros passos para a universalização,0,,,73.76,8.46,11.32,83.31,0.0,declarado,declarado,declarado,declarado,declarado
+2300507,Alcântaras,Pequeno e médio porte,Empenho para universalização,0,,,49.78,12.22,18.7,67.66,100.0,declarado,declarado,declarado,declarado,zero declarado
+2300606,Altaneira,Pequeno e médio porte,Primeiros passos para a universalização,0,,,86.05,9.99,9.59,90.99,0.0,declarado,declarado,declarado,declarado,declarado
+2300754,Amontada,Pequeno e médio porte,Primeiros passos para a universalização,0,,,64.5,2.71,8.64,62.02,0.0,declarado,declarado,declarado,declarado,declarado
+2300804,Antonina do Norte,Pequeno e médio porte,Empenho para universalização,0,,,84.18,45.44,0.0,75.8,0.0,declarado,declarado,zero declarado,declarado,declarado
+2301000,Aquiraz,Pequeno e médio porte,Primeiros passos para a universalização,0,,,31.25,15.18,43.44,95.17,0.0,declarado,declarado,declarado,declarado,declarado
+2301109,Aracati,Pequeno e médio porte,Primeiros passos para a universalização,0,,,66.0,14.45,16.72,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2301406,Aratuba,Pequeno e médio porte,Primeiros passos para a universalização,0,,,23.84,8.48,26.81,39.27,0.0,declarado,declarado,declarado,declarado,declarado
+2301604,Assaré,Pequeno e médio porte,Empenho para universalização,0,,,67.65,67.53,0.0,90.04,0.0,declarado,declarado,zero declarado,declarado,declarado
+2301703,Aurora,Pequeno e médio porte,Primeiros passos para a universalização,0,,,47.87,8.19,12.69,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2301901,Barbalha,Pequeno e médio porte,Empenho para universalização,0,,,58.08,12.24,13.13,95.91,100.0,declarado,declarado,declarado,declarado,zero declarado
+2301950,Barreira,Pequeno e médio porte,Não habilitado,1,IRS0001,não respondeu,31.73,6.69,13.54,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2302008,Barro,Pequeno e médio porte,Primeiros passos para a universalização,0,,,60.55,5.56,5.91,81.35,0.0,declarado,declarado,declarado,declarado,declarado
+2302057,Barroquinha,Pequeno e médio porte,Primeiros passos para a universalização,0,,,54.02,10.66,14.13,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2302107,Baturité,Pequeno e médio porte,Primeiros passos para a universalização,0,,,61.96,1.78,1.6,43.27,0.0,declarado,declarado,declarado,declarado,declarado
+2302206,Beberibe,Pequeno e médio porte,Primeiros passos para a universalização,0,,,16.56,9.38,30.95,41.81,0.0,declarado,declarado,declarado,declarado,declarado
+2302305,Bela Cruz,Pequeno e médio porte,Empenho para universalização,0,,,77.46,16.82,22.13,87.11,0.0,declarado,declarado,declarado,declarado,declarado
+2302404,Boa Viagem,Pequeno e médio porte,Primeiros passos para a universalização,0,,,69.44,52.74,0.0,56.8,0.0,declarado,declarado,zero declarado,declarado,declarado
+2302503,Brejo Santo,Pequeno e médio porte,Empenho para universalização,0,,,98.03,52.78,15.05,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2302602,Camocim,Pequeno e médio porte,Empenho para universalização,0,,,86.7,59.46,59.26,74.33,0.0,declarado,declarado,declarado,declarado,declarado
+2302701,Campos Sales,Pequeno e médio porte,Não habilitado,1,IRS0001,não respondeu,77.71,10.47,13.08,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2302800,Canindé,Pequeno e médio porte,Primeiros passos para a universalização,0,,,70.66,13.74,17.82,84.31,0.0,declarado,declarado,declarado,declarado,declarado
+2303105,Cariré,Pequeno e médio porte,Empenho para universalização,0,,,85.64,13.08,10.8,71.65,100.0,declarado,declarado,declarado,declarado,zero declarado
+2303501,Cascavel,Pequeno e médio porte,Primeiros passos para a universalização,0,,,46.69,3.45,4.38,70.68,0.0,declarado,declarado,declarado,declarado,declarado
+2303600,Catarina,Pequeno e médio porte,Não habilitado,1,IRS0001,não respondeu,59.32,14.21,19.78,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2303709,Caucaia,Grande porte,Empenho para universalização,0,,,68.85,42.33,43.24,89.58,100.0,declarado,declarado,declarado,declarado,zero declarado
+2303808,Cedro,Pequeno e médio porte,Empenho para universalização,0,,,79.04,4.91,4.0,100.0,24.349999999999994,declarado,declarado,declarado,declarado,declarado
+2304004,Coreaú,Pequeno e médio porte,Empenho para universalização,0,,,76.22,10.18,10.03,100.0,100.0,declarado,declarado,declarado,declarado,zero declarado
+2304103,Crateús,Pequeno e médio porte,Empenho para universalização,0,,,84.44,39.23,37.49,96.23,5.840000000000003,declarado,declarado,declarado,declarado,declarado
+2304202,Crato,Grande porte,Não habilitado,1,IAG0001,não calculado,,37.4,18.24,100.0,0.0,não calculado,declarado,declarado,declarado,declarado
+2304236,Croatá,Pequeno e médio porte,Primeiros passos para a universalização,0,,,79.2,8.79,7.65,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2304277,Ererê,Pequeno e médio porte,Primeiros passos para a universalização,0,,,52.76,22.68,0.0,77.57,0.0,declarado,declarado,zero declarado,declarado,declarado
+2304285,Eusébio,Pequeno e médio porte,Empenho para universalização,0,,,79.8,23.16,17.16,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2304350,Forquilha,Pequeno e médio porte,Empenho para universalização,0,,,87.59,29.51,21.51,87.56,0.0,declarado,declarado,declarado,declarado,declarado
+2304400,Fortaleza,Grande porte,Empenho para universalização,0,,,81.96,64.23,62.65,100.0,100.0,declarado,declarado,declarado,declarado,zero declarado
+2304509,Frecheirinha,Pequeno e médio porte,Empenho para universalização,0,,,61.36,8.76,11.44,61.12,100.0,declarado,declarado,declarado,declarado,zero declarado
+2304657,Graça,Pequeno e médio porte,Não habilitado,1,IRS0001,não respondeu,65.05,6.34,8.66,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2304707,Granja,Pequeno e médio porte,Primeiros passos para a universalização,0,,,81.76,1.66,0.0,49.67,0.0,declarado,declarado,zero declarado,declarado,declarado
+2304806,Granjeiro,Pequeno e médio porte,Primeiros passos para a universalização,0,,,67.82,9.54,14.15,74.6,0.0,declarado,declarado,declarado,declarado,declarado
+2304954,Guaiúba,Pequeno e médio porte,Primeiros passos para a universalização,0,,,51.33,9.7,12.75,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2305001,Guaraciaba do Norte,Pequeno e médio porte,Não habilitado,1,IRS0001,não respondeu,83.84,8.47,5.97,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2305100,Guaramiranga,Pequeno e médio porte,Primeiros passos para a universalização,0,,,18.63,14.74,63.16,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2305233,Horizonte,Pequeno e médio porte,Primeiros passos para a universalização,0,,,60.8,19.86,19.71,93.83,0.0,declarado,declarado,declarado,declarado,declarado
+2305407,Icó,Pequeno e médio porte,Primeiros passos para a universalização,0,,,92.38,26.52,0.0,56.95,0.0,declarado,declarado,zero declarado,declarado,declarado
+2305506,Iguatu,Grande porte,Não habilitado,1,IRS0001,não respondeu,80.7,16.15,13.1,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2305605,Independência,Pequeno e médio porte,Primeiros passos para a universalização,0,,,64.68,12.27,16.11,48.86,0.0,declarado,declarado,declarado,declarado,declarado
+2306009,Iracema,Pequeno e médio porte,Primeiros passos para a universalização,0,,,79.65,3.67,4.01,55.51,0.0,declarado,declarado,declarado,declarado,declarado
+2306256,Itaitinga,Pequeno e médio porte,Empenho para universalização,0,,,64.78,1.89,7.19,100.0,33.849999999999994,declarado,declarado,declarado,declarado,declarado
+2306306,Itapajé,Pequeno e médio porte,Empenho para universalização,0,,,78.38,60.44,0.0,100.0,0.0,declarado,declarado,zero declarado,declarado,declarado
+2306405,Itapipoca,Grande porte,Primeiros passos para a universalização,0,,,72.05,20.27,30.06,70.34,0.0,declarado,declarado,declarado,declarado,declarado
+2306553,Itarema,Pequeno e médio porte,Primeiros passos para a universalização,0,,,54.17,4.42,8.94,32.99,0.0,declarado,declarado,declarado,declarado,declarado
+2306702,Jaguaretama,Pequeno e médio porte,Primeiros passos para a universalização,0,,,60.96,1.55,1.69,51.82,0.0,declarado,declarado,declarado,declarado,declarado
+2306801,Jaguaribara,Pequeno e médio porte,Empenho para universalização,0,,,74.36,35.42,35.34,65.93,0.0,declarado,declarado,declarado,declarado,declarado
+2306900,Jaguaribe,Pequeno e médio porte,Empenho para universalização,0,,,81.53,47.12,39.78,71.3,0.0,declarado,declarado,declarado,declarado,declarado
+2307106,Jardim,Pequeno e médio porte,Primeiros passos para a universalização,0,,,61.17,28.09,0.0,77.44,0.0,declarado,declarado,zero declarado,declarado,declarado
+2307254,Jijoca de Jericoacoara,Pequeno e médio porte,Empenho para universalização,0,,,64.11,18.25,44.07,92.57,0.0,declarado,declarado,declarado,declarado,declarado
+2307304,Juazeiro do Norte,Grande porte,Empenho para universalização,0,,,87.62,28.64,22.96,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2307403,Jucás,Pequeno e médio porte,Empenho para universalização,0,,,92.69,27.53,8.91,85.91,0.0,declarado,declarado,declarado,declarado,declarado
+2307502,Lavras da Mangabeira,Pequeno e médio porte,Primeiros passos para a universalização,0,,,57.28,43.58,0.0,61.17,0.0,declarado,declarado,zero declarado,declarado,declarado
+2307601,Limoeiro do Norte,Pequeno e médio porte,Empenho para universalização,0,,,97.0,29.22,60.11,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2307650,Maracanaú,Grande porte,Empenho para universalização,0,,,65.3,37.26,47.29,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2307700,Maranguape,Grande porte,Primeiros passos para a universalização,0,,,66.16,15.77,15.54,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2307809,Marco,Pequeno e médio porte,Primeiros passos para a universalização,0,,,68.7,5.12,5.87,87.15,0.0,declarado,declarado,declarado,declarado,declarado
+2308005,Massapê,Pequeno e médio porte,Empenho para universalização,0,,,72.34,18.04,18.45,55.51,98.33,declarado,declarado,declarado,declarado,declarado
+2308104,Mauriti,Pequeno e médio porte,Primeiros passos para a universalização,0,,,65.39,5.93,11.04,48.6,0.0,declarado,declarado,declarado,declarado,declarado
+2308302,Milagres,Pequeno e médio porte,Primeiros passos para a universalização,0,,,42.65,22.34,0.0,82.45,0.0,declarado,declarado,zero declarado,declarado,declarado
+2308401,Missão Velha,Pequeno e médio porte,Primeiros passos para a universalização,0,,,54.4,2.24,2.8,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2308708,Morada Nova,Pequeno e médio porte,Primeiros passos para a universalização,0,,,97.29,1.95,1.42,77.02,0.0,declarado,declarado,declarado,declarado,declarado
+2309003,Mucambo,Pequeno e médio porte,Empenho para universalização,0,,,89.94,9.68,8.1,89.04,100.0,declarado,declarado,declarado,declarado,zero declarado
+2309102,Mulungu,Pequeno e médio porte,Primeiros passos para a universalização,0,,,52.57,7.54,12.02,90.97,0.0,declarado,declarado,declarado,declarado,declarado
+2309300,Nova Russas,Pequeno e médio porte,Não habilitado,1,IAG0001,não calculado,,27.8,20.85,100.0,0.0,não calculado,declarado,declarado,declarado,declarado
+2309409,Novo Oriente,Pequeno e médio porte,Empenho para universalização,0,,,85.47,16.6,16.87,95.0,0.0,declarado,declarado,declarado,declarado,declarado
+2309458,Ocara,Pequeno e médio porte,Empenho para universalização,0,,,81.9,4.74,5.12,79.25,36.55,declarado,declarado,declarado,declarado,declarado
+2309508,Orós,Pequeno e médio porte,Primeiros passos para a universalização,0,,,87.42,0.45,0.41,75.43,0.0,declarado,declarado,declarado,declarado,declarado
+2309607,Pacajus,Pequeno e médio porte,Primeiros passos para a universalização,0,,,54.8,4.48,4.52,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2309706,Pacatuba,Pequeno e médio porte,Empenho para universalização,0,,,77.15,32.08,38.35,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2309805,Pacoti,Pequeno e médio porte,Empenho para universalização,0,,,27.08,25.6,71.38,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2309904,Pacujá,Pequeno e médio porte,Empenho para universalização,0,,,74.11,40.98,0.0,100.0,100.0,declarado,declarado,zero declarado,declarado,zero declarado
+2310100,Palmácia,Pequeno e médio porte,Não habilitado,1,IRS0001,não respondeu,38.48,8.34,22.56,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2310209,Paracuru,Pequeno e médio porte,Não habilitado,1,IRS0001,não respondeu,30.61,13.46,46.41,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2310258,Paraipaba,Pequeno e médio porte,Empenho para universalização,0,,,66.75,23.61,31.8,83.86,0.0,declarado,declarado,declarado,declarado,declarado
+2310407,Paramoti,Pequeno e médio porte,Primeiros passos para a universalização,0,,,59.24,8.42,11.49,63.95,0.0,declarado,declarado,declarado,declarado,declarado
+2310506,Pedra Branca,Pequeno e médio porte,Primeiros passos para a universalização,0,,,75.5,2.53,9.35,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2311009,Poranga,Pequeno e médio porte,Primeiros passos para a universalização,0,,,44.65,16.39,24.89,65.35,0.0,declarado,declarado,declarado,declarado,declarado
+2311108,Porteiras,Pequeno e médio porte,Empenho para universalização,0,,,76.55,7.46,7.61,100.0,100.0,declarado,declarado,declarado,declarado,zero declarado
+2311306,Quixadá,Pequeno e médio porte,Empenho para universalização,0,,,74.71,17.65,17.73,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2311355,Quixelô,Pequeno e médio porte,Empenho para universalização,0,,,42.23,33.44,41.02,33.44,53.03,declarado,declarado,declarado,declarado,declarado
+2311405,Quixeramobim,Pequeno e médio porte,Empenho para universalização,0,,,89.69,66.89,0.0,58.28,0.0,declarado,declarado,zero declarado,declarado,declarado
+2311603,Redenção,Pequeno e médio porte,Primeiros passos para a universalização,0,,,47.72,2.01,3.08,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2311801,Russas,Pequeno e médio porte,Empenho para universalização,0,,,70.77,19.17,21.21,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2311900,Saboeiro,Pequeno e médio porte,Primeiros passos para a universalização,0,,,67.18,1.39,2.12,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2311959,Salitre,Pequeno e médio porte,Não habilitado,1,IRS0001,não respondeu,55.51,5.42,8.92,,0.0,declarado,declarado,declarado,não respondeu,não respondeu
+2312304,São Benedito,Pequeno e médio porte,Empenho para universalização,0,,,76.66,16.42,16.16,95.25,0.0,declarado,declarado,declarado,declarado,declarado
+2312403,São Gonçalo do Amarante,Pequeno e médio porte,Empenho para universalização,0,,,36.81,22.79,100.0,90.38,0.0,declarado,declarado,declarado,declarado,declarado
+2312601,São Luís do Curu,Pequeno e médio porte,Primeiros passos para a universalização,0,,,82.7,8.91,9.36,70.93,0.0,declarado,declarado,declarado,declarado,declarado
+2312908,Sobral,Grande porte,Empenho para universalização,0,,,85.88,68.13,68.86,100.0,100.0,declarado,declarado,declarado,declarado,zero declarado
+2313104,Tabuleiro do Norte,Pequeno e médio porte,Primeiros passos para a universalização,0,,,56.38,6.33,7.9,69.17,0.0,declarado,declarado,declarado,declarado,declarado
+2313252,Tarrafas,Pequeno e médio porte,Primeiros passos para a universalização,0,,,58.13,2.44,4.08,97.56,0.0,declarado,declarado,declarado,declarado,declarado
+2313302,Tauá,Pequeno e médio porte,Empenho para universalização,0,,,85.38,8.03,8.15,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2313401,Tianguá,Pequeno e médio porte,Primeiros passos para a universalização,0,,,67.11,21.54,22.74,75.46,0.0,declarado,declarado,declarado,declarado,declarado
+2313500,Trairi,Pequeno e médio porte,Primeiros passos para a universalização,0,,,51.01,4.32,13.98,81.28,0.0,declarado,declarado,declarado,declarado,declarado
+2313906,Uruoca,Pequeno e médio porte,Empenho para universalização,0,,,65.13,8.68,12.86,91.27,100.0,declarado,declarado,declarado,declarado,zero declarado
+2314003,Várzea Alegre,Pequeno e médio porte,Empenho para universalização,0,,,58.94,37.48,64.15,100.0,0.0,declarado,declarado,declarado,declarado,declarado
+2314102,Viçosa do Ceará,Pequeno e médio porte,Primeiros passos para a universalização,0,,,49.34,2.13,4.35,100.0,0.0,declarado,declarado,declarado,declarado,declarado
