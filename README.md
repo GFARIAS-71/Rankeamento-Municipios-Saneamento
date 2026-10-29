@@ -20,7 +20,7 @@ Em andamento. Os dados brutos já foram baixados; os scripts de preparação e d
 
 ## Método
 
-- **Alternativas:** os municípios nordestinos com dados suficientes no SINISA 2025. Entram os que têm os cinco indicadores e os que têm só um ausente, imputado pela mediana dos municípios de mesmo porte na região de saúde.
+- **Alternativas:** os municípios nordestinos com dados suficientes no SINISA 2025. Entram os que têm os cinco indicadores e os que têm só um ausente, imputado pela média ponderada dos 15 municípios de mesmo porte mais parecidos nos demais indicadores (KNN, escolhido por validação cruzada). Se o IRS3002 estiver ausente, assume-se disposição inadequada (valor adaptado 0).
 - **Critérios:** os cinco indicadores do Ranking ABES, todos a maximizar.
 
   | Código | Indicador SINISA | Descrição |
@@ -45,9 +45,11 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 ├── docs/
 │   └── guia_escrita.md              Guia de escrita do artigo e decisões metodológicas
 ├── jupyter notebooks/
-│   └── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
+│   ├── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
+│   └── 02_imputacao_faltantes.ipynb    Compara técnicas de imputação e completa a matriz de decisão
 ├── resultados/
-│   └── municipios_selecionados.csv  Saída do notebook de filtragem
+│   ├── municipios_selecionados.csv  Saída do notebook de filtragem
+│   └── matriz_decisao.csv           Matriz de decisão com o indicador faltante imputado
 ├── dados/
 │   ├── SINISA/2025/                 SINISA 2025 (ano-base 2024), Ministério das Cidades; base nacional, filtrada para o Nordeste
 │   │   ├── abastecimento de água/   Planilhas por município, por prestador e consolidadas; glossário
