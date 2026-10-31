@@ -48,7 +48,8 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 │   ├── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
 │   └── 02_imputacao_faltantes.ipynb    Compara técnicas de imputação e completa a matriz de decisão
 ├── resultados/
-│   ├── municipios_selecionados.csv  Saída do notebook de filtragem
+│   ├── municipios_5_indicadores.csv          Saída da filtragem: só os municípios completos
+│   ├── municipios_4_ou_5_indicadores.csv     Saída da filtragem: completos e com um faltante
 │   └── matriz_decisao.csv           Matriz de decisão com o indicador faltante imputado
 ├── dados/
 │   ├── SINISA/2025/                 SINISA 2025 (ano-base 2024), Ministério das Cidades; base nacional, filtrada para o Nordeste
