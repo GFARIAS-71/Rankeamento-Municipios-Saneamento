@@ -219,5 +219,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Arquivos intermediários gerados pelos notebooks
-resultados/intermediarios/
+# Saídas geradas pelos notebooks
+resultados/
