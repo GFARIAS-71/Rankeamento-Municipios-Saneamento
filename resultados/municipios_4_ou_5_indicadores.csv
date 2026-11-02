@@ -1,0 +1,582 @@
+﻿cod_IBGE,Município,UF,Porte,Categoria,IAG0001,IES0001,IES2003,IRS0001,IRS3002,Imputado,Situação do faltante,Vizinhos (5 mais próximos),situação IAG0001,situação IES0001,situação IES2003,situação IRS0001,situação IRS3002
+2100501,Alto Parnaíba,MA,Pequeno e médio porte,Primeiros passos para a universalização,58.95,26.36,0.0,61.5,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2101400,Balsas,MA,Grande porte,Primeiros passos para a universalização,88.51,3.59,1.22,87.95,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2101707,Barreirinhas,MA,Pequeno e médio porte,Não habilitado,24.59,6.12,30.83,69.17,0.0,IRS0001,não respondeu,"Aratuba (CE), Ibitiara (BA), Beberibe (CE), Aquiraz (CE), Cajazeirinhas (PB)",declarado,declarado,declarado,não respondeu,não respondeu
+2103000,Caxias,MA,Grande porte,Primeiros passos para a universalização,86.97,15.11,14.41,73.4,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2103604,Coroatá,MA,Pequeno e médio porte,Não habilitado,64.52,0.0,0.0,78.69,0.0,IRS0001,não respondeu,"Baturité (CE), Saboeiro (CE), Jaguaretama (CE), Alto do Rodrigues (RN), Ribeira do Pombal (BA)",declarado,zero declarado,zero declarado,não respondeu,não respondeu
+2105302,Imperatriz,MA,Grande porte,Empenho para universalização,86.72,28.71,36.91,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2105401,Itapecuru Mirim,MA,Pequeno e médio porte,Primeiros passos para a universalização,56.23,9.58,12.84,64.24,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2107506,Paço do Lumiar,MA,Grande porte,Empenho para universalização,77.01,36.05,55.86,97.63,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2109007,Porto Franco,MA,Pequeno e médio porte,Empenho para universalização,93.64,7.34,100.0,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2111201,São José de Ribamar,MA,Grande porte,Empenho para universalização,96.98,41.9,42.52,77.7,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2111300,São Luís,MA,Grande porte,Empenho para universalização,89.23,41.85,15.78,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2112001,Tasso Fragoso,MA,Pequeno e médio porte,Empenho para universalização,63.44,32.95,74.74,69.6,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2112209,Timon,MA,Grande porte,Empenho para universalização,89.23,34.86,7.61,89.23,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2112506,Tutóia,MA,Pequeno e médio porte,Não habilitado,5.03,2.01,76.83,71.12,0.0,IRS0001,não respondeu,"Guaramiranga (CE), Pacoti (CE), Beberibe (CE), Ibitiara (BA), Aquiraz (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2200806,Antônio Almeida,PI,Pequeno e médio porte,Não habilitado,79.96,30.98,56.67,81.7,0.0,IRS0001,não respondeu,"João Câmara (RN), Lençóis (BA), Pacatuba (CE), Jaguaquara (BA), Macajuba (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2201176,Barra D Alcântara,PI,Pequeno e médio porte,Primeiros passos para a universalização,99.19,0.02,0.0,71.65,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2203750,Fartura do Piauí,PI,Pequeno e médio porte,Primeiros passos para a universalização,26.12,26.12,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2207009,Oeiras,PI,Pequeno e médio porte,Empenho para universalização,93.57,37.82,77.62,79.54,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2208551,Porto Alegre do Piauí,PI,Pequeno e médio porte,Empenho para universalização,78.8,55.21,100.0,86.83,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2209872,São João da Fronteira,PI,Pequeno e médio porte,Primeiros passos para a universalização,90.56,28.85,0.0,47.94,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2211001,Teresina,PI,Grande porte,Empenho para universalização,94.81,55.46,18.74,96.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2300150,Acarape,CE,Pequeno e médio porte,Primeiros passos para a universalização,44.35,13.1,21.15,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2300200,Acaraú,CE,Pequeno e médio porte,Primeiros passos para a universalização,47.92,5.0,8.16,84.2,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2300309,Acopiara,CE,Pequeno e médio porte,Primeiros passos para a universalização,73.76,8.46,11.32,83.31,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2300507,Alcântaras,CE,Pequeno e médio porte,Empenho para universalização,49.78,12.22,18.7,67.66,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2300606,Altaneira,CE,Pequeno e médio porte,Primeiros passos para a universalização,86.05,9.99,9.59,90.99,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2300754,Amontada,CE,Pequeno e médio porte,Primeiros passos para a universalização,64.5,2.71,8.64,62.02,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2300804,Antonina do Norte,CE,Pequeno e médio porte,Empenho para universalização,84.18,45.44,0.0,75.8,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2301000,Aquiraz,CE,Pequeno e médio porte,Primeiros passos para a universalização,31.25,15.18,43.44,95.17,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2301109,Aracati,CE,Pequeno e médio porte,Primeiros passos para a universalização,66.0,14.45,16.72,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2301406,Aratuba,CE,Pequeno e médio porte,Primeiros passos para a universalização,23.84,8.48,26.81,39.27,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2301604,Assaré,CE,Pequeno e médio porte,Empenho para universalização,67.65,67.53,0.0,90.04,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2301703,Aurora,CE,Pequeno e médio porte,Primeiros passos para a universalização,47.87,8.19,12.69,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2301901,Barbalha,CE,Pequeno e médio porte,Empenho para universalização,58.08,12.24,13.13,95.91,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2301950,Barreira,CE,Pequeno e médio porte,Não habilitado,31.73,6.69,13.54,83.32,0.0,IRS0001,não respondeu,"Cajazeirinhas (PB), Pedrão (BA), Banzaê (BA), Aratuba (CE), Brotas de Macaúbas (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2302008,Barro,CE,Pequeno e médio porte,Primeiros passos para a universalização,60.55,5.56,5.91,81.35,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2302057,Barroquinha,CE,Pequeno e médio porte,Primeiros passos para a universalização,54.02,10.66,14.13,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2302107,Baturité,CE,Pequeno e médio porte,Primeiros passos para a universalização,61.96,1.78,1.6,43.27,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2302206,Beberibe,CE,Pequeno e médio porte,Primeiros passos para a universalização,16.56,9.38,30.95,41.81,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2302305,Bela Cruz,CE,Pequeno e médio porte,Empenho para universalização,77.46,16.82,22.13,87.11,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2302404,Boa Viagem,CE,Pequeno e médio porte,Primeiros passos para a universalização,69.44,52.74,0.0,56.8,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2302503,Brejo Santo,CE,Pequeno e médio porte,Empenho para universalização,98.03,52.78,15.05,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2302602,Camocim,CE,Pequeno e médio porte,Empenho para universalização,86.7,59.46,59.26,74.33,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2302701,Campos Sales,CE,Pequeno e médio porte,Não habilitado,77.71,10.47,13.08,85.9,0.0,IRS0001,não respondeu,"Croatá (CE), Acopiara (CE), São Benedito (CE), São Luís do Curu (CE), Pedra Branca (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2302800,Canindé,CE,Pequeno e médio porte,Primeiros passos para a universalização,70.66,13.74,17.82,84.31,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2303105,Cariré,CE,Pequeno e médio porte,Empenho para universalização,85.64,13.08,10.8,71.65,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2303501,Cascavel,CE,Pequeno e médio porte,Primeiros passos para a universalização,46.69,3.45,4.38,70.68,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2303600,Catarina,CE,Pequeno e médio porte,Não habilitado,59.32,14.21,19.78,69.1,0.0,IRS0001,não respondeu,"Lajedinho (BA), Horizonte (CE), Campo Redondo (RN), Rio do Antônio (BA), Independência (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2303709,Caucaia,CE,Grande porte,Empenho para universalização,68.85,42.33,43.24,89.58,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2303808,Cedro,CE,Pequeno e médio porte,Empenho para universalização,79.04,4.91,4.0,100.0,24.349999999999994,,,,declarado,declarado,declarado,declarado,declarado
+2304004,Coreaú,CE,Pequeno e médio porte,Empenho para universalização,76.22,10.18,10.03,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2304103,Crateús,CE,Pequeno e médio porte,Empenho para universalização,84.44,39.23,37.49,96.23,5.840000000000003,,,,declarado,declarado,declarado,declarado,declarado
+2304202,Crato,CE,Grande porte,Não habilitado,81.71,37.4,18.24,100.0,0.0,IAG0001,não calculado,"Juazeiro do Norte (CE), Imperatriz (MA), Maranguape (CE), Maracanaú (CE), Balsas (MA)",não calculado,declarado,declarado,declarado,declarado
+2304236,Croatá,CE,Pequeno e médio porte,Primeiros passos para a universalização,79.2,8.79,7.65,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2304277,Ererê,CE,Pequeno e médio porte,Primeiros passos para a universalização,52.76,22.68,0.0,77.57,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2304285,Eusébio,CE,Pequeno e médio porte,Empenho para universalização,79.8,23.16,17.16,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2304350,Forquilha,CE,Pequeno e médio porte,Empenho para universalização,87.59,29.51,21.51,87.56,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2304400,Fortaleza,CE,Grande porte,Empenho para universalização,81.96,64.23,62.65,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2304509,Frecheirinha,CE,Pequeno e médio porte,Empenho para universalização,61.36,8.76,11.44,61.12,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2304657,Graça,CE,Pequeno e médio porte,Não habilitado,65.05,6.34,8.66,77.03,0.0,IRS0001,não respondeu,"Monte Alegre (RN), Camamu (BA), Mauriti (CE), Iguaí (BA), Amontada (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2304707,Granja,CE,Pequeno e médio porte,Primeiros passos para a universalização,81.76,1.66,0.0,49.67,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2304806,Granjeiro,CE,Pequeno e médio porte,Primeiros passos para a universalização,67.82,9.54,14.15,74.6,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2304954,Guaiúba,CE,Pequeno e médio porte,Primeiros passos para a universalização,51.33,9.7,12.75,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2305001,Guaraciaba do Norte,CE,Pequeno e médio porte,Não habilitado,83.84,8.47,5.97,80.49,0.0,IRS0001,não respondeu,"Tauá (CE), São Luís do Curu (CE), Ruy Barbosa (BA), Altaneira (CE), Brumado (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2305100,Guaramiranga,CE,Pequeno e médio porte,Primeiros passos para a universalização,18.63,14.74,63.16,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2305233,Horizonte,CE,Pequeno e médio porte,Primeiros passos para a universalização,60.8,19.86,19.71,93.83,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2305407,Icó,CE,Pequeno e médio porte,Primeiros passos para a universalização,92.38,26.52,0.0,56.95,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2305506,Iguatu,CE,Grande porte,Não habilitado,80.7,16.15,13.1,90.3,0.0,IRS0001,não respondeu,"Caxias (MA), Juazeiro do Norte (CE), Balsas (MA), Itapipoca (CE), Imperatriz (MA)",declarado,declarado,declarado,não respondeu,não respondeu
+2305605,Independência,CE,Pequeno e médio porte,Primeiros passos para a universalização,64.68,12.27,16.11,48.86,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2306009,Iracema,CE,Pequeno e médio porte,Primeiros passos para a universalização,79.65,3.67,4.01,55.51,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2306256,Itaitinga,CE,Pequeno e médio porte,Empenho para universalização,64.78,1.89,7.19,100.0,33.849999999999994,,,,declarado,declarado,declarado,declarado,declarado
+2306306,Itapajé,CE,Pequeno e médio porte,Empenho para universalização,78.38,60.44,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2306405,Itapipoca,CE,Grande porte,Primeiros passos para a universalização,72.05,20.27,30.06,70.34,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2306553,Itarema,CE,Pequeno e médio porte,Primeiros passos para a universalização,54.17,4.42,8.94,32.99,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2306702,Jaguaretama,CE,Pequeno e médio porte,Primeiros passos para a universalização,60.96,1.55,1.69,51.82,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2306801,Jaguaribara,CE,Pequeno e médio porte,Empenho para universalização,74.36,35.42,35.34,65.93,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2306900,Jaguaribe,CE,Pequeno e médio porte,Empenho para universalização,81.53,47.12,39.78,71.3,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2307106,Jardim,CE,Pequeno e médio porte,Primeiros passos para a universalização,61.17,28.09,0.0,77.44,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2307254,Jijoca de Jericoacoara,CE,Pequeno e médio porte,Empenho para universalização,64.11,18.25,44.07,92.57,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2307304,Juazeiro do Norte,CE,Grande porte,Empenho para universalização,87.62,28.64,22.96,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2307403,Jucás,CE,Pequeno e médio porte,Empenho para universalização,92.69,27.53,8.91,85.91,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2307502,Lavras da Mangabeira,CE,Pequeno e médio porte,Primeiros passos para a universalização,57.28,43.58,0.0,61.17,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2307601,Limoeiro do Norte,CE,Pequeno e médio porte,Empenho para universalização,97.0,29.22,60.11,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2307650,Maracanaú,CE,Grande porte,Empenho para universalização,65.3,37.26,47.29,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2307700,Maranguape,CE,Grande porte,Primeiros passos para a universalização,66.16,15.77,15.54,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2307809,Marco,CE,Pequeno e médio porte,Primeiros passos para a universalização,68.7,5.12,5.87,87.15,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2308005,Massapê,CE,Pequeno e médio porte,Empenho para universalização,72.34,18.04,18.45,55.51,98.33,,,,declarado,declarado,declarado,declarado,declarado
+2308104,Mauriti,CE,Pequeno e médio porte,Primeiros passos para a universalização,65.39,5.93,11.04,48.6,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2308302,Milagres,CE,Pequeno e médio porte,Primeiros passos para a universalização,42.65,22.34,0.0,82.45,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2308401,Missão Velha,CE,Pequeno e médio porte,Primeiros passos para a universalização,54.4,2.24,2.8,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2308708,Morada Nova,CE,Pequeno e médio porte,Primeiros passos para a universalização,97.29,1.95,1.42,77.02,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2309003,Mucambo,CE,Pequeno e médio porte,Empenho para universalização,89.94,9.68,8.1,89.04,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2309102,Mulungu,CE,Pequeno e médio porte,Primeiros passos para a universalização,52.57,7.54,12.02,90.97,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2309300,Nova Russas,CE,Pequeno e médio porte,Não habilitado,79.24,27.8,20.85,100.0,0.0,IAG0001,não calculado,"Curaçá (BA), Eusébio (CE), Pedro Velho (RN), Russas (CE), Quixadá (CE)",não calculado,declarado,declarado,declarado,declarado
+2309409,Novo Oriente,CE,Pequeno e médio porte,Empenho para universalização,85.47,16.6,16.87,95.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2309458,Ocara,CE,Pequeno e médio porte,Empenho para universalização,81.9,4.74,5.12,79.25,36.55,,,,declarado,declarado,declarado,declarado,declarado
+2309508,Orós,CE,Pequeno e médio porte,Primeiros passos para a universalização,87.42,0.45,0.41,75.43,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2309607,Pacajus,CE,Pequeno e médio porte,Primeiros passos para a universalização,54.8,4.48,4.52,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2309706,Pacatuba,CE,Pequeno e médio porte,Empenho para universalização,77.15,32.08,38.35,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2309805,Pacoti,CE,Pequeno e médio porte,Empenho para universalização,27.08,25.6,71.38,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2309904,Pacujá,CE,Pequeno e médio porte,Empenho para universalização,74.11,40.98,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2310100,Palmácia,CE,Pequeno e médio porte,Não habilitado,38.48,8.34,22.56,79.17,0.0,IRS0001,não respondeu,"Cajazeirinhas (PB), Acarape (CE), Poranga (CE), Aurora (CE), Acaraú (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2310209,Paracuru,CE,Pequeno e médio porte,Não habilitado,30.61,13.46,46.41,76.33,0.0,IRS0001,não respondeu,"Aquiraz (CE), Ibitiara (BA), Aratuba (CE), Guaramiranga (CE), Antônio Martins (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2310258,Paraipaba,CE,Pequeno e médio porte,Empenho para universalização,66.75,23.61,31.8,83.86,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2310407,Paramoti,CE,Pequeno e médio porte,Primeiros passos para a universalização,59.24,8.42,11.49,63.95,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2310506,Pedra Branca,CE,Pequeno e médio porte,Primeiros passos para a universalização,75.5,2.53,9.35,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2311009,Poranga,CE,Pequeno e médio porte,Primeiros passos para a universalização,44.65,16.39,24.89,65.35,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2311108,Porteiras,CE,Pequeno e médio porte,Empenho para universalização,76.55,7.46,7.61,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2311306,Quixadá,CE,Pequeno e médio porte,Empenho para universalização,74.71,17.65,17.73,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2311355,Quixelô,CE,Pequeno e médio porte,Empenho para universalização,42.23,33.44,41.02,33.44,53.03,,,,declarado,declarado,declarado,declarado,declarado
+2311405,Quixeramobim,CE,Pequeno e médio porte,Empenho para universalização,89.69,66.89,0.0,58.28,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2311603,Redenção,CE,Pequeno e médio porte,Primeiros passos para a universalização,47.72,2.01,3.08,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2311801,Russas,CE,Pequeno e médio porte,Empenho para universalização,70.77,19.17,21.21,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2311900,Saboeiro,CE,Pequeno e médio porte,Primeiros passos para a universalização,67.18,1.39,2.12,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2311959,Salitre,CE,Pequeno e médio porte,Não habilitado,55.51,5.42,8.92,75.58,0.0,IRS0001,não respondeu,"Tabuleiro do Norte (CE), Itarema (CE), Pacajus (CE), Mulungu (CE), Itapecuru Mirim (MA)",declarado,declarado,declarado,não respondeu,não respondeu
+2312304,São Benedito,CE,Pequeno e médio porte,Empenho para universalização,76.66,16.42,16.16,95.25,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2312403,São Gonçalo do Amarante,CE,Pequeno e médio porte,Empenho para universalização,36.81,22.79,100.0,90.38,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2312601,São Luís do Curu,CE,Pequeno e médio porte,Primeiros passos para a universalização,82.7,8.91,9.36,70.93,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2312908,Sobral,CE,Grande porte,Empenho para universalização,85.88,68.13,68.86,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2313104,Tabuleiro do Norte,CE,Pequeno e médio porte,Primeiros passos para a universalização,56.38,6.33,7.9,69.17,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2313252,Tarrafas,CE,Pequeno e médio porte,Primeiros passos para a universalização,58.13,2.44,4.08,97.56,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2313302,Tauá,CE,Pequeno e médio porte,Empenho para universalização,85.38,8.03,8.15,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2313401,Tianguá,CE,Pequeno e médio porte,Primeiros passos para a universalização,67.11,21.54,22.74,75.46,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2313500,Trairi,CE,Pequeno e médio porte,Primeiros passos para a universalização,51.01,4.32,13.98,81.28,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2313906,Uruoca,CE,Pequeno e médio porte,Empenho para universalização,65.13,8.68,12.86,91.27,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2314003,Várzea Alegre,CE,Pequeno e médio porte,Empenho para universalização,58.94,37.48,64.15,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2314102,Viçosa do Ceará,CE,Pequeno e médio porte,Primeiros passos para a universalização,49.34,2.13,4.35,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2400109,Acari,RN,Pequeno e médio porte,Empenho para universalização,86.81,81.25,95.24,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2400208,Açu,RN,Pequeno e médio porte,Primeiros passos para a universalização,71.2,2.07,3.04,94.4,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2400307,Afonso Bezerra,RN,Pequeno e médio porte,Empenho para universalização,46.73,40.77,83.61,98.19,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2400505,Alexandria,RN,Pequeno e médio porte,Empenho para universalização,69.29,59.87,13.59,72.2,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2400604,Almino Afonso,RN,Pequeno e médio porte,Primeiros passos para a universalização,67.81,7.07,0.0,71.68,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2400703,Alto do Rodrigues,RN,Pequeno e médio porte,Primeiros passos para a universalização,68.47,1.47,1.86,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2400901,Antônio Martins,RN,Pequeno e médio porte,Primeiros passos para a universalização,44.18,22.99,57.83,55.33,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2401909,Caiçara do Rio do Vento,RN,Pequeno e médio porte,Empenho para universalização,84.43,27.6,23.68,80.74,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2402006,Caicó,RN,Pequeno e médio porte,Empenho para universalização,95.06,20.88,22.54,91.57,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2402105,Campo Redondo,RN,Pequeno e médio porte,Primeiros passos para a universalização,60.35,9.41,15.81,87.15,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2402501,Carnaubais,RN,Pequeno e médio porte,Não habilitado,31.6,26.1,77.74,77.93,0.0,IRS0001,não respondeu,"Pacoti (CE), São Gonçalo do Amarante (CE), Jiquiriçá (BA), Antônio Martins (RN), Guaramiranga (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2402709,Cerro Corá,RN,Pequeno e médio porte,Não habilitado,54.04,31.32,42.34,62.19,0.0,IRS0001,não respondeu,"Santa Brígida (BA), Canápolis (BA), Gentio do Ouro (BA), Mirangaba (BA), Goianinha (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2403004,Cruzeta,RN,Pequeno e médio porte,Empenho para universalização,84.66,65.55,0.0,84.66,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2403103,Currais Novos,RN,Pequeno e médio porte,Empenho para universalização,73.73,58.08,81.86,81.53,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2403202,Doutor Severiano,RN,Pequeno e médio porte,Não habilitado,37.23,45.95,89.46,77.44,0.0,IRS0001,não respondeu,"Afonso Bezerra (RN), Mutuípe (BA), São Gonçalo do Amarante (CE), Remanso (BA), Jiquiriçá (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2403251,Parnamirim,RN,Grande porte,Empenho para universalização,93.49,7.47,8.07,94.8,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2403509,Espírito Santo,RN,Pequeno e médio porte,Não habilitado,56.59,13.98,22.99,75.16,0.0,IRS0001,não respondeu,"Lajedinho (BA), Horizonte (CE), Barroquinha (CE), Campo Redondo (RN), Itapecuru Mirim (MA)",declarado,declarado,declarado,não respondeu,não respondeu
+2403806,Florânia,RN,Pequeno e médio porte,Empenho para universalização,72.42,67.45,88.37,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2404200,Goianinha,RN,Pequeno e médio porte,Empenho para universalização,66.37,25.03,38.96,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2404507,Guamaré,RN,Pequeno e médio porte,Empenho para universalização,26.97,55.23,100.0,94.06,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2405009,Jaçanã,RN,Pequeno e médio porte,Empenho para universalização,52.35,82.36,0.0,82.36,40.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2405603,Jardim de Piranhas,RN,Pequeno e médio porte,Empenho para universalização,75.15,23.49,29.79,86.71,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2405801,João Câmara,RN,Pequeno e médio porte,Empenho para universalização,75.54,37.61,55.08,77.44,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2406007,José da Penha,RN,Pequeno e médio porte,Primeiros passos para a universalização,69.16,6.52,10.48,72.57,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2406106,Jucurutu,RN,Pequeno e médio porte,Não habilitado,74.06,19.11,25.81,76.65,0.0,IRS0001,não respondeu,"Russas (CE), Jardim de Piranhas (RN), Bela Cruz (CE), Glória (BA), Quixadá (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2406502,Lagoa Nova,RN,Pequeno e médio porte,Primeiros passos para a universalização,42.52,27.45,25.49,70.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2406700,Lajes,RN,Pequeno e médio porte,Empenho para universalização,84.44,64.18,64.78,100.0,51.79,,,,declarado,declarado,declarado,declarado,declarado
+2406809,Lajes Pintadas,RN,Pequeno e médio porte,Não habilitado,76.35,27.62,38.26,79.73,0.0,IRS0001,não respondeu,"Pacatuba (CE), Jardim de Piranhas (RN), Jaguaribara (CE), Várzea da Roça (BA), Ipirá (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2406908,Lucrécia,RN,Pequeno e médio porte,Empenho para universalização,66.02,66.02,100.0,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2407104,Macaíba,RN,Pequeno e médio porte,Empenho para universalização,51.49,2.53,7.24,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2407203,Macau,RN,Pequeno e médio porte,Empenho para universalização,65.23,61.82,85.79,80.19,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2407807,Monte Alegre,RN,Pequeno e médio porte,Primeiros passos para a universalização,64.11,5.72,9.8,97.57,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2408003,Mossoró,RN,Grande porte,Empenho para universalização,89.71,52.37,54.32,93.6,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2408102,Natal,RN,Grande porte,Empenho para universalização,90.51,45.88,57.74,99.31,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2408201,Nísia Floresta,RN,Pequeno e médio porte,Empenho para universalização,49.06,1.24,2.11,73.64,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2408300,Nova Cruz,RN,Pequeno e médio porte,Empenho para universalização,81.83,30.47,35.46,67.36,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2408904,Parelhas,RN,Pequeno e médio porte,Empenho para universalização,85.26,75.1,92.26,97.79,0.2800000000000011,,,,declarado,declarado,declarado,declarado,declarado
+2409332,Santa Maria,RN,Pequeno e médio porte,Empenho para universalização,65.93,24.04,65.99,74.12,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2409407,Pau dos Ferros,RN,Pequeno e médio porte,Empenho para universalização,91.82,19.44,21.46,91.9,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2409704,Pedro Avelino,RN,Pequeno e médio porte,Empenho para universalização,61.43,46.79,70.01,73.85,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2409803,Pedro Velho,RN,Pequeno e médio porte,Empenho para universalização,91.67,21.36,27.05,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2409902,Pendências,RN,Pequeno e médio porte,Empenho para universalização,65.22,42.76,69.41,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2410009,Pilões,RN,Pequeno e médio porte,Empenho para universalização,92.76,43.19,57.03,88.04,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2410306,Serra Caiada,RN,Pequeno e médio porte,Empenho para universalização,89.78,16.84,24.68,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2410702,Riacho da Cruz,RN,Pequeno e médio porte,Empenho para universalização,61.98,58.26,59.99,92.16,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2410900,Riachuelo,RN,Pequeno e médio porte,Não habilitado,74.64,56.69,77.39,87.13,0.0,IRS0001,não respondeu,"Várzea Nova (BA), Currais Novos (RN), Itamaraju (BA), Palmeiras (BA), Florânia (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2411429,Santana do Seridó,RN,Pequeno e médio porte,Empenho para universalização,55.72,71.76,100.0,93.29,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2411502,Santo Antônio,RN,Pequeno e médio porte,Empenho para universalização,51.18,8.45,17.42,61.46,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2411700,São Bento do Trairí,RN,Pequeno e médio porte,Não habilitado,70.35,61.79,81.3,87.64,0.0,IRS0001,não respondeu,"Currais Novos (RN), Macau (RN), Várzea Nova (BA), Florânia (RN), Itamaraju (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2411809,São Fernando,RN,Pequeno e médio porte,Empenho para universalização,77.22,72.22,57.27,75.81,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2412005,São Gonçalo do Amarante,RN,Grande porte,Não habilitado,78.75,23.43,18.35,100.0,100.0,IAG0001,não calculado,"Vitória de Santo Antão (PE), Patos (PB), Jaboatão dos Guararapes (PE), Abreu e Lima (PE), Alagoinhas (BA)",não calculado,declarado,declarado,declarado,zero declarado
+2412104,São João do Sabugi,RN,Pequeno e médio porte,Empenho para universalização,85.37,29.36,33.27,75.33,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2412203,São José de Mipibu,RN,Pequeno e médio porte,Empenho para universalização,48.0,5.28,10.68,65.21,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2412302,São José do Campestre,RN,Pequeno e médio porte,Empenho para universalização,90.31,30.86,0.0,89.24,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2412401,São José do Seridó,RN,Pequeno e médio porte,Empenho para universalização,58.48,60.79,97.87,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2412609,São Paulo do Potengi,RN,Pequeno e médio porte,Empenho para universalização,83.21,16.29,18.28,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2412807,São Rafael,RN,Pequeno e médio porte,Não habilitado,76.9,57.22,72.01,86.61,0.0,IRS0001,não respondeu,"Várzea Nova (BA), Currais Novos (RN), Itamaraju (BA), Cruz das Almas (BA), Chorrochó (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2412906,São Tomé,RN,Pequeno e médio porte,Empenho para universalização,60.32,30.2,42.39,60.77,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2413409,Serra Negra do Norte,RN,Pequeno e médio porte,Empenho para universalização,73.07,69.95,100.0,83.32,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2413706,Sítio Novo,RN,Pequeno e médio porte,Primeiros passos para a universalização,38.97,42.03,27.32,90.37,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2414100,Tenente Ananias,RN,Pequeno e médio porte,Empenho para universalização,79.0,67.04,0.0,72.26,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2414209,Tibau do Sul,RN,Pequeno e médio porte,Empenho para universalização,56.89,35.66,66.17,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2414407,Touros,RN,Pequeno e médio porte,Empenho para universalização,91.96,7.86,0.0,45.18,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2414605,Upanema,RN,Pequeno e médio porte,Empenho para universalização,60.49,14.63,46.24,35.68,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2414902,Viçosa,RN,Pequeno e médio porte,Empenho para universalização,90.48,95.24,100.0,98.04,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2500106,Água Branca,PB,Pequeno e médio porte,Empenho para universalização,32.57,56.93,0.0,72.23,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2500304,Alagoa Grande,PB,Pequeno e médio porte,Não habilitado,51.73,61.09,40.7,79.13,0.0,IRS0001,não respondeu,"Jeremoabo (BA), Riacho da Cruz (RN), Encruzilhada (BA), Mirangaba (BA), Sítio Novo (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2500601,Alhandra,PB,Pequeno e médio porte,Empenho para universalização,40.16,11.35,8.95,87.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2500775,Aparecida,PB,Pequeno e médio porte,Empenho para universalização,45.25,54.71,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2501005,Araruna,PB,Pequeno e médio porte,Não habilitado,28.16,32.18,77.24,77.99,0.0,IRS0001,não respondeu,"Pacoti (CE), São Gonçalo do Amarante (CE), Guaramiranga (CE), Afonso Bezerra (RN), Jiquiriçá (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2501609,Barra de Santa Rosa,PB,Pequeno e médio porte,Empenho para universalização,43.7,49.27,0.0,61.6,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2501708,Barra de São Miguel,PB,Pequeno e médio porte,Não habilitado,0.0,32.78,12.54,45.03,100.0,IES2003,não calculado,"Matinhas (PB), Carnaubeira da Penha (PE), São Francisco (PB), Taperoá (PB), Damião (PB)",zero declarado,declarado,não calculado,declarado,zero declarado
+2501807,Bayeux,PB,Pequeno e médio porte,Empenho para universalização,65.09,7.51,12.21,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2502003,Belém do Brejo do Cruz,PB,Pequeno e médio porte,Empenho para universalização,50.87,63.25,0.0,81.25,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2502300,Bom Sucesso,PB,Pequeno e médio porte,Empenho para universalização,31.08,33.76,0.0,63.29,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2502508,Boqueirão,PB,Pequeno e médio porte,Empenho para universalização,43.65,57.84,0.0,86.77,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2502805,Brejo do Cruz,PB,Pequeno e médio porte,Empenho para universalização,58.88,67.62,76.77,82.19,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2502904,Brejo dos Santos,PB,Pequeno e médio porte,Empenho para universalização,69.21,15.92,18.37,84.73,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2503209,Cabedelo,PB,Pequeno e médio porte,Empenho para universalização,79.96,40.21,0.32,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2503308,Cachoeira dos Índios,PB,Pequeno e médio porte,Não habilitado,33.23,10.74,0.0,88.03,0.0,IRS0001,não respondeu,"Pedrão (BA), Brotas de Macaúbas (BA), Banzaê (BA), Cajazeirinhas (PB), Milagres (CE)",declarado,declarado,zero declarado,não respondeu,não respondeu
+2503407,Cacimba de Areia,PB,Pequeno e médio porte,Empenho para universalização,39.89,52.21,0.0,68.57,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2503704,Cajazeiras,PB,Pequeno e médio porte,Empenho para universalização,71.87,29.1,15.67,83.2,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2503753,Cajazeirinhas,PB,Pequeno e médio porte,Primeiros passos para a universalização,40.27,10.81,15.79,48.41,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2503902,Camalaú,PB,Pequeno e médio porte,Empenho para universalização,46.14,8.1,5.35,59.53,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2504009,Campina Grande,PB,Grande porte,Compromisso com a universalização,79.91,96.86,75.85,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2504074,Caraúbas,PB,Pequeno e médio porte,Empenho para universalização,32.27,45.77,0.0,89.16,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2504108,Carrapateira,PB,Pequeno e médio porte,Empenho para universalização,71.23,6.34,4.41,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2504157,Casserengue,PB,Pequeno e médio porte,Empenho para universalização,24.77,48.31,0.0,83.46,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2504306,Catolé do Rocha,PB,Pequeno e médio porte,Empenho para universalização,54.96,16.81,25.24,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2504405,Conceição,PB,Pequeno e médio porte,Primeiros passos para a universalização,47.74,39.27,0.0,74.47,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2504850,Coxixola,PB,Pequeno e médio porte,Empenho para universalização,40.17,38.63,0.0,48.25,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2505006,Cubati,PB,Pequeno e médio porte,Empenho para universalização,53.58,0.0,0.0,69.1,100.0,,,,declarado,zero declarado,zero declarado,declarado,zero declarado
+2505352,Damião,PB,Pequeno e médio porte,Empenho para universalização,26.68,35.08,0.0,61.31,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2506004,Esperança,PB,Pequeno e médio porte,Empenho para universalização,40.65,59.21,0.0,92.63,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2506202,Frei Martinho,PB,Pequeno e médio porte,Empenho para universalização,53.79,86.17,100.0,85.82,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2506301,Guarabira,PB,Pequeno e médio porte,Empenho para universalização,77.24,55.62,57.43,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2507002,Itaporanga,PB,Pequeno e médio porte,Empenho para universalização,56.35,17.27,24.0,64.68,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2507507,João Pessoa,PB,Grande porte,Empenho para universalização,78.52,72.36,80.09,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2508307,Lagoa Seca,PB,Pequeno e médio porte,Empenho para universalização,42.62,1.26,1.62,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2508554,Logradouro,PB,Pequeno e médio porte,Empenho para universalização,28.98,41.98,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2508901,Mamanguape,PB,Pequeno e médio porte,Empenho para universalização,33.39,12.9,34.46,87.87,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2509008,Manaíra,PB,Pequeno e médio porte,Empenho para universalização,49.68,55.17,0.0,65.25,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2509156,Marizópolis,PB,Pequeno e médio porte,Empenho para universalização,74.35,71.84,0.0,87.56,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2509339,Matinhas,PB,Pequeno e médio porte,Primeiros passos para a universalização,11.81,23.55,0.0,23.55,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2509396,Maturéia,PB,Pequeno e médio porte,Primeiros passos para a universalização,43.18,86.12,0.0,65.07,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2509404,Mogeiro,PB,Pequeno e médio porte,Primeiros passos para a universalização,20.56,2.21,0.0,62.61,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2509701,Monteiro,PB,Pequeno e médio porte,Não habilitado,51.22,61.16,81.69,84.1,0.0,IRS0001,não respondeu,"São José do Seridó (RN), Macau (RN), Santana do Seridó (RN), Afonso Bezerra (RN), Mutuípe (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2510204,Nova Olinda,PB,Pequeno e médio porte,Empenho para universalização,42.73,50.75,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2510303,Nova Palmeira,PB,Pequeno e médio porte,Empenho para universalização,30.51,47.89,0.0,68.41,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2510402,Olho d Água,PB,Pequeno e médio porte,Empenho para universalização,47.64,62.66,0.0,61.77,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2510808,Patos,PB,Grande porte,Empenho para universalização,82.25,26.83,11.73,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2511004,Pedra Branca,PB,Pequeno e médio porte,Empenho para universalização,56.06,57.2,0.0,75.4,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2511103,Pedra Lavrada,PB,Pequeno e médio porte,Empenho para universalização,38.77,45.46,0.0,40.94,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2511202,Pedras de Fogo,PB,Pequeno e médio porte,Não habilitado,28.6,2.93,8.86,84.23,0.0,IRS0001,não respondeu,"Pedrão (BA), Banzaê (BA), Aratuba (CE), Cajazeirinhas (PB), Brotas de Macaúbas (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2512036,Poço Dantas,PB,Pequeno e médio porte,Empenho para universalização,10.61,36.37,0.0,83.93,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2512077,Poço de José de Moura,PB,Pequeno e médio porte,Empenho para universalização,26.53,35.9,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2512200,Prata,PB,Pequeno e médio porte,Empenho para universalização,50.86,58.36,100.0,66.85,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2512507,Queimadas,PB,Pequeno e médio porte,Empenho para universalização,48.99,1.62,2.02,72.74,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2512606,Quixaba,PB,Pequeno e médio porte,Empenho para universalização,36.1,53.28,33.18,53.28,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2512788,Riacho de Santo Antônio,PB,Pequeno e médio porte,Não habilitado,0.0,65.07,12.28,79.4,100.0,IES2003,não calculado,"Taperoá (PB), Poço Dantas (PB), Casserengue (PB), Guamaré (RN), Água Branca (PB)",zero declarado,declarado,não calculado,declarado,zero declarado
+2512804,Riacho dos Cavalos,PB,Pequeno e médio porte,Não habilitado,0.0,30.55,12.2,55.55,100.0,IES2003,não calculado,"Taperoá (PB), Teixeira (PB), Damião (PB), Santa Luzia do Itanhy (SE), Mogeiro (PB)",zero declarado,declarado,não calculado,declarado,zero declarado
+2513000,Salgadinho,PB,Pequeno e médio porte,Não habilitado,16.7,55.28,0.0,74.63,0.0,IRS0001,não respondeu,"Fartura do Piauí (PI), Teixeira (PB), Sítio Novo (RN), Conceição (PB), Brotas de Macaúbas (BA)",declarado,declarado,zero declarado,não respondeu,não respondeu
+2513307,Santa Helena,PB,Pequeno e médio porte,Empenho para universalização,40.5,61.46,0.0,81.93,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2513406,Santa Luzia,PB,Pequeno e médio porte,Empenho para universalização,66.97,77.99,88.35,91.87,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2513703,Santa Rita,PB,Grande porte,Empenho para universalização,74.63,8.8,12.68,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2513901,São Bento,PB,Pequeno e médio porte,Empenho para universalização,70.03,66.77,77.08,87.5,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2513943,São Domingos do Cariri,PB,Pequeno e médio porte,Empenho para universalização,49.25,43.46,0.0,56.05,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2513984,São Francisco,PB,Pequeno e médio porte,Empenho para universalização,27.34,40.75,0.0,40.25,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2514503,São José de Piranhas,PB,Pequeno e médio porte,Primeiros passos para a universalização,54.9,48.84,0.0,51.15,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2514651,São José do Brejo do Cruz,PB,Pequeno e médio porte,Empenho para universalização,43.48,40.1,0.0,55.84,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2514701,São José do Sabugi,PB,Pequeno e médio porte,Empenho para universalização,55.88,56.21,100.0,74.68,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2514909,São Mamede,PB,Pequeno e médio porte,Empenho para universalização,66.86,80.35,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2515005,São Miguel de Taipu,PB,Pequeno e médio porte,Empenho para universalização,74.42,43.54,0.0,60.29,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2515302,Sapé,PB,Pequeno e médio porte,Empenho para universalização,51.05,16.2,26.51,90.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2516201,Sousa,PB,Pequeno e médio porte,Empenho para universalização,81.79,80.88,12.65,95.48,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2516300,Sumé,PB,Pequeno e médio porte,Primeiros passos para a universalização,62.68,24.33,28.22,79.67,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2516508,Taperoá,PB,Pequeno e médio porte,Empenho para universalização,0.0,54.12,0.0,67.66,100.0,,,,zero declarado,declarado,zero declarado,declarado,zero declarado
+2516706,Teixeira,PB,Pequeno e médio porte,Primeiros passos para a universalização,0.01,34.0,0.0,66.68,41.74,,,,declarado,declarado,zero declarado,declarado,declarado
+2517100,Várzea,PB,Pequeno e médio porte,Empenho para universalização,61.0,95.59,0.0,77.68,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2600054,Abreu e Lima,PE,Grande porte,Empenho para universalização,71.14,25.43,30.95,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2600104,Afogados da Ingazeira,PE,Pequeno e médio porte,Empenho para universalização,82.27,16.34,11.48,90.5,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2600302,Agrestina,PE,Pequeno e médio porte,Empenho para universalização,85.23,65.42,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2600500,Águas Belas,PE,Pequeno e médio porte,Empenho para universalização,42.28,49.18,0.0,58.03,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2600609,Alagoinha,PE,Pequeno e médio porte,Empenho para universalização,50.13,60.08,0.0,80.81,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2601102,Araripina,PE,Pequeno e médio porte,Empenho para universalização,59.92,40.48,23.74,47.03,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2601201,Arcoverde,PE,Pequeno e médio porte,Não habilitado,89.27,4.13,2.78,82.64,0.0,IRS0001,não respondeu,"Itabela (BA), Caém (BA), Brumado (BA), Nova Viçosa (BA), Itambé (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2601300,Barra de Guabiraba,PE,Pequeno e médio porte,Empenho para universalização,88.47,19.02,0.0,91.67,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2601409,Barreiros,PE,Pequeno e médio porte,Empenho para universalização,75.18,23.4,13.91,87.54,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2601607,Belém do São Francisco,PE,Pequeno e médio porte,Empenho para universalização,66.32,58.25,53.38,66.12,98.89,,,,declarado,declarado,declarado,declarado,declarado
+2601706,Belo Jardim,PE,Pequeno e médio porte,Empenho para universalização,90.46,68.74,16.29,80.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2602209,Bom Jardim,PE,Pequeno e médio porte,Empenho para universalização,57.8,84.02,0.0,79.43,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2602308,Bonito,PE,Pequeno e médio porte,Empenho para universalização,76.53,70.22,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2602605,Brejo da Madre de Deus,PE,Pequeno e médio porte,Empenho para universalização,48.62,46.96,0.0,58.7,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2602803,Buíque,PE,Pequeno e médio porte,Empenho para universalização,31.66,56.41,0.0,57.14,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2602902,Cabo de Santo Agostinho,PE,Grande porte,Empenho para universalização,73.91,11.5,12.42,96.91,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2603454,Camaragibe,PE,Grande porte,Empenho para universalização,69.53,1.0,0.93,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2603900,Carnaíba,PE,Pequeno e médio porte,Empenho para universalização,53.4,53.09,100.0,76.09,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2603926,Carnaubeira da Penha,PE,Pequeno e médio porte,Empenho para universalização,16.97,14.19,100.0,30.87,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2604106,Caruaru,PE,Grande porte,Empenho para universalização,93.66,48.02,48.78,97.75,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2604304,Cedro,PE,Pequeno e médio porte,Empenho para universalização,65.1,64.39,0.0,87.6,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2604502,Chã Grande,PE,Pequeno e médio porte,Empenho para universalização,59.48,59.84,0.0,75.15,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2605004,Cupira,PE,Pequeno e médio porte,Empenho para universalização,94.66,87.1,0.0,96.7,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2605152,Dormentes,PE,Pequeno e médio porte,Primeiros passos para a universalização,41.03,24.56,27.5,45.43,53.38,,,,declarado,declarado,declarado,declarado,declarado
+2605301,Exu,PE,Pequeno e médio porte,Empenho para universalização,49.27,36.49,0.0,46.79,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2605459,Fernando de Noronha,PE,Pequeno e médio porte,Empenho para universalização,89.54,51.06,49.99,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2605707,Floresta,PE,Pequeno e médio porte,Empenho para universalização,73.7,65.64,0.0,78.12,42.53,,,,declarado,declarado,zero declarado,declarado,declarado
+2606002,Garanhuns,PE,Grande porte,Empenho para universalização,92.0,12.18,8.46,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2606200,Goiana,PE,Pequeno e médio porte,Empenho para universalização,54.87,40.13,40.74,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2606309,Granito,PE,Pequeno e médio porte,Não habilitado,54.97,10.56,0.64,80.49,0.0,IRS0001,não respondeu,"Pacajus (CE), Tabuleiro do Norte (CE), Missão Velha (CE), Itarema (CE), Tarrafas (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2606408,Gravatá,PE,Pequeno e médio porte,Empenho para universalização,88.73,21.76,13.73,93.59,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2606606,Ibimirim,PE,Pequeno e médio porte,Empenho para universalização,53.98,51.72,0.0,86.93,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2606705,Ibirajuba,PE,Pequeno e médio porte,Empenho para universalização,59.76,36.36,0.0,45.92,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2606804,Igarassu,PE,Grande porte,Empenho para universalização,61.88,4.32,3.96,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2607208,Ipojuca,PE,Grande porte,Empenho para universalização,63.58,16.6,2.96,94.03,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2607307,Ipubi,PE,Pequeno e médio porte,Não habilitado,45.8,21.25,24.94,74.37,0.0,IRS0001,não respondeu,"Poranga (CE), Lagoa Nova (RN), Acarape (CE), Cajazeirinhas (PB), Canápolis (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2607703,Itapetim,PE,Pequeno e médio porte,Empenho para universalização,64.64,10.65,11.89,84.32,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2607752,Itapissuma,PE,Pequeno e médio porte,Empenho para universalização,45.8,13.58,0.0,62.81,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2607901,Jaboatão dos Guararapes,PE,Grande porte,Empenho para universalização,68.43,20.61,27.08,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2608057,Jatobá,PE,Pequeno e médio porte,Empenho para universalização,68.78,41.14,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2608404,Jurema,PE,Pequeno e médio porte,Empenho para universalização,81.34,49.9,0.0,60.6,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2608701,Lagoa dos Gatos,PE,Pequeno e médio porte,Empenho para universalização,69.52,66.62,0.0,73.29,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2608750,Lagoa Grande,PE,Pequeno e médio porte,Empenho para universalização,59.19,76.73,66.06,100.0,95.18,,,,declarado,declarado,declarado,declarado,declarado
+2608800,Lajedo,PE,Pequeno e médio porte,Empenho para universalização,87.73,70.0,0.0,90.94,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2609303,Mirandiba,PE,Pequeno e médio porte,Empenho para universalização,72.11,43.16,0.0,51.38,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2609402,Moreno,PE,Pequeno e médio porte,Empenho para universalização,72.73,30.42,28.02,76.53,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2609501,Nazaré da Mata,PE,Pequeno e médio porte,Não habilitado,81.86,25.82,19.01,90.78,0.0,IRS0001,não respondeu,"Eusébio (CE), Caiçara do Rio do Vento (RN), Curaçá (BA), Forquilha (CE), Vera Cruz (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2609600,Olinda,PE,Grande porte,Empenho para universalização,85.87,36.66,43.06,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2609709,Orobó,PE,Pequeno e médio porte,Empenho para universalização,37.04,35.52,28.11,71.31,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2610202,Panelas,PE,Pequeno e médio porte,Empenho para universalização,63.38,85.29,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2610400,Parnamirim,PE,Pequeno e médio porte,Empenho para universalização,54.93,39.46,43.58,42.83,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2610707,Paulista,PE,Grande porte,Empenho para universalização,78.9,40.54,39.33,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2610905,Pesqueira,PE,Pequeno e médio porte,Empenho para universalização,62.1,91.45,0.0,98.63,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2611002,Petrolândia,PE,Pequeno e médio porte,Empenho para universalização,74.23,0.69,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2611101,Petrolina,PE,Grande porte,Empenho para universalização,82.99,64.66,53.76,95.27,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2611200,Poção,PE,Pequeno e médio porte,Empenho para universalização,52.09,57.38,0.0,64.78,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2611507,Quipapá,PE,Pequeno e médio porte,Não habilitado,55.79,70.39,0.0,67.61,100.0,IAG0001,não calculado,"Tenente Ananias (RN), Tabira (PE), Lagoa dos Gatos (PE), Olho d Água (PB), Poção (PE)",não calculado,declarado,zero declarado,declarado,zero declarado
+2611533,Quixaba,PE,Pequeno e médio porte,Empenho para universalização,52.15,41.45,0.0,35.66,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2611606,Recife,PE,Grande porte,Empenho para universalização,78.93,40.28,70.77,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2611903,Rio Formoso,PE,Pequeno e médio porte,Empenho para universalização,47.93,14.34,16.46,79.02,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2612208,Salgueiro,PE,Pequeno e médio porte,Não habilitado,85.78,33.03,21.8,88.52,0.0,IRS0001,não respondeu,"Forquilha (CE), Caiçara do Rio do Vento (RN), Curaçá (BA), Serra do Ramalho (BA), Vera Cruz (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2612307,Saloá,PE,Pequeno e médio porte,Empenho para universalização,37.9,46.88,100.0,73.22,96.79,,,,declarado,declarado,declarado,declarado,declarado
+2612455,Santa Cruz,PE,Pequeno e médio porte,Empenho para universalização,38.95,36.31,0.0,43.34,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2612554,Santa Filomena,PE,Pequeno e médio porte,Empenho para universalização,36.67,12.09,61.12,36.67,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2612604,Santa Maria da Boa Vista,PE,Pequeno e médio porte,Empenho para universalização,36.89,38.0,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2612802,Santa Terezinha,PE,Pequeno e médio porte,Empenho para universalização,66.2,62.78,3.46,84.6,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2613008,São Bento do Una,PE,Pequeno e médio porte,Empenho para universalização,52.35,48.77,0.0,80.95,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2613206,São João,PE,Pequeno e médio porte,Empenho para universalização,60.81,1.19,1.49,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2613503,São José do Belmonte,PE,Pequeno e médio porte,Empenho para universalização,55.34,46.26,0.0,81.63,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2613602,São José do Egito,PE,Pequeno e médio porte,Empenho para universalização,69.16,43.09,0.0,66.65,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2613701,São Lourenço da Mata,PE,Grande porte,Empenho para universalização,68.54,25.57,27.56,86.91,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2613909,Serra Talhada,PE,Pequeno e médio porte,Empenho para universalização,80.55,77.98,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2614006,Serrita,PE,Pequeno e médio porte,Empenho para universalização,42.76,76.64,0.0,47.98,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2614204,Sirinhaém,PE,Pequeno e médio porte,Empenho para universalização,55.12,15.14,18.6,50.01,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2614303,Moreilândia,PE,Pequeno e médio porte,Empenho para universalização,44.47,4.61,0.0,73.74,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2614501,Surubim,PE,Pequeno e médio porte,Não habilitado,90.46,20.74,14.45,88.36,0.0,IRS0001,não respondeu,"Santa Maria da Vitória (BA), Pau dos Ferros (RN), Novo Oriente (CE), Jucás (CE), Caicó (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2614600,Tabira,PE,Pequeno e médio porte,Empenho para universalização,80.97,67.37,3.93,63.59,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2614709,Tacaimbó,PE,Pequeno e médio porte,Empenho para universalização,62.46,35.65,34.12,44.83,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2614808,Tacaratu,PE,Pequeno e médio porte,Empenho para universalização,61.12,23.97,29.4,76.6,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2614857,Tamandaré,PE,Pequeno e médio porte,Não habilitado,79.85,79.85,31.33,80.93,0.0,IRS0001,não respondeu,"Carinhanha (BA), São Fernando (RN), Senhor do Bonfim (BA), Sobradinho (BA), Alexandria (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2615409,Toritama,PE,Pequeno e médio porte,Empenho para universalização,71.88,100.0,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2615607,Trindade,PE,Pequeno e médio porte,Empenho para universalização,78.93,56.1,0.0,79.61,17.299999999999997,,,,declarado,declarado,zero declarado,declarado,declarado
+2615805,Tupanatinga,PE,Pequeno e médio porte,Empenho para universalização,45.94,35.93,0.0,39.26,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2616001,Venturosa,PE,Pequeno e médio porte,Empenho para universalização,56.92,32.51,40.31,75.4,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2616407,Vitória de Santo Antão,PE,Grande porte,Empenho para universalização,65.78,22.65,21.26,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2700300,Arapiraca,AL,Grande porte,Empenho para universalização,72.92,1.36,1.47,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2700508,Barra de Santo Antônio,AL,Pequeno e médio porte,Empenho para universalização,91.96,5.0,1.5,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2700607,Barra de São Miguel,AL,Pequeno e médio porte,Empenho para universalização,80.96,13.65,5.72,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2700706,Batalha,AL,Pequeno e médio porte,Empenho para universalização,52.78,35.47,57.92,44.44,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2701704,Capela,AL,Pequeno e médio porte,Não habilitado,71.66,6.39,10.61,83.07,0.0,IRS0001,não respondeu,"José da Penha (RN), Acopiara (CE), Marco (CE), Pedra Branca (CE), Campo Formoso (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2702306,Coruripe,AL,Pequeno e médio porte,Empenho para universalização,99.22,20.75,100.0,94.37,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2702405,Delmiro Gouveia,AL,Pequeno e médio porte,Empenho para universalização,94.86,56.96,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2702801,Flexeiras,AL,Pequeno e médio porte,Não habilitado,0.0,64.68,80.2,76.62,0.0,IRS0001,não respondeu,"Pacoti (CE), Guaramiranga (CE), Afonso Bezerra (RN), Guamaré (RN), São Gonçalo do Amarante (CE)",zero declarado,declarado,declarado,não respondeu,não respondeu
+2703502,Jacuípe,AL,Pequeno e médio porte,Empenho para universalização,77.06,19.02,29.28,74.36,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2703908,Jundiá,AL,Pequeno e médio porte,Empenho para universalização,83.12,13.17,19.67,62.5,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2704005,Junqueiro,AL,Pequeno e médio porte,Empenho para universalização,29.45,3.41,0.0,94.34,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2704302,Maceió,AL,Grande porte,Empenho para universalização,85.7,33.53,100.0,99.97,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2704500,Maragogi,AL,Pequeno e médio porte,Não habilitado,74.45,50.61,60.08,78.97,100.0,IAG0001,não calculado,"Mata de São João (BA), Cravolândia (BA), São Félix (BA), Maragogipe (BA), Belém do São Francisco (PE)",não calculado,declarado,declarado,declarado,zero declarado
+2704708,Marechal Deodoro,AL,Pequeno e médio porte,Empenho para universalização,93.06,27.96,21.64,96.24,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2704906,Mar Vermelho,AL,Pequeno e médio porte,Empenho para universalização,67.81,16.0,33.03,88.73,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2705507,Murici,AL,Pequeno e médio porte,Empenho para universalização,58.59,91.13,0.0,91.13,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2706307,Palmeira dos Índios,AL,Pequeno e médio porte,Não habilitado,79.14,3.36,3.1,76.91,0.0,IRS0001,não respondeu,"Iracema (CE), Amargosa (BA), Barra do Choça (BA), Ituberá (BA), Granja (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2706604,Paulo Jacinto,AL,Pequeno e médio porte,Não habilitado,61.69,22.16,26.91,79.53,100.0,IAG0001,não calculado,"Tacaratu (PE), Jacuípe (AL), Moreno (PE), Brejo dos Santos (PB), Rio Formoso (PE)",não calculado,declarado,declarado,declarado,zero declarado
+2706802,Piaçabuçu,AL,Pequeno e médio porte,Empenho para universalização,56.27,30.86,0.0,41.61,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2706901,Pilar,AL,Pequeno e médio porte,Empenho para universalização,93.01,19.7,14.43,96.48,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2707107,Piranhas,AL,Pequeno e médio porte,Empenho para universalização,84.9,43.13,0.0,93.78,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2707602,Quebrangulo,AL,Pequeno e médio porte,Empenho para universalização,68.31,14.81,0.0,35.38,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2707701,Rio Largo,AL,Pequeno e médio porte,Empenho para universalização,69.13,19.41,16.31,99.46,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2708006,Santana do Ipanema,AL,Pequeno e médio porte,Não habilitado,75.9,31.43,6.79,82.61,0.0,IRS0001,não respondeu,"Lajedão (BA), Araci (BA), Caculé (BA), Curaçá (BA), Iaçu (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2708600,São Miguel dos Campos,AL,Pequeno e médio porte,Empenho para universalização,97.67,81.56,1.41,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2709103,Taquarana,AL,Pequeno e médio porte,Empenho para universalização,30.85,4.3,21.11,82.38,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2709152,Teotônio Vilela,AL,Pequeno e médio porte,Empenho para universalização,84.45,54.36,100.0,97.17,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2709301,União dos Palmares,AL,Pequeno e médio porte,Compromisso com a universalização,99.31,82.03,100.0,73.92,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2800308,Aracaju,SE,Grande porte,Compromisso com a universalização,99.63,77.83,73.6,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2800506,Areia Branca,SE,Pequeno e médio porte,Empenho para universalização,93.11,4.31,0.0,88.17,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2800605,Barra dos Coqueiros,SE,Pequeno e médio porte,Empenho para universalização,99.91,81.81,66.97,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2800704,Brejo Grande,SE,Pequeno e médio porte,Empenho para universalização,82.52,57.82,71.08,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2801009,Campo do Brito,SE,Pequeno e médio porte,Empenho para universalização,92.77,13.62,0.0,95.98,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2801207,Canindé de São Francisco,SE,Pequeno e médio porte,Empenho para universalização,75.52,36.1,84.03,90.03,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2801603,Cedro de São João,SE,Pequeno e médio porte,Empenho para universalização,98.34,100.0,0.0,90.84,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2802106,Estância,SE,Pequeno e médio porte,Empenho para universalização,82.65,11.14,5.98,91.55,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2802908,Itabaiana,SE,Grande porte,Empenho para universalização,99.23,23.01,25.14,83.66,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2803302,Japaratuba,SE,Pequeno e médio porte,Empenho para universalização,97.04,8.8,0.0,64.66,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2803500,Lagarto,SE,Grande porte,Empenho para universalização,100.0,11.51,8.82,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2803708,Macambira,SE,Pequeno e médio porte,Empenho para universalização,91.19,7.12,4.98,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2803906,Malhador,SE,Pequeno e médio porte,Empenho para universalização,83.64,87.53,100.0,85.27,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2804102,Moita Bonita,SE,Pequeno e médio porte,Empenho para universalização,74.88,67.64,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2804201,Monte Alegre de Sergipe,SE,Pequeno e médio porte,Empenho para universalização,99.12,54.3,0.0,81.46,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2804607,Nossa Senhora das Dores,SE,Pequeno e médio porte,Empenho para universalização,99.48,53.88,12.86,100.0,98.31,,,,declarado,declarado,declarado,declarado,declarado
+2804805,Nossa Senhora do Socorro,SE,Grande porte,Empenho para universalização,99.93,45.06,41.93,98.57,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2804904,Pacatuba,SE,Pequeno e médio porte,Empenho para universalização,60.93,27.96,41.37,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2805208,Pinhão,SE,Pequeno e médio porte,Empenho para universalização,97.54,44.05,0.0,69.99,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2806305,Santa Luzia do Itanhy,SE,Pequeno e médio porte,Empenho para universalização,25.06,15.2,32.56,57.66,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2806701,São Cristóvão,SE,Grande porte,Empenho para universalização,96.2,35.17,18.17,98.83,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2806909,São Francisco,SE,Pequeno e médio porte,Empenho para universalização,90.82,66.93,57.58,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2807105,Simão Dias,SE,Pequeno e médio porte,Empenho para universalização,85.82,7.4,8.04,95.39,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2900108,Abaíra,BA,Pequeno e médio porte,Empenho para universalização,89.91,43.83,0.0,80.52,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2900207,Abaré,BA,Pequeno e médio porte,Não habilitado,62.32,34.3,52.29,81.32,0.0,IRS0001,não respondeu,"Macajuba (BA), Várzea Alegre (CE), Gentio do Ouro (BA), Mirangaba (BA), Tibau do Sul (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2900355,Adustina,BA,Pequeno e médio porte,Empenho para universalização,91.24,27.48,0.0,96.19,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2900603,Aiquara,BA,Pequeno e médio porte,Primeiros passos para a universalização,58.4,40.08,0.0,58.4,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2900702,Alagoinhas,BA,Grande porte,Empenho para universalização,94.0,34.59,23.34,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2901007,Amargosa,BA,Pequeno e médio porte,Primeiros passos para a universalização,78.13,2.16,2.3,94.25,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2901601,Antas,BA,Pequeno e médio porte,Empenho para universalização,74.65,93.48,0.0,99.59,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2901700,Antônio Cardoso,BA,Pequeno e médio porte,Não habilitado,54.24,34.47,0.0,73.1,0.0,IRS0001,não respondeu,"Itapicuru (BA), Nova Ibiá (BA), Aiquara (BA), Conceição (PB), Lavras da Mangabeira (CE)",declarado,declarado,zero declarado,não respondeu,não respondeu
+2902104,Araci,BA,Pequeno e médio porte,Primeiros passos para a universalização,77.39,41.06,1.47,59.6,0.1899999999999977,,,,declarado,declarado,declarado,declarado,declarado
+2902302,Aratuípe,BA,Pequeno e médio porte,Primeiros passos para a universalização,60.56,44.43,0.0,71.87,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2902609,Baixa Grande,BA,Pequeno e médio porte,Não habilitado,58.15,31.61,34.84,68.1,0.0,IRS0001,não respondeu,"Mirangaba (BA), Santa Brígida (BA), Sumé (PB), Canápolis (BA), Goianinha (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2902658,Banzaê,BA,Pequeno e médio porte,Primeiros passos para a universalização,36.93,2.94,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2902807,Barra da Estiva,BA,Pequeno e médio porte,Empenho para universalização,93.67,43.51,0.0,74.32,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2902906,Barra do Choça,BA,Pequeno e médio porte,Primeiros passos para a universalização,77.17,1.17,1.54,94.81,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2903102,Barra do Rocha,BA,Pequeno e médio porte,Primeiros passos para a universalização,67.3,42.23,0.0,67.6,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2903201,Barreiras,BA,Grande porte,Empenho para universalização,95.08,77.83,68.17,76.17,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2903409,Belmonte,BA,Pequeno e médio porte,Não habilitado,88.14,67.99,100.0,91.13,0.0,IRS0001,não respondeu,"Parelhas (RN), Acari (RN), Porto Alegre do Piauí (PI), Serra Negra do Norte (RN), Ibotirama (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2903805,Boa Vista do Tupim,BA,Pequeno e médio porte,Empenho para universalização,67.04,37.56,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2904209,Botuporã,BA,Pequeno e médio porte,Primeiros passos para a universalização,68.28,28.24,37.96,63.49,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2904308,Brejões,BA,Pequeno e médio porte,Empenho para universalização,99.06,68.15,0.0,48.11,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2904506,Brotas de Macaúbas,BA,Pequeno e médio porte,Primeiros passos para a universalização,32.2,18.21,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2904605,Brumado,BA,Pequeno e médio porte,Primeiros passos para a universalização,87.31,6.64,5.61,73.96,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2904852,Cabaceiras do Paraguaçu,BA,Pequeno e médio porte,Não habilitado,74.84,2.91,3.71,88.39,0.0,IRS0001,não respondeu,"Campo Formoso (BA), Ituberá (BA), Barra do Choça (BA), Amargosa (BA), Açu (RN)",declarado,declarado,declarado,não respondeu,não respondeu
+2904902,Cachoeira,BA,Pequeno e médio porte,Não habilitado,94.05,62.26,53.73,79.62,0.0,IRS0001,não respondeu,"Iuiú (BA), Itaberaba (BA), Camocim (CE), Pilões (RN), Cruz das Almas (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2905008,Caculé,BA,Pequeno e médio porte,Primeiros passos para a universalização,68.66,26.46,0.0,67.54,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2905107,Caém,BA,Pequeno e médio porte,Primeiros passos para a universalização,89.28,5.81,4.78,88.55,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2905404,Cairu,BA,Pequeno e médio porte,Não habilitado,93.55,22.45,28.02,91.56,0.0,IRS0001,não respondeu,"Pedro Velho (RN), Caicó (RN), Pau dos Ferros (RN), Serra do Ramalho (BA), Forquilha (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2905602,Camacan,BA,Pequeno e médio porte,Empenho para universalização,87.4,41.59,42.81,63.72,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2905701,Camaçari,BA,Grande porte,Empenho para universalização,95.65,47.07,31.86,97.85,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2905800,Camamu,BA,Pequeno e médio porte,Primeiros passos para a universalização,64.21,7.04,9.92,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2906006,Campo Formoso,BA,Pequeno e médio porte,Primeiros passos para a universalização,74.25,5.38,4.23,86.79,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2906105,Canápolis,BA,Pequeno e médio porte,Primeiros passos para a universalização,52.65,23.4,39.15,37.69,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2906303,Canavieiras,BA,Pequeno e médio porte,Não habilitado,73.76,49.84,66.01,87.58,0.0,IRS0001,não respondeu,"Ipupiara (BA), Morro do Chapéu (BA), Várzea Nova (BA), Palmeiras (BA), Cruz das Almas (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2906501,Candeias,BA,Pequeno e médio porte,Empenho para universalização,90.97,45.08,44.6,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2906808,Cansanção,BA,Pequeno e médio porte,Empenho para universalização,65.63,60.67,0.0,93.54,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2906824,Canudos,BA,Pequeno e médio porte,Primeiros passos para a universalização,63.66,41.84,0.0,63.66,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2906873,Capim Grosso,BA,Pequeno e médio porte,Empenho para universalização,98.63,39.52,8.36,78.04,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2906907,Caravelas,BA,Pequeno e médio porte,Não habilitado,88.1,39.75,37.74,83.01,0.0,IRS0001,não respondeu,"Camacan (BA), Crateús (CE), Jaguaquara (BA), Ourolândia (BA), Ipiaú (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2907103,Carinhanha,BA,Pequeno e médio porte,Empenho para universalização,89.31,61.19,28.44,79.01,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2907202,Casa Nova,BA,Pequeno e médio porte,Primeiros passos para a universalização,60.79,50.53,0.23,85.74,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2907301,Castro Alves,BA,Pequeno e médio porte,Não habilitado,87.62,3.0,2.97,81.01,0.0,IRS0001,não respondeu,"Itabela (BA), Orós (CE), Caém (BA), Brumado (BA), Itambé (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2907558,Caturama,BA,Pequeno e médio porte,Primeiros passos para a universalização,64.73,18.15,23.34,31.9,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2907707,Chorrochó,BA,Pequeno e médio porte,Empenho para universalização,82.99,70.46,67.58,54.56,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2907806,Cícero Dantas,BA,Pequeno e médio porte,Empenho para universalização,77.97,63.73,0.0,67.68,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2908200,Conceição da Feira,BA,Pequeno e médio porte,Empenho para universalização,73.55,1.27,1.51,66.55,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2908408,Conceição do Coité,BA,Pequeno e médio porte,Primeiros passos para a universalização,94.03,3.64,3.28,96.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2908507,Conceição do Jacuípe,BA,Pequeno e médio porte,Empenho para universalização,94.22,5.28,5.64,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2908606,Conde,BA,Pequeno e médio porte,Primeiros passos para a universalização,68.93,25.86,32.42,32.82,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2909208,Coronel João Sá,BA,Pequeno e médio porte,Empenho para universalização,59.21,51.84,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2909505,Cravolândia,BA,Pequeno e médio porte,Empenho para universalização,70.78,56.49,65.06,67.72,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2909802,Cruz das Almas,BA,Pequeno e médio porte,Empenho para universalização,83.15,50.82,63.24,80.69,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2909901,Curaçá,BA,Pequeno e médio porte,Empenho para universalização,79.53,32.51,19.87,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2910057,Dias d Ávila,BA,Pequeno e médio porte,Empenho para universalização,97.66,54.69,64.16,100.0,71.43,,,,declarado,declarado,declarado,declarado,declarado
+2910404,Encruzilhada,BA,Pequeno e médio porte,Empenho para universalização,65.18,48.4,58.31,84.57,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2910503,Entre Rios,BA,Pequeno e médio porte,Não habilitado,83.32,12.66,17.0,88.61,0.0,IRS0001,não respondeu,"Novo Oriente (CE), São Luís do Curu (CE), Altaneira (CE), São Benedito (CE), Tauá (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2910602,Esplanada,BA,Pequeno e médio porte,Primeiros passos para a universalização,96.76,0.96,0.85,90.79,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2910701,Euclides da Cunha,BA,Pequeno e médio porte,Primeiros passos para a universalização,69.7,14.83,21.42,90.5,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2910727,Eunápolis,BA,Grande porte,Empenho para universalização,94.01,10.95,9.94,98.12,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2910750,Fátima,BA,Pequeno e médio porte,Empenho para universalização,93.85,45.91,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2910800,Feira de Santana,BA,Grande porte,Empenho para universalização,92.9,56.65,62.08,98.03,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2911303,Gentio do Ouro,BA,Pequeno e médio porte,Primeiros passos para a universalização,53.27,29.96,55.14,51.3,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2911402,Glória,BA,Pequeno e médio porte,Primeiros passos para a universalização,69.77,19.0,20.45,18.67,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2911709,Guanambi,BA,Pequeno e médio porte,Não habilitado,85.95,57.42,63.86,81.9,0.0,IRS0001,não respondeu,"Camocim (CE), Cruz das Almas (BA), Itaberaba (BA), Iuiú (BA), Itamaraju (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2911857,Heliópolis,BA,Pequeno e médio porte,Primeiros passos para a universalização,69.72,19.92,0.0,61.19,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2911907,Iaçu,BA,Pequeno e médio porte,Primeiros passos para a universalização,81.51,39.47,0.0,78.95,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2912202,Ibicoara,BA,Pequeno e médio porte,Empenho para universalização,65.71,60.86,0.0,91.22,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2913002,Ibitiara,BA,Pequeno e médio porte,Primeiros passos para a universalização,27.55,9.57,38.72,81.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2913200,Ibotirama,BA,Pequeno e médio porte,Empenho para universalização,84.86,68.81,77.87,96.04,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2913408,Igaporã,BA,Pequeno e médio porte,Empenho para universalização,88.78,36.72,97.81,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2913507,Iguaí,BA,Pequeno e médio porte,Primeiros passos para a universalização,64.52,8.29,9.94,69.72,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2913606,Ilhéus,BA,Grande porte,Empenho para universalização,92.93,65.03,67.57,90.6,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2913903,Ipiaú,BA,Pequeno e médio porte,Empenho para universalização,92.08,45.44,34.14,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2914000,Ipirá,BA,Pequeno e médio porte,Empenho para universalização,73.31,35.64,39.14,54.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2914109,Ipupiara,BA,Pequeno e médio porte,Empenho para universalização,67.42,44.81,65.53,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2914406,Iraquara,BA,Pequeno e médio porte,Não habilitado,32.96,5.27,7.06,88.48,0.0,IRS0001,não respondeu,"Pedrão (BA), Banzaê (BA), Cajazeirinhas (PB), Brotas de Macaúbas (BA), Cascavel (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2914604,Irecê,BA,Pequeno e médio porte,Empenho para universalização,99.88,14.49,11.72,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2914653,Itabela,BA,Pequeno e médio porte,Primeiros passos para a universalização,88.67,3.42,3.38,84.57,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2914703,Itaberaba,BA,Pequeno e médio porte,Empenho para universalização,91.49,62.01,61.77,82.22,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2914802,Itabuna,BA,Grande porte,Empenho para universalização,96.77,86.72,22.83,94.94,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2914901,Itacaré,BA,Pequeno e médio porte,Empenho para universalização,82.01,36.57,48.24,61.36,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2915106,Itagi,BA,Pequeno e médio porte,Empenho para universalização,76.16,47.0,0.0,80.34,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2915205,Itagibá,BA,Pequeno e médio porte,Não habilitado,72.45,23.44,26.03,74.22,0.0,IRS0001,não respondeu,"Jardim de Piranhas (RN), Russas (CE), Glória (BA), Conde (BA), Tianguá (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2915403,Itaju do Colônia,BA,Pequeno e médio porte,Não habilitado,82.33,50.66,60.63,82.57,0.0,IRS0001,não respondeu,"Cruz das Almas (BA), Lençóis (BA), Camocim (CE), Pilões (RN), Ourolândia (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2915502,Itajuípe,BA,Pequeno e médio porte,Empenho para universalização,79.67,39.35,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2915601,Itamaraju,BA,Pequeno e médio porte,Empenho para universalização,81.77,65.36,75.23,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2915809,Itambé,BA,Pequeno e médio porte,Primeiros passos para a universalização,88.23,7.4,6.1,78.18,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2916005,Itanhém,BA,Pequeno e médio porte,Primeiros passos para a universalização,70.5,69.24,0.0,49.29,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2916104,Itaparica,BA,Pequeno e médio porte,Não habilitado,79.99,37.58,51.86,82.6,0.0,IRS0001,não respondeu,"João Câmara (RN), Lençóis (BA), Jaguaquara (BA), Ourolândia (BA), Camacan (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2916401,Itapetinga,BA,Pequeno e médio porte,Empenho para universalização,100.0,98.69,27.89,97.01,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2916500,Itapicuru,BA,Pequeno e médio porte,Primeiros passos para a universalização,53.26,31.58,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2916906,Itiruçu,BA,Pequeno e médio porte,Empenho para universalização,93.55,87.91,0.0,95.91,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2917003,Itiúba,BA,Pequeno e médio porte,Empenho para universalização,70.97,20.22,81.9,67.62,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2917102,Itororó,BA,Pequeno e médio porte,Empenho para universalização,90.63,51.9,0.0,97.04,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2917300,Ituberá,BA,Pequeno e médio porte,Primeiros passos para a universalização,77.02,3.64,5.87,88.53,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2917334,Iuiú,BA,Pequeno e médio porte,Empenho para universalização,93.85,59.12,57.92,69.37,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2917409,Jacaraci,BA,Pequeno e médio porte,Não habilitado,37.77,25.21,65.23,69.61,0.0,IRS0001,não respondeu,"Antônio Martins (RN), Jiquiriçá (BA), Pacoti (CE), Ubaíra (BA), Remanso (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2917508,Jacobina,BA,Pequeno e médio porte,Não habilitado,71.86,41.16,36.85,59.65,0.0,IAG0001,não calculado,"Camacan (BA), Ipirá (BA), Jaguaribara (CE), Botuporã (BA), Jaguaribe (CE)",não calculado,declarado,declarado,declarado,declarado
+2917607,Jaguaquara,BA,Pequeno e médio porte,Empenho para universalização,82.22,37.65,39.03,84.08,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2917706,Jaguarari,BA,Pequeno e médio porte,Empenho para universalização,95.4,41.26,63.52,91.61,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2918001,Jequié,BA,Grande porte,Compromisso com a universalização,91.53,83.12,89.38,88.9,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2918100,Jeremoabo,BA,Pequeno e médio porte,Empenho para universalização,54.45,74.37,33.81,77.05,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2918209,Jiquiriçá,BA,Pequeno e médio porte,Primeiros passos para a universalização,46.86,32.61,65.59,50.45,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2918407,Juazeiro,BA,Grande porte,Empenho para universalização,94.35,83.94,77.03,79.62,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2918803,Laje,BA,Pequeno e médio porte,Não habilitado,35.74,17.08,39.12,69.9,0.0,IRS0001,não respondeu,"Aquiraz (CE), Ibitiara (BA), Poranga (CE), Lagoa Nova (RN), Acarape (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2918902,Lajedão,BA,Pequeno e médio porte,Primeiros passos para a universalização,71.63,25.82,0.0,80.81,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2919009,Lajedinho,BA,Pequeno e médio porte,Primeiros passos para a universalização,60.45,15.33,18.77,62.08,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2919108,Lamarão,BA,Pequeno e médio porte,Primeiros passos para a universalização,99.99,23.64,0.0,42.99,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2919207,Lauro de Freitas,BA,Grande porte,Empenho para universalização,98.4,41.94,41.01,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2919306,Lençóis,BA,Pequeno e médio porte,Empenho para universalização,79.67,41.96,57.38,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2919553,Luís Eduardo Magalhães,BA,Grande porte,Empenho para universalização,96.96,82.05,79.39,88.16,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2919603,Macajuba,BA,Pequeno e médio porte,Empenho para universalização,69.41,38.61,46.54,89.03,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2919801,Macaúbas,BA,Pequeno e médio porte,Primeiros passos para a universalização,93.23,28.06,0.0,31.67,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2919926,Madre de Deus,BA,Pequeno e médio porte,Empenho para universalização,99.98,71.76,67.91,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2920007,Maiquinique,BA,Pequeno e médio porte,Empenho para universalização,80.27,56.29,0.0,91.5,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2920106,Mairi,BA,Pequeno e médio porte,Empenho para universalização,71.2,77.09,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2920601,Maragogipe,BA,Pequeno e médio porte,Empenho para universalização,60.5,34.53,56.12,85.23,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2921005,Mata de São João,BA,Pequeno e médio porte,Empenho para universalização,92.17,51.21,65.19,90.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2921401,Mirangaba,BA,Pequeno e médio porte,Empenho para universalização,64.05,38.67,38.85,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2921450,Mirante,BA,Pequeno e médio porte,Não habilitado,21.34,16.86,0.0,81.22,0.0,IRS0001,não respondeu,"Fartura do Piauí (PI), Brotas de Macaúbas (BA), Pedrão (BA), Banzaê (BA), Aratuba (CE)",declarado,declarado,zero declarado,não respondeu,não respondeu
+2921708,Morro do Chapéu,BA,Pequeno e médio porte,Empenho para universalização,69.36,43.86,60.32,80.46,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2921906,Mucugê,BA,Pequeno e médio porte,Empenho para universalização,74.19,42.57,32.38,75.57,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2922003,Mucuri,BA,Pequeno e médio porte,Empenho para universalização,75.08,41.54,79.44,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2922250,Muquém de São Francisco,BA,Pequeno e médio porte,Primeiros passos para a universalização,68.6,18.37,18.25,46.31,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2922300,Muritiba,BA,Pequeno e médio porte,Empenho para universalização,92.04,40.37,41.52,95.23,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2922409,Mutuípe,BA,Pequeno e médio porte,Primeiros passos para a universalização,50.46,40.4,75.54,30.08,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2922755,Nova Ibiá,BA,Pequeno e médio porte,Primeiros passos para a universalização,48.81,37.22,0.0,52.23,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2923001,Nova Viçosa,BA,Pequeno e médio porte,Empenho para universalização,92.69,3.95,4.23,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2923050,Novo Triunfo,BA,Pequeno e médio porte,Empenho para universalização,62.66,94.19,0.0,86.68,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2923357,Ourolândia,BA,Pequeno e médio porte,Empenho para universalização,87.1,44.37,45.01,85.1,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2923506,Palmeiras,BA,Pequeno e médio porte,Empenho para universalização,65.69,49.24,72.87,83.19,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2923902,Pau Brasil,BA,Pequeno e médio porte,Empenho para universalização,67.38,26.09,0.0,97.04,42.86,,,,declarado,declarado,zero declarado,declarado,declarado
+2924009,Paulo Afonso,BA,Grande porte,Empenho para universalização,88.37,34.57,37.07,95.74,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2924108,Pedrão,BA,Pequeno e médio porte,Primeiros passos para a universalização,32.03,3.46,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2924306,Piatã,BA,Pequeno e médio porte,Primeiros passos para a universalização,100.0,9.63,0.0,63.07,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2924652,Pintadas,BA,Pequeno e médio porte,Empenho para universalização,74.39,50.49,45.37,89.02,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2925303,Porto Seguro,BA,Grande porte,Compromisso com a universalização,84.52,68.14,100.0,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2926004,Remanso,BA,Pequeno e médio porte,Primeiros passos para a universalização,47.95,40.44,64.44,42.74,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2926301,Riachão do Jacuípe,BA,Pequeno e médio porte,Primeiros passos para a universalização,98.63,1.58,1.41,61.51,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2926608,Ribeira do Pombal,BA,Pequeno e médio porte,Primeiros passos para a universalização,70.42,1.57,1.45,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2926707,Rio de Contas,BA,Pequeno e médio porte,Não habilitado,49.34,25.06,46.76,62.03,0.0,IRS0001,não respondeu,"Santa Brígida (BA), Canápolis (BA), Gentio do Ouro (BA), Antônio Martins (RN), Ubaíra (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2926806,Rio do Antônio,BA,Pequeno e médio porte,Primeiros passos para a universalização,63.55,11.61,15.64,45.9,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2926905,Rio do Pires,BA,Pequeno e médio porte,Não habilitado,50.56,27.96,27.8,71.8,0.0,IRS0001,não respondeu,"Lagoa Nova (RN), Canápolis (BA), Santa Brígida (BA), Poranga (CE), Sumé (PB)",declarado,declarado,declarado,não respondeu,não respondeu
+2927101,Rodelas,BA,Pequeno e médio porte,Empenho para universalização,99.06,76.38,0.0,100.0,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2927200,Ruy Barbosa,BA,Pequeno e médio porte,Primeiros passos para a universalização,83.36,4.68,7.1,57.42,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2927408,Salvador,BA,Grande porte,Compromisso com a universalização,97.91,88.56,100.0,96.65,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2927606,Santa Brígida,BA,Pequeno e médio porte,Primeiros passos para a universalização,51.94,28.9,43.1,34.61,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2927705,Santa Cruz Cabrália,BA,Pequeno e médio porte,Não habilitado,84.72,48.47,64.38,83.69,0.0,IRS0001,não respondeu,"Cruz das Almas (BA), Lençóis (BA), Camocim (CE), Pilões (RN), Jaguarari (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2927903,Santa Inês,BA,Pequeno e médio porte,Empenho para universalização,91.18,74.4,72.04,94.99,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2928000,Santaluz,BA,Pequeno e médio porte,Empenho para universalização,70.54,55.11,0.0,92.68,43.33,,,,declarado,declarado,zero declarado,declarado,declarado
+2928109,Santa Maria da Vitória,BA,Pequeno e médio porte,Empenho para universalização,89.19,19.19,16.29,94.89,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2928406,Santa Rita de Cássia,BA,Pequeno e médio porte,Primeiros passos para a universalização,64.32,12.28,0.0,64.32,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2928604,Santo Amaro,BA,Pequeno e médio porte,Empenho para universalização,84.78,44.05,47.69,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2928703,Santo Antônio de Jesus,BA,Grande porte,Empenho para universalização,88.35,24.69,22.83,94.26,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2928802,Santo Estêvão,BA,Pequeno e médio porte,Primeiros passos para a universalização,65.83,13.74,17.55,82.98,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2929008,São Félix,BA,Pequeno e médio porte,Empenho para universalização,68.03,58.76,76.61,75.91,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2929206,São Francisco do Conde,BA,Pequeno e médio porte,Empenho para universalização,100.0,41.32,34.95,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2929305,São Gonçalo dos Campos,BA,Pequeno e médio porte,Empenho para universalização,98.13,8.75,6.13,100.0,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2929503,São Sebastião do Passé,BA,Pequeno e médio porte,Empenho para universalização,84.0,5.19,4.87,88.5,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
+2929800,Saúde,BA,Pequeno e médio porte,Não habilitado,75.93,1.87,0.54,65.33,0.0,IAG0001,não calculado,"Riachão do Jacuípe (BA), Cascavel (CE), Amontada (CE), Piatã (BA), Barra D Alcântara (PI)",não calculado,declarado,declarado,declarado,declarado
+2930105,Senhor do Bonfim,BA,Pequeno e médio porte,Empenho para universalização,96.67,88.75,15.84,95.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2930154,Serra do Ramalho,BA,Pequeno e médio porte,Empenho para universalização,90.69,29.07,28.21,78.43,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2930204,Sento Sé,BA,Pequeno e médio porte,Primeiros passos para a universalização,49.93,65.91,0.0,65.91,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2930501,Serrinha,BA,Pequeno e médio porte,Empenho para universalização,99.83,9.24,7.07,85.28,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2930709,Simões Filho,BA,Grande porte,Não habilitado,82.23,41.12,53.42,93.26,0.0,IRS0001,não respondeu,"Imperatriz (MA), Juazeiro do Norte (CE), Itapipoca (CE), Maracanaú (CE), Teixeira de Freitas (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2930774,Sobradinho,BA,Pequeno e médio porte,Empenho para universalização,81.02,77.93,0.0,91.55,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2931004,Tanhaçu,BA,Pequeno e médio porte,Primeiros passos para a universalização,45.77,25.3,0.0,44.22,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2931301,Tapiramutá,BA,Pequeno e médio porte,Empenho para universalização,76.63,45.04,0.0,98.3,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2931350,Teixeira de Freitas,BA,Grande porte,Empenho para universalização,96.0,64.68,73.54,100.0,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2931905,Tucano,BA,Pequeno e médio porte,Não habilitado,68.23,25.69,39.56,77.59,0.0,IRS0001,não respondeu,"Goianinha (RN), Botuporã (BA), Conde (BA), Paraipaba (CE), Jijoca de Jericoacoara (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2932101,Ubaíra,BA,Pequeno e médio porte,Empenho para universalização,49.37,30.88,60.8,79.4,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2932457,Umburanas,BA,Pequeno e médio porte,Não habilitado,78.36,37.78,50.88,81.6,0.0,IRS0001,não respondeu,"João Câmara (RN), Lençóis (BA), Jaguaquara (BA), Macajuba (BA), Ipirá (BA)",declarado,declarado,declarado,não respondeu,não respondeu
+2932507,Una,BA,Pequeno e médio porte,Primeiros passos para a universalização,67.71,10.36,15.18,76.36,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2932606,Urandi,BA,Pequeno e médio porte,Primeiros passos para a universalização,97.0,22.69,0.0,40.65,0.0,,,,declarado,declarado,zero declarado,declarado,declarado
+2932705,Uruçuca,BA,Pequeno e médio porte,Não habilitado,81.09,13.0,15.61,88.31,0.0,IRS0001,não respondeu,"São Benedito (CE), Novo Oriente (CE), São Luís do Curu (CE), Bela Cruz (CE), Croatá (CE)",declarado,declarado,declarado,não respondeu,não respondeu
+2932903,Valença,BA,Pequeno e médio porte,Empenho para universalização,77.89,73.64,0.0,100.0,100.0,,,,declarado,declarado,zero declarado,declarado,zero declarado
+2933059,Várzea da Roça,BA,Pequeno e médio porte,Empenho para universalização,80.59,26.75,29.93,90.21,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2933158,Várzea Nova,BA,Pequeno e médio porte,Empenho para universalização,74.26,57.69,74.9,88.4,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2933208,Vera Cruz,BA,Pequeno e médio porte,Empenho para universalização,83.52,25.96,28.92,86.09,0.0,,,,declarado,declarado,declarado,declarado,declarado
+2933307,Vitória da Conquista,BA,Grande porte,Compromisso com a universalização,97.17,83.76,84.24,96.07,100.0,,,,declarado,declarado,declarado,declarado,zero declarado
