@@ -47,7 +47,7 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 ├── jupyter notebooks/
 │   ├── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
 │   └── 02_imputacao_faltantes.ipynb    Compara técnicas de imputação e completa a matriz de decisão
-├── resultados/
+├── resultados/                      Criada ao executar os notebooks; fora do Git
 │   ├── municipios_5_indicadores.csv          505 municípios com os cinco indicadores (notebook 01)
 │   └── municipios_4_ou_5_indicadores.csv     581 municípios, com o faltante imputado e a situação de cada indicador (notebook 02)
 ├── dados/
@@ -77,11 +77,12 @@ Cuidados ao usar os dados:
 
 ## Como reproduzir
 
-Os scripts ainda não existem. A estrutura prevista é:
+Execute os notebooks de `jupyter notebooks/` em ordem. A pasta `resultados/` não é versionada: ela é criada na primeira execução e recebe as planilhas geradas.
 
-1. `01_preparar.py`: lê as planilhas em `dados/`, filtra os municípios do Nordeste, aplica a regra de dados ausentes e gera `matriz_decisao.csv`.
-2. `02_promethee.py`: calcula os pesos e o ranking PROMETHEE II.
-3. `03_robustez.py`: roda SMAA, os esquemas de pesos alternativos, a sensibilidade a q e p e a comparação com o ABES.
+1. `01_filtragem_municipios.ipynb`: lê as planilhas em `dados/`, filtra os municípios do Nordeste, classifica os indicadores faltantes e gera `municipios_5_indicadores.csv`.
+2. `02_imputacao_faltantes.ipynb`: imputa o indicador faltante e gera `municipios_4_ou_5_indicadores.csv`.
+
+As etapas seguintes (pesos CRITIC, PROMETHEE II e robustez) ainda serão escritas.
 
 As dependências ficarão em `requirements.txt`, com as versões fixadas.
 
