@@ -56,20 +56,20 @@ Não comece a redigir antes de fechar as oito decisões abaixo. Cada uma aparece
 | RN | 167 | 55 | 33% |
 | SE | 75 | 23 | 31% |
 
-Usar só os completos excluiria mais de dois terços da região e quase todo o Maranhão e o Piauí, provavelmente os pequenos municípios do interior com pior saneamento, o que enviesaria o ranking. A desigualdade de cobertura entre estados também é um achado: registre-a e teste se o ranking muda quando cada estado é retirado.
+A amostra principal (só os completos) deixa de fora 1.289 dos 1.794 municípios, e quase todo o Maranhão e o Piauí, provavelmente os pequenos municípios do interior com pior saneamento. A imputação de um indicador recupera só 76 deles, então esse viés de cobertura não se resolve com ela: ele entra nas Limitações. A desigualdade de cobertura entre estados também é um achado: registre-a e teste se o ranking muda quando cada estado é retirado.
 
-**Armadilha do arquivo do ABES:** nele, dado ausente aparece como "0,00", e não como célula vazia. Não é possível distinguir ausência de zero verdadeiro: entre os 505 habilitados, 248 têm 0 em IRS3002, 154 em IES2003 e 1 em IES0001 e em IAG0001. Nunca use os zeros dos 1.289 não habilitados como valores no PROMETHEE, porque eles contariam como o pior desempenho possível. A taxa de DRSAI também vale 0,00 em 789 municípios, 145 deles habilitados; trate esses casos como ausentes na validação. Entre os 581 municípios da amostra principal, sobram 412 com taxa válida (360 habilitados e 52 com um indicador imputado). Os números estão gravados como texto, com vírgula decimal e ponto de milhar (100 taxas de DRSAI passam de 1.000, como `10.220,55`), e precisam ser convertidos removendo o ponto antes de trocar a vírgula (no Calc: Dados → Texto para colunas, idioma Português do Brasil).
+**Armadilha do arquivo do ABES:** nele, dado ausente aparece como "0,00", e não como célula vazia. Não é possível distinguir ausência de zero verdadeiro: entre os 505 habilitados, 248 têm 0 em IRS3002, 154 em IES2003 e 1 em IES0001 e em IAG0001. Nunca use os zeros dos 1.289 não habilitados como valores no PROMETHEE, porque eles contariam como o pior desempenho possível. A taxa de DRSAI também vale 0,00 em 789 municípios, 145 deles habilitados; trate esses casos como ausentes na validação. Entre os 505 municípios da amostra principal, sobram 360 com taxa válida; no teste de sensibilidade com os 581, sobram 412 (os 360 e mais 52 com um indicador imputado). Os números estão gravados como texto, com vírgula decimal e ponto de milhar (100 taxas de DRSAI passam de 1.000, como `10.220,55`), e precisam ser convertidos removendo o ponto antes de trocar a vírgula (no Calc: Dados → Texto para colunas, idioma Português do Brasil).
 
 **Regra adotada:**
 
 1. Extrair os cinco indicadores das planilhas da Base Municipal do SINISA 2025 em `dados/SINISA/2025/` para os 1.794 municípios do Nordeste (filtro pela coluna `Macrorregião` = `Nordeste`), onde o ausente aparece como vazio. Para o IAG0001, usar a versão retificada (`SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`) e registrar isso no `log_decisoes.md`. Município que não aparece na planilha conta como ausente em todos os indicadores dela: a de indicadores de água traz 1.528 dos 1.794 municípios nordestinos (BA 406, PB 214, CE 182, PE 180, MA 175, RN 163, AL 97, SE 75 e só 36 do PI).
 2. Classificar cada município: completo (5 de 5), falta 1 indicador, faltam 2 ou mais.
-3. **Amostra principal:** completos + os que têm só 1 indicador ausente, imputado pela média ponderada dos 15 municípios de mesmo porte mais parecidos nos demais indicadores (KNN, escolhido por validação cruzada no notebook `02_imputacao_faltantes.ipynb`). Se o IRS3002 estiver ausente, assume-se disposição inadequada (valor adaptado 0). Os que têm 2 ou mais ausentes ficam fora e são listados em apêndice.
-4. **Testes:** (a) só os completos; (b) imputação de todos os ausentes. Reporte o Kendall τ entre os rankings.
+3. **Amostra principal:** só os completos (505). Os que têm 2 ou mais ausentes ficam fora e são listados em apêndice.
+4. **Teste de sensibilidade:** completos + os que têm só 1 indicador ausente (581), imputado pela média ponderada dos 15 municípios de mesmo porte mais parecidos nos demais indicadores (KNN, escolhido por validação cruzada no notebook `02_imputacao_faltantes.ipynb`). Se o IRS3002 estiver ausente, assume-se disposição inadequada (valor adaptado 0). Reporte o Kendall τ entre os rankings das duas amostras e repita a validação com a DRSAI. A imputação não entra na amostra principal porque os demais indicadores explicam pouco do valor ausente (r² ≈ 12%; o KNN erra em média cerca de 14 pontos percentuais, só 6% menos que a mediana do porte) e porque a falta de resposta ao SINISA provavelmente não é aleatória: 65 dos 76 municípios não responderam ao módulo de resíduos, e o KNN os estima a partir de quem respondeu.
 5. Registrar no `log_decisoes.md` quantos municípios caem em cada classe e quais indicadores faltam com mais frequência.
 6. **Verificar** se os completos no SINISA coincidem com os 505 habilitados no ABES. É a hipótese de trabalho, mas a habilitação do ABES pode ter outras exigências e o arquivo do ABES grava ausência como 0,00. A subamostra de comparação com o ABES é sempre a dos habilitados; se as duas listas divergirem, registre quais municípios diferem e por quê.
 
-Daqui em diante, "amostra principal" designa os 581 municípios com dados suficientes (505 completos, que coincidem com os habilitados no ABES, e 76 com um único indicador ausente, imputado), e não os 1.794: quem tem 2 ou mais indicadores ausentes não entra no ranking. A diferença de cobertura entre o ABES (505 municípios) e o seu estudo é um achado em si: o estudo ordena 76 municípios que o ranking oficial descarta. Vale uma frase na Introdução e outra na Discussão.
+Daqui em diante, "amostra principal" designa os 505 municípios completos, que coincidem com os habilitados no ABES, e "amostra ampliada" designa os 581 do teste de sensibilidade (os 505 e mais 76 com um único indicador ausente, imputado). Usar a mesma amostra do ABES tem uma vantagem: a soma ponderada com pesos iguais reproduz exatamente a nota oficial, o que dá ao artigo uma âncora verificável.
 
 **Consequência de usar os mesmos critérios do ABES.** Com base, ano e critérios idênticos, toda diferença entre os 12 rankings vem do método de agregação ou dos pesos, e o desenho cruzado separa um efeito do outro. Como o ABES traz a taxa de internações por DRSAI de cada município, ela serve de teste de validade externa: qual das ordenações se associa mais fortemente à saúde? Esse é o argumento central do artigo. Três princípios valem em todo o texto:
 
@@ -98,7 +98,7 @@ Daqui em diante, "amostra principal" designa os 581 municípios com dados sufici
 - [x] Dados brutos baixados em `dados/` (SINISA 2025 e ABES 2026), com a URL de origem nos arquivos `.url`
 - [ ] Data de extração de cada base registrada no `log_decisoes.md`
 - [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (já existem `01_filtragem_municipios` e `02_imputacao_faltantes`; faltam pesos, os 12 rankings, validade com a DRSAI e robustez) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
-- [x] Matriz de decisão final gerada como `resultados/municipios_4_ou_5_indicadores.csv` (581 alternativas nas linhas, critérios nas colunas)
+- [x] Matrizes de decisão geradas: `resultados/municipios_5_indicadores.csv` (amostra principal, 505 alternativas) e `resultados/municipios_4_ou_5_indicadores.csv` (amostra ampliada, 581), com as alternativas nas linhas e os critérios nas colunas
 - [ ] Tabela de critérios com nome, unidade, direção (max/min), fonte, função de preferência, limiares q e p
 - [ ] Dicionário de pesos para cada esquema, com o cálculo documentado
 - [ ] Métodos, pesos e parâmetros (q, p e v) registrados no `log_decisoes.md` antes de calcular qualquer correlação com a DRSAI
@@ -124,7 +124,7 @@ Siga com duas ou três frases sobre as consequências (saúde, desigualdade regi
 
 **Parágrafo 4 — O que este artigo faz.** Uma frase de propósito e, em seguida, três bullets de contribuição. Os bullets são o que o editor lê para decidir se envia a revisores. Modelo:
 
-- Comparação controlada de quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) e três esquemas de pesos sobre a mesma base, o mesmo ano e os mesmos cinco indicadores do Ranking ABES 2026, cobrindo 581 dos 1.794 municípios nordestinos, 76 a mais que o ranking oficial. O desenho separa o efeito da regra de agregação do efeito dos pesos.
+- Comparação controlada de quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) e três esquemas de pesos sobre a mesma base, o mesmo ano e os mesmos cinco indicadores do Ranking ABES 2026, nos 505 municípios nordestinos com dados completos, os mesmos do ranking oficial, com a análise repetida em 581 municípios (com imputação) como teste de sensibilidade. O desenho separa o efeito da regra de agregação do efeito dos pesos.
 - Teste de validade externa dos 12 rankings contra a taxa de internações por DRSAI, com o método e os parâmetros fixados antes do teste, o que mostra qual regra de agregação produz a ordenação mais coerente com a saúde da população.
 - Explicação das diferenças pelo grau de compensação de cada método: quais municípios mudam de posição, por que mudam (em geral, desempenho muito desigual entre componentes) e o que isso implica para a priorização em um ranking público.
 
@@ -160,7 +160,7 @@ Na redação, use sempre linguagem de associação (*"se associa mais fortemente
 
 | Dimensão | Como redigir | Exemplo (Ideia 1) |
 | --- | --- | --- |
-| Espacial | Nomeie a unidade e o universo | Os 1.794 municípios do Nordeste; amostra principal = 581 (505 completos + 76 com 1 indicador ausente, imputado); subamostra de comparação com a nota ABES = os 505 habilitados; subamostra de validade = os 412 com taxa de DRSAI válida |
+| Espacial | Nomeie a unidade e o universo | Os 1.794 municípios do Nordeste; amostra principal = os 505 completos, que coincidem com os habilitados no ABES; subamostra de validade = os 360 com taxa de DRSAI válida; amostra ampliada (sensibilidade) = 581 (505 + 76 com 1 indicador ausente, imputado), 412 deles com DRSAI válida |
 | Temporal | Ano-base e, se houver, série | Ano-base 2024 (SINISA 2025); SINISA 2024 (ano-base 2023) citado apenas na discussão de tendência |
 | Temática | Quais dimensões do problema entram | Os cinco indicadores do ABES, que cobrem três dos quatro componentes do saneamento: abastecimento de água, esgotamento sanitário (coleta e tratamento) e resíduos sólidos (coleta e disposição final); drenagem fora; DRSAI só como validade externa, nunca como critério |
 | Metodológica | Família de métodos e o que não se compara | Soma ponderada, TOPSIS, VIKOR e PROMETHEE II × pesos iguais, CRITIC e AHP Gaussiano; GAIA e SMAA sobre o PROMETHEE II com CRITIC; associação com a DRSAI ajustada só por UF e porte (sem modelo causal) |
@@ -186,7 +186,7 @@ A revisão não é um inventário; é um argumento em três blocos que termina n
 | Autor (ano) | 92 municípios do RJ | PROMETHEE II | 7 | Especialistas | Não | Não | Não |
 | ABES (2026) | 2.558 municípios habilitados | Soma de indicadores | 5 | Iguais | Não | — | Não |
 | Autor (ano) | 27 UFs | DEA | 5 | — | Parcial | Não | Não |
-| **Este artigo** | 581 municípios do Nordeste | Soma ponderada, TOPSIS, VIKOR, PROMETHEE II (+ GAIA, SMAA) | 5 | Iguais, CRITIC, AHP Gaussiano (+ SMAA) | Sim (SMAA, p/q, reversão) | Sim (Ranking ABES 2026) | Sim (internações por DRSAI) |
+| **Este artigo** | 505 municípios do Nordeste (581 na sensibilidade) | Soma ponderada, TOPSIS, VIKOR, PROMETHEE II (+ GAIA, SMAA) | 5 | Iguais, CRITIC, AHP Gaussiano (+ SMAA) | Sim (SMAA, p/q, reversão) | Sim (Ranking ABES 2026) | Sim (internações por DRSAI) |
 
 **Estratégia de busca (um parágrafo ou uma nota de rodapé).** Bases (Scopus, Web of Science, SciELO, Google Scholar para literatura cinzenta brasileira), string de busca (ex.: `PROMETHEE AND (sanitation OR "water supply" OR sewage) AND (municipal* OR Brazil*)`), período (2010–2026), critérios de inclusão e exclusão, número final de estudos. Isso não é uma revisão sistemática completa, mas mostra ao revisor que a amostra de estudos não foi escolhida por conveniência.
 
@@ -219,13 +219,13 @@ Para cada base, informe em uma tabela: órgão, nome do sistema, ano-base, data 
 | SINISA 2025 — Água | Ministério das Cidades | 2024 | [data] | IAG0001 (planilha retificada) | [n de 1.794] | Regra definida em "Antes de escrever" |
 | SINISA 2025 — Esgoto | Ministério das Cidades | 2024 | [data] | IES0001, IES2003 | [n de 1.794] | Idem; IES2003 acima de 100% limitado a 100, como no ABES |
 | SINISA 2025 — Resíduos | Ministério das Cidades | 2024 | [data] | IRS0001, IRS3002 (invertido: 100 − disposição inadequada) | [n de 1.794] | Idem |
-| Ranking ABES 2026 | ABES | 2024 | [data] | Nota 0–500, categoria, taxa de DRSAI, UF, porte | Nota: 505 habilitados; DRSAI: todos os 1.794 | Comparação com a nota restrita aos habilitados; DRSAI 0,00 tratada como ausente (412 válidas entre os 581) |
+| Ranking ABES 2026 | ABES | 2024 | [data] | Nota 0–500, categoria, taxa de DRSAI, UF, porte | Nota: 505 habilitados; DRSAI: todos os 1.794 | Comparação com a nota restrita aos habilitados; DRSAI 0,00 tratada como ausente (360 válidas entre os 505; 412 entre os 581) |
 
-**Tratamento de ausentes é decisão metodológica, não nota de rodapé.** Diga o que fez e mostre, em Resultados, que a escolha não altera o ranking de forma relevante (rode com e sem imputação, reporte o Kendall τ).
+**Tratamento de ausentes é decisão metodológica, não nota de rodapé.** Diga o que fez e mostre, em Resultados, se a escolha altera as conclusões: repita os rankings e a validação com a DRSAI na amostra ampliada (com imputação) e reporte o Kendall τ e os ρ das duas amostras.
 
 ### 4.2 Alternativas
 
-Uma frase com o universo e o critério de inclusão, seguindo a regra de dados ausentes definida em "Antes de escrever". Liste os excluídos em apêndice. Exemplo: *"Dos 1.794 municípios nordestinos, 505 dispunham dos cinco indicadores no SINISA 2025 e 76 tinham apenas um indicador ausente, imputado por KNN entre municípios de mesmo porte; esses 581 compõem a amostra principal. Os 505 municípios completos coincidem com os habilitados no Ranking ABES 2026 e formam a subamostra de comparação com a nota oficial; os 412 com taxa de DRSAI válida formam a subamostra de validade externa."*
+Uma frase com o universo e o critério de inclusão, seguindo a regra de dados ausentes definida em "Antes de escrever". Liste os excluídos em apêndice. Exemplo: *"Dos 1.794 municípios nordestinos, 505 dispunham dos cinco indicadores no SINISA 2025 e coincidem com os habilitados no Ranking ABES 2026; eles compõem a amostra principal, e os 360 com taxa de DRSAI válida formam a subamostra de validade externa. Como teste de sensibilidade, a análise foi repetida com 581 municípios, incluindo 76 com apenas um indicador ausente, imputado por KNN entre municípios de mesmo porte."*
 
 ### 4.3 Critérios
 
@@ -289,10 +289,10 @@ Para o PROMETHEE, que também gera as leituras detalhadas, um parágrafo por eta
 
 Esta subseção sustenta a pergunta principal. Escreva-a como um protocolo fixado antes de olhar os resultados:
 
-1. **Amostra comum.** Todos os 12 rankings são comparados nos mesmos 412 municípios (amostra principal com taxa de DRSAI válida). Taxa 0,00 é tratada como ausente.
+1. **Amostra comum.** Todos os 12 rankings são comparados nos mesmos 360 municípios (amostra principal com taxa de DRSAI válida). Taxa 0,00 é tratada como ausente. O protocolo inteiro é repetido nos 412 da amostra ampliada como teste de sensibilidade.
 2. **Associação.** Spearman ρ entre a posição em cada ranking e a taxa de DRSAI. Espera-se ρ negativo entre a pontuação e a taxa: melhor saneamento, menos internações.
 3. **Diferença entre métodos.** Os rankings serão muito correlacionados entre si, então as correlações com a DRSAI devem sair próximas. O que importa é a diferença: Δρ entre pares de rankings, com intervalo de confiança por bootstrap (reamostrando municípios, 5.000 vezes, semente fixa) ou o teste de Williams/Steiger para correlações dependentes. Se nenhum intervalo excluir zero, a conclusão é que a escolha do método importa pouco para a associação com a saúde, o que também é um resultado publicável.
-4. **Controle mínimo, sem bases novas.** Correlação parcial de Spearman controlando por UF e porte (as duas variáveis vêm do arquivo do ABES). Spearman dentro dos estados com amostra suficiente (BA 141, CE 93, PE 70, RN 41 e PB 30 municípios válidos) e dentro de cada porte (grande porte 61; pequeno e médio porte 351). Os demais estados (AL 15, MA 12, SE 8, PI 2) só entram na análise conjunta. O que interessa é se o método que se sai melhor no geral continua melhor dentro dos grupos.
+4. **Controle mínimo, sem bases novas.** Correlação parcial de Spearman controlando por UF e porte (as duas variáveis vêm do arquivo do ABES). Spearman dentro dos estados com amostra suficiente (BA 121, CE 84, PE 62, RN 35 e PB 27 municípios válidos) e dentro de cada porte (grande porte 57; pequeno e médio porte 303). Os demais estados (AL 12, MA 9, SE 8, PI 2) só entram na análise conjunta. O que interessa é se o método que se sai melhor no geral continua melhor dentro dos grupos.
 5. **Valores extremos.** O Spearman já é pouco sensível a eles; reporte também uma versão sem os 5% de taxas mais altas.
 6. **Número de rankings.** Não passe de 12: quanto mais rankings comparados à DRSAI, maior a chance de um deles "ganhar" por acaso. Reporte todos, não só o vencedor.
 
@@ -334,7 +334,7 @@ Os resultados respondem às perguntas de pesquisa na ordem em que foram feitas: 
 
 *5.4 Robustez (PS3).* Reporte: (a) se o método que se sai melhor na 5.2 continua melhor sob os três esquemas de pesos e sob a variação de q, p e v; (b) quantas alternativas têm a mesma posição em mais de 90% dos sorteios SMAA no ranking de referência; (c) o Kendall τ entre os rankings com q/p ±50% (acima de 0,9 é estável); (d) o número de pares que trocam de ordem ao retirar alternativas. Conclua com uma frase de julgamento: *"O ranking é robusto nas posições extremas e instável no terço central, onde pequenas variações de peso trocam posições vizinhas."*
 
-*5.5 Perfil dos que mudam e comparação com o ABES (PS4).* Entre os 505 habilitados, compare o ranking que mais se associa à DRSAI com a nota ABES: Spearman ρ, mudanças de quartil (a matriz de transição das três categorias do ABES no Nordeste é pouco informativa, porque uma delas tem só 7 municípios) e uma linha por município que muda de quartil explicando o porquê. Mencione os 76 municípios que o ABES não ordena e onde eles caem. Esta é a parte que interessa ao gestor e ao editor de política pública.
+*5.5 Perfil dos que mudam e comparação com o ABES (PS4).* Entre os 505 habilitados, compare o ranking que mais se associa à DRSAI com a nota ABES: Spearman ρ, mudanças de quartil (a matriz de transição das três categorias do ABES no Nordeste é pouco informativa, porque uma delas tem só 7 municípios) e uma linha por município que muda de quartil explicando o porquê. Na amostra ampliada, mencione onde caem os 76 municípios que o ABES não ordena. Esta é a parte que interessa ao gestor e ao editor de política pública.
 
 *5.6 Discussão.* Três a cinco parágrafos: (1) o que os resultados dizem sobre a escolha do método num ranking público (a regra de agregação muda quem é priorizado, e a DRSAI indica qual regra é mais coerente com a saúde); (2) o que confirmam e o que contradizem na literatura dos blocos 3.1 e 3.2; (3) o papel da compensação na explicação; (4) implicações para a política pública, com cautela (*"sugerem priorizar"*, não *"demonstram que se deve"*); (5) uma ponte para as limitações, em especial a ausência de ajuste por renda e acesso à saúde.
 
@@ -356,7 +356,7 @@ Limitações bem escritas aumentam a credibilidade; mal escritas parecem desculp
 
 | Tipo | Exemplo (Ideia 1) | Mitigação já feita | Trabalho futuro |
 | --- | --- | --- | --- |
-| Dados: cobertura | 1.289 dos 1.794 municípios não habilitados no ABES, com cobertura de 3% no Piauí a 52% no Ceará; [n] sem os cinco indicadores no SINISA 2025 | Imputação de 1 indicador ausente; testes só com completos e com imputação total; Kendall τ reportado | Repetir com as próximas edições do SINISA |
+| Dados: cobertura | 1.289 dos 1.794 municípios não habilitados no ABES, com cobertura de 3% no Piauí a 52% no Ceará; [n] sem os cinco indicadores no SINISA 2025 | Amostra principal só com completos; sensibilidade com imputação de 1 indicador ausente (581); Kendall τ e ρ com a DRSAI reportados nas duas amostras | Repetir com as próximas edições do SINISA |
 | Dados: autodeclaração | Indicadores informados pelos prestadores, sem auditoria | Validade externa com DRSAI | Incorporar o módulo de regulação do SINISA quando publicado |
 | Validade: fatores de confusão | Renda, urbanização, cobertura da atenção primária e acesso hospitalar influenciam tanto o saneamento quanto as internações; parte da diferença entre métodos pode refletir esses fatores | Controle por UF e porte; linguagem de associação | Regressão binomial negativa com as contagens do SIH/SUS (população como offset) e covariáveis do IBGE, do e-Gestor AB e do CNES |
 | Validade: DRSAI ruidosa | Taxas instáveis em municípios pequenos; 0,00 em parte dos municípios; internação depende de haver hospital acessível | Spearman; zeros como ausentes; versão sem valores extremos | Média de 2022–2024 da DRSAI e suavização bayesiana empírica |
@@ -367,7 +367,7 @@ Limitações bem escritas aumentam a credibilidade; mal escritas parecem desculp
 | Escopo: benchmark parcial | ABES só inclui municípios com todos os indicadores | Comparação restrita aos habilitados | Comparação com outros índices (IDSC-BR, ODS 6) |
 | Escopo: inferência | Ranking é descritivo; a associação com a DRSAI não identifica causas | Linguagem de associação na discussão | Modelo explicativo (ML + SHAP) sobre a posição no ranking |
 
-**Como redigir cada parágrafo.** Modelo: *"A principal limitação decorre da cobertura do SINISA 2025: dos 1.794 municípios nordestinos, [n] não dispunham dos cinco indicadores, e o Ranking ABES exclui 1.289. Este estudo manteve os 76 que tinham apenas um indicador ausente, imputado por KNN entre municípios de mesmo porte; o ranking restrito aos municípios completos concorda com o principal em τ = [valor]. A repetição do estudo com as edições seguintes do SINISA é o desdobramento natural."* Para a limitação central da validade, use: *"A associação entre as ordenações e a taxa de internações por DRSAI foi ajustada apenas por unidade da federação e porte. Renda, cobertura da atenção primária e acesso hospitalar influenciam tanto o desempenho em saneamento quanto as internações, e parte da diferença observada entre métodos pode refletir esses fatores. Os resultados devem ser lidos como associação, e não como efeito. Um modelo ajustado por essas covariáveis, com as contagens de internações do SIH/SUS, é o passo seguinte desta agenda."*
+**Como redigir cada parágrafo.** Modelo: *"A principal limitação decorre da cobertura do SINISA 2025: dos 1.794 municípios nordestinos, [n] não dispunham dos cinco indicadores, e o Ranking ABES exclui 1.289. Este estudo usou os 505 completos e, como teste de sensibilidade, incluiu os 76 que tinham apenas um indicador ausente, imputado por KNN entre municípios de mesmo porte; os rankings das duas amostras concordam em τ = [valor]. A repetição do estudo com as edições seguintes do SINISA é o desdobramento natural."* Para a limitação central da validade, use: *"A associação entre as ordenações e a taxa de internações por DRSAI foi ajustada apenas por unidade da federação e porte. Renda, cobertura da atenção primária e acesso hospitalar influenciam tanto o desempenho em saneamento quanto as internações, e parte da diferença observada entre métodos pode refletir esses fatores. Os resultados devem ser lidos como associação, e não como efeito. Um modelo ajustado por essas covariáveis, com as contagens de internações do SIH/SUS, é o passo seguinte desta agenda."*
 
 **Trabalhos futuros que valem a pena mencionar** (escolha dois ou três; os demais ficam implícitos na tabela):
 
@@ -457,7 +457,7 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 2. Lacuna (uma frase).
 3. Objetivo e pergunta.
 4. Método: alternativas, número de critérios, base de dados, os quatro métodos e os três esquemas de pesos, o teste de validade com a DRSAI, testes de robustez.
-5. Resultado principal com número (ex.: *"[n] dos 581 municípios mudam de quartil conforme o método; a ordenação do [método X] é a que mais se associa às internações por DRSAI (ρ = [valor]), [e a diferença para a soma ponderada do ABES é / mas a diferença para os demais não é] distinguível de zero"*).
+5. Resultado principal com número (ex.: *"[n] dos 505 municípios mudam de quartil conforme o método; a ordenação do [método X] é a que mais se associa às internações por DRSAI (ρ = [valor]), [e a diferença para a soma ponderada do ABES é / mas a diferença para os demais não é] distinguível de zero"*).
 6. Implicação para a política pública (uma frase).
 7. Contribuição metodológica (uma frase).
 
@@ -465,7 +465,7 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 
 **Destaques / Highlights (não exigidos pelos anais Springer; use-os como roteiro do resumo e dos slides).** Um resultado por bullet, nunca uma descrição do que foi feito:
 
-- Four aggregation methods and three weighting schemes rank 581 of Northeast Brazil's 1,794 municipalities, 76 more than the official ranking
+- Four aggregation methods and three weighting schemes rank the 505 Northeast Brazil municipalities with complete data, the same set as the official ranking
 - [n] municipalities change quartile depending on the aggregation method
 - The [method X] ranking shows the strongest association with sanitation-related hospitalisations (ρ = [valor])
 - Methods that limit compensation [do / do not] align better with health outcomes
