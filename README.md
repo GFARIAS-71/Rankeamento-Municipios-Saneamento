@@ -1,20 +1,23 @@
 # Rankeamento de Municípios Nordestinos em Saneamento
 
-Este repositório ranqueia os 1.794 municípios do Nordeste (AL, BA, CE, MA, PB, PE, PI, RN e SE) pelo desempenho em saneamento básico usando o método multicritério PROMETHEE II, com pesos objetivos CRITIC. O resultado é comparado ao [Ranking ABES da Universalização do Saneamento 2026](https://rankingabes.abes-dn.org.br/relatorio.php), que usa a mesma base, o mesmo ano e os mesmos cinco indicadores, mas soma os indicadores com pesos iguais. Com isso, a comparação isola o efeito da regra de agregação, que no ABES é compensatória e no PROMETHEE é de compensação limitada.
+Este repositório ranqueia os municípios do Nordeste (AL, BA, CE, MA, PB, PE, PI, RN e SE) pelo desempenho em saneamento básico e mede quanto a escolha do método multicritério altera esse ranking. Os mesmos cinco indicadores do [Ranking ABES da Universalização do Saneamento 2026](https://rankingabes.abes-dn.org.br/relatorio.php) são agregados por quatro métodos (soma ponderada, que é a regra do ABES, TOPSIS, VIKOR e PROMETHEE II), cada um com três esquemas de pesos (iguais, CRITIC e AHP Gaussiano). Os 12 rankings resultantes são comparados entre si e com a taxa de internações por DRSAI (doenças relacionadas ao saneamento ambiental inadequado), para saber qual ordenação se associa mais fortemente à saúde.
+
+**Pergunta principal:** em que medida a escolha do método de agregação multicritério altera a ordenação dos municípios nordestinos quanto ao saneamento, e qual dessas ordenações se associa mais fortemente à taxa de internações por DRSAI, considerando diferenças entre estados e portes? O grau de compensação de cada método (quanto um indicador bom compensa um ruim) entra como pergunta secundária, para explicar as diferenças.
 
 O estudo será submetido como artigo ao [Rii Forum 2027](https://rii-forum.org) (Roma, 6 e 8–9 de abril de 2027), com anais publicados pela Springer.
 
 ## Situação
 
-Em andamento. Os dados brutos já foram baixados; os scripts de preparação e de análise ainda não foram escritos.
+Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta; os notebooks de ranking e de análise ainda não foram escritos.
 
 | Etapa | Situação |
 | --- | --- |
 | Dados do SINISA 2025 baixados | Concluída |
 | Dados do ABES 2026 para o Nordeste baixados | Concluída |
-| Matriz de decisão montada | A fazer |
-| PROMETHEE II com CRITIC e com pesos iguais | A fazer |
-| Robustez (SMAA, AHP Gaussiano, sensibilidade a q e p) e comparação com o ABES | A fazer |
+| Matriz de decisão montada (581 municípios, notebooks 01 e 02) | Concluída |
+| Pesos (iguais, CRITIC e AHP Gaussiano) e os 12 rankings (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) | A fazer |
+| Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte) | A fazer |
+| Robustez (SMAA, sensibilidade a q e p) e comparação com o ABES | A fazer |
 | Resumo para o Rii Forum (prazo: 15/11/2026) | A fazer |
 | Artigo completo (prazo: 30/12/2026) | A fazer |
 
@@ -31,9 +34,20 @@ Em andamento. Os dados brutos já foram baixados; os scripts de preparação e d
   | C4 | IRS0001 | Cobertura da população total com coleta de resíduos sólidos domiciliares |
   | C5 | IRS3002 adaptado | Disposição final adequada de resíduos (100 − disposição inadequada) |
 
-- **Pesos:** CRITIC no ranking principal; AHP Gaussiano, pesos iguais e SMAA (10.000 vetores) como testes de robustez.
-- **Análises:** PROMETHEE II, PROMETHEE I como diagnóstico, plano GAIA e SMAA-PROMETHEE.
-- **Validação externa:** associação das ordenações com a taxa de internações por DRSAI (doenças relacionadas ao saneamento ambiental inadequado) informada pelo ABES.
+- **Desenho métodos × pesos:** 12 rankings, sempre com os mesmos cinco critérios.
+
+  | Método de agregação | Compensação | Pesos iguais | CRITIC | AHP Gaussiano |
+  | --- | --- | --- | --- | --- |
+  | Soma ponderada | Total | ✓ (reproduz a pontuação do ABES) | ✓ | ✓ (é o AHP Gaussiano da literatura) |
+  | TOPSIS | Total | ✓ | ✓ | ✓ |
+  | VIKOR | Parcial | ✓ | ✓ | ✓ |
+  | PROMETHEE II | Limitada | ✓ | ✓ | ✓ |
+
+  O AHP Gaussiano entra como esquema de pesos (desvio-padrão ÷ média de cada critério), seguido de soma ponderada, e não como método de agregação. Assim, o efeito da agregação fica separado do efeito dos pesos. Nenhum peso é definido pelos autores. Métodos, pesos e parâmetros (q e p do PROMETHEE, v do VIKOR) são fixados antes de olhar a DRSAI.
+- **Validade externa:** correlação de Spearman entre cada ranking e a taxa de internações por DRSAI informada pelo ABES, nos 412 dos 581 municípios com taxa válida (taxa 0,00 é tratada como ausente). As diferenças entre rankings são testadas com intervalos bootstrap de Δρ. Como controle mínimo, a associação é recalculada com correlação parcial por UF e porte e dentro dos estados com amostra suficiente (BA, CE, PE, RN e PB). A DRSAI nunca entra como critério.
+- **Robustez:** SMAA (10.000 vetores de pesos) e sensibilidade a q e p (±50%). Robustez e validade externa são análises separadas.
+- **Leitura detalhada:** o PROMETHEE II com pesos CRITIC é o ranking de referência para o plano GAIA, o PROMETHEE I (diagnóstico) e o SMAA-PROMETHEE.
+- **Fora do escopo:** o ajuste por renda, cobertura da atenção primária e acesso hospitalar exigiria novas bases (IBGE, e-Gestor AB, CNES, SIH/SUS) e fica como limitação e trabalho futuro. Os resultados são lidos como associação, e não como efeito.
 
 O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.md](docs/guia_escrita.md).
 
@@ -82,7 +96,7 @@ Execute os notebooks de `jupyter notebooks/` em ordem. A pasta `resultados/` nã
 1. `01_filtragem_municipios.ipynb`: lê as planilhas em `dados/`, filtra os municípios do Nordeste, classifica os indicadores faltantes e gera `municipios_5_indicadores.csv`.
 2. `02_imputacao_faltantes.ipynb`: imputa o indicador faltante e gera `municipios_4_ou_5_indicadores.csv`.
 
-As etapas seguintes (pesos CRITIC, PROMETHEE II e robustez) ainda serão escritas.
+As etapas seguintes (pesos, os 12 rankings, validade externa com a DRSAI e robustez) ainda serão escritas.
 
 As dependências ficarão em `requirements.txt`, com as versões fixadas.
 

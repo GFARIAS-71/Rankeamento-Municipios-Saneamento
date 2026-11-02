@@ -1,10 +1,10 @@
-# Guia de Escrita — Artigo Aplicado com PROMETHEE
+# Guia de Escrita — Artigo Aplicado de Análise Multicritério
 
-Guilherme de Farias · 5 out. 2026 · revisado em 24 out. 2026 (escopo ampliado do Ceará para o Nordeste)
+Guilherme de Farias · 5 out. 2026 · revisado em 24 out. 2026 (escopo ampliado do Ceará para o Nordeste) e em 2 nov. 2026 (pergunta principal reformulada em torno da validade externa com a DRSAI)
 
 ## Como usar este guia
 
-Este guia cobre as sete seções do artigo na ordem em que serão lidas (Introdução, Pergunta e escopo, Revisão, Metodologia, Resultados e discussão, Limitações, Conclusão), mais as Referências, com o que cada uma precisa conter, parágrafos-modelo e os erros que mais levam à rejeição. O exemplo condutor é o projeto deste repositório: o desempenho em saneamento dos municípios do Nordeste com a base SINISA 2025 (ano-base 2024), ordenado por PROMETHEE II com pesos CRITIC e comparado ao Ranking ABES da Universalização do Saneamento 2026.
+Este guia cobre as sete seções do artigo na ordem em que serão lidas (Introdução, Pergunta e escopo, Revisão, Metodologia, Resultados e discussão, Limitações, Conclusão), mais as Referências, com o que cada uma precisa conter, parágrafos-modelo e os erros que mais levam à rejeição. O exemplo condutor é o projeto deste repositório: o desempenho em saneamento dos municípios do Nordeste com a base SINISA 2025 (ano-base 2024), ordenado por quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) com três esquemas de pesos, e os 12 rankings resultantes comparados entre si, com o Ranking ABES da Universalização do Saneamento 2026 e com a taxa de internações por DRSAI.
 
 **Tamanho-alvo** para os anais do Rii Forum 2027, publicados pela Springer e indexados na Scopus, escritos em inglês. A chamada (`Rii2027 call for papers 2027-09-30.pdf`, na raiz do repositório) não informa a série dos anais nem o limite de páginas; o planejamento abaixo assume 12 a 15 páginas no modelo Springer, cerca de 4.500 a 5.500 palavras com referências. Confirme o limite com info@rii-forum.org antes de começar a cortar.
 
@@ -14,7 +14,7 @@ Este guia cobre as sete seções do artigo na ordem em que serão lidas (Introdu
 | Pergunta de pesquisa e escopo | 150–250 | nenhuma |
 | Revisão de literatura | 700–900 | 1 tabela-síntese de estudos anteriores |
 | Metodologia | 900–1.200 | tabela de critérios, tabela de pesos |
-| Resultados e discussão | 1.200–1.500 | ranking, GAIA, SMAA, comparação com o ABES (4 a 5 exibições no total) |
+| Resultados e discussão | 1.200–1.500 | divergência entre os 12 rankings, validade com a DRSAI, perfil dos que mudam, robustez (4 a 5 exibições no total) |
 | Limitações e trabalhos futuros | 250–350 | nenhuma |
 | Conclusão | 150–250 | nenhuma |
 | Referências (fora da contagem de seções) | 25–40 itens | — |
@@ -29,16 +29,17 @@ Este guia cobre as sete seções do artigo na ordem em que serão lidas (Introdu
 
 ## Antes de escrever: o que precisa estar fechado
 
-Não comece a redigir antes de fechar as sete decisões abaixo. Cada uma aparece em pelo menos três seções do artigo, e mudá-la depois obriga a reescrever tudo.
+Não comece a redigir antes de fechar as oito decisões abaixo. Cada uma aparece em pelo menos três seções do artigo, e mudá-la depois obriga a reescrever tudo.
 
 | Decisão | Situação | Escolha | Onde aparece no artigo |
 | --- | --- | --- | --- |
 | Unidade de análise (alternativas) | Fechada | Os 1.794 municípios dos nove estados do Nordeste (AL, BA, CE, MA, PB, PE, PI, RN, SE) como universo; entram no ranking os que têm dados suficientes (regra abaixo) | Escopo, Metodologia, Resultados |
 | Recorte temporal e base | Fechada | SINISA 2025 (ano-base 2024); SINISA 2024 (ano-base 2023) só como contexto, ainda não baixado para `dados/SINISA/2024/` | Escopo, Dados, Limitações |
 | Conjunto de critérios | Fechada | Os cinco indicadores do Ranking ABES: IAG0001, IES0001, IES2003, IRS0001 e IRS3002 (adaptado) | Revisão, Metodologia, Resultados |
-| Pesos | Fechada | CRITIC (principal); AHP Gaussiano e pesos iguais (robustez); SMAA com 10.000 vetores | Metodologia, Resultados, Limitações |
-| Variante PROMETHEE | Fechada | PROMETHEE II + GAIA + SMAA; PROMETHEE I só como diagnóstico; FlowSort opcional | Revisão, Metodologia, Resultados |
-| Benchmark externo | Fechada | Ranking ABES da Universalização do Saneamento 2026 (mesma base, ano e critérios; soma com pesos iguais; 4 categorias nacionais, das quais 3 aparecem entre os habilitados do Nordeste, uma delas com só 7 municípios) | Introdução, Resultados, Discussão |
+| Pesos | Fechada | Três esquemas cruzados com todos os métodos: pesos iguais, CRITIC e AHP Gaussiano; SMAA com 10.000 vetores como teste de robustez | Metodologia, Resultados, Limitações |
+| Métodos de agregação | Fechada | Soma ponderada (compensação total; é a regra do ABES), TOPSIS (total), VIKOR (parcial) e PROMETHEE II (limitada), o que dá 12 rankings; PROMETHEE II com CRITIC é o ranking de referência para GAIA, PROMETHEE I (diagnóstico) e SMAA-PROMETHEE | Revisão, Metodologia, Resultados |
+| Benchmark externo | Fechada | Ranking ABES da Universalização do Saneamento 2026 (mesma base, ano e critérios; soma com pesos iguais; 4 categorias nacionais, das quais 3 aparecem entre os habilitados do Nordeste, uma delas com só 7 municípios). A soma ponderada com pesos iguais reproduz exatamente a pontuação do ABES nos 505 habilitados | Introdução, Resultados, Discussão |
+| Validade externa | Fechada | Taxa de internações por DRSAI do arquivo do ABES, só para avaliar os rankings, nunca como critério; Spearman, bootstrap de Δρ e controle mínimo por UF e porte; renda, atenção primária e acesso hospitalar ficam como limitação | Pergunta, Metodologia, Resultados, Limitações |
 | Veículo | Fechada | Rii Forum 2027 (Roma; anais pela Springer, Scopus); texto em inglês | Todo o texto |
 
 **Decisão derivada: municípios sem dados completos.** O arquivo do ABES para o Nordeste (`dados/ABES 2026/relatorio ABES 2026 NE.xlsx`) traz os 1.794 municípios dos nove estados. Deles, 1.289 aparecem como "Não habilitado" e 505 (28%) como habilitados: 367 em "Empenho para universalização", 131 em "Primeiros passos para a universalização" e 7 em "Compromisso com a universalização" (Salvador, Vitória da Conquista, Jequié e Porto Seguro/BA, União dos Palmares/AL, Campina Grande/PB e Aracaju/SE); a categoria mais alta não aparece na região. A habilitação varia muito entre estados:
@@ -57,20 +58,24 @@ Não comece a redigir antes de fechar as sete decisões abaixo. Cada uma aparece
 
 Usar só os completos excluiria mais de dois terços da região e quase todo o Maranhão e o Piauí, provavelmente os pequenos municípios do interior com pior saneamento, o que enviesaria o ranking. A desigualdade de cobertura entre estados também é um achado: registre-a e teste se o ranking muda quando cada estado é retirado.
 
-**Armadilha do arquivo do ABES:** nele, dado ausente aparece como "0,00", e não como célula vazia. Não é possível distinguir ausência de zero verdadeiro: entre os 505 habilitados, 248 têm 0 em IRS3002, 154 em IES2003 e 1 em IES0001 e em IAG0001. Nunca use os zeros dos 1.289 não habilitados como valores no PROMETHEE, porque eles contariam como o pior desempenho possível. A taxa de DRSAI também vale 0,00 em 789 municípios, 145 deles habilitados; trate esses casos como ausentes na validação. Os números estão gravados como texto, com vírgula decimal e ponto de milhar (100 taxas de DRSAI passam de 1.000, como `10.220,55`), e precisam ser convertidos removendo o ponto antes de trocar a vírgula (no Calc: Dados → Texto para colunas, idioma Português do Brasil).
+**Armadilha do arquivo do ABES:** nele, dado ausente aparece como "0,00", e não como célula vazia. Não é possível distinguir ausência de zero verdadeiro: entre os 505 habilitados, 248 têm 0 em IRS3002, 154 em IES2003 e 1 em IES0001 e em IAG0001. Nunca use os zeros dos 1.289 não habilitados como valores no PROMETHEE, porque eles contariam como o pior desempenho possível. A taxa de DRSAI também vale 0,00 em 789 municípios, 145 deles habilitados; trate esses casos como ausentes na validação. Entre os 581 municípios da amostra principal, sobram 412 com taxa válida (360 habilitados e 52 com um indicador imputado). Os números estão gravados como texto, com vírgula decimal e ponto de milhar (100 taxas de DRSAI passam de 1.000, como `10.220,55`), e precisam ser convertidos removendo o ponto antes de trocar a vírgula (no Calc: Dados → Texto para colunas, idioma Português do Brasil).
 
 **Regra adotada:**
 
 1. Extrair os cinco indicadores das planilhas da Base Municipal do SINISA 2025 em `dados/SINISA/2025/` para os 1.794 municípios do Nordeste (filtro pela coluna `Macrorregião` = `Nordeste`), onde o ausente aparece como vazio. Para o IAG0001, usar a versão retificada (`SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`) e registrar isso no `log_decisoes.md`. Município que não aparece na planilha conta como ausente em todos os indicadores dela: a de indicadores de água traz 1.528 dos 1.794 municípios nordestinos (BA 406, PB 214, CE 182, PE 180, MA 175, RN 163, AL 97, SE 75 e só 36 do PI).
 2. Classificar cada município: completo (5 de 5), falta 1 indicador, faltam 2 ou mais.
-3. **Amostra principal:** completos + os que têm só 1 indicador ausente, imputado pela mediana dos municípios de mesmo porte na região de saúde. Os que têm 2 ou mais ausentes ficam fora e são listados em apêndice.
+3. **Amostra principal:** completos + os que têm só 1 indicador ausente, imputado pela média ponderada dos 15 municípios de mesmo porte mais parecidos nos demais indicadores (KNN, escolhido por validação cruzada no notebook `02_imputacao_faltantes.ipynb`). Se o IRS3002 estiver ausente, assume-se disposição inadequada (valor adaptado 0). Os que têm 2 ou mais ausentes ficam fora e são listados em apêndice.
 4. **Testes:** (a) só os completos; (b) imputação de todos os ausentes. Reporte o Kendall τ entre os rankings.
 5. Registrar no `log_decisoes.md` quantos municípios caem em cada classe e quais indicadores faltam com mais frequência.
 6. **Verificar** se os completos no SINISA coincidem com os 505 habilitados no ABES. É a hipótese de trabalho, mas a habilitação do ABES pode ter outras exigências e o arquivo do ABES grava ausência como 0,00. A subamostra de comparação com o ABES é sempre a dos habilitados; se as duas listas divergirem, registre quais municípios diferem e por quê.
 
-Daqui em diante, "amostra principal" designa os [c + k] municípios com dados suficientes (c completos e k com um único indicador ausente, imputado), e não os 1.794: quem tem 2 ou mais indicadores ausentes não entra no ranking. A diferença de cobertura entre o ABES (505 municípios) e o seu estudo é um achado em si: o PROMETHEE ordena municípios que o ranking oficial descarta. Vale uma frase na Introdução e outra na Discussão.
+Daqui em diante, "amostra principal" designa os 581 municípios com dados suficientes (505 completos, que coincidem com os habilitados no ABES, e 76 com um único indicador ausente, imputado), e não os 1.794: quem tem 2 ou mais indicadores ausentes não entra no ranking. A diferença de cobertura entre o ABES (505 municípios) e o seu estudo é um achado em si: o estudo ordena 76 municípios que o ranking oficial descarta. Vale uma frase na Introdução e outra na Discussão.
 
-**Consequência de usar os mesmos critérios do ABES.** Com base, ano e critérios idênticos, a comparação com pesos iguais isola completamente o efeito do método de agregação. Esse é o argumento central do artigo. Como o ABES traz a taxa de internações por DRSAI de cada município, ela pode servir de validação externa, sem entrar como critério: qual ordenação se associa mais fortemente à saúde, a do ABES ou a do PROMETHEE?
+**Consequência de usar os mesmos critérios do ABES.** Com base, ano e critérios idênticos, toda diferença entre os 12 rankings vem do método de agregação ou dos pesos, e o desenho cruzado separa um efeito do outro. Como o ABES traz a taxa de internações por DRSAI de cada município, ela serve de teste de validade externa: qual das ordenações se associa mais fortemente à saúde? Esse é o argumento central do artigo. Três princípios valem em todo o texto:
+
+1. **O ranking é só de saneamento.** A DRSAI não entra como critério nem calibra parâmetros. Métodos, pesos e limiares são fixados antes de olhar a DRSAI e registrados no `log_decisoes.md`; nada é escolhido pelo que dá a maior correlação.
+2. **Validade externa não é robustez.** Robustez é o ranking se manter quando mudam os pesos ou os limiares (SMAA, sensibilidade a q e p). Validade externa é o ranking se associar a um desfecho que ele deveria refletir. As duas análises ficam em subseções separadas.
+3. **A compensação explica o resultado.** Os métodos diferem principalmente em quanto deixam um indicador bom compensar um ruim. A hipótese é que o risco sanitário depende do componente mais fraco (boa água não protege quem não tem esgoto tratado), e que por isso métodos de compensação limitada se associariam melhor à DRSAI. Ela entra como pergunta secundária.
 
 ### Cronograma até o Rii Forum 2027
 
@@ -78,24 +83,25 @@ Daqui em diante, "amostra principal" designa os [c + k] municípios com dados su
 | --- | --- | --- |
 | 1 nov. 2026 | Fim da inscrição com desconto (on-line 300 EUR, depois 350 EUR; presencial 550 EUR, depois 650 EUR) | Prazo do evento |
 | até 2 nov. 2026 | Dados do SINISA 2025 e do apêndice do ABES extraídos e matriz montada | Interno |
-| até 12 nov. 2026 | PROMETHEE II com CRITIC e com pesos iguais rodando; primeiros números para o resumo | Interno |
+| até 12 nov. 2026 | Os 12 rankings rodando e primeira correlação com a DRSAI, para saber se a pergunta principal tende a uma resposta afirmativa; primeiros números para o resumo | Interno |
 | 15 nov. 2026 | Envio do resumo pelo formulário do site (limite de palavras a confirmar no formulário) | Prazo do evento |
-| até 30 nov. 2026 | SMAA, AHP Gaussiano, sensibilidade a q/p e comparação com o ABES concluídos | Interno |
+| até 30 nov. 2026 | Bootstrap de Δρ, controle por UF e porte, SMAA, sensibilidade a q/p e comparação com o ABES concluídos | Interno |
 | até 20 dez. 2026 | Versão completa revisada, no modelo Springer | Interno |
 | 30 dez. 2026 | Envio do artigo completo | Prazo do evento |
 | 6 abr. 2027 | Apresentações on-line | Evento |
 | 8–9 abr. 2027 | Apresentações presenciais em Roma | Evento |
 
-**Trilha sugerida no formulário:** *Artificial Intelligence, Algorithms and Data-Driven Governance*, com o enquadramento de que rankings públicos são instrumentos algorítmicos de priorização e a regra de agregação muda quem é priorizado. Alternativas: *Complexity Management and Decision Support Systems*, a trilha mais próxima do método, e *Politics, Public Policy, Democracy and Regulation*, a mais conservadora.
+**Trilha sugerida no formulário:** *Artificial Intelligence, Algorithms and Data-Driven Governance*, com o enquadramento de que rankings públicos são instrumentos algorítmicos de priorização, de que a regra de agregação muda quem é priorizado e de que um desfecho de saúde ajuda a julgar qual regra é mais coerente. Alternativas: *Complexity Management and Decision Support Systems*, a trilha mais próxima do método, e *Politics, Public Policy, Democracy and Regulation*, a mais conservadora.
 
 **Checklist de reprodutibilidade** (o que precisa existir antes do primeiro parágrafo):
 
 - [x] Dados brutos baixados em `dados/` (SINISA 2025 e ABES 2026), com a URL de origem nos arquivos `.url`
 - [ ] Data de extração de cada base registrada no `log_decisoes.md`
-- [ ] Conjunto de scripts numerados (`01_preparar.py`, `02_promethee.py`, `03_robustez.py`) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
-- [ ] Matriz de decisão final salva como `matriz_decisao.csv` (alternativas nas linhas, critérios nas colunas)
+- [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (já existem `01_filtragem_municipios` e `02_imputacao_faltantes`; faltam pesos, os 12 rankings, validade com a DRSAI e robustez) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
+- [x] Matriz de decisão final gerada como `resultados/municipios_4_ou_5_indicadores.csv` (581 alternativas nas linhas, critérios nas colunas)
 - [ ] Tabela de critérios com nome, unidade, direção (max/min), fonte, função de preferência, limiares q e p
 - [ ] Dicionário de pesos para cada esquema, com o cálculo documentado
+- [ ] Métodos, pesos e parâmetros (q, p e v) registrados no `log_decisoes.md` antes de calcular qualquer correlação com a DRSAI
 - [x] Repositório no GitHub criado
 - [ ] Repositório ligado ao Zenodo para receber o DOI antes da submissão
 - [ ] `log_decisoes.md` iniciado
@@ -112,15 +118,15 @@ A introdução tem um único objetivo: convencer o revisor, em cinco parágrafos
 
 Siga com duas ou três frases sobre as consequências (saúde, desigualdade regional, custo fiscal) e sobre a situação do Nordeste. Fonte em cada número.
 
-**Parágrafo 2 — Como o problema é medido hoje e por que isso é insuficiente.** Apresente o índice ou a prática corrente (no seu caso, o Ranking ABES da Universalização do Saneamento, que soma cinco indicadores com pesos iguais e classifica os municípios em quatro categorias) e sua limitação estrutural. No caso do ABES, a limitação é a agregação compensatória (soma com pesos iguais) e a exclusão dos municípios não habilitados; a cobertura parcial dos 100 maiores municípios é limitação de outro índice, o do Trata Brasil. Não critique o índice; mostre que ele responde a outra pergunta.
+**Parágrafo 2 — Como o problema é medido hoje e por que isso é insuficiente.** Apresente o índice ou a prática corrente (no seu caso, o Ranking ABES da Universalização do Saneamento, que soma cinco indicadores com pesos iguais e classifica os municípios em quatro categorias) e sua limitação estrutural. No caso do ABES, a limitação é que a regra de agregação (soma com pesos iguais, plenamente compensatória) é uma escolha entre várias possíveis, nunca testada contra um desfecho, além da exclusão dos municípios não habilitados; a cobertura parcial dos 100 maiores municípios é limitação de outro índice, o do Trata Brasil. Não critique o índice; mostre que outra regra, igualmente defensável, priorizaria outros municípios, e que não se sabe qual delas é mais coerente com a saúde da população.
 
-**Parágrafo 3 — O que a literatura já fez e o que falta.** Dois ou três estudos que aplicaram MCDM ao mesmo domínio, uma frase para cada, e a lacuna que eles deixam. A lacuna precisa ser verificável: base nova ainda não explorada, ausência de análise de robustez, ausência de comparação com o índice oficial, ausência de dimensão temporal. Cite as revisões (Behzadian et al., 2010; Yu et al., 2023; Tarnanidis et al., 2026) só aqui, uma vez.
+**Parágrafo 3 — O que a literatura já fez e o que falta.** Dois ou três estudos que aplicaram MCDM ao mesmo domínio, uma frase para cada, e a lacuna que eles deixam. A lacuna precisa ser verificável. A principal aqui: estudos que comparam métodos multicritério costumam medir só a concordância entre os rankings, sem perguntar qual deles reflete melhor um desfecho externo. Lacunas secundárias: base nova ainda não explorada, ausência de análise de robustez, ausência de comparação com o índice oficial. Cite as revisões (Behzadian et al., 2010; Yu et al., 2023; Tarnanidis et al., 2026) só aqui, uma vez.
 
 **Parágrafo 4 — O que este artigo faz.** Uma frase de propósito e, em seguida, três bullets de contribuição. Os bullets são o que o editor lê para decidir se envia a revisores. Modelo:
 
-- Avaliação de compensação limitada (PROMETHEE) do desempenho de saneamento dos municípios nordestinos com a base SINISA 2025 (ano-base 2024), cobrindo [c + k] dos 1.794 municípios, inclusive municípios que o ranking oficial descarta.
-- Pesos objetivos CRITIC, que descontam a redundância entre indicadores correlacionados, testados contra AHP Gaussiano, pesos iguais e 10.000 cenários SMAA, o que elimina a arbitrariedade dos pesos apontada como falha recorrente na literatura PROMETHEE (Tarnanidis et al., 2026).
-- Comparação controlada com o Ranking ABES da Universalização do Saneamento 2026: mesma base, mesmo ano, mesmos cinco indicadores e, no cenário de pesos iguais, mesmos pesos. Toda diferença de posição decorre apenas da regra de agregação, o que mostra como a escolha do algoritmo de um ranking público muda quem é priorizado.
+- Comparação controlada de quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) e três esquemas de pesos sobre a mesma base, o mesmo ano e os mesmos cinco indicadores do Ranking ABES 2026, cobrindo 581 dos 1.794 municípios nordestinos, 76 a mais que o ranking oficial. O desenho separa o efeito da regra de agregação do efeito dos pesos.
+- Teste de validade externa dos 12 rankings contra a taxa de internações por DRSAI, com o método e os parâmetros fixados antes do teste, o que mostra qual regra de agregação produz a ordenação mais coerente com a saúde da população.
+- Explicação das diferenças pelo grau de compensação de cada método: quais municípios mudam de posição, por que mudam (em geral, desempenho muito desigual entre componentes) e o que isso implica para a priorização em um ranking público.
 
 **Parágrafo 5 — Organização do artigo.** Uma frase por seção. Alguns periódicos dispensam este parágrafo; verifique o guia de autores.
 
@@ -135,29 +141,31 @@ Siga com duas ou três frases sobre as consequências (saúde, desigualdade regi
 
 A pergunta de pesquisa é uma frase interrogativa que o artigo responde com um sim, um não, um ranking ou um número. Se a resposta couber em uma frase da conclusão, a pergunta está bem formulada.
 
-**Fórmula da pergunta principal (PP):** *Como [alternativas] se ordenam em [dimensão] quando [compensação limitada / incerteza], e em que medida essa ordem difere de [benchmark oficial]?*
+**Fórmula da pergunta principal (PP):** *Em que medida a escolha de [método] altera a ordenação de [alternativas] em [dimensão], e qual dessas ordenações se associa mais fortemente a [desfecho externo]?*
 
 Exemplo (Ideia 1):
 
-> **PP:** Como os municípios nordestinos se ordenam quanto ao desempenho em saneamento quando a compensação entre componentes é limitada, de modo que déficits graves em um componente não são neutralizados por bons resultados nos demais, e quanto essa ordem difere da classificação plenamente compensatória do Ranking ABES da Universalização do Saneamento 2026?
+> **PP:** Em que medida a escolha do método de agregação multicritério (soma ponderada, como no Ranking ABES 2026, TOPSIS, VIKOR e PROMETHEE II) altera a ordenação dos municípios nordestinos quanto ao saneamento, e qual dessas ordenações se associa mais fortemente à taxa de internações por DRSAI, considerando diferenças entre estados e portes?
 
 **Perguntas secundárias (até quatro):** cada uma corresponde a uma subseção dos Resultados.
 
-- **PS1:** Quais dos cinco indicadores mais discriminam os municípios e quais estão em conflito (análise GAIA e pesos CRITIC)?
-- **PS2:** Quão estável é o ranking frente à incerteza nos pesos (índices de aceitabilidade SMAA) e frente à retirada de alternativas (reversão de ordem)?
-- **PS3:** Entre os habilitados no ABES, quais municípios mudam de quartil ou de categoria entre a agregação compensatória do ABES e a de compensação limitada do PROMETHEE, e qual perfil de desempenho explica a mudança?
-- **PS4 (validação externa):** Qual das duas ordenações se associa mais fortemente às internações por DRSAI?
+- **PS1 (divergência):** Quanto as ordenações diferem entre si (Kendall τ, mudanças de quartil) e quais municípios mudam mais de posição?
+- **PS2 (compensação):** O grau de compensação do método explica as divergências e as diferenças de associação com a DRSAI? Os municípios com desempenho desigual entre componentes, como zero em tratamento de esgoto, são os que mais mudam?
+- **PS3 (robustez):** As conclusões se mantêm sob os três esquemas de pesos, sob a variação de pesos do SMAA e sob a variação dos limiares q e p?
+- **PS4 (perfil):** Qual perfil de desempenho caracteriza os municípios que mudam de quartil, em especial entre os habilitados no ABES, e o que isso sugere para a priorização de investimentos?
+
+Na redação, use sempre linguagem de associação (*"se associa mais fortemente"*, *"é mais coerente com"*), nunca *"o melhor método"* em sentido geral nem *"reduz internações"*.
 
 **Escopo** é o que delimita a resposta. Escreva-o em quatro frases, uma por dimensão:
 
 | Dimensão | Como redigir | Exemplo (Ideia 1) |
 | --- | --- | --- |
-| Espacial | Nomeie a unidade e o universo | Os 1.794 municípios do Nordeste; amostra principal = completos + os que têm 1 indicador ausente (imputado); subamostra de comparação com o ABES = os 505 habilitados |
+| Espacial | Nomeie a unidade e o universo | Os 1.794 municípios do Nordeste; amostra principal = 581 (505 completos + 76 com 1 indicador ausente, imputado); subamostra de comparação com a nota ABES = os 505 habilitados; subamostra de validade = os 412 com taxa de DRSAI válida |
 | Temporal | Ano-base e, se houver, série | Ano-base 2024 (SINISA 2025); SINISA 2024 (ano-base 2023) citado apenas na discussão de tendência |
-| Temática | Quais dimensões do problema entram | Os cinco indicadores do ABES, que cobrem três dos quatro componentes do saneamento: abastecimento de água, esgotamento sanitário (coleta e tratamento) e resíduos sólidos (coleta e disposição final); drenagem fora; DRSAI só como validação |
-| Metodológica | Família de métodos e o que não se compara | PROMETHEE II com pesos CRITIC, GAIA e SMAA; AHP Gaussiano e pesos iguais como testes |
+| Temática | Quais dimensões do problema entram | Os cinco indicadores do ABES, que cobrem três dos quatro componentes do saneamento: abastecimento de água, esgotamento sanitário (coleta e tratamento) e resíduos sólidos (coleta e disposição final); drenagem fora; DRSAI só como validade externa, nunca como critério |
+| Metodológica | Família de métodos e o que não se compara | Soma ponderada, TOPSIS, VIKOR e PROMETHEE II × pesos iguais, CRITIC e AHP Gaussiano; GAIA e SMAA sobre o PROMETHEE II com CRITIC; associação com a DRSAI ajustada só por UF e porte (sem modelo causal) |
 
-**O que fica fora, dito explicitamente.** Uma frase para cada exclusão relevante e o motivo: *"Drenagem urbana não foi incluída porque o módulo correspondente do SINISA 2025 cobriu apenas [x]% dos municípios nordestinos."* (O módulo de drenagem não está em `dados/`; baixe-o se for usar esse número.) Exclusões não justificadas viram perguntas de revisor.
+**O que fica fora, dito explicitamente.** Uma frase para cada exclusão relevante e o motivo: *"Drenagem urbana não foi incluída porque o módulo correspondente do SINISA 2025 cobriu apenas [x]% dos municípios nordestinos."* (O módulo de drenagem não está em `dados/`; baixe-o se for usar esse número.) Outra exclusão a declarar: *"A associação com a DRSAI não foi ajustada por renda, cobertura da atenção primária nem acesso hospitalar, o que exigiria bases adicionais; o estudo controla apenas por unidade da federação e porte."* Exclusões não justificadas viram perguntas de revisor.
 
 **Erro comum:** confundir objetivo com pergunta. *"Avaliar o desempenho dos municípios"* é um objetivo e não pode ser respondido. *"Quais municípios estão mais distantes da meta de 2033 quando..."* é uma pergunta.
 
@@ -165,41 +173,42 @@ Exemplo (Ideia 1):
 
 A revisão não é um inventário; é um argumento em três blocos que termina na lacuna que o artigo preenche. Cada bloco tem de 200 a 300 palavras e fecha com uma frase que aponta para o próximo.
 
-**Bloco 3.1 — O problema no domínio de aplicação.** Como o desempenho em [saneamento] é medido e avaliado na literatura e nos instrumentos oficiais. Cubra: (a) os índices oficiais e sua construção (Ranking ABES da Universalização: cinco indicadores SINISA somados com pesos iguais, quatro categorias fixas, das quais três aparecem no Nordeste; Ranking do Trata Brasil, restrito aos 100 municípios mais populosos, só [n] deles nordestinos); (b) estudos acadêmicos que avaliaram o mesmo objeto com qualquer método (DEA, regressão, índices compostos); (c) o que esses estudos concordam que importa (os critérios que você vai usar nascem aqui). Fecho: *"Esses trabalhos convergem sobre quais dimensões importam, mas as agregam de forma compensatória e sem avaliar a robustez dos resultados."*
+**Bloco 3.1 — O problema no domínio de aplicação.** Como o desempenho em [saneamento] é medido e avaliado na literatura e nos instrumentos oficiais. Cubra: (a) os índices oficiais e sua construção (Ranking ABES da Universalização: cinco indicadores SINISA somados com pesos iguais, quatro categorias fixas, das quais três aparecem no Nordeste; Ranking do Trata Brasil, restrito aos 100 municípios mais populosos, só [n] deles nordestinos); (b) estudos acadêmicos que avaliaram o mesmo objeto com qualquer método (DEA, regressão, índices compostos); (c) o que esses estudos concordam que importa (os critérios que você vai usar nascem aqui). Inclua um parágrafo sobre saneamento e saúde: a classificação das DRSAI (doenças de transmissão feco-oral, por inseto vetor, por contato com a água, relacionadas à higiene e geo-helmintos) e os estudos brasileiros que associam cobertura de saneamento a internações. Fecho: *"Esses trabalhos convergem sobre quais dimensões importam, mas as agregam por uma regra escolhida a priori, sem testar se outra regra produziria uma ordenação mais coerente com a saúde."*
 
-**Bloco 3.2 — PROMETHEE e MCDA aplicados ao domínio.** Apresente a família PROMETHEE em um parágrafo (Brans & Vincke, 1985; Brans & Mareschal, 2005), as variantes que você usa em outro (SMAA-PROMETHEE, Corrente et al., 2014; GAIA), e então os estudos que aplicaram PROMETHEE ou outros MCDA ao domínio, no Brasil e fora. Para cada estudo citado, uma frase com: objeto, alternativas, número de critérios, forma de definir pesos, se fez análise de sensibilidade. Esses cinco atributos alimentam a tabela-síntese.
+**Bloco 3.2 — Métodos multicritério, compensação e comparação entre métodos.** Apresente os quatro métodos em um parágrafo, organizados pelo grau de compensação: soma ponderada e TOPSIS (compensação total; Hwang & Yoon, 1981), VIKOR (parcial; Opricovic & Tzeng, 2004) e PROMETHEE II (limitada; Brans & Vincke, 1985; Brans & Mareschal, 2005). Em outro parágrafo, os estudos que compararam métodos sobre os mesmos dados e o que mediram (quase sempre só a concordância entre rankings). Depois, as variantes que você usa (SMAA-PROMETHEE, Corrente et al., 2014; GAIA) e os estudos que aplicaram MCDA ao domínio, no Brasil e fora. Para cada estudo citado, uma frase com: objeto, alternativas, número de critérios, forma de definir pesos, se fez análise de sensibilidade. Esses cinco atributos alimentam a tabela-síntese.
 
-**Bloco 3.3 — Lacunas e posicionamento.** Nomeie as lacunas com base nas revisões (Behzadian et al., 2010; Yu et al., 2023; Tarnanidis et al., 2026) e no que a tabela-síntese mostra. Fecho obrigatório: um parágrafo que diz exatamente o que este artigo faz que os anteriores não fizeram, em diálogo direto com a tabela.
+**Bloco 3.3 — Lacunas e posicionamento.** Nomeie as lacunas com base nas revisões (Behzadian et al., 2010; Yu et al., 2023; Tarnanidis et al., 2026) e no que a tabela-síntese mostra. A central: a escolha do método raramente é julgada por um desfecho externo. Fecho obrigatório: um parágrafo que diz exatamente o que este artigo faz que os anteriores não fizeram, em diálogo direto com a tabela.
 
 **Tabela-síntese (obrigatória).** É a figura mais lida da revisão e a prova da lacuna. Uma linha por estudo, 8 a 15 estudos, o seu artigo na última linha.
 
-| Estudo | Objeto/alternativas | Método | Critérios (n) | Pesos | Análise de sensibilidade | Comparação com índice oficial |
-| --- | --- | --- | --- | --- | --- | --- |
-| Autor (ano) | 92 municípios do RJ | PROMETHEE II | 7 | Especialistas | Não | Não |
-| ABES (2026) | 2.558 municípios habilitados | Soma de indicadores | 5 | Iguais | Não | — |
-| Autor (ano) | 27 UFs | DEA | 5 | — | Parcial | Não |
-| **Este artigo** | [c + k] municípios do Nordeste | PROMETHEE II + GAIA + SMAA | 5 | CRITIC (+ AHP Gaussiano, iguais, SMAA) | Sim (SMAA, intervalos, p/q, reversão) | Sim (Ranking ABES 2026) |
+| Estudo | Objeto/alternativas | Método | Critérios (n) | Pesos | Análise de sensibilidade | Comparação com índice oficial | Validação com desfecho externo |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Autor (ano) | 92 municípios do RJ | PROMETHEE II | 7 | Especialistas | Não | Não | Não |
+| ABES (2026) | 2.558 municípios habilitados | Soma de indicadores | 5 | Iguais | Não | — | Não |
+| Autor (ano) | 27 UFs | DEA | 5 | — | Parcial | Não | Não |
+| **Este artigo** | 581 municípios do Nordeste | Soma ponderada, TOPSIS, VIKOR, PROMETHEE II (+ GAIA, SMAA) | 5 | Iguais, CRITIC, AHP Gaussiano (+ SMAA) | Sim (SMAA, p/q, reversão) | Sim (Ranking ABES 2026) | Sim (internações por DRSAI) |
 
 **Estratégia de busca (um parágrafo ou uma nota de rodapé).** Bases (Scopus, Web of Science, SciELO, Google Scholar para literatura cinzenta brasileira), string de busca (ex.: `PROMETHEE AND (sanitation OR "water supply" OR sewage) AND (municipal* OR Brazil*)`), período (2010–2026), critérios de inclusão e exclusão, número final de estudos. Isso não é uma revisão sistemática completa, mas mostra ao revisor que a amostra de estudos não foi escolhida por conveniência.
 
 **Erros comuns:**
 
-- Listar métodos MCDA (AHP, TOPSIS, ELECTRE...) sem relação com o problema. Cite só o que compara com sua escolha.
+- Listar métodos MCDA (AHP, ELECTRE...) sem relação com o problema. Cite só os quatro métodos do desenho e os que servem de contraste para eles.
 - Resumir cada estudo em um parágrafo. Uma frase por estudo; o detalhe vai para a tabela.
 - Fechar a revisão sem a frase de lacuna. O revisor precisa ler, em uma frase, por que o artigo existe.
 - Citar só artigos brasileiros ou só internacionais. Periódicos internacionais esperam que o caso brasileiro dialogue com a literatura global de economias emergentes.
 
 ## Seção 4 — Metodologia
 
-A metodologia precisa permitir que outro pesquisador reproduza o ranking a partir dos mesmos dados. Organize-a em sete subseções, na ordem do fluxo de trabalho, e abra com um parágrafo que resume as etapas.
+A metodologia precisa permitir que outro pesquisador reproduza o ranking a partir dos mesmos dados. Organize-a em oito subseções, na ordem do fluxo de trabalho, e abra com um parágrafo que resume as etapas.
 
 1. Fonte e preparação dos dados
 2. Alternativas
 3. Critérios
-4. Funções de preferência e limiares
+4. Parâmetros dos métodos (funções de preferência e limiares do PROMETHEE; v do VIKOR)
 5. Pesos
-6. Método multicritério (PROMETHEE I/II, GAIA, SMAA)
-7. Análise de robustez e comparação com o benchmark
+6. Métodos de agregação (soma ponderada, TOPSIS, VIKOR, PROMETHEE II; GAIA e SMAA no ranking de referência)
+7. Validade externa com a DRSAI
+8. Robustez e comparação com o benchmark
 
 ### 4.1 Dados
 
@@ -210,13 +219,13 @@ Para cada base, informe em uma tabela: órgão, nome do sistema, ano-base, data 
 | SINISA 2025 — Água | Ministério das Cidades | 2024 | [data] | IAG0001 (planilha retificada) | [n de 1.794] | Regra definida em "Antes de escrever" |
 | SINISA 2025 — Esgoto | Ministério das Cidades | 2024 | [data] | IES0001, IES2003 | [n de 1.794] | Idem; IES2003 acima de 100% limitado a 100, como no ABES |
 | SINISA 2025 — Resíduos | Ministério das Cidades | 2024 | [data] | IRS0001, IRS3002 (invertido: 100 − disposição inadequada) | [n de 1.794] | Idem |
-| Ranking ABES 2026 | ABES | 2024 | [data] | Nota 0–500, categoria, taxa de DRSAI | 505 habilitados | Comparação e validação restritas aos habilitados |
+| Ranking ABES 2026 | ABES | 2024 | [data] | Nota 0–500, categoria, taxa de DRSAI, UF, porte | Nota: 505 habilitados; DRSAI: todos os 1.794 | Comparação com a nota restrita aos habilitados; DRSAI 0,00 tratada como ausente (412 válidas entre os 581) |
 
 **Tratamento de ausentes é decisão metodológica, não nota de rodapé.** Diga o que fez e mostre, em Resultados, que a escolha não altera o ranking de forma relevante (rode com e sem imputação, reporte o Kendall τ).
 
 ### 4.2 Alternativas
 
-Uma frase com o universo e o critério de inclusão, seguindo a regra de dados ausentes definida em "Antes de escrever". Liste os excluídos em apêndice. Exemplo: *"Dos 1.794 municípios nordestinos, [c] dispunham dos cinco indicadores no SINISA 2025 e [k] tinham apenas um indicador ausente, imputado pela mediana de seu porte na região de saúde; esses [c + k] compõem a amostra principal. Os 505 municípios habilitados no Ranking ABES 2026 formam a subamostra de comparação."* Se a verificação da etapa 6 da regra mostrar que completos e habilitados não coincidem, ajuste a frase.
+Uma frase com o universo e o critério de inclusão, seguindo a regra de dados ausentes definida em "Antes de escrever". Liste os excluídos em apêndice. Exemplo: *"Dos 1.794 municípios nordestinos, 505 dispunham dos cinco indicadores no SINISA 2025 e 76 tinham apenas um indicador ausente, imputado por KNN entre municípios de mesmo porte; esses 581 compõem a amostra principal. Os 505 municípios completos coincidem com os habilitados no Ranking ABES 2026 e formam a subamostra de comparação com a nota oficial; os 412 com taxa de DRSAI válida formam a subamostra de validade externa."*
 
 ### 4.3 Critérios
 
@@ -234,9 +243,9 @@ A tabela de critérios é a peça central da metodologia. Os critérios são exa
 
 Regras: entre 5 e 10 critérios; verifique a correlação entre eles (matriz de Spearman em apêndice; pares com |ρ| > 0,8 exigem justificativa ou exclusão); mantenha critérios de resultado (saúde) separados dos de insumo (investimento) e diga isso no texto.
 
-### 4.4 Funções de preferência e limiares
+### 4.4 Parâmetros dos métodos
 
-Esta é a subseção que os revisores mais cobram e que a maioria dos artigos omite. Para cada critério, informe a função (usual, U-shape, V-shape, nível, linear, gaussiana) e os limiares q (indiferença) e p (preferência). Nunca use a função "usual" para todos os critérios sem justificar.
+A soma ponderada e o TOPSIS não têm parâmetros além dos pesos e da normalização (informe qual: min-max, vetorial). O VIKOR tem o parâmetro v, peso da estratégia de "maioria" contra a de "arrependimento individual"; use o valor usual v = 0,5 e teste 0,25 e 0,75 na robustez. O PROMETHEE é o que mais exige: esta é a subseção que os revisores mais cobram e que a maioria dos artigos omite. Para cada critério, informe a função (usual, U-shape, V-shape, nível, linear, gaussiana) e os limiares q (indiferença) e p (preferência). Nunca use a função "usual" para todos os critérios sem justificar.
 
 Regra de derivação empírica, reproduzível e defensável: para o critério j, calcule as diferenças absolutas entre todos os pares de alternativas; q = 1º quartil dessas diferenças e p = 3º quartil. Reporte os valores na tabela de critérios (acrescente duas colunas). Exceção: no C5, use a função nível e justifique os limiares escolhidos. Em Resultados, teste q e p nos limites ±50% e mostre o efeito.
 
@@ -248,75 +257,95 @@ P_j(d) = \begin{cases} 0 & d \le q_j \\ \dfrac{d - q_j}{p_j - q_j} & q_j < d \le
 
 ### 4.5 Pesos
 
-O ranking principal usa pesos CRITIC; os demais esquemas são testes de robustez. A justificativa da escolha vai em duas frases: o CRITIC combina dispersão e conflito entre critérios, de modo que indicadores redundantes (coleta e tratamento de esgoto, por exemplo) não contam em dobro; e é menos sensível que o coeficiente de variação a critérios com muitos valores próximos de zero, comuns no esgotamento sanitário do interior nordestino.
+Os três esquemas de pesos são cruzados com os quatro métodos, e nenhum deles é "o principal" para a pergunta de pesquisa. O CRITIC define o ranking de referência usado nas leituras detalhadas (GAIA, PROMETHEE I, SMAA). Justifique cada esquema em uma frase: pesos iguais reproduzem a escolha do ABES; o CRITIC combina dispersão e conflito entre critérios, de modo que indicadores redundantes (coleta e tratamento de esgoto, por exemplo) não contam em dobro; o AHP Gaussiano pondera só pela dispersão e dialoga com a literatura brasileira. O AHP Gaussiano é, na essência, um método de pesos seguido de soma ponderada; por isso ele entra como coluna de pesos, e não como método de agregação, e a célula "soma ponderada com AHP Gaussiano" é o AHP Gaussiano como aparece na literatura.
 
 | Esquema | Natureza | Como calcular | Papel no artigo |
 | --- | --- | --- | --- |
-| CRITIC | Objetivo (dispersão + conflito) | Desvio-padrão dos dados normalizados × Σ(1 − correlação com os demais), normalizado | Ranking principal |
-| AHP Gaussiano | Objetivo (dispersão) | Fator gaussiano = desvio-padrão ÷ média de cada critério normalizado, normalizado para somar 1 | Robustez; diálogo com a literatura brasileira |
-| Pesos iguais | Neutro | 1/n por critério | Isola o efeito da compensação limitada frente ao ABES, que também usa pesos iguais |
-| SMAA | Estocástico | 10.000 vetores de pesos sorteados (uniformes no simplex, ou em torno dos pesos CRITIC) | Índices de aceitabilidade de posição |
+| Pesos iguais | Neutro | 1/n por critério | Desenho cruzado; com a soma ponderada, reproduz o ABES e isola o efeito da agregação |
+| CRITIC | Objetivo (dispersão + conflito) | Desvio-padrão dos dados normalizados × Σ(1 − correlação com os demais), normalizado | Desenho cruzado; ranking de referência (com PROMETHEE II) |
+| AHP Gaussiano | Objetivo (dispersão) | Fator gaussiano = desvio-padrão ÷ média de cada critério normalizado, normalizado para somar 1 | Desenho cruzado; diálogo com a literatura brasileira |
+| SMAA | Estocástico | 10.000 vetores de pesos sorteados (uniformes no simplex, ou em torno dos pesos CRITIC) | Robustez: índices de aceitabilidade de posição |
 
 Diga explicitamente que nenhum peso foi definido pelos autores. Essa frase desarma a objeção mais comum.
 
-### 4.6 Método multicritério
+### 4.6 Métodos de agregação
 
-Um parágrafo por etapa do PROMETHEE: grau de preferência agregado π(a,b), fluxos positivo φ⁺, negativo φ⁻ e líquido φ; PROMETHEE I (pré-ordem parcial; aqui só como diagnóstico, reportando o número de pares incomparáveis e 3 ou 4 casos emblemáticos, pois o diagrama com mais de uma centena de alternativas é ilegível) e PROMETHEE II (pré-ordem total); GAIA (projeção PCA da matriz de fluxos unicritério, com o percentual de variância explicada); SMAA-PROMETHEE (para cada vetor de pesos sorteado, calcule o ranking; o índice de aceitabilidade $b_i^r$ é a fração de sorteios em que a alternativa i fica na posição r). Cite Brans & Mareschal (2005) para o núcleo e Corrente et al. (2014) para o SMAA. Fórmulas só para φ e para $b_i^r$; o resto é referência.
+Abra com uma tabela dos quatro métodos, ordenados pelo grau de compensação, e um parágrafo curto para cada um. Em Python, os quatro estão no `pymcdm` ou no `pyDecision`, ou são curtos de implementar.
+
+| Método | Compensação | Ideia em uma frase | Referência |
+| --- | --- | --- | --- |
+| Soma ponderada | Total | Soma dos critérios normalizados multiplicados pelos pesos; é a regra do ABES | Fishburn (1967) ou manual de MCDA |
+| TOPSIS | Total | Proximidade relativa à solução ideal e distância da anti-ideal | Hwang & Yoon (1981) |
+| VIKOR | Parcial | Compromisso entre o desempenho médio (S) e o pior desvio individual (R), ponderado por v | Opricovic & Tzeng (2004) |
+| PROMETHEE II | Limitada | Comparação par a par com funções de preferência e limiares; uma vantagem grande num critério não cresce sem limite | Brans & Vincke (1985) |
+
+Para o PROMETHEE, que também gera as leituras detalhadas, um parágrafo por etapa: grau de preferência agregado π(a,b), fluxos positivo φ⁺, negativo φ⁻ e líquido φ; PROMETHEE I (pré-ordem parcial; aqui só como diagnóstico, reportando o número de pares incomparáveis e 3 ou 4 casos emblemáticos, pois o diagrama com mais de uma centena de alternativas é ilegível) e PROMETHEE II (pré-ordem total); GAIA (projeção PCA da matriz de fluxos unicritério, com o percentual de variância explicada); SMAA-PROMETHEE (para cada vetor de pesos sorteado, calcule o ranking; o índice de aceitabilidade $b_i^r$ é a fração de sorteios em que a alternativa i fica na posição r). Cite Brans & Mareschal (2005) para o núcleo e Corrente et al. (2014) para o SMAA. Fórmulas só para φ e para $b_i^r$; o resto é referência.
 
 ```math
 \phi(a) = \phi^{+}(a) - \phi^{-}(a) = \frac{1}{n-1}\sum_{b \ne a}\left[\pi(a,b) - \pi(b,a)\right]
 ```
 
-### 4.7 Robustez e benchmark
+### 4.7 Validade externa com a DRSAI
 
-Liste os testes que serão reportados em Resultados, cada um com sua métrica:
+Esta subseção sustenta a pergunta principal. Escreva-a como um protocolo fixado antes de olhar os resultados:
+
+1. **Amostra comum.** Todos os 12 rankings são comparados nos mesmos 412 municípios (amostra principal com taxa de DRSAI válida). Taxa 0,00 é tratada como ausente.
+2. **Associação.** Spearman ρ entre a posição em cada ranking e a taxa de DRSAI. Espera-se ρ negativo entre a pontuação e a taxa: melhor saneamento, menos internações.
+3. **Diferença entre métodos.** Os rankings serão muito correlacionados entre si, então as correlações com a DRSAI devem sair próximas. O que importa é a diferença: Δρ entre pares de rankings, com intervalo de confiança por bootstrap (reamostrando municípios, 5.000 vezes, semente fixa) ou o teste de Williams/Steiger para correlações dependentes. Se nenhum intervalo excluir zero, a conclusão é que a escolha do método importa pouco para a associação com a saúde, o que também é um resultado publicável.
+4. **Controle mínimo, sem bases novas.** Correlação parcial de Spearman controlando por UF e porte (as duas variáveis vêm do arquivo do ABES). Spearman dentro dos estados com amostra suficiente (BA 141, CE 93, PE 70, RN 41 e PB 30 municípios válidos) e dentro de cada porte (grande porte 61; pequeno e médio porte 351). Os demais estados (AL 15, MA 12, SE 8, PI 2) só entram na análise conjunta. O que interessa é se o método que se sai melhor no geral continua melhor dentro dos grupos.
+5. **Valores extremos.** O Spearman já é pouco sensível a eles; reporte também uma versão sem os 5% de taxas mais altas.
+6. **Número de rankings.** Não passe de 12: quanto mais rankings comparados à DRSAI, maior a chance de um deles "ganhar" por acaso. Reporte todos, não só o vencedor.
+
+### 4.8 Robustez e benchmark
+
+Liste os testes que serão reportados em Resultados, cada um com sua métrica. Robustez responde se o ranking se mantém; não confunda com a validade externa da subseção anterior.
 
 - Intervalos de estabilidade dos pesos (Visual PROMETHEE ou cálculo próprio): faixa em que cada peso pode variar sem alterar as k primeiras posições.
-- Sensibilidade a q e p: ±50%, Kendall τ entre rankings.
+- SMAA: índices de aceitabilidade no ranking de referência e, se houver tempo, frequência com que cada método vence na associação com a DRSAI sob os pesos sorteados.
+- Sensibilidade a q e p (±50%) e a v (0,25 e 0,75): Kendall τ entre rankings e efeito sobre o ρ com a DRSAI.
 - Reversão de ordem: retirar a melhor, a pior e uma alternativa aleatória; contar quantos pares trocam de ordem.
-- Concordância entre esquemas de pesos e entre métodos (TOPSIS, VIKOR): Kendall τ e Spearman ρ.
-- Comparação com o Ranking ABES 2026: Spearman ρ entre φ e a nota ABES para os municípios habilitados; matriz de transição das categorias ABES para os quartis (ou classes FlowSort) do PROMETHEE; mesmo teste com pesos iguais no PROMETHEE, para isolar o efeito da agregação.
+- Comparação com o Ranking ABES 2026: a soma ponderada com pesos iguais reproduz a nota do ABES, então ela é o ponto de partida; para cada um dos outros 11 rankings, Spearman ρ com a nota ABES nos 505 habilitados e mudanças de quartil.
 
 **Software.** Nomeie biblioteca e versão exatas, tiradas do `requirements.txt` (por exemplo, pyDecision ou pymcdm para PROMETHEE e pesos); código próprio para SMAA (semente fixa); GAIA e intervalos de estabilidade também em Python, para que os scripts gerem todas as figuras. O Visual PROMETHEE (só Windows, não scriptável) serve apenas para conferir os resultados. Link para o repositório. Sem isso, revisores de MCDA costumam pedir os dados e o código.
 
 ## Seção 5 — Resultados e discussão
 
-Os resultados respondem às perguntas de pesquisa na ordem em que foram feitas: PP, PS1, PS2, PS3, PS4. Cada subseção abre com a resposta em uma frase e só depois mostra a evidência. Separe o que o dado mostra (resultado) do que isso significa (discussão); muitos periódicos aceitam as duas coisas na mesma seção, mas o revisor precisa distinguir uma da outra.
+Os resultados respondem às perguntas de pesquisa na ordem em que foram feitas: PP, PS1, PS2, PS3, PS4. A PP depende das divergências da PS1 para fazer sentido, então a subseção 5.1 pode apresentar as duas juntas: primeiro quanto os rankings diferem, depois qual se associa mais à DRSAI. Cada subseção abre com a resposta em uma frase e só depois mostra a evidência. Separe o que o dado mostra (resultado) do que isso significa (discussão); muitos periódicos aceitam as duas coisas na mesma seção, mas o revisor precisa distinguir uma da outra.
 
 **Sequência recomendada de exibições** (quatro a cinco exibições no corpo; o excedente vai para material suplementar):
 
 | # | Exibição | Responde a | O que mostrar |
 | --- | --- | --- | --- |
-| T1 | Estatística descritiva da matriz de decisão | contexto | média, mediana, mín., máx. por critério; n válido |
-| T2 | Pesos por esquema (CRITIC, AHP Gaussiano, iguais, SMAA médio) | 4.5 | uma coluna por esquema; destaque o critério mais e o menos ponderado |
-| F1 | Ranking PROMETHEE II (φ) — top 20 e bottom 20 | PP | barras horizontais; não liste todos os municípios no corpo do texto |
-| F2 | Pré-ordem parcial PROMETHEE I | PP | número de pares incomparáveis e 3 ou 4 casos emblemáticos (não o diagrama completo) |
-| F3 | Plano GAIA | PS1 | alternativas, eixos de critérios e o bastão de decisão; variância explicada (δ) no rodapé |
-| F4 | Índices de aceitabilidade SMAA | PS2 | mapa de calor alternativa × posição (ou faixa de posições com 90% de aceitabilidade) |
-| T3 | Testes de robustez | PS2 | intervalos de estabilidade, Kendall τ por variação de q/p, reversões de ordem |
-| F5/T4 | Comparação com o benchmark | PS3 | dispersão φ × nota ABES; matriz de transição categoria ABES (3 categorias no Nordeste, uma com só 7 municípios) × quartil PROMETHEE; tabela dos municípios que mais mudam |
-| F6 | Validação externa | PS4 | dispersão da taxa de DRSAI × φ e × nota ABES, com os Spearman ρ; em suplemento se faltar espaço |
+| T1 | Estatística descritiva da matriz de decisão e pesos por esquema | contexto | média, mediana, mín., máx. por critério; n válido; uma coluna de pesos por esquema (iguais, CRITIC, AHP Gaussiano) |
+| F1 | Validade externa (exibição principal) | PP | os 12 ρ com a DRSAI e seus intervalos bootstrap, em gráfico de pontos agrupado por método e colorido por esquema de pesos; métodos ordenados pelo grau de compensação |
+| T2 | Diferenças entre métodos e controle mínimo | PP | Δρ com intervalo de confiança para os pares principais; ρ parcial por UF e porte; ρ dentro de BA, CE, PE, RN, PB e dentro de cada porte |
+| F2 | Divergência entre os 12 rankings | PS1 | mapa de calor de Kendall τ entre os rankings; número de municípios que mudam de quartil em relação à soma ponderada com pesos iguais (o ABES) |
+| F3/T3 | Compensação e perfil dos que mudam | PS2, PS4 | mudança de posição × desigualdade entre os critérios do município (por exemplo, desvio-padrão dos cinco indicadores); tabela dos municípios que mais mudam, com o critério que explica a mudança |
+| T4 | Robustez | PS3 | aceitabilidade SMAA no ranking de referência, Kendall τ por variação de q/p e v, reversões de ordem |
+| S | Suplemento | — | plano GAIA (com δ), PROMETHEE I (pares incomparáveis e casos emblemáticos), top 20 e bottom 20 de cada ranking, mapa de calor SMAA |
 
 **Como escrever cada subseção:**
 
-*5.1 Ranking principal (PP).* Abra com os três primeiros e os três últimos, com os valores de φ. Em seguida, descreva o padrão geográfico ou estrutural (estado × estado, litoral × sertão, capital × interior, prestador regional × local). Não narre a tabela; interprete-a. Use PROMETHEE I para apontar as incomparabilidades mais informativas: *"Município A domina em água e perde em esgoto; Município B, o inverso. O PROMETHEE II os aproxima, mas o PROMETHEE I mostra que essa aproximação esconde perfis opostos."*
+*5.1 Divergência entre os rankings (PS1).* Abra com o número que resume a divergência: o Kendall τ médio entre os 12 rankings e quantos municípios mudam de quartil em relação à soma ponderada com pesos iguais, que reproduz o ABES. Separe o efeito do método (linhas da tabela métodos × pesos) do efeito dos pesos (colunas). Não narre a matriz de τ; diga qual fator move mais o ranking.
 
-*5.2 Critérios discriminantes (PS1).* Leia o GAIA: critérios com vetores longos discriminam; vetores opostos indicam conflito (trade-off); o bastão de decisão aponta o compromisso sob os pesos adotados. Cruze com os pesos CRITIC. Afirme explicitamente quando o resultado é intuitivo ("tratamento de esgoto é o critério mais discriminante, como esperado") e quando não é.
+*5.2 Validade externa com a DRSAI (PP).* É a subseção central. Abra com a resposta em uma frase: *"A ordenação do [método X com pesos Y] é a que mais se associa à taxa de internações por DRSAI (ρ = [valor]; IC 95% [a; b])"*. Em seguida, mostre se essa vantagem é distinguível dos demais (Δρ com intervalo bootstrap) e se se mantém dentro dos estados e dos portes. Se nenhum intervalo de Δρ excluir zero, diga isso com a mesma clareza: a escolha do método altera quem é priorizado, mas não muda a coerência do ranking com a saúde. Linguagem de associação sempre; internações dependem de muitos fatores além do saneamento.
 
-*5.3 Robustez (PS2).* É a subseção que converte um estudo de caso em contribuição. Reporte: (a) quantas alternativas têm a mesma posição em mais de 90% dos sorteios SMAA; (b) a faixa de variação de cada peso que preserva o top 10; (c) o Kendall τ entre os rankings com q/p ±50% (acima de 0,9 é estável); (d) o número de pares que trocam de ordem ao retirar alternativas. Conclua com uma frase de julgamento: *"O ranking é robusto nas posições extremas e instável no terço central, onde pequenas variações de peso trocam posições vizinhas."*
+*5.3 Compensação como explicação (PS2).* Ordene os métodos pelo grau de compensação e veja se o ρ com a DRSAI cresce nessa direção. Mostre que os municípios que mais mudam de posição entre métodos são os de desempenho desigual entre componentes (um zero em disposição de resíduos ou em tratamento de esgoto compensado por bons índices nos demais). Se os métodos de compensação limitada se associarem melhor à DRSAI, a hipótese do componente mais fraco ganha apoio; se não, discuta por quê.
 
-*5.4 Comparação com o Ranking ABES (PS3).* Reporte o Spearman ρ entre φ e a nota ABES para os municípios habilitados, primeiro com pesos CRITIC e depois com pesos iguais. A versão com pesos iguais é o experimento central: como os dois métodos usam a mesma base, o mesmo ano e os mesmos pesos, toda diferença vem da regra de agregação (compensatória no ABES, de compensação limitada no PROMETHEE). Como só três categorias do ABES aparecem entre os habilitados do Nordeste, e uma delas tem apenas 7 municípios, a matriz de transição é pouco informativa; a comparação por quartis da nota ABES é mais útil. Em seguida, concentre-se nas divergências. Para cada município que muda de quartil ou de categoria, uma linha explicando o porquê. Quase sempre é desempenho muito desigual entre critérios, como um zero em disposição de resíduos ou em tratamento de esgoto compensado por bons índices nos demais. Esta é a parte que interessa ao gestor e ao editor de política pública.
+*5.4 Robustez (PS3).* Reporte: (a) se o método que se sai melhor na 5.2 continua melhor sob os três esquemas de pesos e sob a variação de q, p e v; (b) quantas alternativas têm a mesma posição em mais de 90% dos sorteios SMAA no ranking de referência; (c) o Kendall τ entre os rankings com q/p ±50% (acima de 0,9 é estável); (d) o número de pares que trocam de ordem ao retirar alternativas. Conclua com uma frase de julgamento: *"O ranking é robusto nas posições extremas e instável no terço central, onde pequenas variações de peso trocam posições vizinhas."*
 
-*5.5 Validação externa com DRSAI (PS4).* Calcule a correlação de Spearman entre a taxa de internações por DRSAI e, de um lado, a nota ABES, do outro, o fluxo líquido φ. Se o φ se associar mais fortemente à saúde, há um argumento de validade a favor da compensação limitada. Se não, isso também é um achado e deve ser discutido. Use linguagem de associação: internações dependem de muitos fatores além do saneamento, e há municípios com taxas atípicas no apêndice do ABES.
+*5.5 Perfil dos que mudam e comparação com o ABES (PS4).* Entre os 505 habilitados, compare o ranking que mais se associa à DRSAI com a nota ABES: Spearman ρ, mudanças de quartil (a matriz de transição das três categorias do ABES no Nordeste é pouco informativa, porque uma delas tem só 7 municípios) e uma linha por município que muda de quartil explicando o porquê. Mencione os 76 municípios que o ABES não ordena e onde eles caem. Esta é a parte que interessa ao gestor e ao editor de política pública.
 
-*5.6 Discussão.* Três a cinco parágrafos: (1) o que os resultados dizem sobre o problema real (distância da meta de 2033); (2) o que confirmam e o que contradizem na literatura citada no bloco 3.1; (3) o que a abordagem de compensação limitada acrescentou ao que o índice oficial já dizia; (4) implicações para a política pública, com cautela (*"sugerem priorizar"*, não *"demonstram que se deve"*); (5) uma ponte para as limitações.
+*5.6 Discussão.* Três a cinco parágrafos: (1) o que os resultados dizem sobre a escolha do método num ranking público (a regra de agregação muda quem é priorizado, e a DRSAI indica qual regra é mais coerente com a saúde); (2) o que confirmam e o que contradizem na literatura dos blocos 3.1 e 3.2; (3) o papel da compensação na explicação; (4) implicações para a política pública, com cautela (*"sugerem priorizar"*, não *"demonstram que se deve"*); (5) uma ponte para as limitações, em especial a ausência de ajuste por renda e acesso à saúde.
 
 **Erros comuns:**
 
 - Tabela com todas as posições no corpo do texto. Vai para apêndice ou suplemento.
 - Figura GAIA sem o δ (variância explicada). Abaixo de 60%, o plano é pouco confiável e isso precisa ser dito.
 - Reportar robustez em uma frase ("o ranking mostrou-se estável") sem métrica.
-- Concluir causalidade. O ranking descreve; não explica por que o município está onde está.
+- Concluir causalidade. O ranking descreve, e a associação com a DRSAI não prova que um método "reduz" internações nem que é o melhor em sentido geral.
+- Escolher método, pesos ou limiares pelo que dá a maior correlação com a DRSAI. Isso torna o teste circular e convida a pergunta "por que não uma regressão?".
+- Reportar só o ρ de cada ranking sem testar as diferenças entre eles.
 - Discutir só os municípios do topo. As mudanças de posição no meio e na base são o achado.
 
 ## Seção 6 — Limitações e trabalhos futuros
@@ -328,21 +357,24 @@ Limitações bem escritas aumentam a credibilidade; mal escritas parecem desculp
 | Tipo | Exemplo (Ideia 1) | Mitigação já feita | Trabalho futuro |
 | --- | --- | --- | --- |
 | Dados: cobertura | 1.289 dos 1.794 municípios não habilitados no ABES, com cobertura de 3% no Piauí a 52% no Ceará; [n] sem os cinco indicadores no SINISA 2025 | Imputação de 1 indicador ausente; testes só com completos e com imputação total; Kendall τ reportado | Repetir com as próximas edições do SINISA |
-| Dados: autodeclaração | Indicadores informados pelos prestadores, sem auditoria | Validação externa com DRSAI | Incorporar o módulo de regulação do SINISA quando publicado |
+| Dados: autodeclaração | Indicadores informados pelos prestadores, sem auditoria | Validade externa com DRSAI | Incorporar o módulo de regulação do SINISA quando publicado |
+| Validade: fatores de confusão | Renda, urbanização, cobertura da atenção primária e acesso hospitalar influenciam tanto o saneamento quanto as internações; parte da diferença entre métodos pode refletir esses fatores | Controle por UF e porte; linguagem de associação | Regressão binomial negativa com as contagens do SIH/SUS (população como offset) e covariáveis do IBGE, do e-Gestor AB e do CNES |
+| Validade: DRSAI ruidosa | Taxas instáveis em municípios pequenos; 0,00 em parte dos municípios; internação depende de haver hospital acessível | Spearman; zeros como ausentes; versão sem valores extremos | Média de 2022–2024 da DRSAI e suavização bayesiana empírica |
 | Dados: quebra de série | SNIS e SINISA têm definições distintas; a própria ABES pede cautela na comparação entre edições | Análise restrita a um ano-base | PROMETHEE temporal quando houver três ou mais edições do SINISA |
 | Critérios: só acesso | Os cinco indicadores medem cobertura e destinação, não qualidade, perdas ou investimento | Escolha justificada pela comparação controlada com o ABES | Modelo ampliado com perdas, investimento e qualidade da água |
-| Método: pesos objetivos | CRITIC reflete o que os dados discriminam, não a prioridade política | AHP Gaussiano, pesos iguais e SMAA | PROMETHEE-GDSS com representantes das companhias estaduais de saneamento, das agências reguladoras e das prefeituras |
-| Método: limiares empíricos | q e p derivados dos quartis das diferenças | Sensibilidade ±50% | Elicitação de limiares com especialistas |
+| Método: pesos objetivos | CRITIC e AHP Gaussiano refletem o que os dados discriminam, não a prioridade política | Desenho cruzado com pesos iguais; SMAA | PROMETHEE-GDSS com representantes das companhias estaduais de saneamento, das agências reguladoras e das prefeituras |
+| Método: limiares empíricos | q e p derivados dos quartis das diferenças; v = 0,5 por convenção | Sensibilidade ±50% em q e p; v em 0,25 e 0,75 | Elicitação de limiares com especialistas |
 | Escopo: benchmark parcial | ABES só inclui municípios com todos os indicadores | Comparação restrita aos habilitados | Comparação com outros índices (IDSC-BR, ODS 6) |
-| Escopo: inferência | Ranking é descritivo; não identifica causas | Linguagem de associação na discussão | Modelo explicativo (ML + SHAP) sobre o fluxo líquido |
+| Escopo: inferência | Ranking é descritivo; a associação com a DRSAI não identifica causas | Linguagem de associação na discussão | Modelo explicativo (ML + SHAP) sobre a posição no ranking |
 
-**Como redigir cada parágrafo.** Modelo: *"A principal limitação decorre da cobertura do SINISA 2025: dos 1.794 municípios nordestinos, [n] não dispunham dos cinco indicadores, e o Ranking ABES exclui 1.289. Este estudo manteve os que tinham apenas um indicador ausente, imputado pela mediana de seu porte na região de saúde; o ranking restrito aos municípios completos concorda com o principal em τ = [valor]. A repetição do estudo com as edições seguintes do SINISA é o desdobramento natural."*
+**Como redigir cada parágrafo.** Modelo: *"A principal limitação decorre da cobertura do SINISA 2025: dos 1.794 municípios nordestinos, [n] não dispunham dos cinco indicadores, e o Ranking ABES exclui 1.289. Este estudo manteve os 76 que tinham apenas um indicador ausente, imputado por KNN entre municípios de mesmo porte; o ranking restrito aos municípios completos concorda com o principal em τ = [valor]. A repetição do estudo com as edições seguintes do SINISA é o desdobramento natural."* Para a limitação central da validade, use: *"A associação entre as ordenações e a taxa de internações por DRSAI foi ajustada apenas por unidade da federação e porte. Renda, cobertura da atenção primária e acesso hospitalar influenciam tanto o desempenho em saneamento quanto as internações, e parte da diferença observada entre métodos pode refletir esses fatores. Os resultados devem ser lidos como associação, e não como efeito. Um modelo ajustado por essas covariáveis, com as contagens de internações do SIH/SUS, é o passo seguinte desta agenda."*
 
 **Trabalhos futuros que valem a pena mencionar** (escolha dois ou três; os demais ficam implícitos na tabela):
 
+- Ajuste da associação com a DRSAI por renda, cobertura da atenção primária e acesso hospitalar, com as contagens do SIH/SUS e regressão binomial negativa.
 - Extensão temporal com Temporal PROMETHEE II assim que houver três ou mais edições do SINISA.
 - Validação com decisores reais via PROMETHEE-GDSS, transformando o estudo de dados secundários em instrumento de gestão.
-- Replicação para outras UFs do Nordeste ou para o Brasil inteiro, com análise de equidade regional.
+- Replicação para o Brasil inteiro, com análise de equidade regional.
 - Camada explicativa com aprendizado de máquina e SHAP sobre o fluxo líquido, ligando posição no ranking a fatores contextuais (renda, porte, modelo de prestação).
 
 **Erros comuns:**
@@ -356,7 +388,7 @@ Limitações bem escritas aumentam a credibilidade; mal escritas parecem desculp
 
 A conclusão responde à pergunta de pesquisa em uma frase, com número, e não traz nada que não esteja nos Resultados. Escreva-a em dois parágrafos curtos.
 
-**Parágrafo 1 — Resposta e contribuição.** Responda à PP literalmente, com o principal número (por exemplo, quantos municípios mudam de quartil em relação ao ABES e o Spearman ρ com pesos iguais). Em seguida, uma frase para cada contribuição da Introdução, na mesma ordem dos três bullets.
+**Parágrafo 1 — Resposta e contribuição.** Responda à PP literalmente, com os principais números (por exemplo, quantos municípios mudam de quartil entre os métodos e qual ranking tem o maior ρ com a DRSAI, com o intervalo de Δρ). Em seguida, uma frase para cada contribuição da Introdução, na mesma ordem dos três bullets.
 
 **Parágrafo 2 — Implicação e próximo passo.** Uma frase sobre o que gestores e reguladores podem fazer com o ranking (com a cautela da Discussão) e uma frase com o trabalho futuro mais importante da Seção 6.
 
@@ -368,9 +400,9 @@ A conclusão responde à pergunta de pesquisa em uma frase, com número, e não 
 
 ## Referências
 
-Um artigo de anais com 12 a 15 páginas comporta entre 25 e 40 referências, distribuídas em quatro grupos. A lista abaixo é o núcleo; corte para caber no limite. Confira cada DOI antes de incluir.
+Um artigo de anais com 12 a 15 páginas comporta entre 25 e 40 referências, distribuídas em quatro grupos. Com a nova pergunta, o grupo A deixa de ser só PROMETHEE e passa a cobrir os quatro métodos. A lista abaixo é o núcleo; corte para caber no limite. Confira cada DOI antes de incluir.
 
-**Grupo A — Núcleo PROMETHEE (obrigatório, 6 a 8 referências):**
+**Grupo A — Métodos de agregação (obrigatório, 8 a 10 referências):**
 
 - Brans, J.P.; Vincke, Ph. (1985). A preference ranking organisation method: The PROMETHEE method for MCDM. *Management Science*, 31(6), 647–656.
 - Brans, J.P.; Mareschal, B. (2005). PROMETHEE methods. In: Figueira, J.; Greco, S.; Ehrgott, M. (eds.), *Multiple Criteria Decision Analysis: State of the Art Surveys*. Springer, cap. 5.
@@ -379,6 +411,9 @@ Um artigo de anais com 12 a 15 páginas comporta entre 25 e 40 referências, dis
 - Behzadian, M.; Kazemzadeh, R.B.; Albadvi, A.; Aghdasi, M. (2010). PROMETHEE: A comprehensive literature review on methodologies and applications. *EJOR*, 200(1), 198–215. DOI 10.1016/j.ejor.2009.01.021.
 - Corrente, S.; Figueira, J.R.; Greco, S. (2014). The SMAA-PROMETHEE method. *EJOR*, 239(2), 514–522.
 - Yu, D.; Liu, Y.; Xu, Z. (2023). Analysis of knowledge evolution in PROMETHEE: A longitudinal and dynamic perspective. *Information Sciences*, 642, 119151.
+- Hwang, C.L.; Yoon, K. (1981). *Multiple Attribute Decision Making: Methods and Applications*. Springer. (Origem do TOPSIS.)
+- Opricovic, S.; Tzeng, G.H. (2004). Compromise solution by MCDM methods: A comparative analysis of VIKOR and TOPSIS. *EJOR*, 156(2), 445–455.
+- Fishburn, P.C. (1967). Additive utilities with incomplete product sets: application to priorities and assignments. *Operations Research*, 15(3), 537–542. (Referência usual da soma ponderada; confira.)
 
 **Grupo B — Robustez, pesos e variantes recentes (6 a 10 referências):**
 
@@ -390,8 +425,10 @@ Um artigo de anais com 12 a 15 páginas comporta entre 25 e 40 referências, dis
 - Costa, H.G.; Lima, G.B.A. (2026). Inequalities matter when prioritizing sustainable goals: a novel multi-criteria-clustering modeling (KRP2). *Annals of Operations Research*. DOI 10.1007/s10479-026-07125-w. (Referência ainda não conferida.)
 - Tarnanidis, T.; Papathanasiou, J.; Mareschal, B. et al. (2026). Sustainable value creation in global marketing decisions: a systematic PRISMA review of PROMETHEE applications. *Journal of Marketing Analytics*. DOI 10.1057/s41270-026-00486-y. (Referência ainda não conferida.)
 - Pereira, V.; Basilio, M.P.; Santos, C.H.T. (2024). pyDecision: a comprehensive library of MCDA methods in Python. arXiv:2404.06370.
+- Steiger, J.H. (1980). Tests for comparing elements of a correlation matrix. *Psychological Bulletin*, 87(2), 245–251. (Teste da diferença entre correlações dependentes.)
+- Efron, B.; Tibshirani, R.J. (1993). *An Introduction to the Bootstrap*. Chapman & Hall. (Intervalos bootstrap de Δρ.)
 
-**Grupo C — Domínio de aplicação (10 a 15 referências).** Para a Ideia 1: estudos de desempenho em saneamento no Brasil (DEA, índices, regressão), metodologias do Ranking ABES e do Ranking do Trata Brasil, literatura internacional sobre benchmarking de utilities (Berg; Marques; Walter et al.), saúde e saneamento (DRSAI), marco regulatório (Heller; Britto). Metade deve ser de 2020 em diante.
+**Grupo C — Domínio de aplicação (10 a 15 referências).** Para a Ideia 1: estudos de desempenho em saneamento no Brasil (DEA, índices, regressão), metodologias do Ranking ABES e do Ranking do Trata Brasil, literatura internacional sobre benchmarking de utilities (Berg; Marques; Walter et al.), saúde e saneamento (DRSAI: a classificação da Funasa, de Costa et al., 2002, e estudos brasileiros que associam saneamento a internações), marco regulatório (Heller; Britto). Metade deve ser de 2020 em diante.
 
 **Grupo D — Bases, normas e documentos oficiais (5 a 10 referências).** Cite como documento, com órgão, título, ano e URL com data de acesso:
 
@@ -400,7 +437,7 @@ Um artigo de anais com 12 a 15 páginas comporta entre 25 e 40 referências, dis
 - BRASIL. Ministério das Cidades. *SINISA 2025 — Relatório dos Serviços de Esgotamento Sanitário* (ano de referência 2024). Brasília, dez. 2025.
 - BRASIL. Ministério das Cidades. *SINISA 2025 — Relatório de Gestão Municipal* (ano de referência 2024). Brasília, dez. 2025.
 - ABES — ASSOCIAÇÃO BRASILEIRA DE ENGENHARIA SANITÁRIA E AMBIENTAL. *Ranking ABES da Universalização do Saneamento 2026*. 2026.
-- BRASIL. Ministério da Saúde. DATASUS. Sistema de Informações Hospitalares do SUS (SIH/SUS). Acesso em [data].
+- BRASIL. Ministério da Saúde. DATASUS. Sistema de Informações Hospitalares do SUS (SIH/SUS). Acesso em [data]. (Só se citar a origem das internações usadas pelo ABES; as contagens do SIH/SUS ficam para trabalho futuro.)
 - BRASIL. Ministério das Cidades. *PLANSAB — Plano Nacional de Saneamento Básico*, revisão vigente.
 
 **Gestão das referências.** Use Zotero ou Mendeley desde o primeiro dia, com o estilo do modelo Springer indicado pela organização do Rii Forum. Exporte a biblioteca em `.bib` para o repositório. Antes de submeter, confira: todo item citado está na lista e todo item da lista está citado; DOIs resolvem; nenhuma referência aparece em duas versões (preprint e publicada). Documentos brasileiros (leis, relatórios do SINISA, ABES) devem ter título traduzido entre colchetes.
@@ -412,27 +449,27 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 **Título (12 a 16 palavras).** Fórmula: *[o que o método faz] + [objeto] + [contexto] + [sinal metodológico]*. Evite dois-pontos seguidos de subtítulo genérico ("a multicriteria approach"). Exemplos:
 
 - *Same data, different priorities: how the aggregation rule of a public sanitation ranking shapes municipal prioritisation in Northeast Brazil*
-- *Limited-compensation PROMETHEE versus an additive public ranking: evidence from sanitation universalisation in the municipalities of Northeast Brazil*
+- *Does the aggregation method matter for health? Comparing multicriteria rankings of sanitation against sanitation-related hospitalisations in Northeast Brazil*
 
 **Resumo (no formulário do Rii Forum, siga o limite indicado no próprio formulário, que a chamada não informa; no artigo completo, siga o limite do modelo Springer, em geral até 250 palavras), estruturado mesmo que o evento não exija.** Uma ou duas frases por item, sem citações:
 
 1. Contexto e problema (com um número).
 2. Lacuna (uma frase).
 3. Objetivo e pergunta.
-4. Método: alternativas, número de critérios, base de dados, variante PROMETHEE, esquemas de pesos, testes de robustez.
-5. Resultado principal com número (ex.: *"[n] dos [m] municípios habilitados mudam de quartil em relação ao ranking oficial; o ranking é estável nas 15 primeiras posições em 94% dos cenários SMAA"*).
+4. Método: alternativas, número de critérios, base de dados, os quatro métodos e os três esquemas de pesos, o teste de validade com a DRSAI, testes de robustez.
+5. Resultado principal com número (ex.: *"[n] dos 581 municípios mudam de quartil conforme o método; a ordenação do [método X] é a que mais se associa às internações por DRSAI (ρ = [valor]), [e a diferença para a soma ponderada do ABES é / mas a diferença para os demais não é] distinguível de zero"*).
 6. Implicação para a política pública (uma frase).
 7. Contribuição metodológica (uma frase).
 
-**Palavras-chave (5 a 6).** Combine: o método (PROMETHEE; SMAA), o objeto (sanitation; municipal performance), o contexto (Brazil; semi-arid), e um termo de busca da área (multicriteria decision aid; public policy). Não repita palavras do título; elas já são indexadas.
+**Palavras-chave (5 a 6).** Combine: o método (PROMETHEE; TOPSIS; VIKOR; compensation), o objeto (sanitation; sanitation-related diseases), o contexto (Brazil; semi-arid), e um termo de busca da área (multicriteria decision aid; external validity; public policy). Não repita palavras do título; elas já são indexadas.
 
 **Destaques / Highlights (não exigidos pelos anais Springer; use-os como roteiro do resumo e dos slides).** Um resultado por bullet, nunca uma descrição do que foi feito:
 
-- Limited-compensation PROMETHEE ranks [c + k] of Northeast Brazil's 1,794 municipalities, [m] more than the official ranking
-- [n] municipalities change quartile when criteria compensation is limited
-- Equal-weight PROMETHEE vs ABES ranking isolates the effect of aggregation
-- Top-15 ranking is stable in [x]% of SMAA weight scenarios
-- CRITIC and Gaussian AHP weights converge (Kendall τ = [valor])
+- Four aggregation methods and three weighting schemes rank 581 of Northeast Brazil's 1,794 municipalities, 76 more than the official ranking
+- [n] municipalities change quartile depending on the aggregation method
+- The [method X] ranking shows the strongest association with sanitation-related hospitalisations (ρ = [valor])
+- Methods that limit compensation [do / do not] align better with health outcomes
+- The result holds within states and municipality size groups
 
 **Teste final:** entregue título, resumo e highlights a alguém da área que não leu o artigo e peça para dizer, em uma frase, qual foi o achado. Se a pessoa descrever o método em vez do achado, reescreva.
 
@@ -445,9 +482,12 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 - [ ] Os três bullets de contribuição da Introdução correspondem a resultados reportados
 - [ ] Tabela-síntese da revisão inclui o próprio artigo na última linha
 - [ ] Tabela de critérios com unidade, direção, fonte, função de preferência, q e p
-- [ ] Pesos: CRITIC principal e esquemas de robustez (AHP Gaussiano, pesos iguais, SMAA) descritos; frase explícita de que nenhum peso foi definido pelos autores
+- [ ] Desenho métodos × pesos descrito (quatro métodos, três esquemas); frase explícita de que nenhum peso foi definido pelos autores
+- [ ] Métodos, pesos e parâmetros fixados antes do teste com a DRSAI, com registro no `log_decisoes.md`; DRSAI fora dos critérios
+- [ ] Validade externa reportada com os 12 ρ, os intervalos bootstrap de Δρ e o controle por UF e porte
 - [ ] Robustez reportada com métricas (aceitabilidade SMAA, intervalos de estabilidade, τ para q/p, reversão de ordem)
-- [ ] Comparação com o Ranking ABES 2026 feita (com pesos CRITIC e com pesos iguais) e discutida município a município nas divergências
+- [ ] Comparação com o Ranking ABES 2026 feita e discutida município a município nas divergências
+- [ ] Limitação dos fatores de confusão (renda, atenção primária, acesso hospitalar) redigida, com linguagem de associação em todo o texto
 - [ ] GAIA com variância explicada (δ) informada
 - [ ] Todas as figuras legíveis em preto e branco; eixos com unidades; legendas autossuficientes
 - [ ] Data de extração de cada base no texto; URL e ano-base nas referências
@@ -469,9 +509,11 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 
 | Objeção | Onde a resposta já está | O que acrescentar, se pedido |
 | --- | --- | --- |
-| "Por que PROMETHEE e não TOPSIS/AHP/ELECTRE?" | Bloco 3.2 (compensação limitada, incomparabilidades, GAIA) | Tabela de concordância com TOPSIS/VIKOR em suplemento |
+| "Por que esses quatro métodos?" | Bloco 3.2 e Seção 4.6 (cobrem o eixo de compensação, da total à limitada) | ELECTRE como método não compensatório em suplemento |
+| "Por que não uma regressão da DRSAI sobre os indicadores?" | Seção 2 e Seção 4.7 | O objetivo é avaliar rankings construídos por preferência sobre o desempenho; a DRSAI só testa a coerência deles com a saúde e nunca calibrou nada |
+| "A associação pode ser efeito da renda" | Seção 6, limitação de fatores de confusão; controle por UF e porte | Correlação parcial com PIB per capita municipal (IBGE), a covariável mais fácil de obter |
 | "Os pesos são arbitrários" | Seção 4.5 e Tabela T2 | Gráfico de walking weights |
 | "Não há análise de sensibilidade" | Seção 5.3 e Tabela T3 | Variação de q/p por critério individual |
 | "Os dados são autodeclarados" | Seção 6, limitação 2 | Correlação entre SINISA e SIH/SUS como validação cruzada |
 | "O caso é local demais" | Introdução, parágrafo 1 e Discussão | Parágrafo ligando o Nordeste ao semiárido global e a economias emergentes |
-| "Qual a contribuição teórica?" | Introdução, bullet 2, e Discussão item 3 | Uma frase sobre o que o contraste entre agregação compensatória e de compensação limitada ensina sobre índices oficiais em geral |
+| "Qual a contribuição teórica?" | Introdução, bullets 2 e 3, e Discussão itens 1 e 3 | Uma frase sobre o que um desfecho externo ensina sobre a escolha da regra de agregação em índices oficiais em geral |
