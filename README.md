@@ -23,7 +23,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 
 ## Método
 
-- **Alternativas:** os 505 municípios nordestinos que autodeclararam ao SINISA 2025 os quatro indicadores contabilizados (IAG0001, IES0001, IES2003 e IRS0001), que coincidem com os habilitados no ABES 2026. Nenhum valor ausente é inferido: os 76 municípios que declararam só três dos quatro ficam de fora, porque a imputação testada explicava pouco do valor ausente (r² ≈ 12%, erro médio de cerca de 14 pontos percentuais) e a falta de resposta ao SINISA provavelmente não é aleatória. Se o IRS3002 estiver ausente, assume-se disposição final inadequada (valor adaptado 0); nenhum dos 505 está nesse caso hoje.
+- **Alternativas:** os 505 municípios nordestinos que autodeclararam ao SINISA 2025 os quatro indicadores contabilizados (IAG0001, IES0001, IES2003 e IRS0001), que coincidem com os habilitados no ABES 2026. O município a que falta qualquer um dos quatro fica de fora. Se o IRS3002 estiver ausente, assume-se disposição final inadequada (valor adaptado 0); nenhum dos 505 está nesse caso hoje.
 - **Critérios:** os cinco indicadores do Ranking ABES, todos a maximizar.
 
   | Código | Indicador SINISA | Descrição |
