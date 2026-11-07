@@ -14,7 +14,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 | --- | --- |
 | Dados do SINISA 2025 baixados | Concluída |
 | Dados do ABES 2026 para o Nordeste baixados | Concluída |
-| Matriz de decisão montada (505 completos e 581 com imputação, notebooks 01 e 02) | Concluída |
+| Matriz de decisão montada (505 municípios completos, notebook 01) | Concluída |
 | Pesos (iguais, CRITIC e AHP Gaussiano) e os 12 rankings (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) | A fazer |
 | Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte) | A fazer |
 | Robustez (SMAA, sensibilidade a q e p) e comparação com o ABES | A fazer |
@@ -23,7 +23,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 
 ## Método
 
-- **Alternativas:** a amostra principal são os 505 municípios nordestinos com os cinco indicadores no SINISA 2025, que coincidem com os habilitados no ABES 2026. Como teste de sensibilidade, a análise é repetida com 581 municípios: os 505 e mais 76 com só um indicador ausente, imputado pela média ponderada dos 15 municípios de mesmo porte mais parecidos nos demais indicadores (KNN, escolhido por validação cruzada). Se o IRS3002 estiver ausente, assume-se disposição inadequada (valor adaptado 0). A imputação fica fora da amostra principal porque explica pouco do valor ausente (r² ≈ 12%, erro médio de cerca de 14 pontos percentuais) e porque a falta de resposta ao SINISA provavelmente não é aleatória.
+- **Alternativas:** os 505 municípios nordestinos que autodeclararam ao SINISA 2025 os quatro indicadores contabilizados (IAG0001, IES0001, IES2003 e IRS0001), que coincidem com os habilitados no ABES 2026. Nenhum valor ausente é inferido: os 76 municípios que declararam só três dos quatro ficam de fora, porque a imputação testada explicava pouco do valor ausente (r² ≈ 12%, erro médio de cerca de 14 pontos percentuais) e a falta de resposta ao SINISA provavelmente não é aleatória. Se o IRS3002 estiver ausente, assume-se disposição final inadequada (valor adaptado 0); nenhum dos 505 está nesse caso hoje.
 - **Critérios:** os cinco indicadores do Ranking ABES, todos a maximizar.
 
   | Código | Indicador SINISA | Descrição |
@@ -44,7 +44,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
   | PROMETHEE II | Limitada | ✓ | ✓ | ✓ |
 
   O AHP Gaussiano entra como esquema de pesos (desvio-padrão ÷ média de cada critério), seguido de soma ponderada, e não como método de agregação. Assim, o efeito da agregação fica separado do efeito dos pesos. Nenhum peso é definido pelos autores. Métodos, pesos e parâmetros (q e p do PROMETHEE, v do VIKOR) são fixados antes de olhar a DRSAI.
-- **Validade externa:** correlação de Spearman entre cada ranking e a taxa de internações por DRSAI informada pelo ABES, nos 360 dos 505 municípios com taxa válida (taxa 0,00 é tratada como ausente); no teste de sensibilidade, nos 412 dos 581. As diferenças entre rankings são testadas com intervalos bootstrap de Δρ. Como controle mínimo, a associação é recalculada com correlação parcial por UF e porte e dentro dos estados com amostra suficiente (BA, CE, PE, RN e PB). A DRSAI nunca entra como critério.
+- **Validade externa:** correlação de Spearman entre cada ranking e a taxa de internações por DRSAI informada pelo ABES, nos 360 dos 505 municípios com taxa válida (taxa 0,00 é tratada como ausente). As diferenças entre rankings são testadas com intervalos bootstrap de Δρ. Como controle mínimo, a associação é recalculada com correlação parcial por UF e porte e dentro dos estados com amostra suficiente (BA, CE, PE, RN e PB). A DRSAI nunca entra como critério.
 - **Robustez:** SMAA (10.000 vetores de pesos) e sensibilidade a q e p (±50%). Robustez e validade externa são análises separadas.
 - **Leitura detalhada:** o PROMETHEE II com pesos CRITIC é o ranking de referência para o plano GAIA, o PROMETHEE I (diagnóstico) e o SMAA-PROMETHEE.
 - **Fora do escopo:** o ajuste por renda, cobertura da atenção primária e acesso hospitalar exigiria novas bases (IBGE, e-Gestor AB, CNES, SIH/SUS) e fica como limitação e trabalho futuro. Os resultados são lidos como associação, e não como efeito.
@@ -59,11 +59,9 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 ├── docs/
 │   └── guia_escrita.md              Guia de escrita do artigo e decisões metodológicas
 ├── jupyter notebooks/
-│   ├── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
-│   └── 02_imputacao_faltantes.ipynb    Compara técnicas de imputação e completa a matriz de decisão
+│   └── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
 ├── resultados/                      Criada ao executar os notebooks; fora do Git
-│   ├── municipios_5_indicadores.csv          505 municípios com os cinco indicadores (notebook 01)
-│   └── municipios_4_ou_5_indicadores.csv     581 municípios, com o faltante imputado e a situação de cada indicador (notebook 02)
+│   └── municipios_5_indicadores.csv     Matriz de decisão: 505 municípios com os cinco indicadores e a situação de cada um
 ├── dados/
 │   ├── SINISA/2025/                 SINISA 2025 (ano-base 2024), Ministério das Cidades; base nacional, filtrada para o Nordeste
 │   │   ├── abastecimento de água/   Planilhas por município, por prestador e consolidadas; glossário
@@ -94,7 +92,6 @@ Cuidados ao usar os dados:
 Execute os notebooks de `jupyter notebooks/` em ordem. A pasta `resultados/` não é versionada: ela é criada na primeira execução e recebe as planilhas geradas.
 
 1. `01_filtragem_municipios.ipynb`: lê as planilhas em `dados/`, filtra os municípios do Nordeste, classifica os indicadores faltantes e gera `municipios_5_indicadores.csv`.
-2. `02_imputacao_faltantes.ipynb`: imputa o indicador faltante e gera `municipios_4_ou_5_indicadores.csv`.
 
 As etapas seguintes (pesos, os 12 rankings, validade externa com a DRSAI e robustez) ainda serão escritas.
 
