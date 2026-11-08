@@ -4,7 +4,7 @@ Nov 8, 2026 · @Guilherme de Farias
 
 ## Objetivo e escopo
 
-Este parecer reúne, à medida que forem calculados, todos os métodos do trabalho, separados em métodos de pesos e métodos de agregação. Até aqui ele cobre a ABES, os dois AHP, o CRITIC e o PROMETHEE II. Os três primeiros produzem rankings fortemente concordantes no conjunto dos municípios, mas divergem no topo. O CRITIC, que só calcula pesos, concentra 36,6% do peso em Destinação, mais que qualquer outro esquema. O PROMETHEE II, que só ranqueia, foi aplicado aos quatro esquemas de pesos. Com pesos iguais, CRITIC e AHP Gaussiano ele fica muito perto da ABES (ρ de 0,95 a 0,98). Com os pesos do AHP clássico, ele se afasta dela mais que qualquer outro ranking calculado até aqui (ρ = 0,71).
+Este parecer reúne, à medida que forem calculados, todos os métodos do trabalho, separados em métodos de pesos e métodos de agregação. Até aqui ele cobre a ABES, os dois AHP, o CRITIC e o PROMETHEE II. Os três primeiros produzem rankings fortemente concordantes no conjunto dos municípios, mas divergem no topo. O CRITIC, que só calcula pesos, concentra 36,6% do peso em Destinação, mais que qualquer outro esquema. O PROMETHEE II, que só ranqueia, foi aplicado aos quatro esquemas de pesos. Com pesos iguais, CRITIC e AHP Gaussiano ele fica muito perto da ABES (ρ de 0,95 a 0,99). Com os pesos do AHP clássico, ele se afasta dela mais que qualquer outro ranking calculado até aqui (ρ = 0,71).
 
 | Método | Papel | Situação neste parecer | Planilha |
 | --- | --- | --- | --- |
@@ -103,7 +103,7 @@ As contas seguem seis etapas. Como os cinco indicadores já estão em % (0 a 100
 P_j(d) = \begin{cases} 0 & d \le q_j \\ \dfrac{d - q_j}{p_j - q_j} & q_j < d \le p_j \\ 1 & d > p_j \end{cases} \qquad \varphi(a) = \frac{1}{m-1} \sum_{x \ne a} \left[ \pi(a,x) - \pi(x,a) \right]
 ```
 
-**Funções e limiares.** Nos quatro primeiros indicadores, a função é a linear (em V com indiferença), com os limiares dados pela regra registrada no guia de escrita: q é o 1º quartil e p o 3º quartil das diferenças absolutas entre todos os pares de municípios. Em Destinação, quase binário (248 municípios com 0 e 236 com 100), a função é a usual: qualquer vantagem vira preferência total.
+**Funções e limiares.** Nos quatro primeiros indicadores, a função é a linear (em V com indiferença), com os limiares dados pela regra registrada no guia de escrita: q é o 1º quartil e p o 3º quartil das diferenças absolutas entre todos os pares de municípios. Em Destinação, quase binário (248 municípios com 0 e 236 com 100), a regra dos quartis daria q = 0 e p = 100. Por isso a função é a em U, com q = p = 5: diferenças de até 5 pontos são empate (98 contra 100, ou 0,2 contra 0), e qualquer diferença maior vira preferência total. Assim, os poucos municípios com valores como 96,8 ou 98,3 ficam junto dos que têm 100, em vez de perderem para eles por inteiro, como aconteceria com a função usual.
 
 | Indicador | Função | q (pontos percentuais) | p (pontos percentuais) |
 | --- | --- | --- | --- |
@@ -111,7 +111,7 @@ P_j(d) = \begin{cases} 0 & d \le q_j \\ \dfrac{d - q_j}{p_j - q_j} & q_j < d \le
 | Esgoto | Linear | 11,06 | 41,65 |
 | Tratamento | Linear | 7,24 | 50,10 |
 | Coleta | Linear | 6,40 | 31,39 |
-| Destinação | Usual | 0 | 0 |
+| Destinação | Em U | 5 | 5 |
 
 Por exemplo, Salvador tem Tratamento 100 e Aracaju, 73,6. A diferença de 26,4 pontos fica entre q e p e vale P = (26,4 − 7,24)/(50,10 − 7,24) = 0,45. Nos demais indicadores, nenhuma das duas cidades supera a outra além do limiar de indiferença. Com pesos iguais, π(Salvador, Aracaju) = 0,2 × 0,45 = 0,089 e π(Aracaju, Salvador) = 0.
 
@@ -165,27 +165,27 @@ Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II concorda com a ABES mai
 
 | Par comparado | Spearman (ρ) | Kendall (τ-b) | Deslocamento médio (posições) |
 | --- | --- | --- | --- |
-| PROMETHEE II (pesos iguais) × ABES | 0,949 | 0,823 | 35,5 |
-| PROMETHEE II (CRITIC) × ABES | 0,985 | 0,908 | 18,0 |
-| PROMETHEE II (AHP Gaussiano) × ABES | 0,955 | 0,824 | 32,5 |
+| PROMETHEE II (pesos iguais) × ABES | 0,949 | 0,824 | 35,4 |
+| PROMETHEE II (CRITIC) × ABES | 0,988 | 0,917 | 16,1 |
+| PROMETHEE II (AHP Gaussiano) × ABES | 0,955 | 0,826 | 32,2 |
 | PROMETHEE II (AHP clássico) × ABES | 0,713 | 0,535 | 88,6 |
-| PROMETHEE II × soma ponderada, ambos com pesos do AHP Gaussiano | 0,971 | 0,855 | 26,3 |
-| PROMETHEE II × soma ponderada, ambos com pesos do AHP clássico | 0,899 | 0,726 | 50,9 |
+| PROMETHEE II × soma ponderada, ambos com pesos do AHP Gaussiano | 0,973 | 0,859 | 25,7 |
+| PROMETHEE II × soma ponderada, ambos com pesos do AHP clássico | 0,900 | 0,726 | 50,9 |
 
 Todas as correlações são positivas e significativas (p < 10⁻⁷⁰, n = 505). As duas últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar.
 
-- **CRITIC quase reproduz a ABES** (ρ = 0,985). Os dois dão a Destinação um papel decisivo: na ABES, porque o indicador vale 0 ou 100 e entra com toda essa amplitude na soma; no PROMETHEE II com CRITIC, porque ele tem o maior peso (36,6%) e função usual. Dos 50 primeiros, 47 têm Destinação 100 na ABES e 49 no PROMETHEE II com CRITIC.
-- **O AHP clássico se afasta.** Com 68% do peso em Água e Coleta, e a compensação limitada, municípios com Água e Coleta acima de 90 e quase nenhum esgoto sobem muito, porque a perda em Esgoto e Tratamento está limitada aos pesos desses critérios (16,0% e 9,7%). Esplanada (BA) vai de 396º na ABES (318º na soma ponderada clássica) para 163º, e Conceição do Coité (BA), de 381º (298º) para 153º. No sentido oposto, Saloá (PE) cai de 69º para 381º, e Prata (PB), de 51º para 334º. Os dois têm Tratamento 100, mas Água abaixo de 51.
-- **A forma de agregar pesa menos que os pesos.** Mantidos os pesos, a troca de soma ponderada por PROMETHEE II dá ρ de 0,90 a 0,97. Mantido o PROMETHEE II, a troca de pesos dá ρ de 0,60 (AHP Gaussiano × AHP clássico) a 0,93 (CRITIC × AHP Gaussiano).
+- **CRITIC quase reproduz a ABES** (ρ = 0,988). Os dois dão a Destinação um papel decisivo: na ABES, porque o indicador vale 0 ou 100 e entra com toda essa amplitude na soma; no PROMETHEE II com CRITIC, porque ele tem o maior peso (36,6%) e uma função em U, que trata quase toda diferença como preferência total. Dos 50 primeiros, 47 têm Destinação 100 na ABES e 49 no PROMETHEE II com CRITIC.
+- **O AHP clássico se afasta.** Com 68% do peso em Água e Coleta, e a compensação limitada, municípios com Água e Coleta acima de 90 e quase nenhum esgoto sobem muito, porque a perda em Esgoto e Tratamento está limitada aos pesos desses critérios (16,0% e 9,7%). Esplanada (BA) vai de 396º na ABES (318º na soma ponderada clássica) para 163º, e Conceição do Coité (BA), de 381º (298º) para 153º. No sentido oposto, Saloá (PE) cai de 69º para 368º, e Prata (PB), de 51º para 333º. Os dois têm Tratamento 100, mas Água abaixo de 51.
+- **A forma de agregar pesa menos que os pesos.** Mantidos os pesos, a troca de soma ponderada por PROMETHEE II dá ρ de 0,90 a 0,97. Mantido o PROMETHEE II, a troca de pesos dá ρ de 0,60 (AHP Gaussiano × AHP clássico) a 0,94 (CRITIC × AHP Gaussiano).
 
 | Spearman (ρ) entre os PROMETHEE II | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
 | --- | --- | --- | --- | --- |
-| Pesos iguais | 1 | 0,915 | 0,896 | 0,873 |
-| CRITIC | 0,915 | 1 | 0,934 | 0,662 |
-| AHP Gaussiano | 0,896 | 0,934 | 1 | 0,604 |
-| AHP clássico | 0,873 | 0,662 | 0,604 | 1 |
+| Pesos iguais | 1 | 0,916 | 0,897 | 0,873 |
+| CRITIC | 0,916 | 1 | 0,936 | 0,663 |
+| AHP Gaussiano | 0,897 | 0,936 | 1 | 0,605 |
+| AHP clássico | 0,873 | 0,663 | 0,605 | 1 |
 
-**Efeito da função usual em Destinação.** Embora o indicador seja quase binário, 21 municípios têm valores intermediários, e vários deles ficam entre 95 e 99. Com a função usual, 98,3 perde por inteiro para 100, como 0 perderia, e vence por inteiro de 0. Na prática, esses municípios ficam no meio do critério, e não junto dos que têm 100. É o que explica parte das quedas de Massapê (CE, Destinação 98,3), de 237º na ABES para 384º com pesos iguais, e de Saloá (PE, 96,8), de 69º para 208º. Uma função em U com limiar de alguns pontos trataria 96,8 como empate com 100. Essa é uma das variações a testar na análise de sensibilidade a q e p.
+**Por que a função em U em Destinação.** Embora o indicador seja quase binário, 21 municípios têm valores intermediários, e cinco deles ficam entre 95 e 99. Com a função usual (q = p = 0), 98,3 perderia por inteiro para 100, como 0 perde, e esses municípios ficariam no meio do critério: Massapê (CE, Destinação 98,3) cairia de 237º na ABES para 384º com pesos iguais, e Saloá (PE, 96,8), de 69º para 208º. Com q = p = 5, eles empatam com os que têm 100, e Massapê e Saloá ficam em 322º e 144º com pesos iguais. As quedas que sobram vêm dos outros indicadores (Água de 37,9 em Saloá, por exemplo). A troca muda pouco as correlações (ρ com a ABES varia no máximo 0,003) e nada nos Top 10, mas evita esse efeito artificial nos casos isolados. O limiar de 5 pontos é uma escolha e entra na análise de sensibilidade a q e p.
 
 ## Top 10
 
@@ -239,9 +239,9 @@ Nenhum método é neutro. Cada um embute uma resposta diferente à pergunta sobr
 | AHP Clássico | Pesos explícitos e justificáveis, com consistência verificada (RC = 0,015); permite discutir prioridades de política pública | Depende do julgamento de quem preenche a matriz; outro decisor pode chegar a pesos e rankings diferentes |
 | AHP Gaussiano | Objetivo e reprodutível, sem julgamento humano; destaca os indicadores que de fato separam os municípios | Peso alto significa "varia muito", não "é importante"; Coleta, quase universalizada, recebe só 6,8%. Os pesos também mudam conforme a amostra de municípios |
 | CRITIC | Objetivo e reprodutível; além da dispersão, desconta a informação repetida entre indicadores correlacionados | Só calcula pesos, e o ranking depende do método de agregação escolhido depois. Os pesos dependem da normalização (min-max aqui) e da amostra. Com correlações baixas como as daqui, o conflito pesa pouco, e Destinação, quase binário, recebe 36,6% |
-| PROMETHEE II | Compensação limitada: uma nota muito baixa num indicador custa no máximo o peso dele. Dispensa normalização e lida bem com indicadores quase binários (função usual). Gera uma ordem completa, e os fluxos por critério mostram onde cada município ganha e perde | Exige escolher uma função e dois limiares por critério, o que acrescenta parâmetros a testar (sensibilidade a q e p). Os limiares pelos quartis dependem da amostra. Como cada município é comparado com todos os outros, incluir ou excluir municípios pode inverter a ordem de outros dois (*rank reversal*). A função usual em Destinação trata 98 contra 100 como preferência total |
+| PROMETHEE II | Compensação limitada: uma nota muito baixa num indicador custa no máximo o peso dele. Dispensa normalização e lida bem com indicadores quase binários (função em U). Gera uma ordem completa, e os fluxos por critério mostram onde cada município ganha e perde | Exige escolher uma função e dois limiares por critério, o que acrescenta parâmetros a testar (sensibilidade a q e p). Os limiares pelos quartis dependem da amostra. Como cada município é comparado com todos os outros, incluir ou excluir municípios pode inverter a ordem de outros dois (*rank reversal*). Em Destinação, a função em U trata qualquer diferença acima de 5 pontos como preferência total, então 60 contra 100 conta tanto quanto 0 contra 100 |
 
-Um cuidado vale para todos os métodos: os indicadores Tratamento e Destinação têm muitos zeros. Parte desses zeros pode refletir ausência de informação, e não ausência de serviço. Isso afeta sobretudo o Gaussiano e o CRITIC, que dão a esses dois indicadores 64% e 56% do peso, e também o PROMETHEE II, em que um zero em Destinação perde por inteiro para qualquer valor positivo.
+Um cuidado vale para todos os métodos: os indicadores Tratamento e Destinação têm muitos zeros. Parte desses zeros pode refletir ausência de informação, e não ausência de serviço. Isso afeta sobretudo o Gaussiano e o CRITIC, que dão a esses dois indicadores 64% e 56% do peso, e também o PROMETHEE II, em que um zero em Destinação perde por inteiro para qualquer valor acima de 5.
 
 ## Síntese das diferenças
 
@@ -253,7 +253,7 @@ Este parecer não elege um método. Ele registra em que os métodos diferem, par
 - **Concordância com a ABES.** Os dois AHP têm correlação forte com ela (ρ de 0,87 a 0,89). No topo, porém, o Clássico mantém 9 dos 10 primeiros, e o Gaussiano, 5.
 - **Concordância entre os AHP.** A correlação entre os dois (ρ = 0,76) é menor que a de qualquer deles com a ABES, porque cada um se afasta dela numa direção.
 - **Núcleo estável.** Salvador, Vitória da Conquista, União dos Palmares, Jequié e Porto Seguro estão no Top 10 dos três métodos. Salvador, Vitória da Conquista, Aracaju, Barra dos Coqueiros, Madre de Deus, Luís Eduardo Magalhães e Jequié estão no Top 10 da ABES e dos quatro PROMETHEE II.
-- **PROMETHEE II e ABES.** Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II fica mais perto da ABES (ρ de 0,95 a 0,98) do que os dois AHP. Com os pesos do AHP clássico, fica mais longe (ρ = 0,71).
-- **Pesos contra agregação.** No PROMETHEE II, trocar os pesos muda mais o ranking (ρ de 0,60 a 0,93 entre esquemas) do que trocar a soma ponderada pelo PROMETHEE II com os mesmos pesos (ρ de 0,90 a 0,97).
+- **PROMETHEE II e ABES.** Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II fica mais perto da ABES (ρ de 0,95 a 0,99) do que os dois AHP. Com os pesos do AHP clássico, fica mais longe (ρ = 0,71).
+- **Pesos contra agregação.** No PROMETHEE II, trocar os pesos muda mais o ranking (ρ de 0,60 a 0,94 entre esquemas) do que trocar a soma ponderada pelo PROMETHEE II com os mesmos pesos (ρ de 0,90 a 0,97).
 
-Duas verificações fortaleceriam essa comparação: testar como o ranking Clássico muda com pequenas variações nos julgamentos da matriz de Saaty, e como o PROMETHEE II muda com q e p a ±50% e com uma função em U em Destinação (basta trocar os limiares na aba PARÂMETROS da planilha).
+Duas verificações fortaleceriam essa comparação: testar como o ranking Clássico muda com pequenas variações nos julgamentos da matriz de Saaty, e como o PROMETHEE II muda com q e p a ±50% e com outros limiares em Destinação (basta trocar os limiares na aba PARÂMETROS da planilha).
