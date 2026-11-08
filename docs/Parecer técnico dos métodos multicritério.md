@@ -4,7 +4,7 @@ Nov 8, 2026 · @Guilherme de Farias
 
 ## Objetivo e escopo
 
-Este parecer reúne, à medida que forem calculados, todos os métodos do trabalho, separados em métodos de pesos e métodos de agregação. Até aqui ele cobre a ABES, os dois AHP e o CRITIC. Os três primeiros produzem rankings fortemente concordantes no conjunto dos municípios, mas divergem no topo. O CRITIC, que só calcula pesos, concentra 36,6% do peso em Destinação, mais que qualquer outro esquema.
+Este parecer reúne, à medida que forem calculados, todos os métodos do trabalho, separados em métodos de pesos e métodos de agregação. Até aqui ele cobre a ABES, os dois AHP, o CRITIC e o PROMETHEE II. Os três primeiros produzem rankings fortemente concordantes no conjunto dos municípios, mas divergem no topo. O CRITIC, que só calcula pesos, concentra 36,6% do peso em Destinação, mais que qualquer outro esquema. O PROMETHEE II, que só ranqueia, foi aplicado aos quatro esquemas de pesos. Com pesos iguais, CRITIC e AHP Gaussiano ele fica muito perto da ABES (ρ de 0,95 a 0,98). Com os pesos do AHP clássico, ele se afasta dela mais que qualquer outro ranking calculado até aqui (ρ = 0,71).
 
 | Método | Papel | Situação neste parecer | Planilha |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@ Este parecer reúne, à medida que forem calculados, todos os métodos do trabal
 | Pesos iguais na escala normalizada | Só pesos | A incluir | — |
 | TOPSIS | Só agregação | A incluir | — |
 | VIKOR | Só agregação | A incluir | — |
-| PROMETHEE II | Só agregação | A incluir | — |
+| PROMETHEE II | Só agregação (comparação par a par, compensação limitada) | Incluído (ranking nos quatro esquemas de pesos) | *PROMETHEE II.ods* |
 
 A análise usa os **505 municípios do Nordeste habilitados** no Ranking ABES 2026, isto é, excluídos os "Não habilitados". Os cinco indicadores usados são:
 
@@ -29,7 +29,7 @@ Todos os números vêm das planilhas da pasta `planilhas/` indicadas na tabela a
 
 ## Os métodos: formas de pesar e formas de ranquear
 
-Os métodos se distinguem em duas etapas: como se definem os pesos dos cinco indicadores e como esses pesos se combinam com o desempenho de cada município. Alguns métodos cobrem só a primeira etapa (CRITIC), outros só a segunda (TOPSIS, VIKOR, PROMETHEE II), e a ABES e os AHP, como aplicados aqui, cobrem as duas. Até aqui, há quatro formas de pesar e duas de ranquear.
+Os métodos se distinguem em duas etapas: como se definem os pesos dos cinco indicadores e como esses pesos se combinam com o desempenho de cada município. Alguns métodos cobrem só a primeira etapa (CRITIC), outros só a segunda (TOPSIS, VIKOR, PROMETHEE II), e a ABES e os AHP, como aplicados aqui, cobrem as duas. Até aqui, há quatro formas de pesar e três de ranquear.
 
 ### Formas de pesar os critérios
 
@@ -40,7 +40,7 @@ Os métodos se distinguem em duas etapas: como se definem os pesos dos cinco ind
 | AHP Gaussiano | Coeficiente de variação de cada indicador (desvio-padrão ÷ média), normalizado para somar 1 | Objetiva: expressa quanto os municípios diferem entre si em cada indicador |
 | CRITIC | Desvio-padrão de cada indicador normalizado por min-max, multiplicado pelo conflito com os demais (Σ de 1 − correlação), normalizado para somar 1 | Objetiva: expressa quanto o indicador varia e quanto traz de informação que os outros não trazem |
 
-Os valores de cada peso estão na seção "Pesos resultantes". O CRITIC não tem forma de ranquear própria: seus pesos serão aplicados pelos métodos de agregação quando estes entrarem no parecer.
+Os valores de cada peso estão na seção "Pesos resultantes". O CRITIC não tem forma de ranquear própria: seus pesos são aplicados pelos métodos de agregação. Até aqui, isso foi feito no PROMETHEE II.
 
 ### CRITIC
 
@@ -70,6 +70,7 @@ As correlações entre os indicadores são baixas: a maior é 0,33 (Água × Col
 | --- | --- | --- | --- |
 | Soma simples | ABES | Notas brutas dos indicadores (0 a 100) | Soma das cinco notas; como os pesos são iguais, eles são redundantes e podem ser omitidos |
 | Soma ponderada normalizada | AHP Clássico e AHP Gaussiano | Valores normalizados pela soma (cada indicador soma 1 nos 505 municípios) | Soma dos valores normalizados, cada um multiplicado pelo peso do seu critério |
+| Fluxo líquido de sobreclassificação | PROMETHEE II, com qualquer dos quatro esquemas de pesos | Notas brutas (0 a 100), sem normalização | Cada município é comparado com os outros 504, critério a critério; a pontuação é o saldo entre quanto ele supera os demais e quanto é superado |
 
 ```math
 \text{ABES: } P_i = \sum_{j=1}^{5} x_{ij} \qquad\qquad \text{AHP: } P_i = \sum_{j=1}^{5} w_j \, r_{ij}, \quad r_{ij} = \frac{x_{ij}}{S_j}
@@ -84,6 +85,41 @@ As duas formas são aditivas e compensatórias: uma nota alta num indicador comp
 ```
 
 Por isso, para comparar os métodos na mesma base, este parecer usa o **peso equivalente da ABES na escala normalizada**: Coleta 31,3%, Água 26,7%, Destinação 18,7%, Esgoto 13,7% e Tratamento 9,5%. Aplicar 20% a cada valor normalizado não reproduziria a ABES (ρ = 0,95 com ela, e 33 posições de deslocamento médio).
+
+### PROMETHEE II
+
+O PROMETHEE II (Brans e Vincke, 1985; Brans e Mareschal, 2005) é um método de sobreclassificação (*outranking*). Ele não soma notas: compara os municípios dois a dois e conta quanto cada um supera os demais. Por isso é só um método de agregação. Os pesos vêm dos quatro esquemas (iguais, CRITIC, AHP Gaussiano e AHP clássico), o que dá quatro rankings PROMETHEE II.
+
+As contas seguem seis etapas. Como os cinco indicadores já estão em % (0 a 100) e são todos a maximizar, o método trabalha direto com as notas brutas, sem normalização.
+
+1. **Diferença em cada critério:** dⱼ(a,b) = fⱼ(a) − fⱼ(b), a vantagem de a sobre b no indicador j.
+2. **Função de preferência:** Pⱼ(a,b) = Fⱼ[dⱼ(a,b)], entre 0 e 1. Diferenças pequenas (até o limiar de indiferença q) valem 0, e diferenças grandes (acima do limiar de preferência p) valem 1.
+3. **Índice de preferência:** π(a,b) = Σⱼ wⱼ·Pⱼ(a,b), entre 0 e 1. Mede com que intensidade a é preferido a b em todos os critérios.
+4. **Fluxos de saída e de entrada:** φ⁺(a) = Σₓ π(a,x)/(m − 1) mede a força de a, e φ⁻(a) = Σₓ π(x,a)/(m − 1) mede a sua fraqueza, com m = 505.
+5. **Fluxo líquido:** φ(a) = φ⁺(a) − φ⁻(a), entre −1 e 1, com Σφ = 0.
+6. **Ranking:** a fica à frente de b se φ(a) > φ(b). O resultado é uma ordem completa, sem incomparabilidades.
+
+```math
+P_j(d) = \begin{cases} 0 & d \le q_j \\ \dfrac{d - q_j}{p_j - q_j} & q_j < d \le p_j \\ 1 & d > p_j \end{cases} \qquad \varphi(a) = \frac{1}{m-1} \sum_{x \ne a} \left[ \pi(a,x) - \pi(x,a) \right]
+```
+
+**Funções e limiares.** Nos quatro primeiros indicadores, a função é a linear (em V com indiferença), com os limiares dados pela regra registrada no guia de escrita: q é o 1º quartil e p o 3º quartil das diferenças absolutas entre todos os pares de municípios. Em Destinação, quase binário (248 municípios com 0 e 236 com 100), a função é a usual: qualquer vantagem vira preferência total.
+
+| Indicador | Função | q (pontos percentuais) | p (pontos percentuais) |
+| --- | --- | --- | --- |
+| Água | Linear | 8,94 | 32,90 |
+| Esgoto | Linear | 11,06 | 41,65 |
+| Tratamento | Linear | 7,24 | 50,10 |
+| Coleta | Linear | 6,40 | 31,39 |
+| Destinação | Usual | 0 | 0 |
+
+Por exemplo, Salvador tem Tratamento 100 e Aracaju, 73,6. A diferença de 26,4 pontos fica entre q e p e vale P = (26,4 − 7,24)/(50,10 − 7,24) = 0,45. Nos demais indicadores, nenhuma das duas cidades supera a outra além do limiar de indiferença. Com pesos iguais, π(Salvador, Aracaju) = 0,2 × 0,45 = 0,089 e π(Aracaju, Salvador) = 0.
+
+**Compensação limitada.** Uma vantagem, por maior que seja, nunca passa de P = 1, nem conta mais que o peso do seu critério. Na soma ponderada, ao contrário, um zero em Tratamento pesa tanto quanto a distância até a nota do outro município. Com pesos iguais, um município que perde para outro por 100 pontos em Esgoto e em Tratamento soma no máximo 0,4 em π contra si, o mesmo que perderia com uma diferença de 60 pontos em cada um.
+
+**Como a planilha calcula.** A matriz π completa teria 255 mil células por esquema de pesos. Como π é uma soma ponderada das preferências por critério, os fluxos também são: φ⁺(a) = Σⱼ wⱼ·φ⁺ⱼ(a), em que φ⁺ⱼ(a) é a média de Pⱼ(a,x) sobre os outros 504 municípios. A planilha calcula esses fluxos por critério uma vez (aba FLUXOS POR CRITÉRIO) e os combina com os quatro esquemas de pesos (aba FLUXOS GLOBAIS). O resultado é idêntico ao da matriz completa, o que foi conferido com um cálculo independente em Python, com diferença máxima de 10⁻¹⁵ em φ. A aba EXEMPLO PAR A PAR mostra as etapas 1 a 3 para dois municípios escolhidos numa lista.
+
+**Os pesos no PROMETHEE II.** O peso multiplica graus de preferência (de 0 a 1), que não dependem da escala do indicador. Por isso, aqui "pesos iguais" são 20% de fato, e não os pesos equivalentes da ABES. Os pesos CRITIC entram na versão min-max, a mesma em que foram calculados.
 
 ## Pesos resultantes
 
@@ -105,7 +141,7 @@ O CRITIC fica entre os dois extremos na escala min-max, com Destinação muito �
 
 ## Concordância entre os rankings
 
-Esta seção e a seguinte comparam só os métodos que já produzem ranking (ABES e os dois AHP). Os pesos CRITIC entram aqui quando forem combinados com os métodos de agregação.
+Esta seção e a seguinte comparam primeiro a ABES e os dois AHP e, depois, os quatro rankings PROMETHEE II. Os pesos CRITIC aparecem aqui pelo PROMETHEE II, o único método de agregação calculado até agora com eles.
 
 Os dois AHP são fortemente correlacionados com a ABES (ρ ≈ 0,87 a 0,89), mas apenas moderadamente correlacionados entre si (ρ = 0,76). Ou seja, cada um se afasta da ABES numa direção diferente.
 
@@ -122,6 +158,34 @@ Os maiores deslocamentos individuais mostram o efeito dos pesos:
 - **Mutuípe (BA)** é o 384º na ABES, sobe para 321º no Clássico e para 106º no Gaussiano. O município tem Tratamento de 75,5, numa base em que a maioria tem zero.
 - **Viçosa (RN)** é o 41º na ABES e salta para 6º no Clássico, graças a Água, Esgoto e Coleta acima de 90. Sem Destinação (zero), fica em 28º no Gaussiano.
 - **Poço Dantas (PB)** cai de 302º para 482º no Clássico, porque tem Água de apenas 10,6, o indicador de maior peso nesse método.
+
+### PROMETHEE II
+
+Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II concorda com a ABES mais do que os dois AHP concordam com ela. A exceção são os pesos do AHP clássico, com a menor correlação do parecer.
+
+| Par comparado | Spearman (ρ) | Kendall (τ-b) | Deslocamento médio (posições) |
+| --- | --- | --- | --- |
+| PROMETHEE II (pesos iguais) × ABES | 0,949 | 0,823 | 35,5 |
+| PROMETHEE II (CRITIC) × ABES | 0,985 | 0,908 | 18,0 |
+| PROMETHEE II (AHP Gaussiano) × ABES | 0,955 | 0,824 | 32,5 |
+| PROMETHEE II (AHP clássico) × ABES | 0,713 | 0,535 | 88,6 |
+| PROMETHEE II × soma ponderada, ambos com pesos do AHP Gaussiano | 0,971 | 0,855 | 26,3 |
+| PROMETHEE II × soma ponderada, ambos com pesos do AHP clássico | 0,899 | 0,726 | 50,9 |
+
+Todas as correlações são positivas e significativas (p < 10⁻⁷⁰, n = 505). As duas últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar.
+
+- **CRITIC quase reproduz a ABES** (ρ = 0,985). Os dois dão a Destinação um papel decisivo: na ABES, porque o indicador vale 0 ou 100 e entra com toda essa amplitude na soma; no PROMETHEE II com CRITIC, porque ele tem o maior peso (36,6%) e função usual. Dos 50 primeiros, 47 têm Destinação 100 na ABES e 49 no PROMETHEE II com CRITIC.
+- **O AHP clássico se afasta.** Com 68% do peso em Água e Coleta, e a compensação limitada, municípios com Água e Coleta acima de 90 e quase nenhum esgoto sobem muito, porque a perda em Esgoto e Tratamento está limitada aos pesos desses critérios (16,0% e 9,7%). Esplanada (BA) vai de 396º na ABES (318º na soma ponderada clássica) para 163º, e Conceição do Coité (BA), de 381º (298º) para 153º. No sentido oposto, Saloá (PE) cai de 69º para 381º, e Prata (PB), de 51º para 334º. Os dois têm Tratamento 100, mas Água abaixo de 51.
+- **A forma de agregar pesa menos que os pesos.** Mantidos os pesos, a troca de soma ponderada por PROMETHEE II dá ρ de 0,90 a 0,97. Mantido o PROMETHEE II, a troca de pesos dá ρ de 0,60 (AHP Gaussiano × AHP clássico) a 0,93 (CRITIC × AHP Gaussiano).
+
+| Spearman (ρ) entre os PROMETHEE II | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
+| --- | --- | --- | --- | --- |
+| Pesos iguais | 1 | 0,915 | 0,896 | 0,873 |
+| CRITIC | 0,915 | 1 | 0,934 | 0,662 |
+| AHP Gaussiano | 0,896 | 0,934 | 1 | 0,604 |
+| AHP clássico | 0,873 | 0,662 | 0,604 | 1 |
+
+**Efeito da função usual em Destinação.** Embora o indicador seja quase binário, 21 municípios têm valores intermediários, e vários deles ficam entre 95 e 99. Com a função usual, 98,3 perde por inteiro para 100, como 0 perderia, e vence por inteiro de 0. Na prática, esses municípios ficam no meio do critério, e não junto dos que têm 100. É o que explica parte das quedas de Massapê (CE, Destinação 98,3), de 237º na ABES para 384º com pesos iguais, e de Saloá (PE, 96,8), de 69º para 208º. Uma função em U com limiar de alguns pontos trataria 96,8 como empate com 100. Essa é uma das variações a testar na análise de sensibilidade a q e p.
 
 ## Top 10
 
@@ -144,6 +208,27 @@ Em negrito, os municípios presentes nos três Top 10.
 
 No Gaussiano, todos os cinco que entram têm Tratamento entre 88 e 100 e Destinação 100. Quatro deles são municípios pequenos da Paraíba, alguns com Água de apenas 51 a 56. Os cinco que saem também têm Destinação 100, mas Tratamento entre 67 e 79. Como o Tratamento é o indicador de maior peso no Gaussiano, essa diferença basta para tirá-los do Top 10, mesmo tendo Água e Coleta próximas de 100.
 
+### Top 10 do PROMETHEE II
+
+Sete municípios estão nos cinco Top 10 (ABES e os quatro PROMETHEE II): Salvador, Vitória da Conquista, Aracaju, Barra dos Coqueiros, Madre de Deus, Luís Eduardo Magalhães e Jequié. Salvador é o primeiro em todos os rankings do parecer.
+
+| Posição | ABES | PROMETHEE II, pesos iguais | PROMETHEE II, CRITIC | PROMETHEE II, AHP Gaussiano | PROMETHEE II, AHP clássico |
+| --- | --- | --- | --- | --- | --- |
+| 1 | **Salvador (BA)** | **Salvador (BA)** | **Salvador (BA)** | **Salvador (BA)** | **Salvador (BA)** |
+| 2 | **Vitória da Conquista (BA)** | **Vitória da Conquista (BA)** | **Vitória da Conquista (BA)** | **Vitória da Conquista (BA)** | **Barra dos Coqueiros (SE)** |
+| 3 | União dos Palmares (AL) | **Aracaju (SE)** | **Aracaju (SE)** | **Jequié (BA)** | **Aracaju (SE)** |
+| 4 | **Jequié (BA)** | **Barra dos Coqueiros (SE)** | **Barra dos Coqueiros (SE)** | União dos Palmares (AL) | **Madre de Deus (BA)** |
+| 5 | Porto Seguro (BA) | **Madre de Deus (BA)** | **Madre de Deus (BA)** | Campina Grande (PB) | **Vitória da Conquista (BA)** |
+| 6 | Campina Grande (PB) | **Luís Eduardo Magalhães (BA)** | **Jequié (BA)** | **Luís Eduardo Magalhães (BA)** | **Luís Eduardo Magalhães (BA)** |
+| 7 | **Aracaju (SE)** | **Jequié (BA)** | Campina Grande (PB) | Porto Seguro (BA) | **Jequié (BA)** |
+| 8 | **Barra dos Coqueiros (SE)** | Campina Grande (PB) | **Luís Eduardo Magalhães (BA)** | **Aracaju (SE)** | Viçosa (RN) |
+| 9 | **Luís Eduardo Magalhães (BA)** | Porto Seguro (BA) | Porto Seguro (BA) | **Barra dos Coqueiros (SE)** | São Francisco (SE) |
+| 10 | **Madre de Deus (BA)** | Sobral (CE) | João Pessoa (PB) | **Madre de Deus (BA)** | Itabuna (BA) |
+
+Em negrito, os municípios presentes nos cinco Top 10.
+
+O Top 10 da ABES se mantém quase inteiro com pesos iguais e com CRITIC (9 de 10) e por inteiro com o AHP Gaussiano (10 de 10). Com o AHP clássico, ficam 7. União dos Palmares (AL), 3º na ABES, sai do Top 10 com pesos iguais, CRITIC e AHP clássico: tem Coleta de 73,9, a mais baixa entre os dez primeiros da ABES (os demais têm 88 ou mais). Na soma, as notas máximas em Água, Tratamento e Destinação cobrem essa diferença. No PROMETHEE II, a vantagem dele sobre os vizinhos de topo nesses critérios é pequena ou nula, enquanto a desvantagem em Coleta pesa contra quase todos eles. Curiosamente, o PROMETHEE II com os pesos do AHP Gaussiano tem o Top 10 da ABES, enquanto a soma ponderada com os mesmos pesos renovava metade dele.
+
 ## Pontos fortes e limitações
 
 Nenhum método é neutro. Cada um embute uma resposta diferente à pergunta sobre o que mais importa no saneamento.
@@ -154,8 +239,9 @@ Nenhum método é neutro. Cada um embute uma resposta diferente à pergunta sobr
 | AHP Clássico | Pesos explícitos e justificáveis, com consistência verificada (RC = 0,015); permite discutir prioridades de política pública | Depende do julgamento de quem preenche a matriz; outro decisor pode chegar a pesos e rankings diferentes |
 | AHP Gaussiano | Objetivo e reprodutível, sem julgamento humano; destaca os indicadores que de fato separam os municípios | Peso alto significa "varia muito", não "é importante"; Coleta, quase universalizada, recebe só 6,8%. Os pesos também mudam conforme a amostra de municípios |
 | CRITIC | Objetivo e reprodutível; além da dispersão, desconta a informação repetida entre indicadores correlacionados | Só calcula pesos, e o ranking depende do método de agregação escolhido depois. Os pesos dependem da normalização (min-max aqui) e da amostra. Com correlações baixas como as daqui, o conflito pesa pouco, e Destinação, quase binário, recebe 36,6% |
+| PROMETHEE II | Compensação limitada: uma nota muito baixa num indicador custa no máximo o peso dele. Dispensa normalização e lida bem com indicadores quase binários (função usual). Gera uma ordem completa, e os fluxos por critério mostram onde cada município ganha e perde | Exige escolher uma função e dois limiares por critério, o que acrescenta parâmetros a testar (sensibilidade a q e p). Os limiares pelos quartis dependem da amostra. Como cada município é comparado com todos os outros, incluir ou excluir municípios pode inverter a ordem de outros dois (*rank reversal*). A função usual em Destinação trata 98 contra 100 como preferência total |
 
-Um cuidado vale para todos os métodos: os indicadores Tratamento e Destinação têm muitos zeros. Parte desses zeros pode refletir ausência de informação, e não ausência de serviço. Isso afeta sobretudo o Gaussiano e o CRITIC, que dão a esses dois indicadores 64% e 56% do peso.
+Um cuidado vale para todos os métodos: os indicadores Tratamento e Destinação têm muitos zeros. Parte desses zeros pode refletir ausência de informação, e não ausência de serviço. Isso afeta sobretudo o Gaussiano e o CRITIC, que dão a esses dois indicadores 64% e 56% do peso, e também o PROMETHEE II, em que um zero em Destinação perde por inteiro para qualquer valor positivo.
 
 ## Síntese das diferenças
 
@@ -163,9 +249,11 @@ Este parecer não elege um método. Ele registra em que os métodos diferem, par
 
 - **O que define o peso.** Na ABES, nenhuma decisão: os pesos são iguais nas notas brutas. No AHP Clássico, o julgamento declarado de importância. No AHP Gaussiano, a dispersão dos dados. No CRITIC, a dispersão e o conflito entre os indicadores.
 - **Onde o peso se concentra.** Na escala normalizada, a ABES e o Clássico concentram o peso em Água e Coleta (58% e 68%). O Gaussiano o concentra em Tratamento e Destinação (64%). O CRITIC dá o maior peso a Destinação (36,6% em min-max, 34,0% na escala pela soma).
-- **Como a pontuação é formada.** A ABES usa a soma simples das notas brutas, e os dois AHP usam a soma ponderada dos valores normalizados. As duas formas são aditivas e compensatórias.
+- **Como a pontuação é formada.** A ABES usa a soma simples das notas brutas, e os dois AHP usam a soma ponderada dos valores normalizados. As duas formas são aditivas e compensatórias. O PROMETHEE II compara os municípios dois a dois e ordena pelo fluxo líquido, com compensação limitada.
 - **Concordância com a ABES.** Os dois AHP têm correlação forte com ela (ρ de 0,87 a 0,89). No topo, porém, o Clássico mantém 9 dos 10 primeiros, e o Gaussiano, 5.
 - **Concordância entre os AHP.** A correlação entre os dois (ρ = 0,76) é menor que a de qualquer deles com a ABES, porque cada um se afasta dela numa direção.
-- **Núcleo estável.** Salvador, Vitória da Conquista, União dos Palmares, Jequié e Porto Seguro estão no Top 10 dos três métodos.
+- **Núcleo estável.** Salvador, Vitória da Conquista, União dos Palmares, Jequié e Porto Seguro estão no Top 10 dos três métodos. Salvador, Vitória da Conquista, Aracaju, Barra dos Coqueiros, Madre de Deus, Luís Eduardo Magalhães e Jequié estão no Top 10 da ABES e dos quatro PROMETHEE II.
+- **PROMETHEE II e ABES.** Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II fica mais perto da ABES (ρ de 0,95 a 0,98) do que os dois AHP. Com os pesos do AHP clássico, fica mais longe (ρ = 0,71).
+- **Pesos contra agregação.** No PROMETHEE II, trocar os pesos muda mais o ranking (ρ de 0,60 a 0,93 entre esquemas) do que trocar a soma ponderada pelo PROMETHEE II com os mesmos pesos (ρ de 0,90 a 0,97).
 
-Uma verificação fortaleceria essa comparação, que seria testar como o ranking Clássico muda com pequenas variações nos julgamentos da matriz de Saaty.
+Duas verificações fortaleceriam essa comparação: testar como o ranking Clássico muda com pequenas variações nos julgamentos da matriz de Saaty, e como o PROMETHEE II muda com q e p a ±50% e com uma função em U em Destinação (basta trocar os limiares na aba PARÂMETROS da planilha).
