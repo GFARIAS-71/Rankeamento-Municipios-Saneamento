@@ -1,10 +1,10 @@
 # Guia de Escrita — Artigo Aplicado de Análise Multicritério
 
-Guilherme de Farias · 5 out. 2026 · revisado em 24 out. 2026 (escopo ampliado do Ceará para o Nordeste) em 2 nov. 2026 (pergunta principal reformulada em torno da validade externa com a DRSAI) e em 8 nov. 2026 (inclusão dos métodos compensatórios AHP clássico e AHP Gaussiano)
+Guilherme de Farias · 5 out. 2026 · revisado em 24 out. 2026 (escopo ampliado do Ceará para o Nordeste), em 2 nov. 2026 (pergunta principal reformulada em torno da validade externa com a DRSAI) e em 8 nov. 2026 (inclusão dos métodos compensatórios AHP clássico e AHP Gaussiano)
 
 ## Como usar este guia
 
-Este guia cobre as sete seções do artigo na ordem em que serão lidas (Introdução, Pergunta e escopo, Revisão, Metodologia, Resultados e discussão, Limitações, Conclusão), mais as Referências, com o que cada uma precisa conter, parágrafos-modelo e os erros que mais levam à rejeição. O exemplo condutor é o projeto deste repositório: o desempenho em saneamento dos municípios do Nordeste com a base SINISA 2025 (ano-base 2024), ordenado por quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) com três esquemas de pesos, mais o AHP clássico, com pesos de Saaty, e os 13 rankings resultantes comparados entre si, com o Ranking ABES da Universalização do Saneamento 2026 e com a taxa de internações por DRSAI.
+Este guia cobre as sete seções do artigo na ordem em que serão lidas (Introdução, Pergunta e escopo, Revisão, Metodologia, Resultados e discussão, Limitações, Conclusão), mais as Referências, com o que cada uma precisa conter, parágrafos-modelo e os erros que mais levam à rejeição. O exemplo condutor é o projeto deste repositório: o desempenho em saneamento dos municípios do Nordeste com a base SINISA 2025 (ano-base 2024), ordenado por quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) com quatro esquemas de pesos (iguais, CRITIC, AHP Gaussiano e AHP clássico, este com pesos de Saaty), e os 16 rankings resultantes comparados entre si, com o Ranking ABES da Universalização do Saneamento 2026 e com a taxa de internações por DRSAI.
 
 **Tamanho-alvo** para os anais do Rii Forum 2027, publicados pela Springer e indexados na Scopus, escritos em inglês. A chamada (`Rii2027 call for papers 2027-09-30.pdf`, na raiz do repositório) não informa a série dos anais nem o limite de páginas; o planejamento abaixo assume 12 a 15 páginas no modelo Springer, cerca de 4.500 a 5.500 palavras com referências. Confirme o limite com info@rii-forum.org antes de começar a cortar.
 
@@ -14,7 +14,7 @@ Este guia cobre as sete seções do artigo na ordem em que serão lidas (Introdu
 | Pergunta de pesquisa e escopo | 150–250 | nenhuma |
 | Revisão de literatura | 700–900 | 1 tabela-síntese de estudos anteriores |
 | Metodologia | 900–1.200 | tabela de critérios, tabela de pesos |
-| Resultados e discussão | 1.200–1.500 | divergência entre os 13 rankings, validade com a DRSAI, perfil dos que mudam, robustez (4 a 5 exibições no total) |
+| Resultados e discussão | 1.200–1.500 | divergência entre os 16 rankings, validade com a DRSAI, perfil dos que mudam, robustez (4 a 5 exibições no total) |
 | Limitações e trabalhos futuros | 250–350 | nenhuma |
 | Conclusão | 150–250 | nenhuma |
 | Referências (fora da contagem de seções) | 25–40 itens | — |
@@ -36,9 +36,9 @@ Não comece a redigir antes de fechar as nove decisões abaixo. Cada uma aparece
 | Unidade de análise (alternativas) | Fechada | Os 1.794 municípios dos nove estados do Nordeste (AL, BA, CE, MA, PB, PE, PI, RN, SE) como universo; entram no ranking os que têm dados suficientes (regra abaixo) | Escopo, Metodologia, Resultados |
 | Recorte temporal e base | Fechada | SINISA 2025 (ano-base 2024); SINISA 2024 (ano-base 2023) só como contexto, ainda não baixado para `dados/SINISA/2024/` | Escopo, Dados, Limitações |
 | Conjunto de critérios | Fechada | Os cinco indicadores do Ranking ABES: IAG0001, IES0001, IES2003, IRS0001 e IRS3002 (adaptado) | Revisão, Metodologia, Resultados |
-| Pesos | Fechada | Três esquemas cruzados com todos os métodos: pesos iguais, CRITIC e AHP Gaussiano; SMAA com 10.000 vetores como teste de robustez | Metodologia, Resultados, Limitações |
-| Métodos compensatórios AHP | Fechada (8 nov. 2026) | AHP clássico (matriz de Saaty preenchida pelo autor, pesos pela média geométrica das linhas, RC = 0,0152) e AHP Gaussiano (pesos pelo coeficiente de variação), ambos com soma ponderada dos valores normalizados pela soma. O AHP Gaussiano é a célula soma ponderada × AHP Gaussiano do desenho cruzado; o AHP clássico entra só com soma ponderada, como contraste de pesos subjetivos, e eleva o total a 13 rankings. Calculados em `planilhas/` e comparados com o ABES no [parecer técnico](Parecer%20técnico%20ABES,%20AHP%20Clássico%20e%20AHP%20Gaussiano.md) | Revisão, Metodologia, Resultados, Limitações |
-| Métodos de agregação | Fechada | Soma ponderada (compensação total; é a regra do ABES), TOPSIS (total), VIKOR (parcial) e PROMETHEE II (limitada), o que dá 12 rankings no desenho cruzado, mais o AHP clássico, num total de 13; PROMETHEE II com CRITIC é o ranking de referência para GAIA, PROMETHEE I (diagnóstico) e SMAA-PROMETHEE | Revisão, Metodologia, Resultados |
+| Pesos | Fechada | Quatro esquemas cruzados com todos os métodos: pesos iguais, CRITIC, AHP Gaussiano e AHP clássico (Saaty, único subjetivo); SMAA com 10.000 vetores como teste de robustez | Metodologia, Resultados, Limitações |
+| Métodos compensatórios AHP | Fechada (8 nov. 2026) | AHP clássico (matriz de Saaty preenchida pelo autor, pesos pela média geométrica das linhas, RC = 0,0152) e AHP Gaussiano (pesos pelo coeficiente de variação), ambos com soma ponderada dos valores normalizados pela soma. Os dois entram como colunas de pesos do desenho cruzado: as células soma ponderada × AHP Gaussiano e soma ponderada × AHP clássico são os dois AHP da literatura, e os pesos de Saaty também alimentam TOPSIS, VIKOR e PROMETHEE II, o que eleva o total a 16 rankings. Calculados em `planilhas/` e comparados com o ABES no [parecer técnico](Parecer%20técnico%20ABES,%20AHP%20Clássico%20e%20AHP%20Gaussiano.md) | Revisão, Metodologia, Resultados, Limitações |
+| Métodos de agregação | Fechada | Soma ponderada (compensação total; é a regra do ABES), TOPSIS (total), VIKOR (parcial) e PROMETHEE II (limitada), o que, com os quatro esquemas de pesos, dá 16 rankings; PROMETHEE II com CRITIC é o ranking de referência para GAIA, PROMETHEE I (diagnóstico) e SMAA-PROMETHEE | Revisão, Metodologia, Resultados |
 | Benchmark externo | Fechada | Ranking ABES da Universalização do Saneamento 2026 (mesma base, ano e critérios; soma com pesos iguais; 4 categorias nacionais, das quais 3 aparecem entre os habilitados do Nordeste, uma delas com só 7 municípios). A soma ponderada com pesos iguais sobre as notas brutas reproduz exatamente a pontuação do ABES nos 505 habilitados | Introdução, Resultados, Discussão |
 | Validade externa | Fechada | Taxa de internações por DRSAI do arquivo do ABES, só para avaliar os rankings, nunca como critério; Spearman, bootstrap de Δρ e controle mínimo por UF e porte; renda, atenção primária e acesso hospitalar ficam como limitação | Pergunta, Metodologia, Resultados, Limitações |
 | Veículo | Fechada | Rii Forum 2027 (Roma; anais pela Springer, Scopus); texto em inglês | Todo o texto |
@@ -73,7 +73,7 @@ A amostra (só os completos) deixa de fora 1.289 dos 1.794 municípios, e quase 
 
 Daqui em diante, "amostra" designa os 505 municípios completos, que coincidem com os habilitados no ABES. Nenhum deles tem o IRS3002 ausente, então a presunção de disposição inadequada não altera nenhum valor da amostra atual; ela fica registrada como regra para as próximas edições. Usar a mesma amostra do ABES tem uma vantagem: a soma ponderada com pesos iguais reproduz exatamente a nota oficial, o que dá ao artigo uma âncora verificável.
 
-**Consequência de usar os mesmos critérios do ABES.** Com base, ano e critérios idênticos, toda diferença entre os 13 rankings vem do método de agregação, dos pesos ou da normalização, e o desenho cruzado separa o efeito da agregação do efeito dos pesos. Como o ABES traz a taxa de internações por DRSAI de cada município, ela serve de teste de validade externa: qual das ordenações se associa mais fortemente à saúde? Esse é o argumento central do artigo. Três princípios valem em todo o texto:
+**Consequência de usar os mesmos critérios do ABES.** Com base, ano e critérios idênticos, toda diferença entre os 16 rankings vem do método de agregação, dos pesos ou da normalização, e o desenho cruzado separa o efeito da agregação do efeito dos pesos. Como o ABES traz a taxa de internações por DRSAI de cada município, ela serve de teste de validade externa: qual das ordenações se associa mais fortemente à saúde? Esse é o argumento central do artigo. Três princípios valem em todo o texto:
 
 1. **O ranking é só de saneamento.** A DRSAI não entra como critério nem calibra parâmetros. Métodos, pesos e limiares são fixados antes de olhar a DRSAI e registrados no `log_decisoes.md`; nada é escolhido pelo que dá a maior correlação. Isso vale também para a matriz de Saaty do AHP clássico: registre que ela foi preenchida antes de qualquer correlação com a DRSAI e não a altere depois.
 2. **Validade externa não é robustez.** Robustez é o ranking se manter quando mudam os pesos ou os limiares (SMAA, sensibilidade a q e p). Validade externa é o ranking se associar a um desfecho que ele deveria refletir. As duas análises ficam em subseções separadas.
@@ -86,7 +86,7 @@ Daqui em diante, "amostra" designa os 505 municípios completos, que coincidem c
 | 1 nov. 2026 | Fim da inscrição com desconto (on-line 300 EUR, depois 350 EUR; presencial 550 EUR, depois 650 EUR) | Prazo do evento |
 | até 2 nov. 2026 | Dados do SINISA 2025 e do apêndice do ABES extraídos e matriz montada | Interno |
 | 8 nov. 2026 | AHP clássico e AHP Gaussiano calculados nas planilhas de `planilhas/` e comparados com o ABES no parecer técnico (`docs/`) | Interno |
-| até 12 nov. 2026 | Os 13 rankings rodando e primeira correlação com a DRSAI, para saber se a pergunta principal tende a uma resposta afirmativa; primeiros números para o resumo | Interno |
+| até 12 nov. 2026 | Os 16 rankings rodando e primeira correlação com a DRSAI, para saber se a pergunta principal tende a uma resposta afirmativa; primeiros números para o resumo | Interno |
 | 15 nov. 2026 | Envio do resumo pelo formulário do site (limite de palavras a confirmar no formulário) | Prazo do evento |
 | até 30 nov. 2026 | Bootstrap de Δρ, controle por UF e porte, SMAA, sensibilidade a q/p e comparação com o ABES concluídos | Interno |
 | até 20 dez. 2026 | Versão completa revisada, no modelo Springer | Interno |
@@ -100,7 +100,7 @@ Daqui em diante, "amostra" designa os 505 municípios completos, que coincidem c
 
 - [x] Dados brutos baixados em `dados/` (SINISA 2025 e ABES 2026), com a URL de origem nos arquivos `.url`
 - [ ] Data de extração de cada base registrada no `log_decisoes.md`
-- [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (já existe `01_filtragem_municipios`; faltam pesos, os 13 rankings, validade com a DRSAI e robustez; o AHP clássico e o AHP Gaussiano, hoje em planilhas do LibreOffice, também precisam ser portados para notebook) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
+- [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (já existe `01_filtragem_municipios`; faltam pesos, os 16 rankings, validade com a DRSAI e robustez; o AHP clássico e o AHP Gaussiano, hoje em planilhas do LibreOffice, também precisam ser portados para notebook) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
 - [x] Matriz de decisão gerada: `resultados/municipios_5_indicadores.csv` (505 alternativas), com as alternativas nas linhas e os critérios nas colunas
 - [ ] Tabela de critérios com nome, unidade, direção (max/min), fonte, função de preferência, limiares q e p
 - [ ] Dicionário de pesos para cada esquema, com o cálculo documentado (AHP clássico e AHP Gaussiano já calculados em `planilhas/AHP Classico.ods` e `planilhas/AHP Gaussiano.ods`; faltam iguais em escala normalizada e CRITIC)
@@ -127,8 +127,8 @@ Siga com duas ou três frases sobre as consequências (saúde, desigualdade regi
 
 **Parágrafo 4 — O que este artigo faz.** Uma frase de propósito e, em seguida, três bullets de contribuição. Os bullets são o que o editor lê para decidir se envia a revisores. Modelo:
 
-- Comparação controlada de quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) e três esquemas de pesos, mais o AHP clássico com pesos de Saaty, sobre a mesma base, o mesmo ano e os mesmos cinco indicadores do Ranking ABES 2026, nos 505 municípios nordestinos com dados completos, os mesmos do ranking oficial. O desenho separa o efeito da regra de agregação do efeito dos pesos.
-- Teste de validade externa dos 13 rankings contra a taxa de internações por DRSAI, com o método e os parâmetros fixados antes do teste, o que mostra qual regra de agregação produz a ordenação mais coerente com a saúde da população.
+- Comparação controlada de quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) e quatro esquemas de pesos (três neutros ou objetivos e um subjetivo, o AHP clássico) sobre a mesma base, o mesmo ano e os mesmos cinco indicadores do Ranking ABES 2026, nos 505 municípios nordestinos com dados completos, os mesmos do ranking oficial. O desenho separa o efeito da regra de agregação do efeito dos pesos, e o efeito de pesos objetivos do de pesos subjetivos.
+- Teste de validade externa dos 16 rankings contra a taxa de internações por DRSAI, com o método e os parâmetros fixados antes do teste, o que mostra qual regra de agregação produz a ordenação mais coerente com a saúde da população.
 - Explicação das diferenças pelo grau de compensação de cada método: quais municípios mudam de posição, por que mudam (em geral, desempenho muito desigual entre componentes) e o que isso implica para a priorização em um ranking público.
 
 **Parágrafo 5 — Organização do artigo.** Uma frase por seção. Alguns periódicos dispensam este parágrafo; verifique o guia de autores.
@@ -154,7 +154,7 @@ Exemplo (Ideia 1):
 
 - **PS1 (divergência):** Quanto as ordenações diferem entre si (Kendall τ, mudanças de quartil) e quais municípios mudam mais de posição?
 - **PS2 (compensação):** O grau de compensação do método explica as divergências e as diferenças de associação com a DRSAI? Os municípios com desempenho desigual entre componentes, como zero em tratamento de esgoto, são os que mais mudam?
-- **PS3 (robustez):** As conclusões se mantêm sob os três esquemas de pesos, sob a variação de pesos do SMAA, sob a variação dos limiares q e p e sob pequenas variações dos julgamentos da matriz de Saaty?
+- **PS3 (robustez):** As conclusões se mantêm sob os quatro esquemas de pesos, sob a variação de pesos do SMAA, sob a variação dos limiares q e p e sob pequenas variações dos julgamentos da matriz de Saaty?
 - **PS4 (perfil):** Qual perfil de desempenho caracteriza os municípios que mudam de quartil, em especial entre os habilitados no ABES, e o que isso sugere para a priorização de investimentos?
 
 Na redação, use sempre linguagem de associação (*"se associa mais fortemente"*, *"é mais coerente com"*), nunca *"o melhor método"* em sentido geral nem *"reduz internações"*.
@@ -166,7 +166,7 @@ Na redação, use sempre linguagem de associação (*"se associa mais fortemente
 | Espacial | Nomeie a unidade e o universo | Os 1.794 municípios do Nordeste; amostra = os 505 completos, que coincidem com os habilitados no ABES; subamostra de validade = os 360 com taxa de DRSAI válida |
 | Temporal | Ano-base e, se houver, série | Ano-base 2024 (SINISA 2025); SINISA 2024 (ano-base 2023) citado apenas na discussão de tendência |
 | Temática | Quais dimensões do problema entram | Os cinco indicadores do ABES, que cobrem três dos quatro componentes do saneamento: abastecimento de água, esgotamento sanitário (coleta e tratamento) e resíduos sólidos (coleta e disposição final); drenagem fora; DRSAI só como validade externa, nunca como critério |
-| Metodológica | Família de métodos e o que não se compara | Soma ponderada, TOPSIS, VIKOR e PROMETHEE II × pesos iguais, CRITIC e AHP Gaussiano, mais o AHP clássico (pesos de Saaty com soma ponderada); GAIA e SMAA sobre o PROMETHEE II com CRITIC; associação com a DRSAI ajustada só por UF e porte (sem modelo causal) |
+| Metodológica | Família de métodos e o que não se compara | Soma ponderada, TOPSIS, VIKOR e PROMETHEE II × pesos iguais, CRITIC, AHP Gaussiano e AHP clássico (Saaty); GAIA e SMAA sobre o PROMETHEE II com CRITIC; associação com a DRSAI ajustada só por UF e porte (sem modelo causal) |
 
 **O que fica fora, dito explicitamente.** Uma frase para cada exclusão relevante e o motivo: *"Drenagem urbana não foi incluída porque o módulo correspondente do SINISA 2025 cobriu apenas [x]% dos municípios nordestinos."* (O módulo de drenagem não está em `dados/`; baixe-o se for usar esse número.) Outra exclusão a declarar: *"A associação com a DRSAI não foi ajustada por renda, cobertura da atenção primária nem acesso hospitalar, o que exigiria bases adicionais; o estudo controla apenas por unidade da federação e porte."* Exclusões não justificadas viram perguntas de revisor.
 
@@ -260,14 +260,14 @@ P_j(d) = \begin{cases} 0 & d \le q_j \\ \dfrac{d - q_j}{p_j - q_j} & q_j < d \le
 
 ### 4.5 Pesos
 
-Os três esquemas de pesos são cruzados com os quatro métodos, e nenhum deles é "o principal" para a pergunta de pesquisa. Os pesos de Saaty do AHP clássico ficam fora do cruzamento: entram só com soma ponderada, como contraste subjetivo. O CRITIC define o ranking de referência usado nas leituras detalhadas (GAIA, PROMETHEE I, SMAA). Justifique cada esquema em uma frase: pesos iguais reproduzem a escolha do ABES; o CRITIC combina dispersão e conflito entre critérios, de modo que indicadores redundantes (coleta e tratamento de esgoto, por exemplo) não contam em dobro; o AHP Gaussiano pondera só pela dispersão e dialoga com a literatura brasileira. O AHP Gaussiano é, na essência, um método de pesos seguido de soma ponderada; por isso ele entra como coluna de pesos, e não como método de agregação, e a célula "soma ponderada com AHP Gaussiano" é o AHP Gaussiano como aparece na literatura, com os valores normalizados pela soma. O AHP clássico tem a mesma estrutura (pesos seguidos de soma ponderada normalizada), mas os pesos vêm da comparação par a par dos critérios na escala de Saaty, com a razão de consistência (RC) abaixo de 0,10.
+Os quatro esquemas de pesos são cruzados com os quatro métodos, e nenhum deles é "o principal" para a pergunta de pesquisa. Os pesos de Saaty do AHP clássico são o único esquema subjetivo; cruzá-los com todos os métodos permite ver se o efeito da agregação se repete quando os pesos expressam prioridade, e não dispersão. O CRITIC define o ranking de referência usado nas leituras detalhadas (GAIA, PROMETHEE I, SMAA). Justifique cada esquema em uma frase: pesos iguais reproduzem a escolha do ABES; o CRITIC combina dispersão e conflito entre critérios, de modo que indicadores redundantes (coleta e tratamento de esgoto, por exemplo) não contam em dobro; o AHP Gaussiano pondera só pela dispersão e dialoga com a literatura brasileira; o AHP clássico expressa uma prioridade declarada entre os componentes do saneamento. O AHP Gaussiano é, na essência, um método de pesos seguido de soma ponderada; por isso ele entra como coluna de pesos, e não como método de agregação, e a célula "soma ponderada com AHP Gaussiano" é o AHP Gaussiano como aparece na literatura, com os valores normalizados pela soma. O AHP clássico tem a mesma estrutura (pesos seguidos de soma ponderada normalizada), e a célula "soma ponderada com AHP clássico" é o AHP clássico da literatura; os pesos vêm da comparação par a par dos critérios na escala de Saaty, com a razão de consistência (RC) abaixo de 0,10.
 
 | Esquema | Natureza | Como calcular | Papel no artigo |
 | --- | --- | --- | --- |
 | Pesos iguais | Neutro | 1/n por critério | Desenho cruzado; com a soma ponderada sobre as notas brutas, reproduz o ABES e isola o efeito da agregação |
 | CRITIC | Objetivo (dispersão + conflito) | Desvio-padrão dos dados normalizados × Σ(1 − correlação com os demais), normalizado | Desenho cruzado; ranking de referência (com PROMETHEE II) |
 | AHP Gaussiano | Objetivo (dispersão) | Fator gaussiano = desvio-padrão ÷ média de cada critério normalizado, normalizado para somar 1 | Desenho cruzado; diálogo com a literatura brasileira |
-| AHP clássico | Subjetivo (julgamento do decisor) | Matriz de comparação par a par na escala de Saaty (1 a 9); pesos pela média geométrica das linhas, normalizada; RC < 0,10 | Só com soma ponderada; contraste entre pesos subjetivos e objetivos |
+| AHP clássico | Subjetivo (julgamento do decisor) | Matriz de comparação par a par na escala de Saaty (1 a 9); pesos pela média geométrica das linhas, normalizada; RC < 0,10 | Desenho cruzado; contraste entre pesos subjetivos e objetivos |
 | SMAA | Estocástico | 10.000 vetores de pesos sorteados (uniformes no simplex, ou em torno dos pesos CRITIC) | Robustez: índices de aceitabilidade de posição |
 
 Os pesos já calculados nas planilhas, na escala normalizada pela soma, ficam assim (os do ABES são os equivalentes aos 20% nominais sobre as notas brutas; os do CRITIC ainda não foram calculados):
@@ -307,23 +307,23 @@ Para o PROMETHEE, que também gera as leituras detalhadas, um parágrafo por eta
 
 Esta subseção sustenta a pergunta principal. Escreva-a como um protocolo fixado antes de olhar os resultados:
 
-1. **Amostra comum.** Todos os 13 rankings são comparados nos mesmos 360 municípios (amostra com taxa de DRSAI válida). Taxa 0,00 é tratada como ausente.
+1. **Amostra comum.** Todos os 16 rankings são comparados nos mesmos 360 municípios (amostra com taxa de DRSAI válida). Taxa 0,00 é tratada como ausente.
 2. **Associação.** Spearman ρ entre a posição em cada ranking e a taxa de DRSAI. Espera-se ρ negativo entre a pontuação e a taxa: melhor saneamento, menos internações.
 3. **Diferença entre métodos.** Os rankings serão muito correlacionados entre si, então as correlações com a DRSAI devem sair próximas. O que importa é a diferença: Δρ entre pares de rankings, com intervalo de confiança por bootstrap (reamostrando municípios, 5.000 vezes, semente fixa) ou o teste de Williams/Steiger para correlações dependentes. Se nenhum intervalo excluir zero, a conclusão é que a escolha do método importa pouco para a associação com a saúde, o que também é um resultado publicável.
 4. **Controle mínimo, sem bases novas.** Correlação parcial de Spearman controlando por UF e porte (as duas variáveis vêm do arquivo do ABES). Spearman dentro dos estados com amostra suficiente (BA 121, CE 84, PE 62, RN 35 e PB 27 municípios válidos) e dentro de cada porte (grande porte 57; pequeno e médio porte 303). Os demais estados (AL 12, MA 9, SE 8, PI 2) só entram na análise conjunta. O que interessa é se o método que se sai melhor no geral continua melhor dentro dos grupos.
 5. **Valores extremos.** O Spearman já é pouco sensível a eles; reporte também uma versão sem os 5% de taxas mais altas.
-6. **Número de rankings.** Não passe de 13: quanto mais rankings comparados à DRSAI, maior a chance de um deles "ganhar" por acaso. Reporte todos, não só o vencedor.
+6. **Número de rankings.** Não passe de 16: quanto mais rankings comparados à DRSAI, maior a chance de um deles "ganhar" por acaso. Reporte todos, não só o vencedor.
 
 ### 4.8 Robustez e benchmark
 
 Liste os testes que serão reportados em Resultados, cada um com sua métrica. Robustez responde se o ranking se mantém; não confunda com a validade externa da subseção anterior.
 
 - Intervalos de estabilidade dos pesos (Visual PROMETHEE ou cálculo próprio): faixa em que cada peso pode variar sem alterar as k primeiras posições.
-- Sensibilidade do AHP clássico aos julgamentos: alterar cada julgamento da matriz de Saaty em um ponto da escala, mantendo RC < 0,10, e medir o Kendall τ com o ranking original.
+- Sensibilidade aos julgamentos de Saaty: alterar cada julgamento da matriz em um ponto da escala, mantendo RC < 0,10, e medir o Kendall τ com o ranking original nos quatro métodos.
 - SMAA: índices de aceitabilidade no ranking de referência e, se houver tempo, frequência com que cada método vence na associação com a DRSAI sob os pesos sorteados.
 - Sensibilidade a q e p (±50%) e a v (0,25 e 0,75): Kendall τ entre rankings e efeito sobre o ρ com a DRSAI.
 - Reversão de ordem: retirar a melhor, a pior e uma alternativa aleatória; contar quantos pares trocam de ordem.
-- Comparação com o Ranking ABES 2026: a soma ponderada com pesos iguais reproduz a nota do ABES, então ela é o ponto de partida; para cada um dos outros 12 rankings, Spearman ρ com a nota ABES nos 505 habilitados e mudanças de quartil.
+- Comparação com o Ranking ABES 2026: a soma ponderada com pesos iguais reproduz a nota do ABES, então ela é o ponto de partida; para cada um dos outros 15 rankings, Spearman ρ com a nota ABES nos 505 habilitados e mudanças de quartil.
 
 **Software.** Nomeie biblioteca e versão exatas, tiradas do `requirements.txt` (por exemplo, pyDecision ou pymcdm para PROMETHEE e pesos); código próprio para SMAA (semente fixa); GAIA e intervalos de estabilidade também em Python, para que os scripts gerem todas as figuras. O Visual PROMETHEE (só Windows, não scriptável) serve apenas para conferir os resultados. Link para o repositório. Sem isso, revisores de MCDA costumam pedir os dados e o código.
 
@@ -336,22 +336,22 @@ Os resultados respondem às perguntas de pesquisa na ordem em que foram feitas: 
 | # | Exibição | Responde a | O que mostrar |
 | --- | --- | --- | --- |
 | T1 | Estatística descritiva da matriz de decisão e pesos por esquema | contexto | média, mediana, mín., máx. por critério; n válido; uma coluna de pesos por esquema (iguais em escala normalizada, CRITIC, AHP Gaussiano, AHP clássico) |
-| F1 | Validade externa (exibição principal) | PP | os 13 ρ com a DRSAI e seus intervalos bootstrap, em gráfico de pontos agrupado por método e colorido por esquema de pesos; métodos ordenados pelo grau de compensação |
+| F1 | Validade externa (exibição principal) | PP | os 16 ρ com a DRSAI e seus intervalos bootstrap, em gráfico de pontos agrupado por método e colorido por esquema de pesos; métodos ordenados pelo grau de compensação |
 | T2 | Diferenças entre métodos e controle mínimo | PP | Δρ com intervalo de confiança para os pares principais; ρ parcial por UF e porte; ρ dentro de BA, CE, PE, RN, PB e dentro de cada porte |
-| F2 | Divergência entre os 13 rankings | PS1 | mapa de calor de Kendall τ entre os rankings; número de municípios que mudam de quartil em relação à soma ponderada com pesos iguais (o ABES) |
+| F2 | Divergência entre os 16 rankings | PS1 | mapa de calor de Kendall τ entre os rankings; número de municípios que mudam de quartil em relação à soma ponderada com pesos iguais (o ABES) |
 | F3/T3 | Compensação e perfil dos que mudam | PS2, PS4 | mudança de posição × desigualdade entre os critérios do município (por exemplo, desvio-padrão dos cinco indicadores); tabela dos municípios que mais mudam, com o critério que explica a mudança |
 | T4 | Robustez | PS3 | aceitabilidade SMAA no ranking de referência, Kendall τ por variação de q/p e v, reversões de ordem |
 | S | Suplemento | — | plano GAIA (com δ), PROMETHEE I (pares incomparáveis e casos emblemáticos), top 20 e bottom 20 de cada ranking, mapa de calor SMAA |
 
 **Como escrever cada subseção:**
 
-*5.1 Divergência entre os rankings (PS1).* Abra com o número que resume a divergência: o Kendall τ médio entre os 13 rankings e quantos municípios mudam de quartil em relação à soma ponderada com pesos iguais, que reproduz o ABES. Separe o efeito do método (linhas da tabela métodos × pesos) do efeito dos pesos (colunas). Os dois AHP ilustram bem o efeito dos pesos: no parecer técnico, ambos têm ρ de 0,87 a 0,89 com o ABES, mas só 0,76 entre si, porque cada um se afasta do ABES numa direção. Não narre a matriz de τ; diga qual fator move mais o ranking.
+*5.1 Divergência entre os rankings (PS1).* Abra com o número que resume a divergência: o Kendall τ médio entre os 16 rankings e quantos municípios mudam de quartil em relação à soma ponderada com pesos iguais, que reproduz o ABES. Separe o efeito do método (linhas da tabela métodos × pesos) do efeito dos pesos (colunas). Os dois AHP ilustram bem o efeito dos pesos: no parecer técnico, ambos têm ρ de 0,87 a 0,89 com o ABES, mas só 0,76 entre si, porque cada um se afasta do ABES numa direção. Não narre a matriz de τ; diga qual fator move mais o ranking.
 
 *5.2 Validade externa com a DRSAI (PP).* É a subseção central. Abra com a resposta em uma frase: *"A ordenação do [método X com pesos Y] é a que mais se associa à taxa de internações por DRSAI (ρ = [valor]; IC 95% [a; b])"*. Em seguida, mostre se essa vantagem é distinguível dos demais (Δρ com intervalo bootstrap) e se se mantém dentro dos estados e dos portes. Se nenhum intervalo de Δρ excluir zero, diga isso com a mesma clareza: a escolha do método altera quem é priorizado, mas não muda a coerência do ranking com a saúde. Linguagem de associação sempre; internações dependem de muitos fatores além do saneamento.
 
 *5.3 Compensação como explicação (PS2).* Ordene os métodos pelo grau de compensação e veja se o ρ com a DRSAI cresce nessa direção. Mostre que os municípios que mais mudam de posição entre métodos são os de desempenho desigual entre componentes (um zero em disposição de resíduos ou em tratamento de esgoto compensado por bons índices nos demais). Se os métodos de compensação limitada se associarem melhor à DRSAI, a hipótese do componente mais fraco ganha apoio; se não, discuta por quê.
 
-*5.4 Robustez (PS3).* Reporte: (a) se o método que se sai melhor na 5.2 continua melhor sob os três esquemas de pesos e sob a variação de q, p e v, e quanto o AHP clássico muda com pequenas variações na matriz de Saaty; (b) quantas alternativas têm a mesma posição em mais de 90% dos sorteios SMAA no ranking de referência; (c) o Kendall τ entre os rankings com q/p ±50% (acima de 0,9 é estável); (d) o número de pares que trocam de ordem ao retirar alternativas. Conclua com uma frase de julgamento: *"O ranking é robusto nas posições extremas e instável no terço central, onde pequenas variações de peso trocam posições vizinhas."*
+*5.4 Robustez (PS3).* Reporte: (a) se o método que se sai melhor na 5.2 continua melhor sob os quatro esquemas de pesos e sob a variação de q, p e v, e quanto os rankings com pesos de Saaty mudam com pequenas variações na matriz; (b) quantas alternativas têm a mesma posição em mais de 90% dos sorteios SMAA no ranking de referência; (c) o Kendall τ entre os rankings com q/p ±50% (acima de 0,9 é estável); (d) o número de pares que trocam de ordem ao retirar alternativas. Conclua com uma frase de julgamento: *"O ranking é robusto nas posições extremas e instável no terço central, onde pequenas variações de peso trocam posições vizinhas."*
 
 *5.5 Perfil dos que mudam e comparação com o ABES (PS4).* Entre os 505 habilitados, compare o ranking que mais se associa à DRSAI com a nota ABES: Spearman ρ, mudanças de quartil (a matriz de transição das três categorias do ABES no Nordeste é pouco informativa, porque uma delas tem só 7 municípios) e uma linha por município que muda de quartil explicando o porquê. Esta é a parte que interessa ao gestor e ao editor de política pública.
 
@@ -382,7 +382,7 @@ Limitações bem escritas aumentam a credibilidade; mal escritas parecem desculp
 | Dados: quebra de série | SNIS e SINISA têm definições distintas; a própria ABES pede cautela na comparação entre edições | Análise restrita a um ano-base | PROMETHEE temporal quando houver três ou mais edições do SINISA |
 | Critérios: só acesso | Os cinco indicadores medem cobertura e destinação, não qualidade, perdas ou investimento | Escolha justificada pela comparação controlada com o ABES | Modelo ampliado com perdas, investimento e qualidade da água |
 | Método: pesos objetivos | CRITIC e AHP Gaussiano refletem o que os dados discriminam, não a prioridade política; no Gaussiano, Coleta, quase universalizada, recebe só 6,8%, e os pesos mudam com a amostra | Desenho cruzado com pesos iguais; SMAA; contraste com o AHP clássico | PROMETHEE-GDSS com representantes das companhias estaduais de saneamento, das agências reguladoras e das prefeituras |
-| Método: pesos subjetivos | Os pesos do AHP clássico dependem do julgamento de um único decisor; outro decisor chegaria a outros pesos | RC = 0,015; matriz publicada em apêndice; sensibilidade aos julgamentos; AHP clássico fora do desenho cruzado | Matriz de Saaty preenchida por um painel de especialistas, com agregação dos julgamentos individuais |
+| Método: pesos subjetivos | Os pesos do AHP clássico dependem do julgamento de um único decisor; outro decisor chegaria a outros pesos | RC = 0,015; matriz publicada em apêndice; sensibilidade aos julgamentos; comparação com os três esquemas neutros ou objetivos no mesmo desenho | Matriz de Saaty preenchida por um painel de especialistas, com agregação dos julgamentos individuais |
 | Método: limiares empíricos | q e p derivados dos quartis das diferenças; v = 0,5 por convenção | Sensibilidade ±50% em q e p; v em 0,25 e 0,75 | Elicitação de limiares com especialistas |
 | Escopo: benchmark parcial | ABES só inclui municípios com todos os indicadores | Comparação restrita aos habilitados | Comparação com outros índices (IDSC-BR, ODS 6) |
 | Escopo: inferência | Ranking é descritivo; a associação com a DRSAI não identifica causas | Linguagem de associação na discussão | Modelo explicativo (ML + SHAP) sobre a posição no ranking |
@@ -478,7 +478,7 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 1. Contexto e problema (com um número).
 2. Lacuna (uma frase).
 3. Objetivo e pergunta.
-4. Método: alternativas, número de critérios, base de dados, os quatro métodos e os três esquemas de pesos, mais o AHP clássico, o teste de validade com a DRSAI, testes de robustez.
+4. Método: alternativas, número de critérios, base de dados, os quatro métodos e os quatro esquemas de pesos, o teste de validade com a DRSAI, testes de robustez.
 5. Resultado principal com número (ex.: *"[n] dos 505 municípios mudam de quartil conforme o método; a ordenação do [método X] é a que mais se associa às internações por DRSAI (ρ = [valor]), [e a diferença para a soma ponderada do ABES é / mas a diferença para os demais não é] distinguível de zero"*).
 6. Implicação para a política pública (uma frase).
 7. Contribuição metodológica (uma frase).
@@ -487,7 +487,7 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 
 **Destaques / Highlights (não exigidos pelos anais Springer; use-os como roteiro do resumo e dos slides).** Um resultado por bullet, nunca uma descrição do que foi feito:
 
-- Four aggregation methods, three weighting schemes and the classic AHP rank the 505 Northeast Brazil municipalities with complete data, the same set as the official ranking
+- Four aggregation methods and four weighting schemes (including classic AHP) rank the 505 Northeast Brazil municipalities with complete data, the same set as the official ranking
 - [n] municipalities change quartile depending on the aggregation method
 - The [method X] ranking shows the strongest association with sanitation-related hospitalisations (ρ = [valor])
 - Methods that limit compensation [do / do not] align better with health outcomes
@@ -504,9 +504,9 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 - [ ] Os três bullets de contribuição da Introdução correspondem a resultados reportados
 - [ ] Tabela-síntese da revisão inclui o próprio artigo na última linha
 - [ ] Tabela de critérios com unidade, direção, fonte, função de preferência, q e p
-- [ ] Desenho métodos × pesos descrito (quatro métodos, três esquemas, mais o AHP clássico); frase explícita de que só os pesos do AHP clássico foram definidos pelos autores, com a matriz de Saaty e a RC em apêndice
+- [ ] Desenho métodos × pesos descrito (quatro métodos, quatro esquemas de pesos); frase explícita de que só os pesos do AHP clássico foram definidos pelos autores, com a matriz de Saaty e a RC em apêndice
 - [ ] Métodos, pesos e parâmetros fixados antes do teste com a DRSAI, com registro no `log_decisoes.md`; DRSAI fora dos critérios
-- [ ] Validade externa reportada com os 13 ρ, os intervalos bootstrap de Δρ e o controle por UF e porte
+- [ ] Validade externa reportada com os 16 ρ, os intervalos bootstrap de Δρ e o controle por UF e porte
 - [ ] Robustez reportada com métricas (aceitabilidade SMAA, intervalos de estabilidade, τ para q/p, reversão de ordem)
 - [ ] Comparação com o Ranking ABES 2026 feita e discutida município a município nas divergências
 - [ ] Limitação dos fatores de confusão (renda, atenção primária, acesso hospitalar) redigida, com linguagem de associação em todo o texto
@@ -535,7 +535,7 @@ Estes quatro elementos são escritos por último e são os únicos que a maioria
 | "Por que não uma regressão da DRSAI sobre os indicadores?" | Seção 2 e Seção 4.7 | O objetivo é avaliar rankings construídos por preferência sobre o desempenho; a DRSAI só testa a coerência deles com a saúde e nunca calibrou nada |
 | "A associação pode ser efeito da renda" | Seção 6, limitação de fatores de confusão; controle por UF e porte | Correlação parcial com PIB per capita municipal (IBGE), a covariável mais fácil de obter |
 | "Os pesos são arbitrários" | Seção 4.5 e Tabela T2 | Gráfico de walking weights |
-| "Os pesos do AHP clássico refletem só a opinião do autor" | Seção 4.5 (RC e matriz em apêndice) e Seção 6, limitação de pesos subjetivos | Sensibilidade aos julgamentos da matriz; o AHP clássico é contraste, e as conclusões principais vêm do desenho cruzado |
+| "Os pesos do AHP clássico refletem só a opinião do autor" | Seção 4.5 (RC e matriz em apêndice) e Seção 6, limitação de pesos subjetivos | Sensibilidade aos julgamentos da matriz; mostrar se as conclusões se repetem com os três esquemas que não dependem de julgamento |
 | "Não há análise de sensibilidade" | Seção 5.3 e Tabela T3 | Variação de q/p por critério individual |
 | "Os dados são autodeclarados" | Seção 6, limitação 2 | Correlação entre SINISA e SIH/SUS como validação cruzada |
 | "O caso é local demais" | Introdução, parágrafo 1 e Discussão | Parágrafo ligando o Nordeste ao semiárido global e a economias emergentes |
