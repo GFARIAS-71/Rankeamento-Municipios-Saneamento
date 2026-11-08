@@ -55,7 +55,7 @@ Por isso, para comparar os três métodos na mesma base, este parecer usa o **pe
 
 O Clássico e o Gaussiano privilegiam dimensões opostas. O Clássico concentra 68% do peso em Água e Coleta, enquanto o Gaussiano põe 64% em Tratamento e Destinação. A ABES, com 20% nominais para cada indicador, equivale na escala normalizada a uma posição intermediária, mais perto do Clássico.
 
-&#91;embedded content: AHP\_Classico.ods e AHP\_Gaussiano.ods · 505 municípios habilitados\]
+![Pesos Valores Normalizados ABES e AHPs.png](imagens/pesos%20valores%20normalizados%20ABES%20e%20AHPs.png)
 
 A inversão no Gaussiano é esperada. Coleta e Água são quase universais entre os habilitados (médias de 81,6 e 69,6), então variam pouco e recebem peso baixo. Tratamento e Destinação têm muitos zeros e muitos 100, variam muito e por isso dominam.
 
