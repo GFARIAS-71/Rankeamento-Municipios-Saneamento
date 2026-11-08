@@ -62,7 +62,7 @@ Na fórmula, rᵢⱼ é o valor normalizado por min-max (o pior município do in
 
 As correlações entre os indicadores são baixas: a maior é 0,33 (Água × Coleta), seguida de 0,32 (Esgoto × Tratamento). Nenhum par passa do limite de 0,8 que exigiria justificar ou excluir um critério. Por isso o conflito varia pouco (3,26 a 3,88), e quem decide o peso é sobretudo o desvio-padrão. Destinação lidera nas duas partes. É o indicador mais disperso, porque quase todos os municípios têm 0 ou 100, e o menos correlacionado com os outros (correlação negativa com Água e com Tratamento).
 
-**Por que min-max.** A normalização muda o desvio-padrão, mas não a correlação. Com a normalização pela soma, usada nos AHP, o desvio-padrão de cada indicador vira o coeficiente de variação dividido por 505, e o CRITIC daria praticamente os pesos do Gaussiano (8,3%, 18,8%, 34,1%, 6,4% e 32,4%). O min-max é a normalização do artigo original e mantém o CRITIC como um esquema distinto. A mesma normalização será usada quando os pesos CRITIC forem aplicados na agregação.
+**Por que min-max.** A normalização muda o desvio-padrão, mas não a correlação. Com a normalização pela soma, usada nos AHP, o desvio-padrão de cada indicador vira o coeficiente de variação dividido por 505, e o CRITIC daria praticamente os pesos do Gaussiano (8,3%, 18,8%, 34,1%, 6,4% e 32,4%; coluna O da aba PESOS CRITIC, só para comparação). O min-max é a normalização do artigo original e mantém o CRITIC como um esquema distinto. A mesma normalização será usada quando os pesos CRITIC forem aplicados na agregação.
 
 ### Formas de ranquear os municípios
 
@@ -133,7 +133,7 @@ O Clássico e o Gaussiano privilegiam dimensões opostas. O Clássico concentra 
 | Coleta | 31,3% | 26,3% | 6,8% | 14,9% | 28,5% |
 | Destinação | 18,7% | 6,2% | 29,5% | 36,6% | 34,0% |
 
-O gráfico ainda não inclui o CRITIC. A tabela traz os pesos CRITIC na escala min-max, em que são aplicados, e convertidos para a escala pela soma, para comparação direta com as outras colunas. A conversão divide cada peso pela amplitude do indicador, multiplica pela soma dele nos 505 municípios e normaliza o resultado.
+A coluna "CRITIC (equivalente pela soma)" não é um CRITIC calculado com outra normalização. São os mesmos pesos min-max, que dão a mesma pontuação, reescritos na escala dos AHP para comparação direta com as outras colunas. A conversão divide cada peso pela amplitude do indicador, multiplica pela soma dele nos 505 municípios e normaliza o resultado. Ela está na coluna N da aba PESOS CRITIC do *CRITIC.ods*.
 
 A inversão no Gaussiano é esperada. Coleta e Água são quase universais entre os habilitados (médias de 81,6 e 69,6), então variam pouco e recebem peso baixo. Tratamento e Destinação têm muitos zeros e muitos 100, variam muito e por isso dominam.
 
