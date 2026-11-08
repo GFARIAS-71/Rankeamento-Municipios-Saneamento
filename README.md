@@ -8,7 +8,7 @@ O estudo será submetido como artigo ao [Rii Forum 2027](https://rii-forum.org) 
 
 ## Situação
 
-Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. O AHP clássico e o AHP Gaussiano já foram calculados em planilhas e comparados com o ABES no [parecer técnico](docs/Parecer%20técnico%20ABES,%20AHP%20Clássico%20e%20AHP%20Gaussiano.md), e os pesos CRITIC foram calculados na mesma estrutura de planilha; os notebooks de ranking e de análise ainda não foram escritos.
+Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. O AHP clássico e o AHP Gaussiano já foram calculados em planilhas e comparados com o ABES no [parecer técnico](docs/Parecer%20técnico%20dos%20métodos%20multicritério.md), e os pesos CRITIC foram calculados na mesma estrutura de planilha e entraram no parecer; os notebooks de ranking e de análise ainda não foram escritos.
 
 | Etapa | Situação |
 | --- | --- |
@@ -16,7 +16,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 | Dados do ABES 2026 para o Nordeste baixados | Concluída |
 | Matriz de decisão montada (505 municípios completos, notebook 01) | Concluída |
 | AHP clássico e AHP Gaussiano em planilha, com parecer técnico comparando-os ao ABES | Concluída |
-| Pesos CRITIC em planilha (normalização min-max), com ranking e comparação com o ABES | Concluída |
+| Pesos CRITIC em planilha (normalização min-max) e no parecer técnico | Concluída |
 | AHP clássico e AHP Gaussiano portados para notebook | A fazer |
 | Pesos (iguais, CRITIC, AHP Gaussiano e AHP clássico) e os 16 rankings (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) | A fazer |
 | Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte) | A fazer |
@@ -72,7 +72,7 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 ├── README.md
 ├── docs/
 │   ├── guia_escrita.md              Guia de escrita do artigo e decisões metodológicas
-│   ├── Parecer técnico ABES, AHP Clássico e AHP Gaussiano.md   Comparação dos três rankings compensatórios
+│   ├── Parecer técnico dos métodos multicritério.md   Comparação dos métodos de pesos e de agregação (hoje: ABES, AHP clássico, AHP Gaussiano e CRITIC)
 │   └── imagens/                     Figuras dos documentos (pesos do ABES e dos AHP)
 ├── jupyter notebooks/
 │   └── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
@@ -80,7 +80,7 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 │   ├── relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos; base dos dois AHP
 │   ├── AHP Classico.ods                 Matriz de Saaty, pesos, consistência, ranking e comparação com o ABES
 │   ├── AHP Gaussiano.ods                Pesos gaussianos, ranking e comparação com o ABES
-│   └── CRITIC.ods                       Normalização min-max, correlação entre critérios, pesos CRITIC, ranking e comparação com o ABES
+│   └── CRITIC.ods                       Normalização min-max, correlação entre critérios e pesos CRITIC (só pesos; a agregação fica para depois)
 ├── resultados/                      Criada ao executar os notebooks; fora do Git
 │   └── municipios_5_indicadores.csv     Matriz de decisão: 505 municípios com os cinco indicadores e a situação de cada um
 ├── dados/
