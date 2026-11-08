@@ -8,7 +8,7 @@ O estudo será submetido como artigo ao [Rii Forum 2027](https://rii-forum.org) 
 
 ## Situação
 
-Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. O AHP clássico e o AHP Gaussiano já foram calculados em planilhas e comparados com o ABES no [parecer técnico](docs/Parecer%20técnico%20ABES,%20AHP%20Clássico%20e%20AHP%20Gaussiano.md); os notebooks de ranking e de análise ainda não foram escritos.
+Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. O AHP clássico e o AHP Gaussiano já foram calculados em planilhas e comparados com o ABES no [parecer técnico](docs/Parecer%20técnico%20ABES,%20AHP%20Clássico%20e%20AHP%20Gaussiano.md), e os pesos CRITIC foram calculados na mesma estrutura de planilha; os notebooks de ranking e de análise ainda não foram escritos.
 
 | Etapa | Situação |
 | --- | --- |
@@ -16,6 +16,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 | Dados do ABES 2026 para o Nordeste baixados | Concluída |
 | Matriz de decisão montada (505 municípios completos, notebook 01) | Concluída |
 | AHP clássico e AHP Gaussiano em planilha, com parecer técnico comparando-os ao ABES | Concluída |
+| Pesos CRITIC em planilha (normalização min-max), com ranking e comparação com o ABES | Concluída |
 | AHP clássico e AHP Gaussiano portados para notebook | A fazer |
 | Pesos (iguais, CRITIC, AHP Gaussiano e AHP clássico) e os 16 rankings (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) | A fazer |
 | Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte) | A fazer |
@@ -54,6 +55,8 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
   | AHP clássico | Matriz de Saaty preenchida pelo autor, média geométrica das linhas (RC = 0,0152) | 41,7% | 16,0% | 9,7% | 26,3% | 6,2% |
   | AHP Gaussiano | Coeficiente de variação de cada indicador, normalizado para somar 1 | 8,5% | 20,4% | 34,9% | 6,8% | 29,5% |
 
+- **Pesos CRITIC:** desvio-padrão de cada indicador normalizado por min-max × conflito Σ(1 − ρ) com os demais, normalizado para somar 1 ([planilhas/CRITIC.ods](planilhas/CRITIC.ods)). Dão 13,4% para Água, 15,5% para Esgoto, 19,6% para Tratamento, 14,9% para Coleta e 36,6% para Destinação. A soma ponderada com CRITIC também usa min-max, porque com a normalização pela soma o CRITIC praticamente repetiria o AHP Gaussiano (ρ = 0,998).
+
   O AHP clássico é o único esquema com pesos definidos pelos autores. Cruzá-lo com os quatro métodos mostra se o efeito da agregação se repete quando os pesos expressam prioridade, e não dispersão. A normalização importa: 20% para cada valor normalizado não reproduz o ABES (ρ = 0,95), então a comparação de pesos usa os equivalentes do ABES da tabela acima. Métodos, pesos e parâmetros (q e p do PROMETHEE, v do VIKOR) são fixados antes de olhar a DRSAI.
 - **Validade externa:** correlação de Spearman entre cada ranking e a taxa de internações por DRSAI informada pelo ABES, nos 360 dos 505 municípios com taxa válida (taxa 0,00 é tratada como ausente). As diferenças entre rankings são testadas com intervalos bootstrap de Δρ. Como controle mínimo, a associação é recalculada com correlação parcial por UF e porte e dentro dos estados com amostra suficiente (BA, CE, PE, RN e PB). A DRSAI nunca entra como critério.
 - **Robustez:** SMAA (10.000 vetores de pesos), sensibilidade a q e p (±50%) e, nos rankings com pesos de Saaty, a pequenas variações dos julgamentos da matriz. Robustez e validade externa são análises separadas.
@@ -76,7 +79,8 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 ├── planilhas/                       Cálculos feitos no LibreOffice Calc
 │   ├── relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos; base dos dois AHP
 │   ├── AHP Classico.ods                 Matriz de Saaty, pesos, consistência, ranking e comparação com o ABES
-│   └── AHP Gaussiano.ods                Pesos gaussianos, ranking e comparação com o ABES
+│   ├── AHP Gaussiano.ods                Pesos gaussianos, ranking e comparação com o ABES
+│   └── CRITIC.ods                       Normalização min-max, correlação entre critérios, pesos CRITIC, ranking e comparação com o ABES
 ├── resultados/                      Criada ao executar os notebooks; fora do Git
 │   └── municipios_5_indicadores.csv     Matriz de decisão: 505 municípios com os cinco indicadores e a situação de cada um
 ├── dados/

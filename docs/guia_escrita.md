@@ -43,7 +43,7 @@ Não comece a redigir antes de fechar as nove decisões abaixo. Cada uma aparece
 | Validade externa | Fechada | Taxa de internações por DRSAI do arquivo do ABES, só para avaliar os rankings, nunca como critério; Spearman, bootstrap de Δρ e controle mínimo por UF e porte; renda, atenção primária e acesso hospitalar ficam como limitação | Pergunta, Metodologia, Resultados, Limitações |
 | Veículo | Fechada | Rii Forum 2027 (Roma; anais pela Springer, Scopus); texto em inglês | Todo o texto |
 
-**Decisão derivada: normalização da soma ponderada.** O parecer técnico dos AHP mostrou que a normalização muda o ranking mesmo com pesos fixos. O ABES soma as notas brutas (0 a 100) com pesos iguais; os dois AHP dividem cada indicador pela sua soma nos 505 municípios e só então aplicam os pesos. Aplicar 20% a cada valor normalizado pela soma não reproduz o ABES (ρ = 0,95, deslocamento médio de 33 posições), porque pesos iguais nas notas brutas equivalem, na escala normalizada, a pesos proporcionais à soma de cada indicador: Coleta 31,3%, Água 26,7%, Destinação 18,7%, Esgoto 13,7% e Tratamento 9,5%. Para comparar pesos entre métodos, use sempre esses pesos equivalentes do ABES. Falta registrar no `log_decisoes.md` qual normalização a soma ponderada usa com os pesos CRITIC; a recomendação é a normalização pela soma, a mesma dos AHP.
+**Decisão derivada: normalização da soma ponderada.** O parecer técnico dos AHP mostrou que a normalização muda o ranking mesmo com pesos fixos. O ABES soma as notas brutas (0 a 100) com pesos iguais; os dois AHP dividem cada indicador pela sua soma nos 505 municípios e só então aplicam os pesos. Aplicar 20% a cada valor normalizado pela soma não reproduz o ABES (ρ = 0,95, deslocamento médio de 33 posições), porque pesos iguais nas notas brutas equivalem, na escala normalizada, a pesos proporcionais à soma de cada indicador: Coleta 31,3%, Água 26,7%, Destinação 18,7%, Esgoto 13,7% e Tratamento 9,5%. Para comparar pesos entre métodos, use sempre esses pesos equivalentes do ABES. Com os pesos CRITIC, a normalização é min-max (pior município = 0, melhor = 1) tanto no cálculo dos pesos quanto na soma ponderada. A normalização pela soma foi descartada para o CRITIC: com ela, o desvio-padrão de cada indicador vira CV ÷ 505 e, como o fator de conflito varia pouco entre os critérios (3,26 a 3,88), o CRITIC reproduziria o AHP Gaussiano (ρ = 0,998 entre os dois rankings). O min-max é a normalização do artigo original (Diakoulaki et al., 1995) e mantém o peso na mesma escala em que ele é aplicado. Falta copiar esta decisão para o `log_decisoes.md`.
 
 **Decisão derivada: municípios sem dados completos.** O arquivo do ABES para o Nordeste (`dados/ABES 2026/relatorio ABES 2026 NE.xlsx`) traz os 1.794 municípios dos nove estados. Deles, 1.289 aparecem como "Não habilitado" e 505 (28%) como habilitados: 367 em "Empenho para universalização", 131 em "Primeiros passos para a universalização" e 7 em "Compromisso com a universalização" (Salvador, Vitória da Conquista, Jequié e Porto Seguro/BA, União dos Palmares/AL, Campina Grande/PB e Aracaju/SE); a categoria mais alta não aparece na região. A habilitação varia muito entre estados:
 
@@ -103,7 +103,7 @@ Daqui em diante, "amostra" designa os 505 municípios completos, que coincidem c
 - [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (já existe `01_filtragem_municipios`; faltam pesos, os 16 rankings, validade com a DRSAI e robustez; o AHP clássico e o AHP Gaussiano, hoje em planilhas do LibreOffice, também precisam ser portados para notebook) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
 - [x] Matriz de decisão gerada: `resultados/municipios_5_indicadores.csv` (505 alternativas), com as alternativas nas linhas e os critérios nas colunas
 - [ ] Tabela de critérios com nome, unidade, direção (max/min), fonte, função de preferência, limiares q e p
-- [ ] Dicionário de pesos para cada esquema, com o cálculo documentado (AHP clássico e AHP Gaussiano já calculados em `planilhas/AHP Classico.ods` e `planilhas/AHP Gaussiano.ods`; faltam iguais em escala normalizada e CRITIC)
+- [ ] Dicionário de pesos para cada esquema, com o cálculo documentado (AHP clássico, AHP Gaussiano e CRITIC já calculados em `planilhas/AHP Classico.ods`, `planilhas/AHP Gaussiano.ods` e `planilhas/CRITIC.ods`; faltam iguais em escala normalizada)
 - [ ] Métodos, pesos e parâmetros (q, p e v) registrados no `log_decisoes.md` antes de calcular qualquer correlação com a DRSAI
 - [x] Repositório no GitHub criado
 - [ ] Repositório ligado ao Zenodo para receber o DOI antes da submissão
@@ -248,7 +248,7 @@ Regras: entre 5 e 10 critérios; verifique a correlação entre eles (matriz de 
 
 ### 4.4 Parâmetros dos métodos
 
-A soma ponderada, os dois AHP e o TOPSIS não têm parâmetros além dos pesos e da normalização (informe qual: notas brutas no ABES, pela soma nos AHP, vetorial no TOPSIS). O VIKOR tem o parâmetro v, peso da estratégia de "maioria" contra a de "arrependimento individual"; use o valor usual v = 0,5 e teste 0,25 e 0,75 na robustez. O PROMETHEE é o que mais exige: esta é a subseção que os revisores mais cobram e que a maioria dos artigos omite. Para cada critério, informe a função (usual, U-shape, V-shape, nível, linear, gaussiana) e os limiares q (indiferença) e p (preferência). Nunca use a função "usual" para todos os critérios sem justificar.
+A soma ponderada, os dois AHP e o TOPSIS não têm parâmetros além dos pesos e da normalização (informe qual: notas brutas no ABES, pela soma nos AHP, min-max na soma ponderada com CRITIC, vetorial no TOPSIS). O VIKOR tem o parâmetro v, peso da estratégia de "maioria" contra a de "arrependimento individual"; use o valor usual v = 0,5 e teste 0,25 e 0,75 na robustez. O PROMETHEE é o que mais exige: esta é a subseção que os revisores mais cobram e que a maioria dos artigos omite. Para cada critério, informe a função (usual, U-shape, V-shape, nível, linear, gaussiana) e os limiares q (indiferença) e p (preferência). Nunca use a função "usual" para todos os critérios sem justificar.
 
 Regra de derivação empírica, reproduzível e defensável: para o critério j, calcule as diferenças absolutas entre todos os pares de alternativas; q = 1º quartil dessas diferenças e p = 3º quartil. Reporte os valores na tabela de critérios (acrescente duas colunas). Exceção: no C5, use a função nível e justifique os limiares escolhidos. Em Resultados, teste q e p nos limites ±50% e mostre o efeito.
 
@@ -265,20 +265,22 @@ Os quatro esquemas de pesos são cruzados com os quatro métodos, e nenhum deles
 | Esquema | Natureza | Como calcular | Papel no artigo |
 | --- | --- | --- | --- |
 | Pesos iguais | Neutro | 1/n por critério | Desenho cruzado; com a soma ponderada sobre as notas brutas, reproduz o ABES e isola o efeito da agregação |
-| CRITIC | Objetivo (dispersão + conflito) | Desvio-padrão dos dados normalizados × Σ(1 − correlação com os demais), normalizado | Desenho cruzado; ranking de referência (com PROMETHEE II) |
+| CRITIC | Objetivo (dispersão + conflito) | Desvio-padrão dos dados normalizados por min-max × Σ(1 − correlação com os demais), normalizado; a soma ponderada também usa min-max | Desenho cruzado; ranking de referência (com PROMETHEE II) |
 | AHP Gaussiano | Objetivo (dispersão) | Fator gaussiano = desvio-padrão ÷ média de cada critério normalizado, normalizado para somar 1 | Desenho cruzado; diálogo com a literatura brasileira |
 | AHP clássico | Subjetivo (julgamento do decisor) | Matriz de comparação par a par na escala de Saaty (1 a 9); pesos pela média geométrica das linhas, normalizada; RC < 0,10 | Desenho cruzado; contraste entre pesos subjetivos e objetivos |
 | SMAA | Estocástico | 10.000 vetores de pesos sorteados (uniformes no simplex, ou em torno dos pesos CRITIC) | Robustez: índices de aceitabilidade de posição |
 
-Os pesos já calculados nas planilhas, na escala normalizada pela soma, ficam assim (os do ABES são os equivalentes aos 20% nominais sobre as notas brutas; os do CRITIC ainda não foram calculados):
+Os pesos já calculados nas planilhas ficam assim. ABES, AHP clássico e AHP Gaussiano estão na escala normalizada pela soma (os do ABES são os equivalentes aos 20% nominais sobre as notas brutas). O CRITIC está na escala min-max, em que é aplicado; a última coluna converte esses pesos para a escala pela soma, para comparação direta com as demais:
 
-| Critério | ABES (equivalente) | AHP clássico | AHP Gaussiano |
-| --- | --- | --- | --- |
-| C1 Água (IAG0001) | 26,7% | 41,7% | 8,5% |
-| C2 Esgoto (IES0001) | 13,7% | 16,0% | 20,4% |
-| C3 Tratamento (IES2003) | 9,5% | 9,7% | 34,9% |
-| C4 Coleta (IRS0001) | 31,3% | 26,3% | 6,8% |
-| C5 Destinação (IRS3002) | 18,7% | 6,2% | 29,5% |
+| Critério | ABES (equivalente) | AHP clássico | AHP Gaussiano | CRITIC (min-max) | CRITIC (equivalente pela soma) |
+| --- | --- | --- | --- | --- | --- |
+| C1 Água (IAG0001) | 26,7% | 41,7% | 8,5% | 13,4% | 17,7% |
+| C2 Esgoto (IES0001) | 13,7% | 16,0% | 20,4% | 15,5% | 10,6% |
+| C3 Tratamento (IES2003) | 9,5% | 9,7% | 34,9% | 19,6% | 9,2% |
+| C4 Coleta (IRS0001) | 31,3% | 26,3% | 6,8% | 14,9% | 28,5% |
+| C5 Destinação (IRS3002) | 18,7% | 6,2% | 29,5% | 36,6% | 34,0% |
+
+No CRITIC, Destinação recebe o maior peso (36,6%), como previsto para o C5 quase binário (seção 4.3). A soma ponderada com CRITIC tem ρ = 0,950 com o ranking do ABES.
 
 O AHP clássico concentra 68% do peso em Água e Coleta; o Gaussiano põe 64% em Tratamento e Destinação. Essa oposição é um resultado em si e entra na subseção 5.1.
 
