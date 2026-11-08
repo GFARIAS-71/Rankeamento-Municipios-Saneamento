@@ -221,3 +221,6 @@ __marimo__/
 
 # Saídas geradas pelos notebooks
 resultados/
+
+# Arquivos de bloqueio do LibreOffice
+.~lock.*#
