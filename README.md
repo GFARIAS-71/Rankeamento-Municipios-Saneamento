@@ -8,7 +8,7 @@ O estudo será submetido como artigo ao [Rii Forum 2027](https://rii-forum.org) 
 
 ## Situação
 
-Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. Os 16 rankings foram calculados primeiro em planilhas e comparados no [parecer técnico](docs/Parecer%20técnico%20dos%20métodos%20multicritério.md), e depois portados para notebook, com as mesmas pontuações. As decisões metodológicas foram congeladas no [log de decisões](docs/Log%20de%20decisoes.md) antes do teste com a DRSAI, e o teste de validade externa já rodou (notebook 03). Falta a robustez.
+Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. Os 16 rankings foram calculados primeiro em planilhas e comparados no [parecer técnico](docs/Parecer%20técnico%20dos%20métodos%20multicritério.md), e depois portados para notebook, com as mesmas pontuações. As decisões metodológicas foram congeladas no [log de decisões](docs/Log%20de%20decisoes.md) antes do teste com a DRSAI, o teste de validade externa já rodou (notebook 02) e a compensação e o perfil dos que mudam foram analisados (notebook 03). Falta a robustez.
 
 | Etapa | Situação |
 | --- | --- |
@@ -23,7 +23,8 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 | Soma ponderada com pesos CRITIC (min-max) em planilha | Concluída |
 | Decisões e parâmetros congelados no `docs/Log de decisoes.md` antes do teste com a DRSAI | Concluída |
 | Pesos e os 16 rankings portados para notebook (02), conferidos com as planilhas | Concluída |
-| Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte; notebook 03) | Concluída |
+| Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte; notebook 02) | Concluída |
+| Compensação e perfil dos que mudam de posição (PS2 e PS4; notebook 03) | Concluída |
 | Robustez (SMAA, sensibilidade a q e p) e comparação com o ABES | A fazer |
 | Resumo para o Rii Forum (prazo: 15/11/2026) | A fazer |
 | Artigo completo (prazo: 30/12/2026) | A fazer |
@@ -83,11 +84,12 @@ O roteiro do artigo está em [docs/Guia de escrita.md](docs/Guia%20de%20escrita.
 │   ├── Parecer técnico dos métodos multicritério.md   Comparação dos métodos de pesos e de agregação (hoje: ABES, AHP clássico, AHP Gaussiano, CRITIC, PROMETHEE II, VIKOR e TOPSIS)
 │   └── imagens/                     Figuras dos documentos (pesos do ABES e dos AHP)
 ├── jupyter notebooks/
-│   ├── 02_rankings.ipynb               Pesos, os 16 rankings e a concordância entre eles
-│   ├── 03_validade_drsai.ipynb         Validade externa dos 16 rankings com a taxa de DRSAI
+│   ├── 01_rankings.ipynb               Pesos, os 16 rankings e a concordância entre eles
+│   ├── 02_validade_drsai.ipynb         Validade externa dos 16 rankings com a taxa de DRSAI
+│   ├── 03_compensacao_perfil.ipynb     Compensação e perfil dos municípios que mudam de posição (PS2 e PS4)
 │   └── mcda.py                         Pesos e métodos de agregação, com os parâmetros do log
 ├── planilhas/                       Cálculos feitos no LibreOffice Calc
-│   ├── Relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos e a taxa de DRSAI; base de todas as planilhas e dos notebooks 02 e 03
+│   ├── Relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos e a taxa de DRSAI; base de todas as planilhas e dos notebooks
 │   ├── AHP Classico.ods                 Matriz de Saaty, pesos, consistência, ranking e comparação com o ABES
 │   ├── AHP Gaussiano.ods                Pesos gaussianos, ranking e comparação com o ABES
 │   ├── CRITIC.ods                       Normalizações min-max e pela soma, correlação entre critérios, pesos CRITIC e soma ponderada com esses pesos
@@ -123,8 +125,9 @@ Cuidados ao usar os dados:
 
 O trabalho é feito nas planilhas de `planilhas/` (LibreOffice Calc), que partem de `Relatorio ABES 2026 NE.ods`. Os notebooks de `jupyter notebooks/` leem essa mesma planilha e não gravam arquivos:
 
-- `02_rankings.ipynb`: recalcula os pesos e os 16 rankings (funções em `mcda.py`), a concordância entre eles (ρ e τ) e as mudanças de quartil em relação ao ABES. As pontuações coincidem com as das planilhas até a 15ª casa decimal.
-- `03_validade_drsai.ipynb`: aplica o protocolo de validade externa com a DRSAI (seção 7 do log), com o bootstrap, o teste de Steiger e o controle por UF e porte, que não cabem numa planilha.
+- `01_rankings.ipynb`: recalcula os pesos e os 16 rankings (funções em `mcda.py`), a concordância entre eles (ρ e τ) e as mudanças de quartil em relação ao ABES. As pontuações coincidem com as das planilhas até a 15ª casa decimal.
+- `02_validade_drsai.ipynb`: aplica o protocolo de validade externa com a DRSAI (seção 7 do log), com o bootstrap, o teste de Steiger e o controle por UF e porte, que não cabem numa planilha.
+- `03_compensacao_perfil.ipynb`: responde à PS2 e à PS4. Cruza a mudança de posição com a desigualdade entre os indicadores e testa se a DRSAI acompanha o pior indicador. Também compara, município a município, o ranking mais associado à DRSAI com o ABES.
 
 A robustez ainda será feita.
 
