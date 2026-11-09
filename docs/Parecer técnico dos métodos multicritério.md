@@ -1,21 +1,43 @@
 # Parecer técnico: métodos multicritério do ranking de saneamento
 
-Nov 8, 2026 · @Guilherme de Farias
+Guilherme de Farias · 8 nov. 2026, revisto em 9 nov. 2026
 
 ## Objetivo e escopo
 
-Este parecer reúne todos os métodos do trabalho, separados em métodos de pesos e métodos de agregação: a ABES, os dois AHP, o CRITIC, o PROMETHEE II, o VIKOR e o TOPSIS. Os três primeiros produzem rankings fortemente concordantes no conjunto dos municípios, mas divergem no topo. O CRITIC, que só calcula pesos, concentra 36,6% do peso em Destinação, mais que qualquer outro esquema. O PROMETHEE II, que só ranqueia, foi aplicado aos quatro esquemas de pesos. Com pesos iguais, CRITIC e AHP Gaussiano ele fica muito perto da ABES (ρ de 0,95 a 0,99). Com os pesos do AHP clássico, ele se afasta dela (ρ = 0,71). O VIKOR, também só de agregação, foi aplicado aos mesmos quatro esquemas. Com pesos iguais, ele fica muito perto da ABES (ρ = 0,98), mais que o PROMETHEE II com os mesmos pesos; com os pesos do AHP clássico, é o ranking mais distante dela calculado até aqui (ρ = 0,70). Nos quatro esquemas, Salvador é a solução de compromisso única. O TOPSIS, o último método de agregação, também foi aplicado aos quatro esquemas. Com a normalização vetorial, os 20% nominais deixam de ser iguais em efeito: Esgoto e Tratamento, com muitos zeros, ganham influência, e o TOPSIS de pesos iguais se afasta mais da ABES (ρ = 0,91) que o PROMETHEE II e o VIKOR de pesos iguais. Com os pesos do AHP Gaussiano, ele praticamente repete a soma ponderada (ρ = 0,99), e com os do AHP clássico é o ranking mais distante da ABES (ρ = 0,69). Salvador é o primeiro nos quatro. Com os pesos CRITIC, a soma ponderada fica a ρ = 0,95 da ABES e a ρ de 0,97 a 0,99 dos outros três métodos com os mesmos pesos. Comparados os 16 rankings, os pesos mudam a ordem mais que a forma de agregar, e só Salvador, Vitória da Conquista e Jequié estão no Top 10 de todos.
+Este parecer descreve e compara os 16 rankings do trabalho. Eles cruzam quatro esquemas de pesos (pesos iguais, CRITIC, AHP Gaussiano e AHP clássico) com quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II). A célula soma ponderada × pesos iguais, aplicada às notas brutas, é o próprio Ranking ABES. O parecer explica como cada método funciona, que pesos cada esquema produz, quanto os rankings concordam entre si e no topo, e como cada método trata os municípios com indicadores muito fracos. Duas seções no fim resumem o perfil dos municípios que mais mudam de posição e a associação dos rankings com as internações por DRSAI.
 
-| Método | Papel | Situação neste parecer | Planilha |
-| --- | --- | --- | --- |
-| ABES | Pesos iguais + soma simples das notas brutas | Incluído (pesos e ranking) | *Relatorio ABES 2026 NE.ods* |
-| AHP Clássico | Pesos (Saaty) + soma ponderada normalizada | Incluído (pesos e ranking) | *AHP Classico.ods* |
-| AHP Gaussiano | Pesos (coeficiente de variação) + soma ponderada normalizada | Incluído (pesos e ranking) | *AHP Gaussiano.ods* |
-| CRITIC | Só pesos (dispersão + conflito); a soma ponderada com esses pesos fica na mesma planilha | Incluído (pesos e ranking pela soma ponderada) | *CRITIC.ods* |
-| Pesos iguais | Só pesos (20% para cada indicador) | Incluído (aplicado no PROMETHEE II, no VIKOR e no TOPSIS; na soma ponderada, corresponde à ABES) | — |
-| TOPSIS | Só agregação (proximidade relativa ao ideal, compensação total) | Incluído (ranking nos quatro esquemas de pesos) | *TOPSIS.ods* |
-| VIKOR | Só agregação (solução de compromisso, compensação parcial) | Incluído (ranking nos quatro esquemas de pesos) | *VIKOR.ods* |
-| PROMETHEE II | Só agregação (comparação par a par, compensação limitada) | Incluído (ranking nos quatro esquemas de pesos) | *PROMETHEE II.ods* |
+Os parâmetros são os da versão congelada em 9 nov. 2026 no [`Log de decisoes.md`](Log%20de%20decisoes.md) (seções 4 a 6). A seção sobre a DRSAI segue o protocolo da seção 7 do log e foi calculada depois do congelamento; nenhum parâmetro foi alterado por causa dela.
+
+## Principais resultados
+
+- **Os pesos mudam o ranking mais que a forma de agregar.** Com os mesmos pesos, os pares de métodos têm ρ médio de 0,95 (τ de 0,82); com o mesmo método e pesos diferentes, de 0,78 (τ de 0,63). Por município, a troca de pesos move em média 132 posições, e a troca de método, 62.
+- **A normalização decide o efeito real dos pesos.** Os 20% da ABES sobre as notas brutas equivalem, na escala normalizada pela soma, a 31% para Coleta e 9,5% para Tratamento. No TOPSIS, a normalização vetorial dá a Esgoto e Tratamento 56% da influência com pesos nominais iguais.
+- **A ABES é o ranking mais central** (ρ médio de 0,88 com os outros 15), e os rankings com os pesos do AHP clássico formam um grupo à parte (ρ médio de 0,66 com os demais).
+- **O topo é estável.** Salvador é o primeiro nos 16 rankings e a solução de compromisso única do VIKOR nos quatro esquemas. Vitória da Conquista e Jequié também estão nos 16 Top 10.
+- **Só o VIKOR penaliza os municípios com zeros.** Em relação à soma ponderada com os mesmos pesos, o PROMETHEE II e o TOPSIS fazem esses municípios subir.
+- **A associação com a DRSAI é fraca e parecida nos 16 rankings** (ρ de −0,11 a −0,23). Nenhum ranking se associa à DRSAI significativamente mais que a ABES; sete se associam significativamente menos.
+
+**O desenho 4 × 4 e a planilha de cada célula.**
+
+| Método de agregação | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
+| --- | --- | --- | --- | --- |
+| Soma ponderada | ABES (notas brutas) | *CRITIC.ods* | *AHP Gaussiano.ods* | *AHP Classico.ods* |
+| TOPSIS | *TOPSIS.ods* | *TOPSIS.ods* | *TOPSIS.ods* | *TOPSIS.ods* |
+| VIKOR | *VIKOR.ods* | *VIKOR.ods* | *VIKOR.ods* | *VIKOR.ods* |
+| PROMETHEE II | *PROMETHEE II.ods* | *PROMETHEE II.ods* | *PROMETHEE II.ods* | *PROMETHEE II.ods* |
+
+**O papel de cada método.**
+
+| Método | Papel | Planilha |
+| --- | --- | --- |
+| ABES | Pesos iguais + soma simples das notas brutas | *Relatorio ABES 2026 NE.ods* |
+| AHP Clássico | Pesos (Saaty) + soma ponderada normalizada pela soma | *AHP Classico.ods* |
+| AHP Gaussiano | Pesos (coeficiente de variação) + soma ponderada normalizada pela soma | *AHP Gaussiano.ods* |
+| CRITIC | Só pesos (dispersão + conflito); a soma ponderada com esses pesos (min-max) fica na mesma planilha | *CRITIC.ods* |
+| Pesos iguais | Só pesos (20% para cada indicador); na soma ponderada sobre as notas brutas, é a ABES | — |
+| TOPSIS | Só agregação (proximidade relativa ao ideal, compensação total) | *TOPSIS.ods* |
+| VIKOR | Só agregação (solução de compromisso, compensação parcial) | *VIKOR.ods* |
+| PROMETHEE II | Só agregação (comparação par a par, compensação limitada) | *PROMETHEE II.ods* |
 
 A análise usa os **505 municípios do Nordeste habilitados** no Ranking ABES 2026, isto é, excluídos os "Não habilitados". Os cinco indicadores usados são:
 
@@ -25,11 +47,11 @@ A análise usa os **505 municípios do Nordeste habilitados** no Ranking ABES 20
 - **Coleta**: IRS0001
 - **Destinação**: IRS3002
 
-Todos os números vêm das planilhas da pasta `planilhas/` indicadas na tabela acima.
+Todos os números vêm das planilhas da pasta `planilhas/` indicadas na tabela acima. Os 16 rankings foram recalculados em Python nos notebooks de `jupyter notebooks/`, com as funções de `mcda.py`: as pontuações coincidem com as das planilhas até a 15ª casa decimal. Os resultados de DRSAI vêm do notebook 02, e os de compensação e perfil, do notebook 03.
 
 ## Os métodos: formas de pesar e formas de ranquear
 
-Os métodos se distinguem em duas etapas: como se definem os pesos dos cinco indicadores e como esses pesos se combinam com o desempenho de cada município. Alguns métodos cobrem só a primeira etapa (CRITIC), outros só a segunda (TOPSIS, VIKOR, PROMETHEE II), e a ABES e os AHP, como aplicados aqui, cobrem as duas. Ao todo, há quatro formas de pesar e cinco de ranquear.
+Os métodos se distinguem em duas etapas: como se definem os pesos dos cinco indicadores e como esses pesos se combinam com o desempenho de cada município. Alguns métodos cobrem só a primeira etapa (CRITIC), outros só a segunda (TOPSIS, VIKOR, PROMETHEE II), e a ABES e os AHP, como aplicados aqui, cobrem as duas. Ao todo, há quatro esquemas de pesos e quatro métodos de agregação, que formam o desenho 4 × 4 da tabela acima. A normalização é uma propriedade de cada célula: notas brutas na ABES, normalização pela soma nos dois AHP, min-max na soma ponderada com CRITIC e no VIKOR, norma vetorial no TOPSIS e nenhuma no PROMETHEE II (tabela 6.4 do log). Ao longo do parecer, os métodos de agregação aparecem na ordem do grau de compensação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II), exceto nas seções de cada método, que seguem a ordem em que foram calculados e se comparam com os anteriores.
 
 ### Formas de pesar os critérios
 
@@ -68,17 +90,16 @@ As correlações entre os indicadores são baixas: a maior é 0,33 (Água × Col
 
 | Forma | Métodos que a usam | Dados de entrada | Como a pontuação é formada |
 | --- | --- | --- | --- |
-| Soma simples | ABES | Notas brutas dos indicadores (0 a 100) | Soma das cinco notas; como os pesos são iguais, eles são redundantes e podem ser omitidos |
-| Soma ponderada normalizada | AHP Clássico e AHP Gaussiano; também os pesos CRITIC | Valores normalizados pela soma (cada indicador soma 1 nos 505 municípios); com os pesos CRITIC, normalizados por min-max | Soma dos valores normalizados, cada um multiplicado pelo peso do seu critério |
-| Fluxo líquido de sobreclassificação | PROMETHEE II, com qualquer dos quatro esquemas de pesos | Notas brutas (0 a 100), sem normalização | Cada município é comparado com os outros 504, critério a critério; a pontuação é o saldo entre quanto ele supera os demais e quanto é superado |
-| Índice de compromisso | VIKOR, com qualquer dos quatro esquemas de pesos | Distâncias ao melhor valor observado, normalizadas por min-max (0 a 1) | Combina a soma das distâncias ponderadas (S) com a maior delas (R); menor índice Q, melhor posição |
+| Soma ponderada | ABES (pesos iguais), AHP Clássico, AHP Gaussiano e CRITIC | Notas brutas (0 a 100) na ABES; valores normalizados pela soma (cada indicador soma 1 nos 505 municípios) nos AHP; min-max com os pesos CRITIC | Soma dos valores, cada um multiplicado pelo peso do seu critério; na ABES, como os pesos são iguais, é a soma simples das cinco notas |
 | Proximidade relativa ao ideal | TOPSIS, com qualquer dos quatro esquemas de pesos | Valores normalizados pela norma vetorial (cada indicador dividido pela raiz da soma dos quadrados) | Distâncias euclidianas ao ideal positivo (D⁺) e ao negativo (D⁻); maior C* = D⁻/(D⁺ + D⁻), melhor posição |
+| Índice de compromisso | VIKOR, com qualquer dos quatro esquemas de pesos | Distâncias ao melhor valor observado, normalizadas por min-max (0 a 1) | Combina a soma das distâncias ponderadas (S) com a maior delas (R); menor índice Q, melhor posição |
+| Fluxo líquido de sobreclassificação | PROMETHEE II, com qualquer dos quatro esquemas de pesos | Notas brutas (0 a 100), sem normalização | Cada município é comparado com os outros 504, critério a critério; a pontuação é o saldo entre quanto ele supera os demais e quanto é superado |
 
 ```math
-\text{ABES: } P_i = \sum_{j=1}^{5} x_{ij} \qquad\qquad \text{AHP: } P_i = \sum_{j=1}^{5} w_j \, r_{ij}, \quad r_{ij} = \frac{x_{ij}}{S_j}
+\text{ABES: } P_i = \sum_{j=1}^{5} x_{ij} \qquad \text{AHP: } P_i = \sum_{j=1}^{5} w_j \, \frac{x_{ij}}{S_j} \qquad \text{CRITIC: } P_i = \sum_{j=1}^{5} w_j \, \frac{x_{ij} - \min_i x_{ij}}{\max_i x_{ij} - \min_i x_{ij}}
 ```
 
-Na fórmula, xᵢⱼ é a nota do município i no indicador j, Sⱼ é a soma desse indicador nos 505 municípios e wⱼ é o peso do AHP. Os dois AHP compartilham a mesma forma de ranquear e diferem apenas nos pesos.
+Na fórmula, xᵢⱼ é a nota do município i no indicador j, Sⱼ é a soma desse indicador nos 505 municípios e wⱼ é o peso do esquema. Os dois AHP compartilham a mesma forma de ranquear e diferem apenas nos pesos; a soma com os pesos CRITIC usa a normalização min-max em que eles foram calculados.
 
 As duas formas são aditivas e compensatórias: uma nota alta num indicador compensa uma nota baixa em outro. A diferença está na normalização, que divide cada indicador por uma constante própria. Por isso, os pesos iguais da ABES nas notas brutas equivalem, na escala normalizada, a pesos proporcionais à soma de cada indicador:
 
@@ -121,13 +142,13 @@ Por exemplo, Salvador tem Tratamento 100 e Aracaju, 73,6. A diferença de 26,4 p
 
 **Como a planilha calcula.** A matriz π completa teria 255 mil células por esquema de pesos. Como π é uma soma ponderada das preferências por critério, os fluxos também são: φ⁺(a) = Σⱼ wⱼ·φ⁺ⱼ(a), em que φ⁺ⱼ(a) é a média de Pⱼ(a,x) sobre os outros 504 municípios. A planilha calcula esses fluxos por critério uma vez (aba FLUXOS POR CRITÉRIO) e os combina com os quatro esquemas de pesos (aba FLUXOS GLOBAIS). O resultado é idêntico ao da matriz completa, o que foi conferido com um cálculo independente em Python, com diferença máxima de 10⁻¹⁵ em φ. A aba EXEMPLO PAR A PAR mostra as etapas 1 a 3 para dois municípios escolhidos numa lista.
 
-**Os pesos no PROMETHEE II.** O peso multiplica graus de preferência (de 0 a 1), que não dependem da escala do indicador. Por isso, aqui "pesos iguais" são 20% de fato, e não os pesos equivalentes da ABES. Os pesos CRITIC entram na versão min-max, a mesma em que foram calculados.
+**Os pesos no PROMETHEE II.** O peso multiplica graus de preferência (de 0 a 1), que não dependem da escala do indicador. Por isso, aqui "pesos iguais" são 20% de fato, e não os pesos equivalentes da ABES. A conta confirma: medida pelo peso vezes o desvio-padrão do fluxo unicritério φⱼ, a influência de cada indicador com 20% nominais fica entre 19,0% e 19,5% nos quatro primeiros e em 22,8% em Destinação, cujo fluxo é um pouco mais disperso por causa da função em U. Os pesos CRITIC entram na versão min-max, a mesma em que foram calculados.
 
 ### VIKOR
 
 O VIKOR (Opricovic e Tzeng, 2004) busca uma **solução de compromisso**: o município mais perto do ideal, medido de duas formas ao mesmo tempo. A desvantagem agregada S soma as distâncias ponderadas ao ideal nos cinco indicadores, como uma soma ponderada. O arrependimento individual R pega só a maior dessas distâncias, isto é, o indicador em que o município está pior. O índice Q combina as duas medidas com o parâmetro v, e o ranking vai do menor para o maior Q. Como o PROMETHEE II, o VIKOR é só um método de agregação e foi aplicado aos quatro esquemas de pesos.
 
-As contas seguem as dez etapas do mapa mental do método (apresentação da UNIFOR):
+As contas seguem as dez etapas do método (Opricovic e Tzeng, 2004):
 
 1. **Entradas:** os 505 municípios, os cinco indicadores (todos de benefício), a matriz de notas fᵢⱼ e os pesos wⱼ, que somam 1.
 2. **Ideal e anti-ideal:** f*ⱼ = maior valor observado e f⁻ⱼ = menor valor observado em cada indicador. Todos chegam a 100; quatro chegam a 0, e Coleta, a 18,67.
@@ -144,7 +165,7 @@ As contas seguem as dez etapas do mapa mental do método (apresentação da UNIF
 Q_i = v \, \frac{S_i - S^*}{S^- - S^*} + (1 - v) \, \frac{R_i - R^*}{R^- - R^*}, \qquad S^* = \min_i S_i, \; S^- = \max_i S_i, \; R^* = \min_i R_i, \; R^- = \max_i R_i
 ```
 
-**Parâmetro v.** Usa-se v = 0,5, o valor da apresentação da UNIFOR e o mais comum na literatura: S e R pesam o mesmo em Q. Com v perto de 1, o VIKOR se aproxima de uma soma ponderada (estratégia da maioria); com v perto de 0, ele ordena pelo pior indicador de cada município. A sensibilidade a v (0,25 e 0,75, como previsto no guia de escrita) entra na análise de robustez; basta trocar a célula B22 da aba PARÂMETROS.
+**Parâmetro v.** Usa-se v = 0,5, o valor mais comum na literatura: S e R pesam o mesmo em Q. Com v perto de 1, o VIKOR se aproxima de uma soma ponderada (estratégia da maioria); com v perto de 0, ele ordena pelo pior indicador de cada município. A sensibilidade a v (0,25 e 0,75, como previsto no guia de escrita) entra na análise de robustez; basta trocar a célula B22 da aba PARÂMETROS.
 
 **Os pesos no VIKOR.** Como no PROMETHEE II, o peso multiplica valores de 0 a 1, que não dependem da escala do indicador. Por isso, "pesos iguais" são 20% de fato, e os pesos CRITIC entram na versão min-max, a mesma normalização do dᵢⱼ.
 
@@ -154,7 +175,7 @@ Q_i = v \, \frac{S_i - S^*}{S^- - S^*} + (1 - v) \, \frac{R_i - R^*}{R^- - R^*},
 
 | Esquema de pesos | Indicador de maior peso | Municípios com R no máximo (R⁻) | Melhor posição entre eles no VIKOR |
 | --- | --- | --- | --- |
-| Pesos iguais | Todos (20%) | 340 (zero em Tratamento ou em Destinação) | 91º |
+| Pesos iguais | Todos (20%) | 340 (pelo menos um indicador no pior valor observado, quase sempre Tratamento ou Destinação 0) | 91º |
 | CRITIC | Destinação (36,6%) | 248 (Destinação 0) | 253º |
 | AHP Gaussiano | Tratamento (34,9%) | 154 (Tratamento 0) | 132º |
 | AHP clássico | Água (41,7%) | 1 (Água no mínimo observado) | 503º |
@@ -180,7 +201,7 @@ Com 505 alternativas, DQ é muito baixo, e C1 só falharia com as duas primeiras
 
 O TOPSIS (Hwang e Yoon, 1981) ordena os municípios pela **proximidade relativa à solução ideal**. Ele monta dois municípios teóricos: o ideal positivo A⁺, com o melhor valor observado em cada indicador, e o ideal negativo A⁻, com o pior. Depois mede a distância euclidiana de cada município a cada um deles. O melhor município é o que fica, ao mesmo tempo, perto de A⁺ e longe de A⁻. Como o PROMETHEE II e o VIKOR, o TOPSIS é só um método de agregação e foi aplicado aos quatro esquemas de pesos.
 
-As contas seguem as oito etapas do mapa mental do método:
+As contas seguem as oito etapas usuais do método:
 
 1. **Matriz de decisão:** X = [xᵢⱼ], com os 505 municípios e os cinco indicadores, todos de benefício.
 2. **Normalização vetorial:** rᵢⱼ = xᵢⱼ/√Σᵢ x²ᵢⱼ. Cada indicador é dividido pela raiz da soma dos quadrados das suas notas.
@@ -189,7 +210,7 @@ As contas seguem as oito etapas do mapa mental do método:
 5. **Distância ao ideal positivo:** D⁺ᵢ = √Σⱼ(vᵢⱼ − A⁺ⱼ)².
 6. **Distância ao ideal negativo:** D⁻ᵢ = √Σⱼ(vᵢⱼ − A⁻ⱼ)².
 7. **Proximidade relativa:** C*ᵢ = D⁻ᵢ/(D⁺ᵢ + D⁻ᵢ), entre 0 (no ideal negativo) e 1 (no ideal positivo).
-8. **Ranking:** ordem decrescente de C*. Em empate, vale a ordem da base, como o desempate pelo identificador do mapa mental.
+8. **Ranking:** ordem decrescente de C*. Não há empates em C* entre os 505 municípios.
 
 ```math
 r_{ij} = \frac{x_{ij}}{\sqrt{\sum_{i=1}^{m} x_{ij}^2}} \qquad D_i^{\pm} = \sqrt{\sum_{j=1}^{5} \left( w_j r_{ij} - A_j^{\pm} \right)^2} \qquad C_i^* = \frac{D_i^-}{D_i^+ + D_i^-}
@@ -197,7 +218,7 @@ r_{ij} = \frac{x_{ij}}{\sqrt{\sum_{i=1}^{m} x_{ij}^2}} \qquad D_i^{\pm} = \sqrt{
 
 Nenhum município chega a C* = 1, porque nenhum tem o melhor valor nos cinco indicadores. Salvador é o primeiro nos quatro esquemas, com C* de 0,937 a 0,953.
 
-**A normalização vetorial muda o efeito dos pesos.** A normalização é a do mapa mental e a do TOPSIS original, e o guia de escrita já a registrava. Ela preserva as proporções (um zero continua zero), mas a amplitude de rᵢⱼ depende do indicador. Nos indicadores com muitos zeros, a soma dos quadrados é menor, e a mesma diferença de pontos vale mais. Por isso o peso nominal não mede a influência do critério na distância; essa influência é proporcional a wⱼ vezes a amplitude de rᵢⱼ. A aba PARÂMETROS calcula essa influência efetiva:
+**A normalização vetorial muda o efeito dos pesos.** A normalização é a do TOPSIS original, registrada no log. Ela preserva as proporções (um zero continua zero), mas a amplitude de rᵢⱼ depende do indicador. Nos indicadores com muitos zeros, a soma dos quadrados é menor, e a mesma diferença de pontos vale mais. Por isso o peso nominal não mede a influência do critério na distância; essa influência é proporcional a wⱼ vezes a amplitude de rᵢⱼ. A aba PARÂMETROS calcula essa influência efetiva:
 
 | Indicador | Amplitude de rᵢⱼ | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
 | --- | --- | --- | --- | --- | --- |
@@ -237,7 +258,9 @@ O CRITIC fica entre os dois extremos na escala min-max, com Destinação muito �
 
 ## Concordância entre os rankings
 
-Esta seção e a seguinte comparam primeiro a ABES e os dois AHP, depois a soma ponderada com CRITIC, os quatro rankings PROMETHEE II, os quatro rankings VIKOR e os quatro rankings TOPSIS, e por fim os 16 rankings em conjunto. Os pesos CRITIC aparecem aqui pelo PROMETHEE II, pelo VIKOR, pelo TOPSIS e pela soma ponderada (aba PONTUAÇÃO E RANKING de *CRITIC.ods*, com ρ = 0,950 em relação à ABES).
+Esta seção compara primeiro a ABES e os dois AHP, depois a soma ponderada com CRITIC, os quatro rankings PROMETHEE II, os quatro VIKOR e os quatro TOPSIS, e por fim os 16 rankings em conjunto, que trazem a conclusão geral.
+
+**Medidas.** O ρ de Spearman e o τ-b de Kendall são calculados sobre as pontuações, com postos médios nos empates (só a ABES tem empates, em três casos). O deslocamento médio é a média, nos 505 municípios, da diferença absoluta entre as duas posições; nas posições, municípios empatados recebem a mesma posição, a menor. Os rankings vêm todos dos mesmos cinco indicadores, então o teste de ρ = 0 não informa nada, e o parecer não reporta p-valores para essas correlações. A inferência fica para a associação com a DRSAI.
 
 Os dois AHP são fortemente correlacionados com a ABES (ρ ≈ 0,87 a 0,89), mas apenas moderadamente correlacionados entre si (ρ = 0,76). Ou seja, cada um se afasta da ABES numa direção diferente.
 
@@ -247,7 +270,7 @@ Os dois AHP são fortemente correlacionados com a ABES (ρ ≈ 0,87 a 0,89), mas
 | ABES × AHP Gaussiano | 0,888 | 0,711 | 52,6 |
 | AHP Clássico × AHP Gaussiano | 0,765 | 0,580 | 76,1 |
 
-Todas as correlações são positivas e significativas (p < 10⁻¹⁰⁰, n = 505). Nas duas comparações com a ABES, cerca de 86% dos pares de municípios mantêm a mesma ordem relativa. Entre os dois AHP, essa proporção cai para 79%.
+Nas duas comparações com a ABES, cerca de 86% dos pares de municípios mantêm a mesma ordem relativa. Entre os dois AHP, essa proporção cai para 79%.
 
 Os maiores deslocamentos individuais mostram o efeito dos pesos:
 
@@ -268,7 +291,7 @@ Com os pesos CRITIC, a soma ponderada fica muito perto da ABES (ρ = 0,950) e ma
 | Soma ponderada × VIKOR, ambos com CRITIC | 0,988 | 0,939 | 12,3 |
 | Soma ponderada × PROMETHEE II, ambos com CRITIC | 0,979 | 0,905 | 19,1 |
 
-Todas as correlações são positivas e significativas (p < 10⁻⁷⁴, n = 505). As três últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar.
+As três últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar.
 
 - **Destinação divide o ranking em dois grupos.** Com 36,6% do peso e notas de 0 a 100, um zero em Destinação custa 0,366 de uma pontuação que vai no máximo a 1. Nenhum dos 248 municípios sem Destinação fica entre os 182 primeiros. O melhor deles, Viçosa (RN), com Tratamento 100 e Água, Esgoto e Coleta acima de 90, é o 183º, contra 41º na ABES. Os 236 municípios com Destinação 100 ficam todos até a 281ª posição; na ABES, o último deles é o 457º. O efeito é parecido com o do VIKOR com CRITIC (melhor sem Destinação em 253º) e mais forte que no TOPSIS (101º) e no PROMETHEE II (92º) com os mesmos pesos.
 - **Quem mais cai e quem mais sobe.** Os que mais caem têm os outros quatro indicadores altos e Destinação 0: Juazeiro (BA) vai de 89º na ABES para 248º, Itapetinga (BA), de 106º para 258º, e Malhador (SE), com Tratamento 100, de 66º para 215º. Os que mais sobem têm Destinação 100 e o resto fraco: Matinhas (PB), com Água 11,8 e Tratamento 0, vai de 457º para 281º, e Mogeiro (PB), de 402º para 260º.
@@ -276,7 +299,7 @@ Todas as correlações são positivas e significativas (p < 10⁻⁷⁴, n = 505
 
 ### PROMETHEE II
 
-Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II concorda com a ABES mais do que os dois AHP concordam com ela. A exceção são os pesos do AHP clássico, com a menor correlação do parecer.
+Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II concorda com a ABES mais do que os dois AHP concordam com ela. A exceção são os pesos do AHP clássico, com a menor correlação com a ABES entre os PROMETHEE II (0,713).
 
 | Par comparado | Spearman (ρ) | Kendall (τ-b) | Deslocamento médio (posições) |
 | --- | --- | --- | --- |
@@ -287,18 +310,11 @@ Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II concorda com a ABES mai
 | PROMETHEE II × soma ponderada, ambos com pesos do AHP Gaussiano | 0,973 | 0,859 | 25,7 |
 | PROMETHEE II × soma ponderada, ambos com pesos do AHP clássico | 0,900 | 0,726 | 50,9 |
 
-Todas as correlações são positivas e significativas (p < 10⁻⁷⁰, n = 505). As duas últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar.
+As duas últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar.
 
 - **CRITIC quase reproduz a ABES** (ρ = 0,988). Os dois dão a Destinação um papel decisivo: na ABES, porque o indicador vale 0 ou 100 e entra com toda essa amplitude na soma; no PROMETHEE II com CRITIC, porque ele tem o maior peso (36,6%) e uma função em U, que trata quase toda diferença como preferência total. Dos 50 primeiros, 47 têm Destinação 100 na ABES e 49 no PROMETHEE II com CRITIC.
 - **O AHP clássico se afasta.** Com 68% do peso em Água e Coleta, e a compensação limitada, municípios com Água e Coleta acima de 90 e quase nenhum esgoto sobem muito, porque a perda em Esgoto e Tratamento está limitada aos pesos desses critérios (16,0% e 9,7%). Esplanada (BA) vai de 396º na ABES (318º na soma ponderada clássica) para 163º, e Conceição do Coité (BA), de 381º (298º) para 153º. No sentido oposto, Saloá (PE) cai de 69º para 368º, e Prata (PB), de 51º para 333º. Os dois têm Tratamento 100, mas Água abaixo de 51.
-- **A forma de agregar pesa menos que os pesos.** Mantidos os pesos, a troca de soma ponderada por PROMETHEE II dá ρ de 0,90 a 0,97. Mantido o PROMETHEE II, a troca de pesos dá ρ de 0,60 (AHP Gaussiano × AHP clássico) a 0,94 (CRITIC × AHP Gaussiano).
 
-| Spearman (ρ) entre os PROMETHEE II | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
-| --- | --- | --- | --- | --- |
-| Pesos iguais | 1 | 0,916 | 0,897 | 0,873 |
-| CRITIC | 0,916 | 1 | 0,936 | 0,663 |
-| AHP Gaussiano | 0,897 | 0,936 | 1 | 0,605 |
-| AHP clássico | 0,873 | 0,663 | 0,605 | 1 |
 
 **Por que a função em U em Destinação.** Embora o indicador seja quase binário, 21 municípios têm valores intermediários, e cinco deles ficam entre 95 e 99. Com a função usual (q = p = 0), 98,3 perderia por inteiro para 100, como 0 perde, e esses municípios ficariam no meio do critério: Massapê (CE, Destinação 98,3) cairia de 237º na ABES para 384º com pesos iguais, e Saloá (PE, 96,8), de 69º para 208º. Com q = p = 5, eles empatam com os que têm 100, e Massapê e Saloá ficam em 322º e 144º com pesos iguais. As quedas que sobram vêm dos outros indicadores (Água de 37,9 em Saloá, por exemplo). A troca muda pouco as correlações (ρ com a ABES varia no máximo 0,003) e nada nos Top 10, mas evita esse efeito artificial nos casos isolados. O limiar de 5 pontos é uma escolha e entra na análise de sensibilidade a q e p.
 
@@ -319,23 +335,16 @@ Com pesos iguais, o VIKOR fica mais perto da ABES (ρ = 0,977) que o PROMETHEE I
 | VIKOR × PROMETHEE II, ambos com pesos do AHP Gaussiano | 0,944 | 0,805 | 38,3 |
 | VIKOR × PROMETHEE II, ambos com pesos do AHP clássico | 0,976 | 0,866 | 24,6 |
 
-Todas as correlações são positivas e significativas (p < 10⁻⁷⁰, n = 505). As seis últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar. Os fluxos do PROMETHEE II entram na planilha do VIKOR como valores copiados de *PROMETHEE II.ods*.
+As seis últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar. Os fluxos do PROMETHEE II entram na planilha do VIKOR como valores copiados de *PROMETHEE II.ods*.
 
 - **Com pesos iguais, o VIKOR é quase a ABES.** S reproduz a ABES (ρ = 0,999), e R só reordena os municípios dentro de faixas próximas. Os que mais sobem têm todas as notas medianas e nenhum zero: Dormentes (PE) vai de 393º para 196º, e Quixelô (CE), de 370º para 236º. Os que mais caem têm notas altas e um zero: Cedro de São João (SE), com Tratamento 0, cai de 34º para 91º, e Viçosa (RN), com Destinação 0, de 41º para 93º.
 - **Com CRITIC, Destinação divide o ranking em dois blocos.** O R dos 248 municípios sem Destinação é o peso do indicador (36,6%), e eles ficam praticamente todos depois do 252º lugar. Viçosa (RN) vai de 41º na ABES (92º no PROMETHEE II com CRITIC) para 253º, e Acari (RN), de 61º para 254º, ambos com as outras quatro notas acima de 80. No sentido oposto, Teixeira (PB), com Água 0,01 e Tratamento 0, mas Destinação 41,7, sobe de 485º para 252º. No PROMETHEE II, a função em U também pune o zero em Destinação, mas a perda fica limitada ao peso do critério em cada comparação; no VIKOR, metade do índice passa a depender só desse indicador.
 - **Com o AHP clássico, os dois métodos de compensação limitada concordam.** O peso de Água (41,7%) domina tanto R quanto os fluxos do PROMETHEE II. Guamaré (RN), com Água 27,0 e Tratamento e Destinação 100, cai de 50º na ABES para 433º (313º no PROMETHEE II), e Saloá (PE), de 69º para 409º. Abaíra (BA), com Água 89,9 e zeros em Tratamento e Destinação, sobe de 351º para 139º.
-- **A forma de agregar pesa menos que os pesos, de novo.** Mantidos os pesos, trocar a soma ponderada ou o PROMETHEE II pelo VIKOR dá ρ de 0,90 a 0,98. Mantido o VIKOR, trocar os pesos dá ρ de 0,48 (CRITIC × AHP clássico) a 0,95 (pesos iguais × CRITIC), faixa mais larga que a do PROMETHEE II (0,60 a 0,94).
 
-| Spearman (ρ) entre os VIKOR | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
-| --- | --- | --- | --- | --- |
-| Pesos iguais | 1 | 0,952 | 0,927 | 0,649 |
-| CRITIC | 0,952 | 1 | 0,885 | 0,477 |
-| AHP Gaussiano | 0,927 | 0,885 | 1 | 0,503 |
-| AHP clássico | 0,649 | 0,477 | 0,503 | 1 |
 
 ### TOPSIS
 
-Com pesos iguais e com CRITIC, o TOPSIS fica a uma distância parecida da ABES (ρ = 0,915 e 0,927). Com pesos iguais, é o mais longe dela entre os três métodos (0,949 no PROMETHEE II e 0,977 no VIKOR); com CRITIC, fica entre o VIKOR (0,920) e o PROMETHEE II (0,988). Com os pesos do AHP Gaussiano, ele é quase a soma ponderada com os mesmos pesos (ρ = 0,990, a maior concordância entre formas de agregar do parecer). Com os pesos do AHP clássico, é o ranking mais distante da ABES calculado até aqui (ρ = 0,695).
+Com pesos iguais e com CRITIC, o TOPSIS fica a uma distância parecida da ABES (ρ = 0,915 e 0,927). Com pesos iguais, é o mais longe dela entre os três métodos (0,949 no PROMETHEE II e 0,977 no VIKOR); com CRITIC, fica entre o VIKOR (0,920) e o PROMETHEE II (0,988). Com os pesos do AHP Gaussiano, ele é quase a soma ponderada com os mesmos pesos (ρ = 0,990, a maior concordância entre formas de agregar do parecer). Com os pesos do AHP clássico, é o ranking mais distante da ABES entre os 16 (ρ = 0,695).
 
 | Par comparado | Spearman (ρ) | Kendall (τ-b) | Deslocamento médio (posições) |
 | --- | --- | --- | --- |
@@ -354,27 +363,20 @@ Com pesos iguais e com CRITIC, o TOPSIS fica a uma distância parecida da ABES (
 | TOPSIS × VIKOR, ambos com pesos do AHP Gaussiano | 0,942 | 0,800 | 40,8 |
 | TOPSIS × VIKOR, ambos com pesos do AHP clássico | 0,959 | 0,834 | 29,9 |
 
-Todas as correlações são positivas e significativas (p < 10⁻⁶⁷, n = 505). As dez últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar e da normalização de cada método. Os fluxos do PROMETHEE II e os índices Q do VIKOR entram na planilha do TOPSIS como valores copiados de *PROMETHEE II.ods* e *VIKOR.ods*.
+As dez últimas linhas comparam rankings com os mesmos pesos, então a diferença entre eles vem só da forma de agregar e da normalização de cada método. Os fluxos do PROMETHEE II e os índices Q do VIKOR entram na planilha do TOPSIS como valores copiados de *PROMETHEE II.ods* e *VIKOR.ods*.
 
 - **Com pesos iguais, o TOPSIS segue a influência efetiva, e não os 20%.** Os que mais sobem têm Tratamento e Esgoto médios e Destinação 0: Mutuípe (BA) vai de 384º na ABES para 131º, e Tasso Fragoso (MA), de 283º para 115º. Os que mais caem têm Água, Coleta e Destinação no máximo, mas quase nenhum esgoto: Barra de Santo Antônio (AL), com Esgoto 5,0 e Tratamento 1,5, cai de 152º para 278º, e Campo do Brito (SE), de 143º para 260º. É o mesmo movimento da soma ponderada com os pesos do AHP Gaussiano (Mutuípe é o 106º nela), o que explica por que, com pesos iguais, o TOPSIS concorda menos com o PROMETHEE II e o VIKOR (0,90 e 0,88) do que com os outros pesos.
 - **Com CRITIC, o zero em Destinação pesa, mas não divide o ranking.** O melhor dos 248 municípios sem Destinação fica em 101º, contra 92º no PROMETHEE II e 253º no VIKOR. Itapetinga (BA), com Água 100, Esgoto 98,7 e Coleta 97,0, cai de 106º na ABES para 284º. Santa Filomena (PE), com Destinação 100 e Tratamento 61,1, sobe de 271º para 66º. Mesmo assim, é com CRITIC que o TOPSIS mais se aproxima do VIKOR (ρ = 0,974).
 - **Com o AHP clássico, os três métodos de agregação convergem.** Água tem 37,4% da influência, e os municípios com Água baixa caem: Guamaré (RN), com Água 27,0 e Tratamento e Destinação 100, vai de 50º na ABES para 354º, e Saloá (PE), de 69º para 336º. Brejões (BA), com Água 99,1 e zeros em Tratamento e Destinação, sobe de 345º para 110º. O TOPSIS fica a ρ = 0,95 do PROMETHEE II e a 0,96 do VIKOR com os mesmos pesos.
-- **A forma de agregar pesa menos que os pesos, mais uma vez.** Mantidos os pesos, trocar a soma ponderada, o PROMETHEE II ou o VIKOR pelo TOPSIS dá ρ de 0,88 a 0,99. Mantido o TOPSIS, trocar os pesos dá ρ de 0,45 (CRITIC × AHP clássico) a 0,95 (pesos iguais × AHP Gaussiano), a faixa mais larga dos três métodos.
 
-| Spearman (ρ) entre os TOPSIS | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
-| --- | --- | --- | --- | --- |
-| Pesos iguais | 1 | 0,854 | 0,951 | 0,712 |
-| CRITIC | 0,854 | 1 | 0,861 | 0,448 |
-| AHP Gaussiano | 0,951 | 0,861 | 1 | 0,527 |
-| AHP clássico | 0,712 | 0,448 | 0,527 | 1 |
 
 ### Os 16 rankings em conjunto
 
-A matriz abaixo reúne as correlações de Spearman entre os 16 rankings, agrupados pelo esquema de pesos. "Soma iguais" é a ABES, "Soma Gauss." e "Soma Cláss." são os dois AHP, e "PROM." é o PROMETHEE II. Todas as correlações são positivas e significativas (p < 10⁻²⁴, n = 505).
+A matriz abaixo reúne as correlações de Spearman entre os 16 rankings, agrupados pelo esquema de pesos. "ABES" é a soma das notas brutas com pesos iguais, "Soma Gauss." e "Soma Cláss." são os dois AHP, e "PROM." é o PROMETHEE II. Todas as correlações são positivas, de 0,44 a 0,99.
 
-| ρ | Soma iguais | TOPSIS iguais | VIKOR iguais | PROM. iguais | Soma CRITIC | TOPSIS CRITIC | VIKOR CRITIC | PROM. CRITIC | Soma Gauss. | TOPSIS Gauss. | VIKOR Gauss. | PROM. Gauss. | Soma Cláss. | TOPSIS Cláss. | VIKOR Cláss. | PROM. Cláss. |
+| ρ | ABES | TOPSIS iguais | VIKOR iguais | PROM. iguais | Soma CRITIC | TOPSIS CRITIC | VIKOR CRITIC | PROM. CRITIC | Soma Gauss. | TOPSIS Gauss. | VIKOR Gauss. | PROM. Gauss. | Soma Cláss. | TOPSIS Cláss. | VIKOR Cláss. | PROM. Cláss. |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Soma iguais** | 1 | 0,91 | 0,98 | 0,95 | 0,95 | 0,93 | 0,92 | 0,99 | 0,89 | 0,84 | 0,90 | 0,96 | 0,87 | 0,69 | 0,70 | 0,71 |
+| **ABES** | 1 | 0,91 | 0,98 | 0,95 | 0,95 | 0,93 | 0,92 | 0,99 | 0,89 | 0,84 | 0,90 | 0,96 | 0,87 | 0,69 | 0,70 | 0,71 |
 | **TOPSIS iguais** | 0,91 | 1 | 0,88 | 0,90 | 0,81 | 0,85 | 0,79 | 0,87 | 0,95 | 0,95 | 0,90 | 0,97 | 0,89 | 0,71 | 0,64 | 0,64 |
 | **VIKOR iguais** | 0,98 | 0,88 | 1 | 0,91 | 0,95 | 0,94 | 0,95 | 0,97 | 0,89 | 0,84 | 0,93 | 0,94 | 0,82 | 0,62 | 0,65 | 0,65 |
 | **PROM. iguais** | 0,95 | 0,90 | 0,91 | 1 | 0,83 | 0,78 | 0,79 | 0,92 | 0,80 | 0,77 | 0,80 | 0,90 | 0,96 | 0,85 | 0,85 | 0,87 |
@@ -391,20 +393,127 @@ A matriz abaixo reúne as correlações de Spearman entre os 16 rankings, agrupa
 | **VIKOR Cláss.** | 0,70 | 0,64 | 0,65 | 0,85 | 0,53 | 0,45 | 0,48 | 0,65 | 0,49 | 0,46 | 0,50 | 0,61 | 0,90 | 0,96 | 1 | 0,98 |
 | **PROM. Cláss.** | 0,71 | 0,64 | 0,65 | 0,87 | 0,54 | 0,45 | 0,48 | 0,66 | 0,48 | 0,45 | 0,49 | 0,61 | 0,90 | 0,95 | 0,98 | 1 |
 
-| Tipo de par | Pares | ρ mínimo | ρ máximo | ρ médio |
-| --- | --- | --- | --- | --- |
-| Mesmos pesos, agregação diferente | 24 | 0,88 | 0,99 | 0,95 |
-| Mesma agregação, pesos diferentes | 24 | 0,45 | 0,95 | 0,78 |
-| Pesos e agregação diferentes | 72 | 0,44 | 0,99 | 0,75 |
+| Tipo de par | Pares | ρ mínimo | ρ máximo | ρ médio | τ mínimo | τ máximo | τ médio |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Mesmos pesos, agregação diferente | 24 | 0,88 | 0,99 | 0,95 | 0,72 | 0,94 | 0,82 |
+| Mesma agregação, pesos diferentes | 24 | 0,45 | 0,95 | 0,78 | 0,33 | 0,87 | 0,63 |
+| Pesos e agregação diferentes | 72 | 0,44 | 0,99 | 0,75 | 0,31 | 0,92 | 0,60 |
 
-- **Os pesos definem os blocos.** Os quatro rankings de cada esquema formam um bloco na diagonal da matriz, com ρ de 0,88 a 0,99 dentro dele. Mantidos os pesos, trocar a forma de agregar muda pouco o ranking. Mantida a agregação, trocar os pesos pode baixar o ρ até 0,45. É a conclusão de cada seção anterior, agora confirmada para todos os pares.
+O τ médio entre os 120 pares é 0,65: para um par de municípios escolhido ao acaso, dois rankings quaisquer concordam sobre qual dos dois está à frente em cerca de 83% das vezes.
+
+- **Os pesos definem os blocos.** Os quatro rankings de cada esquema formam um bloco na diagonal da matriz, com ρ de 0,88 a 0,99 dentro dele. Mantidos os pesos, trocar a forma de agregar muda pouco o ranking. Mantida a agregação, trocar os pesos pode baixar o ρ até 0,45. O padrão vale para cada método: entre esquemas de pesos, o ρ vai de 0,60 a 0,94 no PROMETHEE II, de 0,48 a 0,95 no VIKOR e de 0,45 a 0,95 no TOPSIS; mantidos os pesos, a troca de método fica entre 0,88 e 0,99. Por município, a conclusão é a mesma: a amplitude de posições entre os quatro esquemas, com o método fixo, é em média de 132 posições, e entre os quatro métodos, com os pesos fixos, de 62 (notebook 03).
 - **Com CRITIC as agregações mais concordam, e com pesos iguais, menos.** Dentro de cada esquema, o ρ médio entre as quatro agregações é 0,97 com CRITIC, 0,96 com AHP Gaussiano, 0,94 com AHP clássico e 0,92 com pesos iguais. Com pesos iguais, os 20% valem sobre escalas diferentes em cada método (notas brutas, min-max, norma vetorial), e a influência efetiva de cada indicador muda de um método para outro.
 - **O AHP clássico forma um grupo à parte.** Os quatro rankings com esses pesos concordam entre si (ρ de 0,90 a 0,98), mas TOPSIS, VIKOR e PROMETHEE II com esses pesos têm as menores correlações médias com os outros 15 (0,66). O par mais distante do parecer é TOPSIS com AHP clássico × VIKOR com CRITIC (ρ = 0,44): os pesos de um concentram Água e Coleta, e os do outro, Destinação.
 - **A ABES é o ranking mais central.** Seu ρ médio com os outros 15 é 0,88, o maior dos 16, seguido do PROMETHEE II com AHP Gaussiano (0,87) e do VIKOR e do PROMETHEE II com pesos iguais (0,86).
+- **O PROMETHEE II com pesos iguais fica mais perto da soma com os pesos do AHP clássico (ρ = 0,96) que da ABES (0,95).** A explicação provável está na influência de Destinação. Medida pelo peso vezes o desvio-padrão do indicador na escala em que ele entra, Destinação tem 34,5% da influência na ABES, porque nas notas brutas é o indicador mais disperso (quase só 0 e 100). No PROMETHEE II com 20%, os fluxos por critério têm dispersão parecida, e Destinação cai para 22,8%; na soma com os pesos do AHP clássico, cai para 13,2%. Os dois rankings tiram peso de Destinação em relação à ABES, e por isso se aproximam.
+
+**Mudanças de quartil em relação à ABES.** Quartil 1 = 25% melhores. A tabela conta quantos dos 505 municípios mudam de quartil em cada ranking e quantos mudam dois quartis ou mais.
+
+| Ranking | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
+| --- | --- | --- | --- | --- |
+| Soma ponderada | — (é a ABES) | 127 (3) | 184 (11) | 234 (2) |
+| TOPSIS | 148 (12) | 155 (5) | 208 (21) | 300 (46) |
+| VIKOR | 79 (1) | 152 (22) | 181 (9) | 283 (43) |
+| PROMETHEE II | 126 (0) | 50 (0) | 117 (3) | 288 (46) |
+
+Entre parênteses, os que mudam dois quartis ou mais. O PROMETHEE II com CRITIC é o mais parecido com a ABES (50 mudanças, todas de um quartil só), e os três métodos com os pesos do AHP clássico mudam o quartil de mais da metade dos municípios.
 
 ## Top 10
 
-Cinco municípios estão no Top 10 dos três métodos: Salvador, Vitória da Conquista, União dos Palmares, Jequié e Porto Seguro. Fora esse núcleo, o Clássico preserva o Top 10 da ABES (9 de 10 em comum), enquanto o Gaussiano o renova pela metade (5 de 10).
+Três municípios estão no Top 10 dos 16 rankings: Salvador, primeiro em todos, Vitória da Conquista e Jequié. Ao todo, 20 municípios aparecem em algum Top 10. A tabela mostra os 13 que aparecem em pelo menos cinco.
+
+| Município | No Top 10 (de 16) | Melhor posição | Pior posição | Posição mediana |
+| --- | --- | --- | --- | --- |
+| Salvador (BA) | 16 | 1 | 1 | 1 |
+| Vitória da Conquista (BA) | 16 | 2 | 7 | 2 |
+| Jequié (BA) | 16 | 3 | 7 | 4 |
+| Luís Eduardo Magalhães (BA) | 14 | 4 | 15 | 7,5 |
+| Porto Seguro (BA) | 14 | 3 | 16 | 7 |
+| União dos Palmares (AL) | 12 | 2 | 26 | 4 |
+| Aracaju (SE) | 12 | 3 | 19 | 7 |
+| Campina Grande (PB) | 12 | 5 | 21 | 8,5 |
+| Barra dos Coqueiros (SE) | 10 | 2 | 24 | 8,5 |
+| Madre de Deus (BA) | 7 | 4 | 26 | 11 |
+| Santa Luzia (PB) | 6 | 5 | 100 | 13,5 |
+| Frei Martinho (PB) | 5 | 2 | 220 | 13 |
+| João Pessoa (PB) | 5 | 8 | 41 | 11,5 |
+
+Os nove primeiros formam um núcleo amplo: estão no Top 10 em pelo menos 10 dos 16 rankings e nunca passam da 26ª posição. Luís Eduardo Magalhães só sai do Top 10 com os pesos do AHP Gaussiano (na soma ponderada e no TOPSIS), e Porto Seguro, com os do AHP clássico (no TOPSIS e no PROMETHEE II). Santa Luzia e Frei Martinho mostram o oposto: entram no Top 10 com os pesos do AHP Gaussiano e no TOPSIS, que dão mais influência a Tratamento, e caem muito com o AHP clássico, porque têm Água de 67 e 54. Frei Martinho chega a 220º no VIKOR com esses pesos. Dos sete que não estão na tabela, Viçosa (RN) é o caso mais nítido: entra no Top 10 só com os pesos do AHP clássico, nos quatro métodos.
+
+**Soma ponderada com CRITIC.** O Top 10 dela é quase o da ABES: Salvador, Vitória da Conquista, Porto Seguro, União dos Palmares, Jequié, Campina Grande, Aracaju, Barra dos Coqueiros, Luís Eduardo Magalhães e Teotônio Vilela (AL). Só Madre de Deus (BA), 10º na ABES, cai para 11º, e Teotônio Vilela, 11º na ABES, entra no lugar dele. Porto Seguro, com Tratamento, Coleta e Destinação 100, sobe de 5º para 3º. Os dez têm Destinação 100, como os dez da ABES, então o peso maior nesse indicador não muda o topo.
+
+Os Top 10 de cada método, comparados com o da ABES, estão no apêndice.
+
+## Compensação e perfil dos municípios que mudam
+
+Os métodos costumam ser ordenados pelo grau de compensação: total na soma ponderada e no TOPSIS, parcial no VIKOR e limitada no PROMETHEE II. A expectativa usual é que, quanto menor a compensação, mais o método penalize os municípios com um indicador muito fraco. O notebook 03 testa isso comparando a posição de cada município em cada método com a posição dele na soma ponderada com os mesmos pesos (Δ positivo = queda).
+
+| Método (média dos quatro esquemas) | ρ(Δ, número de zeros) | Δ médio, zero em Tratamento | Δ médio, zero em Destinação | Δ médio, sem zeros |
+| --- | --- | --- | --- | --- |
+| TOPSIS | −0,37 | +0,4 | −19,1 | +19,1 |
+| VIKOR | +0,26 | +13,4 | +0,2 | −13,3 |
+| PROMETHEE II | −0,26 | −0,7 | −13,8 | +12,7 |
+
+- **Só o VIKOR penaliza quem tem zeros.** Nele, os municípios com zero em Tratamento caem em média 13 posições em relação à soma, e os sem nenhum zero sobem 13. É o efeito do arrependimento R.
+- **O PROMETHEE II e o TOPSIS fazem o contrário.** Os municípios com zero em Destinação sobem em média 14 e 19 posições, e os sem zeros caem. No PROMETHEE II, "compensação limitada" quer dizer que a perda por um zero fica limitada ao peso do critério em cada comparação: com a função em U, um zero em Destinação empata com os outros zeros e perde para os valores acima de 5, mas não perde mais por estar longe de 100. No TOPSIS, o efeito vem da normalização vetorial, que dá mais influência a Esgoto e Tratamento e menos a Destinação.
+- **Os pesos movem mais quem é desigual.** A amplitude de posições entre esquemas de pesos cresce com a desigualdade entre os cinco indicadores (ρ = 0,31) e com o número de zeros (0,20). Dos 20 municípios com maior amplitude nos 16 rankings, todos ficam na pior posição com os pesos do AHP clássico, e 19 na melhor com os do AHP Gaussiano. São municípios com Água baixa e Tratamento ou Destinação altos, como Carnaubeira da Penha (PE), Santa Filomena (PE) e Guamaré (RN).
+- **Quem muda de quartil entre a ABES e o VIKOR com pesos iguais.** São 79 municípios, 39 que sobem e 40 que descem. Os que descem quase sempre têm um indicador no zero (pior indicador médio de 0,2; 45% com zero em Tratamento e 50% em Destinação). Os que sobem quase não têm zeros (pior indicador médio de 17,5; nenhum com zero em Tratamento). Para a priorização, o VIKOR desloca a atenção para os municípios com um componente ausente, mesmo quando a média deles é alta.
+
+## Associação com a DRSAI
+
+A DRSAI não entra em nenhum ranking. Ela só avalia os rankings prontos, pelo protocolo da seção 7 do log (notebook 02). A amostra comum tem 360 dos 505 municípios, os que têm taxa de internações válida. Um ρ negativo entre a pontuação e a taxa quer dizer que os municípios mais bem colocados têm menos internações. É uma medida de coerência do ranking com um desfecho de saúde, e não de efeito causal.
+
+| ρ com a DRSAI | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico | Média |
+| --- | --- | --- | --- | --- | --- |
+| Soma ponderada | −0,218 (ABES) | −0,227 | −0,168 | −0,151 | −0,191 |
+| TOPSIS | −0,137 | −0,206 | −0,141 | −0,114 | −0,149 |
+| VIKOR | −0,230 | −0,228 | −0,210 | −0,150 | −0,204 |
+| PROMETHEE II | −0,187 | −0,224 | −0,177 | −0,152 | −0,185 |
+| **Média** | −0,193 | −0,221 | −0,174 | −0,142 | −0,182 |
+
+- **A associação é fraca e do mesmo sinal em todos.** Os 16 ρ vão de −0,11 a −0,23, e todos os intervalos de 95% por bootstrap ficam abaixo de zero.
+- **Nenhum ranking supera a ABES.** Os quatro com ρ mais negativo que o da ABES (VIKOR com pesos iguais e com CRITIC, soma com CRITIC e PROMETHEE II com CRITIC) ficam a no máximo 0,012 dela, e o intervalo da diferença inclui zero em todos. Sete rankings se associam significativamente menos que a ABES: os três TOPSIS que não usam CRITIC, a soma com os dois AHP e o PROMETHEE II com pesos iguais e com AHP Gaussiano.
+- **Os pesos importam mais que o método também aqui.** Em média, o CRITIC é o esquema mais associado (Δρ = −0,05 contra a média dos outros, intervalo abaixo de zero) e o AHP clássico, o menos. Entre os métodos, o VIKOR é o mais associado (Δρ = −0,03) e o TOPSIS, o menos (+0,04), ambos com intervalo que exclui zero.
+- **O controle por UF e porte reduz a associação.** O ρ parcial fica entre −0,04 e −0,14. Dentro dos estados, os ρ são negativos na BA, em PE e na PB, misturados no RN (de −0,15 a +0,07) e positivos no CE em 13 dos 16 rankings (até +0,15). Sem os 5% de taxas mais altas, os ρ quase não mudam.
+- **O componente mais fraco não se associa mais que a média.** O ρ do pior indicador de cada município com a DRSAI (−0,221) é praticamente igual ao da média dos cinco (−0,218), com diferença de −0,003 (intervalo de −0,08 a +0,08). Destinação sozinha tem ρ de −0,223. O grau de compensação também não ordena os métodos: o VIKOR, que penaliza os zeros, é o mais associado, mas o PROMETHEE II, de compensação limitada, fica atrás da soma ponderada.
+
+## Pontos fortes e limitações
+
+Nenhum método é neutro. Cada um embute uma resposta diferente à pergunta sobre o que mais importa no saneamento.
+
+| Método | Pontos fortes | Limitações |
+| --- | --- | --- |
+| ABES | Simples, transparente e oficial, com comparação direta entre edições do ranking | Os 20% nominais não geram influência igual: como as notas de Coleta e Água são mais altas, na escala normalizada elas equivalem a 31% e 27%, contra 9,5% de Tratamento |
+| AHP Clássico | Pesos explícitos e justificáveis, com consistência verificada (RC = 0,015); permite discutir prioridades de política pública | Depende do julgamento de quem preenche a matriz; outro decisor pode chegar a pesos e rankings diferentes |
+| AHP Gaussiano | Objetivo e reprodutível, sem julgamento humano; destaca os indicadores que de fato separam os municípios | Peso alto significa "varia muito", não "é importante"; Coleta, quase universalizada, recebe só 6,8%. Os pesos também mudam conforme a amostra de municípios |
+| CRITIC | Objetivo e reprodutível; além da dispersão, desconta a informação repetida entre indicadores correlacionados | Só calcula pesos, e o ranking depende do método de agregação escolhido depois. Os pesos dependem da normalização (min-max aqui) e da amostra. Com correlações baixas como as daqui, o conflito pesa pouco, e Destinação, quase binário, recebe 36,6% |
+| TOPSIS | Simples e sem parâmetros além dos pesos e da normalização. Usa duas referências ao mesmo tempo (ideal positivo e negativo), e D⁺ e D⁻ mostram de onde vem a posição. Muito usado na literatura, o que facilita a comparação com outros estudos | Compensação total, como a soma ponderada: uma nota muito baixa num indicador pode ser coberta pelos outros. A normalização vetorial faz os pesos nominais perderem o sentido de influência (com 20% para cada, Tratamento e Esgoto somam 56% do efeito), e outra normalização muda o ranking. Os ideais e a norma dependem da amostra, então incluir ou excluir municípios pode reordenar os demais (*rank reversal*) |
+| VIKOR | Equilibra duas visões, a do conjunto dos indicadores (S) e a do pior indicador (R), e favorece municípios sem nenhum indicador no pior valor. É o único dos quatro métodos que penaliza os zeros em relação à soma ponderada. Tem um só parâmetro (v) e testa se a 1ª colocada é uma recomendação estável (C1 e C2) | Os valores ideal e anti-ideal são os melhores e piores observados, então mudam com a amostra, e incluir ou excluir municípios pode reordenar os demais (*rank reversal*). Com muitos zeros, R satura: todo município com o pior valor no indicador de maior peso recebe o mesmo R, e metade do índice deixa de distinguir entre eles. As condições C1 e C2 pouco informam com 505 alternativas (DQ ≈ 0,002) |
+| PROMETHEE II | Compensação limitada: uma nota muito baixa num indicador custa no máximo o peso dele em cada comparação. Os pesos nominais valem praticamente como influência, sem depender da escala. Dispensa normalização e lida bem com indicadores quase binários (função em U). Gera uma ordem completa, e os fluxos por critério mostram onde cada município ganha e perde | Exige escolher uma função e dois limiares por critério, o que acrescenta parâmetros a testar (sensibilidade a q e p). Os limiares pelos quartis dependem da amostra. Como cada município é comparado com todos os outros, incluir ou excluir municípios pode inverter a ordem de outros dois (*rank reversal*). Em Destinação, a função em U trata qualquer diferença acima de 5 pontos como preferência total, então 60 contra 100 conta tanto quanto 0 contra 100. A compensação limitada não significa que o zero seja punido: em relação à soma ponderada, os municípios com zero em Destinação sobem |
+
+Um cuidado vale para todos os métodos: os indicadores Tratamento e Destinação têm muitos zeros. Parte desses zeros pode refletir ausência de informação, e não ausência de serviço. Isso afeta sobretudo o Gaussiano e o CRITIC, que dão a esses dois indicadores 64% e 56% do peso, e também o PROMETHEE II, em que um zero em Destinação perde por inteiro para qualquer valor acima de 5, o VIKOR, em que um zero no indicador de maior peso leva R ao máximo, a soma ponderada com CRITIC, em que nenhum município sem Destinação fica entre os 182 primeiros, e o TOPSIS, em que os zeros reduzem a norma vetorial de Esgoto e Tratamento e aumentam a influência desses indicadores.
+
+## Síntese das diferenças
+
+Este parecer não elege um método. Ele registra em que os métodos diferem, para servir de base à comparação com as demais formas de ranqueamento do trabalho.
+
+- **O que define o peso.** Na ABES, nenhuma decisão: os pesos são iguais nas notas brutas. No AHP Clássico, o julgamento declarado de importância. No AHP Gaussiano, a dispersão dos dados. No CRITIC, a dispersão e o conflito entre os indicadores.
+- **Onde o peso se concentra.** Na escala normalizada pela soma, a ABES e o Clássico concentram o peso em Água e Coleta (58% e 68%). O Gaussiano o concentra em Tratamento e Destinação (64%). O CRITIC dá o maior peso a Destinação (36,6% em min-max, 34,0% na escala pela soma).
+- **O peso nominal não é a influência.** A normalização de cada método muda o efeito dos mesmos pesos. Os 20% da ABES sobre as notas brutas favorecem Água e Coleta na escala pela soma; os 20% do TOPSIS sobre a norma vetorial dão 56% da influência a Esgoto e Tratamento; no PROMETHEE II, os 20% são praticamente iguais em efeito (de 19% a 23%).
+- **Como a pontuação é formada.** A soma ponderada (ABES, AHP e CRITIC) e o TOPSIS são compensatórios. O VIKOR combina a soma das distâncias ao ideal com a maior delas, com compensação parcial. O PROMETHEE II compara os municípios dois a dois e ordena pelo fluxo líquido, com compensação limitada.
+- **Os pesos mudam mais o ranking que o método.** Nos 16 rankings, os 24 pares com os mesmos pesos têm ρ de 0,88 a 0,99 (média 0,95), e os 24 com o mesmo método, de 0,45 a 0,95 (média 0,78). Por município, a troca de pesos move em média 132 posições, e a troca de método, 62. Os rankings com os pesos do AHP clássico formam um grupo à parte, e a ABES é o mais central dos 16.
+- **Os casos de cada método.** O VIKOR com pesos iguais quase reproduz a ABES (ρ = 0,977), porque a parcela S é praticamente a soma das notas. O TOPSIS com os pesos do AHP Gaussiano quase reproduz a soma com os mesmos pesos (ρ = 0,990 e o mesmo Top 10). Com CRITIC, a soma ponderada e o VIKOR dividem o ranking por Destinação: nenhum município sem esse indicador fica entre os 182 primeiros na soma, nem entre os 252 primeiros no VIKOR. O ranking mais distante da ABES é o TOPSIS com os pesos do AHP clássico (ρ = 0,695).
+- **O topo é estável.** Salvador é o primeiro nos 16 rankings e a solução de compromisso única do VIKOR nos quatro esquemas. Vitória da Conquista e Jequié estão nos 16 Top 10, e nove municípios estão em pelo menos 10 deles.
+- **Compensação e zeros.** Só o VIKOR penaliza os municípios com zeros em relação à soma ponderada. O PROMETHEE II e o TOPSIS os fazem subir, pela perda limitada a cada critério e pela normalização vetorial.
+- **Associação com a DRSAI.** É fraca nos 16 rankings (ρ de −0,11 a −0,23) e cai com o controle por UF e porte. Nenhum ranking supera a ABES de forma significativa; o CRITIC é o esquema mais associado, e o TOPSIS, o método menos associado.
+
+**Análises de robustez.** As variações previstas estão fixadas na seção 8 do log: limiares do PROMETHEE II (q e p de C1 a C4 a ±50%, função usual e em U com q = p = 10 em Destinação), v do VIKOR (0,25 e 0,75, célula B22 da aba PARÂMETROS de *VIKOR.ods*), normalização min-max no TOPSIS (célula B30 da aba PARÂMETROS de *TOPSIS.ods*; com ela e pesos iguais, o TOPSIS reproduz a ABES com ρ = 0,996), variações de ±1 ponto nos julgamentos de Saaty, SMAA-PROMETHEE, reversão de ordem e retirada de um estado de cada vez.
+
+## Apêndice: Top 10 por método
+
+### ABES e os dois AHP
+
+Cinco municípios estão no Top 10 da ABES e dos dois AHP: Salvador, Vitória da Conquista, União dos Palmares, Jequié e Porto Seguro. Fora esse núcleo, o Clássico preserva o Top 10 da ABES (9 de 10 em comum), enquanto o Gaussiano o renova pela metade (5 de 10).
 
 | Posição | ABES | AHP Clássico | AHP Gaussiano |
 | --- | --- | --- | --- |
@@ -485,74 +594,3 @@ Quatro municípios estão nos cinco Top 10 (ABES e os quatro TOPSIS): Salvador, 
 Em negrito, os municípios presentes nos cinco Top 10.
 
 O Top 10 da ABES perde mais municípios no TOPSIS que no PROMETHEE II e no VIKOR: ficam 8 com pesos iguais, 7 com CRITIC, 5 com o AHP Gaussiano e 9 com o AHP clássico. Os que entram são, de novo, os municípios pequenos da Paraíba com Tratamento acima de 88 e Destinação 100 (Frei Martinho e Santa Luzia, já no Top 10 com pesos iguais), favorecidos pela influência de Tratamento. Com os pesos do AHP Gaussiano, o Top 10 do TOPSIS tem exatamente os mesmos dez municípios da soma ponderada com esses pesos, só em outra ordem, coerente com ρ = 0,990. Com o AHP clássico, ele repete 8 dos 10 do PROMETHEE II e do VIKOR com os mesmos pesos.
-
-### Top 10 da soma ponderada com CRITIC
-
-O Top 10 é quase o da ABES: Salvador, Vitória da Conquista, Porto Seguro, União dos Palmares, Jequié, Campina Grande, Aracaju, Barra dos Coqueiros, Luís Eduardo Magalhães e Teotônio Vilela (AL). Só Madre de Deus (BA), 10º na ABES, cai para 11º, e Teotônio Vilela, 11º na ABES, entra no lugar dele. Porto Seguro, com Tratamento, Coleta e Destinação 100, sobe de 5º para 3º. Os dez têm Destinação 100, como os dez da ABES, então o peso maior nesse indicador não muda o topo.
-
-### Top 10 nos 16 rankings
-
-Três municípios estão no Top 10 dos 16 rankings: Salvador, primeiro em todos, Vitória da Conquista e Jequié. Ao todo, 20 municípios aparecem em algum Top 10. A tabela mostra os 13 que aparecem em pelo menos cinco.
-
-| Município | No Top 10 (de 16) | Melhor posição | Pior posição | Posição mediana |
-| --- | --- | --- | --- | --- |
-| Salvador (BA) | 16 | 1 | 1 | 1 |
-| Vitória da Conquista (BA) | 16 | 2 | 7 | 2 |
-| Jequié (BA) | 16 | 3 | 7 | 4 |
-| Luís Eduardo Magalhães (BA) | 14 | 4 | 15 | 7,5 |
-| Porto Seguro (BA) | 14 | 3 | 16 | 7 |
-| União dos Palmares (AL) | 12 | 2 | 26 | 4 |
-| Aracaju (SE) | 12 | 3 | 19 | 7 |
-| Campina Grande (PB) | 12 | 5 | 21 | 8,5 |
-| Barra dos Coqueiros (SE) | 10 | 2 | 24 | 8,5 |
-| Madre de Deus (BA) | 7 | 4 | 26 | 11 |
-| Santa Luzia (PB) | 6 | 5 | 100 | 13,5 |
-| Frei Martinho (PB) | 5 | 2 | 220 | 13 |
-| João Pessoa (PB) | 5 | 8 | 41 | 11,5 |
-
-Os nove primeiros formam um núcleo amplo: estão no Top 10 em pelo menos 10 dos 16 rankings e nunca passam da 26ª posição. Luís Eduardo Magalhães só sai do Top 10 com os pesos do AHP Gaussiano (na soma ponderada e no TOPSIS), e Porto Seguro, com os do AHP clássico (no TOPSIS e no PROMETHEE II). Santa Luzia e Frei Martinho mostram o oposto: entram no Top 10 com os pesos do AHP Gaussiano e no TOPSIS, que dão mais influência a Tratamento, e caem muito com o AHP clássico, porque têm Água de 67 e 54. Frei Martinho chega a 220º no VIKOR com esses pesos. Dos sete que não estão na tabela, Viçosa (RN) é o caso mais nítido: entra no Top 10 só com os pesos do AHP clássico, nos quatro métodos.
-
-## Pontos fortes e limitações
-
-Nenhum método é neutro. Cada um embute uma resposta diferente à pergunta sobre o que mais importa no saneamento.
-
-| Método | Pontos fortes | Limitações |
-| --- | --- | --- |
-| ABES | Simples, transparente e oficial, com comparação direta entre edições do ranking | Os 20% nominais não geram influência igual: como as notas de Coleta e Água são mais altas, na escala normalizada elas equivalem a 31% e 27%, contra 9,5% de Tratamento |
-| AHP Clássico | Pesos explícitos e justificáveis, com consistência verificada (RC = 0,015); permite discutir prioridades de política pública | Depende do julgamento de quem preenche a matriz; outro decisor pode chegar a pesos e rankings diferentes |
-| AHP Gaussiano | Objetivo e reprodutível, sem julgamento humano; destaca os indicadores que de fato separam os municípios | Peso alto significa "varia muito", não "é importante"; Coleta, quase universalizada, recebe só 6,8%. Os pesos também mudam conforme a amostra de municípios |
-| CRITIC | Objetivo e reprodutível; além da dispersão, desconta a informação repetida entre indicadores correlacionados | Só calcula pesos, e o ranking depende do método de agregação escolhido depois. Os pesos dependem da normalização (min-max aqui) e da amostra. Com correlações baixas como as daqui, o conflito pesa pouco, e Destinação, quase binário, recebe 36,6% |
-| VIKOR | Equilibra duas visões, a do conjunto dos indicadores (S) e a do pior indicador (R), e favorece municípios sem nenhum indicador no pior valor. Tem um só parâmetro (v) e testa se a 1ª colocada é uma recomendação estável (C1 e C2) | Os valores ideal e anti-ideal são os melhores e piores observados, então mudam com a amostra, e incluir ou excluir municípios pode reordenar os demais (*rank reversal*). Com muitos zeros, R satura: todo município com o pior valor no indicador de maior peso recebe o mesmo R, e metade do índice deixa de distinguir entre eles. As condições C1 e C2 pouco informam com 505 alternativas (DQ ≈ 0,002) |
-| TOPSIS | Simples e sem parâmetros além dos pesos e da normalização. Usa duas referências ao mesmo tempo (ideal positivo e negativo), e D⁺ e D⁻ mostram de onde vem a posição. Muito usado na literatura, o que facilita a comparação com outros estudos | Compensação total, como a soma ponderada: uma nota muito baixa num indicador pode ser coberta pelos outros. A normalização vetorial faz os pesos nominais perderem o sentido de influência (com 20% para cada, Tratamento e Esgoto somam 56% do efeito), e outra normalização muda o ranking. Os ideais e a norma dependem da amostra, então incluir ou excluir municípios pode reordenar os demais (*rank reversal*) |
-| PROMETHEE II | Compensação limitada: uma nota muito baixa num indicador custa no máximo o peso dele. Dispensa normalização e lida bem com indicadores quase binários (função em U). Gera uma ordem completa, e os fluxos por critério mostram onde cada município ganha e perde | Exige escolher uma função e dois limiares por critério, o que acrescenta parâmetros a testar (sensibilidade a q e p). Os limiares pelos quartis dependem da amostra. Como cada município é comparado com todos os outros, incluir ou excluir municípios pode inverter a ordem de outros dois (*rank reversal*). Em Destinação, a função em U trata qualquer diferença acima de 5 pontos como preferência total, então 60 contra 100 conta tanto quanto 0 contra 100 |
-
-Um cuidado vale para todos os métodos: os indicadores Tratamento e Destinação têm muitos zeros. Parte desses zeros pode refletir ausência de informação, e não ausência de serviço. Isso afeta sobretudo o Gaussiano e o CRITIC, que dão a esses dois indicadores 64% e 56% do peso, e também o PROMETHEE II, em que um zero em Destinação perde por inteiro para qualquer valor acima de 5, o VIKOR, em que um zero no indicador de maior peso leva R ao máximo, a soma ponderada com CRITIC, em que nenhum município sem Destinação fica entre os 182 primeiros, e o TOPSIS, em que os zeros reduzem a norma vetorial de Esgoto e Tratamento e aumentam a influência desses indicadores.
-
-## Síntese das diferenças
-
-Este parecer não elege um método. Ele registra em que os métodos diferem, para servir de base à comparação com as demais formas de ranqueamento do trabalho.
-
-- **O que define o peso.** Na ABES, nenhuma decisão: os pesos são iguais nas notas brutas. No AHP Clássico, o julgamento declarado de importância. No AHP Gaussiano, a dispersão dos dados. No CRITIC, a dispersão e o conflito entre os indicadores.
-- **Onde o peso se concentra.** Na escala normalizada, a ABES e o Clássico concentram o peso em Água e Coleta (58% e 68%). O Gaussiano o concentra em Tratamento e Destinação (64%). O CRITIC dá o maior peso a Destinação (36,6% em min-max, 34,0% na escala pela soma).
-- **Como a pontuação é formada.** A ABES usa a soma simples das notas brutas, e os dois AHP usam a soma ponderada dos valores normalizados. As duas formas são aditivas e compensatórias. O PROMETHEE II compara os municípios dois a dois e ordena pelo fluxo líquido, com compensação limitada. O VIKOR combina a soma das distâncias ao ideal com a maior delas, com compensação parcial. O TOPSIS ordena pela proximidade relativa aos ideais positivo e negativo, com compensação total.
-- **Concordância com a ABES.** Os dois AHP têm correlação forte com ela (ρ de 0,87 a 0,89). No topo, porém, o Clássico mantém 9 dos 10 primeiros, e o Gaussiano, 5.
-- **Concordância entre os AHP.** A correlação entre os dois (ρ = 0,76) é menor que a de qualquer deles com a ABES, porque cada um se afasta dela numa direção.
-- **Núcleo estável.** Salvador, Vitória da Conquista, União dos Palmares, Jequié e Porto Seguro estão no Top 10 dos três métodos. Salvador, Vitória da Conquista, Aracaju, Barra dos Coqueiros, Madre de Deus, Luís Eduardo Magalhães e Jequié estão no Top 10 da ABES e dos quatro PROMETHEE II. Salvador, Vitória da Conquista, Jequié, Luís Eduardo Magalhães e Porto Seguro estão no da ABES e dos quatro VIKOR. Salvador, Vitória da Conquista, União dos Palmares e Jequié estão no da ABES e dos quatro TOPSIS. Nos 16 rankings, só Salvador, Vitória da Conquista e Jequié estão sempre no Top 10, e nove municípios estão em pelo menos 10 deles.
-- **PROMETHEE II e ABES.** Com pesos iguais, CRITIC e AHP Gaussiano, o PROMETHEE II fica mais perto da ABES (ρ de 0,95 a 0,99) do que os dois AHP. Com os pesos do AHP clássico, fica mais longe (ρ = 0,71).
-- **VIKOR e ABES.** Com pesos iguais, o VIKOR fica muito perto da ABES (ρ = 0,977), porque sua parcela S praticamente a reproduz. Com os pesos do AHP clássico, é o mais distante (ρ = 0,705). Com CRITIC, o arrependimento individual R separa os municípios sem Destinação, que caem para a segunda metade do ranking.
-- **TOPSIS e ABES.** Com pesos iguais e CRITIC, o TOPSIS fica a ρ de 0,91 a 0,93 da ABES, mais longe que o PROMETHEE II de mesmos pesos (e, com pesos iguais, também que o VIKOR), porque a normalização vetorial dá mais influência a Esgoto e Tratamento. Com o AHP Gaussiano, repete a soma ponderada (ρ = 0,990 e o mesmo Top 10). Com o AHP clássico, é o mais distante da ABES (ρ = 0,695). Com normalização min-max e pesos iguais, praticamente reproduz a ABES (ρ = 0,996).
-- **Salvador como solução de compromisso.** Nos quatro esquemas, Salvador satisfaz as duas condições do VIKOR (vantagem e estabilidade aceitáveis) e é a solução única.
-- **Pesos contra agregação.** No PROMETHEE II, trocar os pesos muda mais o ranking (ρ de 0,60 a 0,94 entre esquemas) do que trocar a soma ponderada pelo PROMETHEE II com os mesmos pesos (ρ de 0,90 a 0,97). O VIKOR repete o padrão, com faixa ainda mais larga entre esquemas (ρ de 0,48 a 0,95) e de 0,90 a 0,98 contra a soma ponderada e o PROMETHEE II de mesmos pesos. O TOPSIS também: de 0,45 a 0,95 entre esquemas e de 0,88 a 0,99 contra os outros três métodos com os mesmos pesos. Nos 16 rankings, os 24 pares com os mesmos pesos têm ρ de 0,88 a 0,99 (média 0,95), e os 24 com a mesma agregação, de 0,45 a 0,95 (média 0,78).
-- **Soma ponderada com CRITIC.** Fica a ρ = 0,950 da ABES e muda pouco o topo (9 dos 10 em comum), mas divide o ranking por Destinação: nenhum município sem esse indicador fica entre os 182 primeiros.
-
-
-**Cobertura do desenho métodos × pesos.** Os 16 rankings estão calculados em planilha. O último foi a soma ponderada com os pesos CRITIC (normalização min-max), na aba PONTUAÇÃO E RANKING de *CRITIC.ods*, com ρ = 0,950 em relação à ABES.
-
-| Método de agregação | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
-| --- | --- | --- | --- | --- |
-| Soma ponderada | Calculado (é a ABES) | Calculado (*CRITIC.ods*) | Calculado (*AHP Gaussiano.ods*) | Calculado (*AHP Classico.ods*) |
-| TOPSIS | Calculado (*TOPSIS.ods*) | Calculado | Calculado | Calculado |
-| VIKOR | Calculado (*VIKOR.ods*) | Calculado | Calculado | Calculado |
-| PROMETHEE II | Calculado (*PROMETHEE II.ods*) | Calculado | Calculado | Calculado |
-
-Quatro verificações fortaleceriam essa comparação: testar como o ranking Clássico muda com pequenas variações nos julgamentos da matriz de Saaty, como o PROMETHEE II muda com q e p a ±50% e com outros limiares em Destinação (basta trocar os limiares na aba PARÂMETROS da planilha), como o VIKOR muda com v = 0,25 e v = 0,75 (célula B22 da aba PARÂMETROS de *VIKOR.ods*) e como o TOPSIS muda com a normalização min-max (célula B30 da aba PARÂMETROS de *TOPSIS.ods*).
