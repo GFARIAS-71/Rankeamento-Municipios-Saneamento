@@ -99,7 +99,7 @@ Daqui em diante, "amostra" designa os 505 municípios completos, que coincidem c
 **Checklist de reprodutibilidade** (o que precisa existir antes do primeiro parágrafo):
 
 - [x] Dados brutos baixados em `dados/` (SINISA 2025 e ABES 2026), com a URL de origem nos arquivos `.url`
-- [ ] Data de extração de cada base registrada no `log_decisoes.md` (registradas as datas dos commits como limite superior; falta confirmar a data real de download)
+- [x] Data de extração de cada base registrada no `log_decisoes.md` (7 nov. 2026 para o SINISA 2025 e o ABES 2026)
 - [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (já existe `01_filtragem_municipios`; faltam pesos, os 16 rankings, validade com a DRSAI e robustez; o AHP clássico e o AHP Gaussiano, hoje em planilhas do LibreOffice, também precisam ser portados para notebook) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
 - [x] Matriz de decisão gerada: `resultados/municipios_5_indicadores.csv` (505 alternativas), com as alternativas nas linhas e os critérios nas colunas
 - [x] Tabela de critérios com nome, unidade, direção (max/min), fonte, função de preferência, limiares q e p (no `log_decisoes.md`, seções 3 e 4)

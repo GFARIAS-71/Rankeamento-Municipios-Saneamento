@@ -10,10 +10,10 @@ Este arquivo registra cada escolha metodológica do trabalho, com a justificativ
 
 | Base | Arquivo no repositório | Origem | Ano-base | Data de extração |
 | --- | --- | --- | --- | --- |
-| SINISA 2025: água, esgoto e resíduos sólidos | `dados/SINISA/2025/` | [gov.br/cidades, resultados SINISA 2025](https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/resultados-sinisa-2025) | 2024 | Até 17 out. 2026 (a confirmar) |
-| Ranking ABES 2026, Nordeste | `dados/ABES 2026/relatorio ABES 2026 NE.xlsx` | [rankingabes.abes-dn.org.br](https://rankingabes.abes-dn.org.br/relatorio.php) | 2024 | Até 24 out. 2026 (a confirmar) |
+| SINISA 2025: água, esgoto e resíduos sólidos | `dados/SINISA/2025/` | [gov.br/cidades, resultados SINISA 2025](https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/resultados-sinisa-2025) | 2024 | 7 nov. 2026 |
+| Ranking ABES 2026, Nordeste | `dados/ABES 2026/relatorio ABES 2026 NE.xlsx` | [rankingabes.abes-dn.org.br](https://rankingabes.abes-dn.org.br/relatorio.php) | 2024 | 7 nov. 2026 |
 
-As datas exatas de download não foram anotadas na época. As datas acima são as dos commits que trouxeram os arquivos para o repositório (17 out. 2026 para o SINISA; 24 out. 2026 para o arquivo do ABES do Nordeste, que substituiu o do Ceará), e por isso são o limite superior da extração. Substitua-as pela data real, se ela estiver no histórico do navegador, ou declare no artigo "extraído em outubro de 2026".
+As duas bases foram baixadas em 7 nov. 2026, data informada pelo autor.
 
 **Planilha de água retificada.** O IAG0001 vem de `SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`, a versão retificada publicada pelo Ministério das Cidades, e não da versão original.
 

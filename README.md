@@ -117,7 +117,7 @@ Cuidados ao usar os dados:
 - Os números estão gravados como texto, com vírgula decimal e ponto de milhar (por exemplo, `10.220,55` na taxa de DRSAI).
 - As planilhas do SINISA são nacionais; filtre os municípios do Nordeste pela coluna `Macrorregião` (valor `Nordeste`). Nem todo município aparece em todas as planilhas: a de indicadores de água traz 1.528 dos 1.794 municípios nordestinos, e só 36 dos 224 do Piauí.
 - Para o abastecimento de água, use a versão retificada da planilha (`SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`).
-- As datas de extração de cada base estão no [`docs/log_decisoes.md`](docs/log_decisoes.md) (por enquanto, as datas dos commits como limite superior).
+- As datas de extração de cada base estão no [`docs/log_decisoes.md`](docs/log_decisoes.md) (7 nov. 2026 para as duas).
 
 ## Como reproduzir
 
