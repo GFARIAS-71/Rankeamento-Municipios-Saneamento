@@ -1,5 +1,7 @@
 # Rankeamento de Municípios Nordestinos em Saneamento
 
+*[English version](README.en.md) · [Data dictionary in English](DATA_DICTIONARY.md)*
+
 Este repositório ranqueia os municípios do Nordeste (AL, BA, CE, MA, PB, PE, PI, RN e SE) pelo desempenho em saneamento básico e mede quanto a escolha do método multicritério altera esse ranking. Os mesmos cinco indicadores do [Ranking ABES da Universalização do Saneamento 2026](https://rankingabes.abes-dn.org.br/relatorio.php) são agregados por quatro métodos (soma ponderada, que é a regra do ABES, TOPSIS, VIKOR e PROMETHEE II), cada um com quatro esquemas de pesos (iguais, CRITIC, AHP Gaussiano e AHP clássico, este com pesos definidos pela comparação par a par de Saaty). Na soma ponderada, essas colunas reproduzem os três métodos compensatórios da literatura: o ABES, o AHP Gaussiano e o AHP clássico. Os 16 rankings resultantes são comparados entre si e com a taxa de internações por DRSAI (doenças relacionadas ao saneamento ambiental inadequado), para saber qual ordenação se associa mais fortemente à saúde.
 
 **Pergunta principal:** em que medida a escolha do método de agregação multicritério (soma ponderada do ABES, AHP clássico, AHP Gaussiano, TOPSIS, VIKOR ou PROMETHEE II) altera a ordenação dos municípios nordestinos quanto ao saneamento, e qual dessas ordenações se associa mais fortemente à taxa de internações por DRSAI, considerando diferenças entre estados e portes? O grau de compensação de cada método (quanto um indicador bom compensa um ruim) entra como pergunta secundária, para explicar as diferenças.
@@ -78,6 +80,8 @@ O roteiro do artigo está em [docs/Guia de escrita.md](docs/Guia%20de%20escrita.
 ```text
 .
 ├── README.md
+├── README.en.md                     README em inglês, para revisores internacionais
+├── DATA_DICTIONARY.md               Dicionário em inglês de arquivos, abas, colunas, indicadores e rótulos
 ├── docs/
 │   ├── Guia de escrita.md              Guia de escrita do artigo e decisões metodológicas
 │   ├── Log de decisoes.md              Registro das decisões (bases, amostra, critérios, parâmetros, pesos, protocolo da DRSAI e robustez), congelado antes do teste com a DRSAI
