@@ -28,8 +28,8 @@ Rankings municipais de saneamento, como o Ranking ABES da Universalização do S
 
 ## Notas para fechar
 
-- **Limite de palavras.** A chamada não informa. Se o formulário pedir menos de 250 palavras, as frases mais fáceis de cortar são a da lacuna ("It is unclear...") e a última (contribuição), que juntas somam cerca de 45 palavras.
+- **Limite de palavras.** O [formulário de submissão](https://rii-forum.org/abstract-submission-form/) pede no máximo 300 palavras, então as 258 da versão em inglês cabem. O formulário também pede título, palavras-chave (sem número definido), trilha, forma de participação e forma de apresentação.
 - **Robustez.** Ainda não rodou, então o resumo não fala dela. Se rodar antes de 15/11, cabe uma frase: "The conclusions held under SMAA and parameter sensitivity checks."
 - **Unidade da taxa de DRSAI.** O resumo cita a taxa sem unidade, então não depende da resposta da ABES.
-- **Trilha.** Os temas da chamada que mais se aproximam são *Complexity Management and Decision Support Systems* e *Politics, Public Policy, Democracy and Regulation*. Se a banca for de gestão, uma frase ligando rankings a decisões algorítmicas de governo ajuda a encaixar o tema do evento (*The Algorithmic Transition*).
+- **Trilha.** O formulário não tem a trilha *Complexity Management and Decision Support Systems* que aparece na chamada. As que mais se aproximam são *Politics, Public Policy, Democracy and Regulation* (recomendada), *Research Methods and Research Design* e *Artificial Intelligence, Algorithms and Data-Driven Governance*. Para a terceira, valeria uma frase ligando os rankings a decisões algorítmicas de governo, o tema do evento (*The Algorithmic Transition*).
 - **Linguagem.** O resumo fala em associação, nunca em efeito, como pede o parecer da pergunta de pesquisa.
