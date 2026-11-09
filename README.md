@@ -8,7 +8,7 @@ O estudo será submetido como artigo ao [Rii Forum 2027](https://rii-forum.org) 
 
 ## Situação
 
-Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. O AHP clássico e o AHP Gaussiano já foram calculados em planilhas e comparados com o ABES no [parecer técnico](docs/Parecer%20técnico%20dos%20métodos%20multicritério.md), os pesos CRITIC foram calculados na mesma estrutura de planilha e entraram no parecer, o PROMETHEE II foi calculado em planilha com os quatro esquemas de pesos (4 dos 16 rankings) e também entrou no parecer, e o VIKOR e o TOPSIS seguiram o mesmo caminho (mais 8 rankings, 15 dos 16 do desenho; falta a soma ponderada com pesos CRITIC); os notebooks de ranking e de análise ainda não foram escritos.
+Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. Os 16 rankings foram calculados primeiro em planilhas e comparados no [parecer técnico](docs/Parecer%20técnico%20dos%20métodos%20multicritério.md), e depois portados para notebook, com as mesmas pontuações. As decisões metodológicas foram congeladas no [log de decisões](docs/log_decisoes.md) antes do teste com a DRSAI, e o teste de validade externa já rodou (notebook 03). Falta a robustez.
 
 | Etapa | Situação |
 | --- | --- |
@@ -21,9 +21,9 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 | VIKOR em planilha nos quatro esquemas de pesos (v = 0,5), e no parecer técnico | Concluída |
 | TOPSIS em planilha nos quatro esquemas de pesos (normalização vetorial), e no parecer técnico | Concluída |
 | Soma ponderada com pesos CRITIC (min-max) em planilha | Concluída |
-| AHP clássico e AHP Gaussiano portados para notebook | A fazer |
-| Pesos (iguais, CRITIC, AHP Gaussiano e AHP clássico) e os 16 rankings (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) | A fazer |
-| Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte) | A fazer |
+| Decisões e parâmetros congelados no `docs/log_decisoes.md` antes do teste com a DRSAI | Concluída |
+| Pesos e os 16 rankings portados para notebook (02), conferidos com as planilhas | Concluída |
+| Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte; notebook 03) | Concluída |
 | Robustez (SMAA, sensibilidade a q e p) e comparação com o ABES | A fazer |
 | Resumo para o Rii Forum (prazo: 15/11/2026) | A fazer |
 | Artigo completo (prazo: 30/12/2026) | A fazer |
@@ -83,7 +83,10 @@ O roteiro do artigo está em [docs/guia_escrita.md](docs/guia_escrita.md), e cad
 │   ├── Parecer técnico dos métodos multicritério.md   Comparação dos métodos de pesos e de agregação (hoje: ABES, AHP clássico, AHP Gaussiano, CRITIC, PROMETHEE II, VIKOR e TOPSIS)
 │   └── imagens/                     Figuras dos documentos (pesos do ABES e dos AHP)
 ├── jupyter notebooks/
-│   └── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
+│   ├── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
+│   ├── 02_rankings.ipynb               Pesos, os 16 rankings e a concordância entre eles
+│   ├── 03_validade_drsai.ipynb         Validade externa dos 16 rankings com a taxa de DRSAI
+│   └── mcda.py                         Pesos e métodos de agregação, com os parâmetros do log
 ├── planilhas/                       Cálculos feitos no LibreOffice Calc
 │   ├── relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos; base dos dois AHP
 │   ├── AHP Classico.ods                 Matriz de Saaty, pesos, consistência, ranking e comparação com o ABES
@@ -124,10 +127,12 @@ Cuidados ao usar os dados:
 Execute os notebooks de `jupyter notebooks/` em ordem. A pasta `resultados/` não é versionada: ela é criada na primeira execução e recebe as planilhas geradas.
 
 1. `01_filtragem_municipios.ipynb`: lê as planilhas em `dados/`, filtra os municípios do Nordeste, classifica os indicadores faltantes e gera `municipios_5_indicadores.csv`.
+2. `02_rankings.ipynb`: calcula os pesos e os 16 rankings (funções em `mcda.py`), a concordância entre eles (ρ e τ) e as mudanças de quartil em relação ao ABES, e gera `rankings_16.csv`.
+3. `03_validade_drsai.ipynb`: aplica o protocolo de validade externa com a DRSAI (seção 7 do log) e gera `drsai_rho_16.csv`, `drsai_delta_rho_pares.csv`, `drsai_rho_grupos.csv` e a figura `F1_validade_drsai.png`.
 
-Os rankings do AHP clássico, do AHP Gaussiano, do PROMETHEE II, do VIKOR e do TOPSIS estão, por enquanto, em `planilhas/` (abra no LibreOffice Calc). As etapas seguintes (pesos, os 16 rankings em notebook, validade externa com a DRSAI e robustez) ainda serão escritas.
+As planilhas de `planilhas/` continuam como conferência: as pontuações dos notebooks coincidem com as delas até a 15ª casa decimal. A robustez ainda será escrita.
 
-As dependências ficarão em `requirements.txt`, com as versões fixadas.
+As dependências estão em `requirements.txt`, com as versões fixadas (`pip install -r requirements.txt`).
 
 ## Autoria e licença
 
