@@ -83,15 +83,13 @@ O guia sugere 12 a 16 palavras, com a fórmula *[o que o método faz] + [objeto]
 
 ## Proposta escrita a partir do roteiro
 
-### Títulos
+### Título
 
-| | Inglês | Português |
-| --- | --- | --- |
-| **A (achado, recomendado)** | *Weights matter more than methods: multicriteria rankings of municipal sanitation and sanitation-related hospitalisations in Northeast Brazil* | *Os pesos importam mais que o método: rankings multicritério de saneamento municipal e internações por DRSAI no Nordeste brasileiro* |
-| **B (pergunta)** | *Does the aggregation method matter for health? Comparing multicriteria rankings of sanitation against sanitation-related hospitalisations in Northeast Brazil* | *O método de agregação importa para a saúde? Rankings multicritério de saneamento comparados às internações por DRSAI no Nordeste brasileiro* |
-| **C (política pública)** | *Same data, different priorities: how weighting and aggregation shape a public sanitation ranking in Northeast Brazil* | *Mesmos dados, prioridades diferentes: como pesos e agregação moldam um ranking público de saneamento no Nordeste brasileiro* |
+*Multicriteria weighting and aggregation in a municipal sanitation ranking: sanitation-related hospitalisations and method-independent priorities in Northeast Brazil* (17 palavras)
 
-O título A anuncia o achado principal. O B é o que estava no guia e funciona se você preferir não adiantar o resultado. O C combina com a trilha de políticas públicas, mas não menciona a saúde.
+*Ponderação e agregação multicritério em um ranking municipal de saneamento: internações por DRSAI e prioridades independentes do método no Nordeste brasileiro*
+
+"Method-independent priorities" são os 35 municípios que ficam no pior quartil em todos os rankings aceitáveis, isto é, cuja prioridade não depende da escolha de pesos ou de método.
 
 ### Resumo em inglês (281 palavras)
 
@@ -119,4 +117,4 @@ Com o prazo legal de universalização do saneamento fixado em 2033, rankings mu
 | 6. Implicação | "Because health outcomes..." |
 | 7. Contribuição (prática) | "An exploratory consensus..." |
 
-São dez palavras-chave, acima das 5 a 6 do guia, mas o formulário não fixa um número. Com os títulos A e B, *multi-criteria* repete a palavra do título; o guia recomenda evitar a repetição, mas isso não impede o envio.
+São dez palavras-chave, acima das 5 a 6 do guia, mas o formulário não fixa um número. *Multi-criteria* e *sanitation-related* repetem palavras do título; o guia recomenda evitar a repetição, mas isso não impede o envio.
