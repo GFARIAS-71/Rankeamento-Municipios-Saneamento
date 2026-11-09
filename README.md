@@ -14,7 +14,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 | --- | --- |
 | Dados do SINISA 2025 baixados | Concluída |
 | Dados do ABES 2026 para o Nordeste baixados | Concluída |
-| Matriz de decisão montada (505 municípios completos, notebook 01) | Concluída |
+| Matriz de decisão montada (505 habilitados no ABES, em `planilhas/relatorio ABES 2026 NE.ods`) | Concluída |
 | AHP clássico e AHP Gaussiano em planilha, com parecer técnico comparando-os ao ABES | Concluída |
 | Pesos CRITIC em planilha (normalização min-max) e no parecer técnico | Concluída |
 | PROMETHEE II em planilha nos quatro esquemas de pesos, e no parecer técnico | Concluída |
@@ -83,20 +83,18 @@ O roteiro do artigo está em [docs/guia_escrita.md](docs/guia_escrita.md), e cad
 │   ├── Parecer técnico dos métodos multicritério.md   Comparação dos métodos de pesos e de agregação (hoje: ABES, AHP clássico, AHP Gaussiano, CRITIC, PROMETHEE II, VIKOR e TOPSIS)
 │   └── imagens/                     Figuras dos documentos (pesos do ABES e dos AHP)
 ├── jupyter notebooks/
-│   ├── 01_filtragem_municipios.ipynb   Classifica os indicadores faltantes e seleciona as alternativas
+│   ├── 01_filtragem_municipios.ipynb   Fora de uso: a base passou a ser a planilha do ABES em planilhas/
 │   ├── 02_rankings.ipynb               Pesos, os 16 rankings e a concordância entre eles
 │   ├── 03_validade_drsai.ipynb         Validade externa dos 16 rankings com a taxa de DRSAI
 │   └── mcda.py                         Pesos e métodos de agregação, com os parâmetros do log
 ├── planilhas/                       Cálculos feitos no LibreOffice Calc
-│   ├── relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos; base dos dois AHP
+│   ├── relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos e a taxa de DRSAI; base de todas as planilhas e dos notebooks 02 e 03
 │   ├── AHP Classico.ods                 Matriz de Saaty, pesos, consistência, ranking e comparação com o ABES
 │   ├── AHP Gaussiano.ods                Pesos gaussianos, ranking e comparação com o ABES
 │   ├── CRITIC.ods                       Normalizações min-max e pela soma, correlação entre critérios, pesos CRITIC e soma ponderada com esses pesos
 │   ├── PROMETHEE II.ods                 Funções de preferência e limiares, fluxos por critério, fluxos e ranking nos quatro esquemas de pesos, comparação com o ABES e com a soma ponderada
 │   ├── TOPSIS.ods                       Normalização vetorial, matriz ponderada, ideais positivo e negativo, D⁺, D⁻, C* e ranking nos quatro esquemas de pesos, comparação com o ABES, a soma ponderada, o PROMETHEE II e o VIKOR
 │   └── VIKOR.ods                        Ideal e anti-ideal, distâncias normalizadas, S, R e Q, ranking e condições C1 e C2 nos quatro esquemas de pesos, comparação com o ABES, a soma ponderada e o PROMETHEE II
-├── resultados/                      Criada ao executar os notebooks; fora do Git
-│   └── municipios_5_indicadores.csv     Matriz de decisão: 505 municípios com os cinco indicadores e a situação de cada um
 ├── dados/
 │   ├── SINISA/2025/                 SINISA 2025 (ano-base 2024), Ministério das Cidades; base nacional, filtrada para o Nordeste
 │   │   ├── abastecimento de água/   Planilhas por município, por prestador e consolidadas; glossário
@@ -124,13 +122,12 @@ Cuidados ao usar os dados:
 
 ## Como reproduzir
 
-Execute os notebooks de `jupyter notebooks/` em ordem. A pasta `resultados/` não é versionada: ela é criada na primeira execução e recebe as planilhas geradas.
+O trabalho é feito nas planilhas de `planilhas/` (LibreOffice Calc), que partem de `relatorio ABES 2026 NE.ods`. Os notebooks de `jupyter notebooks/` leem essa mesma planilha e não gravam arquivos:
 
-1. `01_filtragem_municipios.ipynb`: lê as planilhas em `dados/`, filtra os municípios do Nordeste, classifica os indicadores faltantes e gera `municipios_5_indicadores.csv`.
-2. `02_rankings.ipynb`: calcula os pesos e os 16 rankings (funções em `mcda.py`), a concordância entre eles (ρ e τ) e as mudanças de quartil em relação ao ABES, e gera `rankings_16.csv`.
-3. `03_validade_drsai.ipynb`: aplica o protocolo de validade externa com a DRSAI (seção 7 do log) e gera `drsai_rho_16.csv`, `drsai_delta_rho_pares.csv`, `drsai_rho_grupos.csv` e a figura `F1_validade_drsai.png`.
+- `02_rankings.ipynb`: recalcula os pesos e os 16 rankings (funções em `mcda.py`), a concordância entre eles (ρ e τ) e as mudanças de quartil em relação ao ABES. As pontuações coincidem com as das planilhas até a 15ª casa decimal.
+- `03_validade_drsai.ipynb`: aplica o protocolo de validade externa com a DRSAI (seção 7 do log), com o bootstrap, o teste de Steiger e o controle por UF e porte, que não cabem numa planilha.
 
-As planilhas de `planilhas/` continuam como conferência: as pontuações dos notebooks coincidem com as delas até a 15ª casa decimal. A robustez ainda será escrita.
+O `01_filtragem_municipios.ipynb` ficou fora de uso. A robustez ainda será feita.
 
 As dependências estão em `requirements.txt`, com as versões fixadas (`pip install -r requirements.txt`).
 

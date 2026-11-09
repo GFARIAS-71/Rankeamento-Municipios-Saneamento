@@ -100,8 +100,8 @@ Daqui em diante, "amostra" designa os 505 municípios completos, que coincidem c
 
 - [x] Dados brutos baixados em `dados/` (SINISA 2025 e ABES 2026), com a URL de origem nos arquivos `.url`
 - [x] Data de extração de cada base registrada no `log_decisoes.md` (7 nov. 2026 para o SINISA 2025 e o ABES 2026)
-- [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (já existem `01_filtragem_municipios`, `02_rankings`, com os pesos e os 16 rankings, e `03_validade_drsai`; falta a robustez) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
-- [x] Matriz de decisão gerada: `resultados/municipios_5_indicadores.csv` (505 alternativas), com as alternativas nas linhas e os critérios nas colunas
+- [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (o trabalho principal é feito nas planilhas de `planilhas/`; `02_rankings` e `03_validade_drsai` leem `planilhas/relatorio ABES 2026 NE.ods` e fazem o que a planilha não comporta; falta a robustez) que gera todas as tabelas e figuras, com as versões das bibliotecas em `requirements.txt`
+- [x] Matriz de decisão gerada: `planilhas/relatorio ABES 2026 NE.ods` (505 alternativas), com as alternativas nas linhas e os critérios nas colunas
 - [x] Tabela de critérios com nome, unidade, direção (max/min), fonte, função de preferência, limiares q e p (no `log_decisoes.md`, seções 3 e 4)
 - [x] Dicionário de pesos para cada esquema, com o cálculo documentado (`log_decisoes.md`, seção 6, com os pesos iguais também na escala normalizada pela soma)
 - [x] Métodos, pesos e parâmetros (q, p e v) registrados no `log_decisoes.md` antes de calcular qualquer correlação com a DRSAI (congelados em 9 nov. 2026)

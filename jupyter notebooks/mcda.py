@@ -1,6 +1,7 @@
 """Pesos e métodos de agregação do estudo, com os parâmetros do docs/log_decisoes.md.
 
-Todas as funções recebem a matriz de decisão X (municípios nas linhas, os cinco
+A base é a planilha planilhas/relatorio ABES 2026 NE.ods (ler_base).
+As demais funções recebem a matriz de decisão X (municípios nas linhas, os cinco
 critérios nas colunas, na ordem de CRITERIOS, notas brutas de 0 a 100).
 """
 import numpy as np
@@ -26,6 +27,13 @@ Q = np.array([8.94, 11.06, 7.24, 6.40, 5.0])
 P = np.array([32.90, 41.65, 50.10, 31.39, 5.0])
 FUNCAO = ["linear", "linear", "linear", "linear", "U"]
 V_VIKOR = 0.5
+
+
+def ler_base(raiz):
+    """Os 505 municípios habilitados no ABES 2026, da planilha usada em todas as demais (números já convertidos)."""
+    base = pd.read_excel(raiz / "planilhas" / "relatorio ABES 2026 NE.ods", engine="odf")
+    base.columns = base.columns.str.strip()
+    return base
 
 
 def minmax(X):
