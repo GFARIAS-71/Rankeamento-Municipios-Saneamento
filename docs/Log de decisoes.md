@@ -188,3 +188,21 @@ Robustez e validade externa são análises separadas. Nenhuma variação desta s
 ## 9. Alterações depois do congelamento
 
 Nenhuma até agora.
+
+## 10. Análises exploratórias depois da DRSAI
+
+Análises acrescentadas depois do teste de validade externa. Nenhuma altera método, peso, limiar ou normalização das seções 1 a 8; elas só combinam os rankings prontos. No artigo, entram como exploratórias, separadas do protocolo.
+
+### 10.1 Lista de prioridade de consenso (9 nov. 2026)
+
+**Decisão.** Em vez de eleger um único ranking, indicar como prioritários os municípios que ficam no 4º quartil (25% piores) em todas as combinações aceitáveis de pesos e método. Os métodos multicritério apoiam a decisão e não a substituem.
+
+**Critérios, definidos pelo autor:**
+
+1. **Filtro pela DRSAI.** Saem os rankings que se associam significativamente menos à DRSAI que o ABES (IC de 95% do Δρ contra o ABES acima de zero, mesmas reamostragens do notebook 02). Ficam 9: ABES, soma ponderada com CRITIC, TOPSIS com CRITIC, os 4 VIKOR, PROMETHEE II com CRITIC e PROMETHEE II com AHP clássico.
+2. **Saneamento como direito.** Ter um serviço não compensa a falta de outro, então ficam só os métodos de compensação parcial ou limitada: os 4 VIKOR, o PROMETHEE II com CRITIC e o PROMETHEE II com AHP clássico (6 rankings).
+3. **Consenso.** Prioritário é o município no 4º quartil nos 6 rankings. Quartis como na seção 5 do notebook 03.
+
+**Resultado (notebook 03, seção 7).** São 35 municípios prioritários, todos de pequeno e médio porte e todos com Destinação zero. Outros 199 ficam no 4º quartil em alguns dos 6 rankings, mas não em todos. Com os 9 rankings do filtro, o núcleo tem 33 municípios, todos dentro dos 35. O Ceará tem 20 dos 35 (57%, contra 19% dos 505). A taxa mediana de DRSAI dos 27 prioritários com taxa válida é 79,7, contra 49,4 nos demais, uma comparação descritiva.
+
+**Fora desta análise.** Um esquema de pesos pela distância às metas da Lei 14.026/2020 (99% de água e 90% de esgoto até 2033) seria um ranking novo e, pela regra 7 da seção 7, não entra no estudo. Fica como trabalho futuro.
