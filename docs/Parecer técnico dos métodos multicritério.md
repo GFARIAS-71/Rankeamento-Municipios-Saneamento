@@ -4,15 +4,15 @@ Nov 8, 2026 · @Guilherme de Farias
 
 ## Objetivo e escopo
 
-Este parecer reúne, à medida que forem calculados, todos os métodos do trabalho, separados em métodos de pesos e métodos de agregação. Até aqui ele cobre a ABES, os dois AHP, o CRITIC, o PROMETHEE II, o VIKOR e o TOPSIS. Os três primeiros produzem rankings fortemente concordantes no conjunto dos municípios, mas divergem no topo. O CRITIC, que só calcula pesos, concentra 36,6% do peso em Destinação, mais que qualquer outro esquema. O PROMETHEE II, que só ranqueia, foi aplicado aos quatro esquemas de pesos. Com pesos iguais, CRITIC e AHP Gaussiano ele fica muito perto da ABES (ρ de 0,95 a 0,99). Com os pesos do AHP clássico, ele se afasta dela (ρ = 0,71). O VIKOR, também só de agregação, foi aplicado aos mesmos quatro esquemas. Com pesos iguais, ele fica muito perto da ABES (ρ = 0,98), mais que o PROMETHEE II com os mesmos pesos; com os pesos do AHP clássico, é o ranking mais distante dela calculado até aqui (ρ = 0,70). Nos quatro esquemas, Salvador é a solução de compromisso única. O TOPSIS, o último método de agregação, também foi aplicado aos quatro esquemas. Com a normalização vetorial, os 20% nominais deixam de ser iguais em efeito: Esgoto e Tratamento, com muitos zeros, ganham influência, e o TOPSIS de pesos iguais se afasta mais da ABES (ρ = 0,91) que o PROMETHEE II e o VIKOR de pesos iguais. Com os pesos do AHP Gaussiano, ele praticamente repete a soma ponderada (ρ = 0,99), e com os do AHP clássico é o ranking mais distante da ABES (ρ = 0,69). Salvador é o primeiro nos quatro.
+Este parecer reúne todos os métodos do trabalho, separados em métodos de pesos e métodos de agregação: a ABES, os dois AHP, o CRITIC, o PROMETHEE II, o VIKOR e o TOPSIS. Os três primeiros produzem rankings fortemente concordantes no conjunto dos municípios, mas divergem no topo. O CRITIC, que só calcula pesos, concentra 36,6% do peso em Destinação, mais que qualquer outro esquema. O PROMETHEE II, que só ranqueia, foi aplicado aos quatro esquemas de pesos. Com pesos iguais, CRITIC e AHP Gaussiano ele fica muito perto da ABES (ρ de 0,95 a 0,99). Com os pesos do AHP clássico, ele se afasta dela (ρ = 0,71). O VIKOR, também só de agregação, foi aplicado aos mesmos quatro esquemas. Com pesos iguais, ele fica muito perto da ABES (ρ = 0,98), mais que o PROMETHEE II com os mesmos pesos; com os pesos do AHP clássico, é o ranking mais distante dela calculado até aqui (ρ = 0,70). Nos quatro esquemas, Salvador é a solução de compromisso única. O TOPSIS, o último método de agregação, também foi aplicado aos quatro esquemas. Com a normalização vetorial, os 20% nominais deixam de ser iguais em efeito: Esgoto e Tratamento, com muitos zeros, ganham influência, e o TOPSIS de pesos iguais se afasta mais da ABES (ρ = 0,91) que o PROMETHEE II e o VIKOR de pesos iguais. Com os pesos do AHP Gaussiano, ele praticamente repete a soma ponderada (ρ = 0,99), e com os do AHP clássico é o ranking mais distante da ABES (ρ = 0,69). Salvador é o primeiro nos quatro.
 
 | Método | Papel | Situação neste parecer | Planilha |
 | --- | --- | --- | --- |
 | ABES | Pesos iguais + soma simples das notas brutas | Incluído (pesos e ranking) | *relatorio ABES 2026 NE.ods* |
 | AHP Clássico | Pesos (Saaty) + soma ponderada normalizada | Incluído (pesos e ranking) | *AHP Classico.ods* |
 | AHP Gaussiano | Pesos (coeficiente de variação) + soma ponderada normalizada | Incluído (pesos e ranking) | *AHP Gaussiano.ods* |
-| CRITIC | Só pesos (dispersão + conflito); a soma ponderada com esses pesos fica na mesma planilha | Incluído (pesos) | *CRITIC.ods* |
-| Pesos iguais na escala normalizada | Só pesos | A incluir | — |
+| CRITIC | Só pesos (dispersão + conflito); a soma ponderada com esses pesos fica na mesma planilha | Incluído (pesos e ranking pela soma ponderada) | *CRITIC.ods* |
+| Pesos iguais | Só pesos (20% para cada indicador) | Incluído (aplicado no PROMETHEE II, no VIKOR e no TOPSIS; na soma ponderada, corresponde à ABES) | — |
 | TOPSIS | Só agregação (proximidade relativa ao ideal, compensação total) | Incluído (ranking nos quatro esquemas de pesos) | *TOPSIS.ods* |
 | VIKOR | Só agregação (solução de compromisso, compensação parcial) | Incluído (ranking nos quatro esquemas de pesos) | *VIKOR.ods* |
 | PROMETHEE II | Só agregação (comparação par a par, compensação limitada) | Incluído (ranking nos quatro esquemas de pesos) | *PROMETHEE II.ods* |
@@ -29,7 +29,7 @@ Todos os números vêm das planilhas da pasta `planilhas/` indicadas na tabela a
 
 ## Os métodos: formas de pesar e formas de ranquear
 
-Os métodos se distinguem em duas etapas: como se definem os pesos dos cinco indicadores e como esses pesos se combinam com o desempenho de cada município. Alguns métodos cobrem só a primeira etapa (CRITIC), outros só a segunda (TOPSIS, VIKOR, PROMETHEE II), e a ABES e os AHP, como aplicados aqui, cobrem as duas. Até aqui, há quatro formas de pesar e cinco de ranquear.
+Os métodos se distinguem em duas etapas: como se definem os pesos dos cinco indicadores e como esses pesos se combinam com o desempenho de cada município. Alguns métodos cobrem só a primeira etapa (CRITIC), outros só a segunda (TOPSIS, VIKOR, PROMETHEE II), e a ABES e os AHP, como aplicados aqui, cobrem as duas. Ao todo, há quatro formas de pesar e cinco de ranquear.
 
 ### Formas de pesar os critérios
 
@@ -40,7 +40,7 @@ Os métodos se distinguem em duas etapas: como se definem os pesos dos cinco ind
 | AHP Gaussiano | Coeficiente de variação de cada indicador (desvio-padrão ÷ média), normalizado para somar 1 | Objetiva: expressa quanto os municípios diferem entre si em cada indicador |
 | CRITIC | Desvio-padrão de cada indicador normalizado por min-max, multiplicado pelo conflito com os demais (Σ de 1 − correlação), normalizado para somar 1 | Objetiva: expressa quanto o indicador varia e quanto traz de informação que os outros não trazem |
 
-Os valores de cada peso estão na seção "Pesos resultantes". O CRITIC não tem forma de ranquear própria: seus pesos são aplicados pelos métodos de agregação. Até aqui, isso foi feito no PROMETHEE II, no VIKOR e no TOPSIS.
+Os valores de cada peso estão na seção "Pesos resultantes". O CRITIC não tem forma de ranquear própria: seus pesos são aplicados pelos métodos de agregação. Isso foi feito na soma ponderada (normalização min-max, na própria *CRITIC.ods*), no PROMETHEE II, no VIKOR e no TOPSIS.
 
 ### CRITIC
 
@@ -62,14 +62,14 @@ Na fórmula, rᵢⱼ é o valor normalizado por min-max (o pior município do in
 
 As correlações entre os indicadores são baixas: a maior é 0,33 (Água × Coleta), seguida de 0,32 (Esgoto × Tratamento). Nenhum par passa do limite de 0,8 que exigiria justificar ou excluir um critério. Por isso o conflito varia pouco (3,26 a 3,88), e quem decide o peso é sobretudo o desvio-padrão. Destinação lidera nas duas partes. É o indicador mais disperso, porque quase todos os municípios têm 0 ou 100, e o menos correlacionado com os outros (correlação negativa com Água e com Tratamento).
 
-**Por que min-max.** A normalização muda o desvio-padrão, mas não a correlação. Com a normalização pela soma, usada nos AHP, o desvio-padrão de cada indicador vira o coeficiente de variação dividido por 505, e o CRITIC daria praticamente os pesos do Gaussiano (8,3%, 18,8%, 34,1%, 6,4% e 32,4%; coluna O da aba PESOS CRITIC, só para comparação). O min-max é a normalização do artigo original e mantém o CRITIC como um esquema distinto. A mesma normalização será usada quando os pesos CRITIC forem aplicados na agregação.
+**Por que min-max.** A normalização muda o desvio-padrão, mas não a correlação. Com a normalização pela soma, usada nos AHP, o desvio-padrão de cada indicador vira o coeficiente de variação dividido por 505, e o CRITIC daria praticamente os pesos do Gaussiano (8,3%, 18,8%, 34,1%, 6,4% e 32,4%; coluna O da aba PESOS CRITIC, só para comparação). O min-max é a normalização do artigo original e mantém o CRITIC como um esquema distinto. A mesma normalização foi usada na soma ponderada com os pesos CRITIC.
 
 ### Formas de ranquear os municípios
 
 | Forma | Métodos que a usam | Dados de entrada | Como a pontuação é formada |
 | --- | --- | --- | --- |
 | Soma simples | ABES | Notas brutas dos indicadores (0 a 100) | Soma das cinco notas; como os pesos são iguais, eles são redundantes e podem ser omitidos |
-| Soma ponderada normalizada | AHP Clássico e AHP Gaussiano | Valores normalizados pela soma (cada indicador soma 1 nos 505 municípios) | Soma dos valores normalizados, cada um multiplicado pelo peso do seu critério |
+| Soma ponderada normalizada | AHP Clássico e AHP Gaussiano; também os pesos CRITIC | Valores normalizados pela soma (cada indicador soma 1 nos 505 municípios); com os pesos CRITIC, normalizados por min-max | Soma dos valores normalizados, cada um multiplicado pelo peso do seu critério |
 | Fluxo líquido de sobreclassificação | PROMETHEE II, com qualquer dos quatro esquemas de pesos | Notas brutas (0 a 100), sem normalização | Cada município é comparado com os outros 504, critério a critério; a pontuação é o saldo entre quanto ele supera os demais e quanto é superado |
 | Índice de compromisso | VIKOR, com qualquer dos quatro esquemas de pesos | Distâncias ao melhor valor observado, normalizadas por min-max (0 a 1) | Combina a soma das distâncias ponderadas (S) com a maior delas (R); menor índice Q, melhor posição |
 | Proximidade relativa ao ideal | TOPSIS, com qualquer dos quatro esquemas de pesos | Valores normalizados pela norma vetorial (cada indicador dividido pela raiz da soma dos quadrados) | Distâncias euclidianas ao ideal positivo (D⁺) e ao negativo (D⁻); maior C* = D⁻/(D⁺ + D⁻), melhor posição |
@@ -237,7 +237,7 @@ O CRITIC fica entre os dois extremos na escala min-max, com Destinação muito �
 
 ## Concordância entre os rankings
 
-Esta seção e a seguinte comparam primeiro a ABES e os dois AHP e, depois, os quatro rankings PROMETHEE II, os quatro rankings VIKOR e os quatro rankings TOPSIS. Os pesos CRITIC aparecem aqui pelo PROMETHEE II, pelo VIKOR e pelo TOPSIS, os métodos de agregação calculados até agora com eles.
+Esta seção e a seguinte comparam primeiro a ABES e os dois AHP e, depois, os quatro rankings PROMETHEE II, os quatro rankings VIKOR e os quatro rankings TOPSIS. Os pesos CRITIC aparecem aqui pelo PROMETHEE II, pelo VIKOR, pelo TOPSIS e pela soma ponderada (aba PONTUAÇÃO E RANKING de *CRITIC.ods*, com ρ = 0,950 em relação à ABES).
 
 Os dois AHP são fortemente correlacionados com a ABES (ρ ≈ 0,87 a 0,89), mas apenas moderadamente correlacionados entre si (ρ = 0,76). Ou seja, cada um se afasta da ABES numa direção diferente.
 
