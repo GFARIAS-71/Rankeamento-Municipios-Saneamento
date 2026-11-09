@@ -70,7 +70,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 - **Leitura detalhada:** o PROMETHEE II com pesos CRITIC é o ranking de referência para o plano GAIA, o PROMETHEE I (diagnóstico) e o SMAA-PROMETHEE.
 - **Fora do escopo:** o ajuste por renda, cobertura da atenção primária e acesso hospitalar exigiria novas bases (IBGE, e-Gestor AB, CNES, SIH/SUS) e fica como limitação e trabalho futuro. Os resultados são lidos como associação, e não como efeito.
 
-O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.md](docs/guia_escrita.md).
+O roteiro do artigo está em [docs/guia_escrita.md](docs/guia_escrita.md), e cada decisão metodológica, com os parâmetros fixados antes do teste com a DRSAI, em [docs/log_decisoes.md](docs/log_decisoes.md).
 
 ## Estrutura do repositório
 
@@ -79,6 +79,7 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 ├── README.md
 ├── docs/
 │   ├── guia_escrita.md              Guia de escrita do artigo e decisões metodológicas
+│   ├── log_decisoes.md              Registro das decisões (bases, amostra, critérios, parâmetros, pesos, protocolo da DRSAI e robustez), congelado antes do teste com a DRSAI
 │   ├── Parecer técnico dos métodos multicritério.md   Comparação dos métodos de pesos e de agregação (hoje: ABES, AHP clássico, AHP Gaussiano, CRITIC, PROMETHEE II, VIKOR e TOPSIS)
 │   └── imagens/                     Figuras dos documentos (pesos do ABES e dos AHP)
 ├── jupyter notebooks/
@@ -116,7 +117,7 @@ Cuidados ao usar os dados:
 - Os números estão gravados como texto, com vírgula decimal e ponto de milhar (por exemplo, `10.220,55` na taxa de DRSAI).
 - As planilhas do SINISA são nacionais; filtre os municípios do Nordeste pela coluna `Macrorregião` (valor `Nordeste`). Nem todo município aparece em todas as planilhas: a de indicadores de água traz 1.528 dos 1.794 municípios nordestinos, e só 36 dos 224 do Piauí.
 - Para o abastecimento de água, use a versão retificada da planilha (`SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`).
-- As datas de extração de cada base devem ser registradas no `log_decisoes.md`, que ainda será criado.
+- As datas de extração de cada base estão no [`docs/log_decisoes.md`](docs/log_decisoes.md) (por enquanto, as datas dos commits como limite superior).
 
 ## Como reproduzir
 

@@ -25,7 +25,7 @@ Este guia cobre as sete seções do artigo na ordem em que serão lidas (Introdu
 - Parágrafos de 3 a 5 frases. Frases com menos de 25 palavras sempre que possível.
 - Toda afirmação sobre o estado da arte leva citação. Toda afirmação sobre dado leva fonte, ano-base e data de extração.
 - Escreva os Resultados antes da Introdução. A introdução promete o que os resultados entregam, então ela só pode ser finalizada depois.
-- Mantenha um arquivo `log_decisoes.md` com cada escolha metodológica e sua justificativa. Ele vira a seção de Metodologia e as respostas aos revisores.
+- Mantenha o arquivo [`log_decisoes.md`](log_decisoes.md) com cada escolha metodológica e sua justificativa. Ele vira a seção de Metodologia e as respostas aos revisores.
 
 ## Antes de escrever: o que precisa estar fechado
 
@@ -43,7 +43,7 @@ Não comece a redigir antes de fechar as nove decisões abaixo. Cada uma aparece
 | Validade externa | Fechada | Taxa de internações por DRSAI do arquivo do ABES, só para avaliar os rankings, nunca como critério; Spearman, bootstrap de Δρ e controle mínimo por UF e porte; renda, atenção primária e acesso hospitalar ficam como limitação | Pergunta, Metodologia, Resultados, Limitações |
 | Veículo | Fechada | Rii Forum 2027 (Roma; anais pela Springer, Scopus); texto em inglês | Todo o texto |
 
-**Decisão derivada: normalização da soma ponderada.** O parecer técnico dos AHP mostrou que a normalização muda o ranking mesmo com pesos fixos. O ABES soma as notas brutas (0 a 100) com pesos iguais; os dois AHP dividem cada indicador pela sua soma nos 505 municípios e só então aplicam os pesos. Aplicar 20% a cada valor normalizado pela soma não reproduz o ABES (ρ = 0,95, deslocamento médio de 33 posições), porque pesos iguais nas notas brutas equivalem, na escala normalizada, a pesos proporcionais à soma de cada indicador: Coleta 31,3%, Água 26,7%, Destinação 18,7%, Esgoto 13,7% e Tratamento 9,5%. Para comparar pesos entre métodos, use sempre esses pesos equivalentes do ABES. Com os pesos CRITIC, a normalização é min-max (pior município = 0, melhor = 1) tanto no cálculo dos pesos quanto na soma ponderada. A normalização pela soma foi descartada para o CRITIC: com ela, o desvio-padrão de cada indicador vira CV ÷ 505 e, como o fator de conflito varia pouco entre os critérios (3,26 a 3,88), o CRITIC reproduziria o AHP Gaussiano (ρ = 0,998 entre os dois rankings). O min-max é a normalização do artigo original (Diakoulaki et al., 1995) e mantém o peso na mesma escala em que ele é aplicado. Falta copiar esta decisão para o `log_decisoes.md`.
+**Decisão derivada: normalização da soma ponderada.** O parecer técnico dos AHP mostrou que a normalização muda o ranking mesmo com pesos fixos. O ABES soma as notas brutas (0 a 100) com pesos iguais; os dois AHP dividem cada indicador pela sua soma nos 505 municípios e só então aplicam os pesos. Aplicar 20% a cada valor normalizado pela soma não reproduz o ABES (ρ = 0,95, deslocamento médio de 33 posições), porque pesos iguais nas notas brutas equivalem, na escala normalizada, a pesos proporcionais à soma de cada indicador: Coleta 31,3%, Água 26,7%, Destinação 18,7%, Esgoto 13,7% e Tratamento 9,5%. Para comparar pesos entre métodos, use sempre esses pesos equivalentes do ABES. Com os pesos CRITIC, a normalização é min-max (pior município = 0, melhor = 1) tanto no cálculo dos pesos quanto na soma ponderada. A normalização pela soma foi descartada para o CRITIC: com ela, o desvio-padrão de cada indicador vira CV ÷ 505 e, como o fator de conflito varia pouco entre os critérios (3,26 a 3,88), o CRITIC reproduziria o AHP Gaussiano (ρ = 0,998 entre os dois rankings). O min-max é a normalização do artigo original (Diakoulaki et al., 1995) e mantém o peso na mesma escala em que ele é aplicado. A decisão está registrada no [`log_decisoes.md`](log_decisoes.md).
 
 **Decisão derivada: municípios sem dados completos.** O arquivo do ABES para o Nordeste (`dados/ABES 2026/relatorio ABES 2026 NE.xlsx`) traz os 1.794 municípios dos nove estados. Deles, 1.289 aparecem como "Não habilitado" e 505 (28%) como habilitados: 367 em "Empenho para universalização", 131 em "Primeiros passos para a universalização" e 7 em "Compromisso com a universalização" (Salvador, Vitória da Conquista, Jequié e Porto Seguro/BA, União dos Palmares/AL, Campina Grande/PB e Aracaju/SE); a categoria mais alta não aparece na região. A habilitação varia muito entre estados:
 
@@ -99,15 +99,15 @@ Daqui em diante, "amostra" designa os 505 municípios completos, que coincidem c
 **Checklist de reprodutibilidade** (o que precisa existir antes do primeiro parágrafo):
 
 - [x] Dados brutos baixados em `dados/` (SINISA 2025 e ABES 2026), com a URL de origem nos arquivos `.url`
-- [ ] Data de extração de cada base registrada no `log_decisoes.md`
+- [ ] Data de extração de cada base registrada no `log_decisoes.md` (registradas as datas dos commits como limite superior; falta confirmar a data real de download)
 - [ ] Conjunto de notebooks numerados em `jupyter notebooks/` (já existe `01_filtragem_municipios`; faltam pesos, os 16 rankings, validade com a DRSAI e robustez; o AHP clássico e o AHP Gaussiano, hoje em planilhas do LibreOffice, também precisam ser portados para notebook) que gera todas as tabelas e figuras a partir dos dados brutos, com as versões das bibliotecas em `requirements.txt`
 - [x] Matriz de decisão gerada: `resultados/municipios_5_indicadores.csv` (505 alternativas), com as alternativas nas linhas e os critérios nas colunas
-- [ ] Tabela de critérios com nome, unidade, direção (max/min), fonte, função de preferência, limiares q e p
-- [ ] Dicionário de pesos para cada esquema, com o cálculo documentado (AHP clássico, AHP Gaussiano e CRITIC já calculados em `planilhas/AHP Classico.ods`, `planilhas/AHP Gaussiano.ods` e `planilhas/CRITIC.ods`; faltam iguais em escala normalizada)
-- [ ] Métodos, pesos e parâmetros (q, p e v) registrados no `log_decisoes.md` antes de calcular qualquer correlação com a DRSAI
+- [x] Tabela de critérios com nome, unidade, direção (max/min), fonte, função de preferência, limiares q e p (no `log_decisoes.md`, seções 3 e 4)
+- [x] Dicionário de pesos para cada esquema, com o cálculo documentado (`log_decisoes.md`, seção 6, com os pesos iguais também na escala normalizada pela soma)
+- [x] Métodos, pesos e parâmetros (q, p e v) registrados no `log_decisoes.md` antes de calcular qualquer correlação com a DRSAI (congelados em 9 nov. 2026)
 - [x] Repositório no GitHub criado
 - [ ] Repositório ligado ao Zenodo para receber o DOI antes da submissão
-- [ ] `log_decisoes.md` iniciado
+- [x] `log_decisoes.md` iniciado (`docs/log_decisoes.md`)
 
 Se algum item não puder ser cumprido (por exemplo, a base não permite redistribuição), registre isso agora: será uma frase na seção de Dados e outra em Limitações.
 
@@ -242,7 +242,7 @@ A tabela de critérios é a peça central da metodologia. Os critérios são exa
 | C4 | Cobertura da população total com coleta de resíduos sólidos domiciliares | IRS0001 | % | max | Componente de resíduos da Lei 11.445/2007 |
 | C5 | Disposição final adequada de resíduos sólidos urbanos | IRS3002 adaptado (100 − inadequada) | % | max | Fim dos lixões (Lei 14.026/2020) |
 
-**Atenção ao C5.** No ABES, esse indicador é quase binário: muitos municípios aparecem com 0 ou 100. O CRITIC tende a dar peso alto a critérios com essa dispersão, e o C5 pode dominar o ranking. Reporte os pesos, mostre o efeito no GAIA e compare com o cenário de pesos iguais. Para o C5, uma função de preferência do tipo nível (*level*) ou usual é mais coerente que a linear. A regra dos quartis da subseção 4.4 confirma isso: aplicada ao IRS3002 dos 505 habilitados no ABES, ela dá q = 0 e p = 100 (só 23 valores distintos; 248 zeros e 236 valores 100), e a função linear vira, na prática, uma V-shape.
+**Atenção ao C5.** No ABES, esse indicador é quase binário: muitos municípios aparecem com 0 ou 100. O CRITIC tende a dar peso alto a critérios com essa dispersão, e o C5 pode dominar o ranking. Reporte os pesos, mostre o efeito no GAIA e compare com o cenário de pesos iguais. Para o C5, a função linear não serve: a regra dos quartis da subseção 4.4, aplicada ao IRS3002 dos 505 habilitados no ABES, dá q = 0 e p = 100 (só 23 valores distintos; 248 zeros e 236 valores 100), e a função linear vira, na prática, uma V-shape. Adotou-se a função em U com q = p = 5 (decisão registrada no `log_decisoes.md`): diferenças de até 5 pontos são empate, e acima disso a preferência é total. Ela foi preferida à função nível e à usual porque os poucos municípios com valores entre 95 e 99 empatam com os que têm 100, em vez de perderem para eles por inteiro.
 
 Regras: entre 5 e 10 critérios; verifique a correlação entre eles (matriz de Spearman em apêndice; pares com |ρ| > 0,8 exigem justificativa ou exclusão); mantenha critérios de resultado (saúde) separados dos de insumo (investimento) e diga isso no texto.
 
@@ -250,7 +250,7 @@ Regras: entre 5 e 10 critérios; verifique a correlação entre eles (matriz de 
 
 A soma ponderada, os dois AHP e o TOPSIS não têm parâmetros além dos pesos e da normalização (informe qual: notas brutas no ABES, pela soma nos AHP, min-max na soma ponderada com CRITIC, vetorial no TOPSIS). O VIKOR tem o parâmetro v, peso da estratégia de "maioria" contra a de "arrependimento individual"; use o valor usual v = 0,5 e teste 0,25 e 0,75 na robustez. O PROMETHEE é o que mais exige: esta é a subseção que os revisores mais cobram e que a maioria dos artigos omite. Para cada critério, informe a função (usual, U-shape, V-shape, nível, linear, gaussiana) e os limiares q (indiferença) e p (preferência). Nunca use a função "usual" para todos os critérios sem justificar.
 
-Regra de derivação empírica, reproduzível e defensável: para o critério j, calcule as diferenças absolutas entre todos os pares de alternativas; q = 1º quartil dessas diferenças e p = 3º quartil. Reporte os valores na tabela de critérios (acrescente duas colunas). Exceção: no C5, use a função nível e justifique os limiares escolhidos. Em Resultados, teste q e p nos limites ±50% e mostre o efeito.
+Regra de derivação empírica, reproduzível e defensável: para o critério j, calcule as diferenças absolutas entre todos os pares de alternativas; q = 1º quartil dessas diferenças e p = 3º quartil. Reporte os valores na tabela de critérios (acrescente duas colunas). Exceção: no C5, a função em U com q = p = 5, justificada na subseção 4.3. Em Resultados, teste q e p nos limites ±50% e mostre o efeito.
 
 A fórmula da função linear (tipo V com indiferença) fica em destaque uma única vez:
 
@@ -323,7 +323,7 @@ Liste os testes que serão reportados em Resultados, cada um com sua métrica. R
 - Intervalos de estabilidade dos pesos (Visual PROMETHEE ou cálculo próprio): faixa em que cada peso pode variar sem alterar as k primeiras posições.
 - Sensibilidade aos julgamentos de Saaty: alterar cada julgamento da matriz em um ponto da escala, mantendo RC < 0,10, e medir o Kendall τ com o ranking original nos quatro métodos.
 - SMAA: índices de aceitabilidade no ranking de referência e, se houver tempo, frequência com que cada método vence na associação com a DRSAI sob os pesos sorteados.
-- Sensibilidade a q e p (±50%) e a v (0,25 e 0,75): Kendall τ entre rankings e efeito sobre o ρ com a DRSAI.
+- Sensibilidade a q e p (±50%), ao limiar de Destinação (função usual e em U com q = p = 10), a v (0,25 e 0,75) e à normalização do TOPSIS (min-max): Kendall τ entre rankings e efeito sobre o ρ com a DRSAI. Os valores exatos de cada variação estão no `log_decisoes.md`, seção 8.
 - Reversão de ordem: retirar a melhor, a pior e uma alternativa aleatória; contar quantos pares trocam de ordem.
 - Comparação com o Ranking ABES 2026: a soma ponderada com pesos iguais reproduz a nota do ABES, então ela é o ponto de partida; para cada um dos outros 15 rankings, Spearman ρ com a nota ABES nos 505 habilitados e mudanças de quartil.
 
