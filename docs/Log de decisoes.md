@@ -1,6 +1,6 @@
 # Log de decisões metodológicas
 
-Guilherme de Farias · iniciado em 9 nov. 2026
+Iniciado em 9 nov. 2026
 
 Este arquivo registra cada escolha metodológica do trabalho, com a justificativa e a data. Ele vira a seção de Metodologia do artigo e a base das respostas aos revisores. O [guia de escrita](Guia%20de%20escrita.md) explica o porquê de cada regra; aqui fica só o que foi decidido.
 
@@ -13,7 +13,7 @@ Este arquivo registra cada escolha metodológica do trabalho, com a justificativ
 | SINISA 2025: água, esgoto e resíduos sólidos | `dados/SINISA/2025/` | [gov.br/cidades, resultados SINISA 2025](https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/resultados-sinisa-2025) | 2024 | 7 nov. 2026 |
 | Ranking ABES 2026, Nordeste | `dados/ABES 2026/relatorio ABES 2026 NE.xlsx` | [rankingabes.abes-dn.org.br](https://rankingabes.abes-dn.org.br/relatorio.php) | 2024 | 7 nov. 2026 |
 
-As duas bases foram baixadas em 7 nov. 2026, data informada pelo autor.
+As duas bases foram baixadas em 7 nov. 2026, data informada pelos autores.
 
 **Planilha de água retificada.** O IAG0001 vem de `SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`, a versão retificada publicada pelo Ministério das Cidades, e não da versão original.
 
@@ -114,13 +114,13 @@ Os mesmos quatro vetores alimentam a soma ponderada, o TOPSIS, o VIKOR e o PROME
 | Pesos iguais | Neutro | 1/5 por critério | — |
 | CRITIC | Objetivo (dispersão + conflito) | Desvio-padrão populacional de cada critério normalizado por min-max × Σ(1 − ρ) com os demais, dividido pela soma | `CRITIC.ods`, PESOS CRITIC |
 | AHP Gaussiano | Objetivo (dispersão) | Desvio-padrão populacional ÷ média de cada critério normalizado pela soma, dividido pela soma dos fatores | `AHP Gaussiano.ods`, PESOS GAUSSIANOS |
-| AHP clássico | Subjetivo (julgamento do autor) | Média geométrica das linhas da matriz de Saaty, normalizada | `AHP Classico.ods`, MATRIZ, PESOS E CONSISTÊNCIA |
+| AHP clássico | Subjetivo (julgamento dos autores) | Média geométrica das linhas da matriz de Saaty, normalizada | `AHP Classico.ods`, MATRIZ, PESOS E CONSISTÊNCIA |
 
 O AHP clássico é o único esquema com pesos definidos por julgamento. Nenhum outro peso foi escolhido pelos autores.
 
 ### 6.3 Matriz de Saaty do AHP clássico
 
-Preenchida pelo autor antes de qualquer correlação com a DRSAI. Não será alterada depois do teste.
+Preenchida pelos autores antes de qualquer correlação com a DRSAI. Não será alterada depois do teste.
 
 | | Água | Esgoto | Tratamento | Coleta | Destinação | Peso |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -197,7 +197,7 @@ Análises acrescentadas depois do teste de validade externa. Nenhuma altera mét
 
 **Decisão.** Em vez de eleger um único ranking, indicar como prioritários os municípios que ficam no 4º quartil (25% piores) em todas as combinações aceitáveis de pesos e método. Os métodos multicritério apoiam a decisão e não a substituem.
 
-**Critérios, definidos pelo autor:**
+**Critérios, definidos pelos autores:**
 
 1. **Filtro pela DRSAI.** Saem os rankings que se associam significativamente menos à DRSAI que o ABES (IC de 95% do Δρ contra o ABES acima de zero, mesmas reamostragens do notebook 02). Ficam 9: ABES, soma ponderada com CRITIC, TOPSIS com CRITIC, os 4 VIKOR, PROMETHEE II com CRITIC e PROMETHEE II com AHP clássico.
 2. **Saneamento como direito.** Ter um serviço não compensa a falta de outro, então ficam só os métodos de compensação parcial ou limitada: os 4 VIKOR, o PROMETHEE II com CRITIC e o PROMETHEE II com AHP clássico (6 rankings).

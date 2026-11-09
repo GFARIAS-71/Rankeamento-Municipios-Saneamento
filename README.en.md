@@ -44,7 +44,7 @@ The unweighted sum of the five raw scores reproduces the ABES total score ("Pont
 | Equal weights | Neutral | 1/5 each | 20.0% | 20.0% | 20.0% | 20.0% | 20.0% |
 | CRITIC | Objective (dispersion and conflict) | Std. dev. of min-max-normalized criterion × Σ(1 − r) with the other criteria, normalized to sum to 1 | 13.4% | 15.5% | 19.6% | 14.9% | 36.6% |
 | Gaussian AHP | Objective (dispersion) | Coefficient of variation of each sum-normalized criterion, normalized to sum to 1 | 8.5% | 20.4% | 34.9% | 6.8% | 29.5% |
-| Classical AHP | Subjective (author's judgment) | Geometric mean of the rows of a Saaty pairwise comparison matrix (CR = 0.0152) | 41.7% | 16.0% | 9.7% | 26.3% | 6.2% |
+| Classical AHP | Subjective (authors' judgment) | Geometric mean of the rows of a Saaty pairwise comparison matrix (CR = 0.0152) | 41.7% | 16.0% | 9.7% | 26.3% | 6.2% |
 
 The two AHP variants enter as weighting schemes followed by a weighted sum, not as separate aggregation methods, so that the effect of aggregation is separated from the effect of the weights. In the weighted-sum row, the Gaussian AHP and classical AHP columns are the "Gaussian AHP" and "classical AHP" methods of the literature. Classical AHP is the only scheme whose weights express the authors' priorities; all others are derived from the data. Because 20% applied to sum-normalized values does not reproduce ABES (Spearman ρ = 0.95), comparisons of weights in the Portuguese documents use the ABES-equivalent weights on the sum-normalized scale (26.7%, 13.7%, 9.5%, 31.3% and 18.7%).
 
@@ -142,6 +142,6 @@ Or open them in Jupyter and run all cells. Each notebook locates the repository 
 
 ## Authorship and license
 
-Guilherme de Farias ([@GFARIAS-71](https://github.com/GFARIAS-71)).
+Omitted during the double-blind review for Rii Forum 2027; it will be restored in the final version.
 
 The license for the code has not yet been chosen. The data in `dados/` belong to their publishers (Brazilian Ministry of Cities and ABES) and are subject to their terms of use.

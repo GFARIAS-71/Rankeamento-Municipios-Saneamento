@@ -12,7 +12,7 @@ NOMES = ["Água", "Esgoto", "Tratamento", "Coleta", "Destinação"]
 ESQUEMAS = ["Pesos iguais", "CRITIC", "AHP Gaussiano", "AHP clássico"]
 METODOS = ["Soma ponderada", "TOPSIS", "VIKOR", "PROMETHEE II"]  # ordem de compensação: total, total, parcial, limitada
 
-# Matriz de Saaty preenchida pelo autor (Log de decisoes.md, seção 6.3)
+# Matriz de Saaty preenchida pelos autores (Log de decisoes.md, seção 6.3)
 SAATY = np.array([
     [1,   3,   4,   2,   5],
     [1/3, 1,   2,   1/2, 3],

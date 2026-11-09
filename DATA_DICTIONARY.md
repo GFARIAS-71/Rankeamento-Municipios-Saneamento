@@ -46,7 +46,7 @@ Common elements: `PLANILHA ABES` is the decision matrix (section 1). `ETAPA n` =
 | Sheet | English | Contents |
 | --- | --- | --- |
 | `PLANILHA ABES` | ABES sheet | Decision matrix |
-| `MATRIZ, PESOS E CONSISTÊNCIA` | Matrix, weights and consistency | Step 1: Saaty pairwise comparison matrix (filled in by the author), row geometric means (`Média geométrica`), weights (`Peso`), A × w, individual λ, λmax, consistency index (CI), random index (RI = 1.12) and consistency ratio (CR = 0.0152) |
+| `MATRIZ, PESOS E CONSISTÊNCIA` | Matrix, weights and consistency | Step 1: Saaty pairwise comparison matrix (filled in by the authors), row geometric means (`Média geométrica`), weights (`Peso`), A × w, individual λ, λmax, consistency index (CI), random index (RI = 1.12) and consistency ratio (CR = 0.0152) |
 | `NORMALIZAÇÃO PELA SOMA` | Sum normalization | Step 2: each indicator divided by its column sum over the 505 municipalities |
 | `PONTUAÇÃO E RANKING` | Score and ranking | Step 3: weighted normalized values, `Pontuação AHP` (AHP score = Σ normalized value × weight), position |
 | `CORRELAÇÃO AHP × ABES` | Correlation AHP × ABES | Step 4: Spearman ρ, t statistic, p-value, Kendall τ-b, concordant − discordant pairs (S), z, p-value, with a verbal interpretation (`Interpretação`) |

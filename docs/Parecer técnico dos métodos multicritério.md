@@ -1,6 +1,6 @@
 # Parecer técnico: métodos multicritério do ranking de saneamento
 
-Guilherme de Farias · 8 nov. 2026, revisto em 9 nov. 2026
+8 nov. 2026, revisto em 9 nov. 2026
 
 ## Objetivo e escopo
 

@@ -59,7 +59,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
   | Método | Como os pesos são obtidos | Água | Esgoto | Tratamento | Coleta | Destinação |
   | --- | --- | --- | --- | --- | --- | --- |
   | ABES (equivalente na escala normalizada) | Pesos iguais sobre as notas brutas | 26,7% | 13,7% | 9,5% | 31,3% | 18,7% |
-  | AHP clássico | Matriz de Saaty preenchida pelo autor, média geométrica das linhas (RC = 0,0152) | 41,7% | 16,0% | 9,7% | 26,3% | 6,2% |
+  | AHP clássico | Matriz de Saaty preenchida pelos autores, média geométrica das linhas (RC = 0,0152) | 41,7% | 16,0% | 9,7% | 26,3% | 6,2% |
   | AHP Gaussiano | Coeficiente de variação de cada indicador, normalizado para somar 1 | 8,5% | 20,4% | 34,9% | 6,8% | 29,5% |
 
 - **Pesos CRITIC:** desvio-padrão de cada indicador normalizado por min-max × conflito Σ(1 − ρ) com os demais, normalizado para somar 1 ([planilhas/CRITIC.ods](planilhas/CRITIC.ods)). Dão 13,4% para Água, 15,5% para Esgoto, 19,6% para Tratamento, 14,9% para Coleta e 36,6% para Destinação. A soma ponderada com CRITIC também usa min-max, porque com a normalização pela soma o CRITIC praticamente repetiria o AHP Gaussiano (ρ = 0,998).
@@ -139,6 +139,6 @@ As dependências estão em `requirements.txt`, com as versões fixadas (`pip ins
 
 ## Autoria e licença
 
-Guilherme de Farias ([@GFARIAS-71](https://github.com/GFARIAS-71)).
+Omitida durante a revisão duplo-cega do Rii Forum 2027; será restabelecida na versão final.
 
 A licença do código ainda não foi definida. Os dados em `dados/` pertencem às respectivas fontes (Ministério das Cidades e ABES) e seguem as condições de uso delas.
