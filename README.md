@@ -20,7 +20,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 | PROMETHEE II em planilha nos quatro esquemas de pesos, e no parecer técnico | Concluída |
 | VIKOR em planilha nos quatro esquemas de pesos (v = 0,5), e no parecer técnico | Concluída |
 | TOPSIS em planilha nos quatro esquemas de pesos (normalização vetorial), e no parecer técnico | Concluída |
-| Soma ponderada com pesos CRITIC (min-max) em planilha | A fazer |
+| Soma ponderada com pesos CRITIC (min-max) em planilha | Concluída |
 | AHP clássico e AHP Gaussiano portados para notebook | A fazer |
 | Pesos (iguais, CRITIC, AHP Gaussiano e AHP clássico) e os 16 rankings (soma ponderada, TOPSIS, VIKOR e PROMETHEE II) | A fazer |
 | Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte) | A fazer |
@@ -87,7 +87,7 @@ O detalhamento das decisões e o roteiro do artigo estão em [docs/guia_escrita.
 │   ├── relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos; base dos dois AHP
 │   ├── AHP Classico.ods                 Matriz de Saaty, pesos, consistência, ranking e comparação com o ABES
 │   ├── AHP Gaussiano.ods                Pesos gaussianos, ranking e comparação com o ABES
-│   ├── CRITIC.ods                       Normalização min-max, correlação entre critérios e pesos CRITIC (só pesos; a agregação fica para depois)
+│   ├── CRITIC.ods                       Normalizações min-max e pela soma, correlação entre critérios, pesos CRITIC e soma ponderada com esses pesos
 │   ├── PROMETHEE II.ods                 Funções de preferência e limiares, fluxos por critério, fluxos e ranking nos quatro esquemas de pesos, comparação com o ABES e com a soma ponderada
 │   ├── TOPSIS.ods                       Normalização vetorial, matriz ponderada, ideais positivo e negativo, D⁺, D⁻, C* e ranking nos quatro esquemas de pesos, comparação com o ABES, a soma ponderada, o PROMETHEE II e o VIKOR
 │   └── VIKOR.ods                        Ideal e anti-ideal, distâncias normalizadas, S, R e Q, ranking e condições C1 e C2 nos quatro esquemas de pesos, comparação com o ABES, a soma ponderada e o PROMETHEE II

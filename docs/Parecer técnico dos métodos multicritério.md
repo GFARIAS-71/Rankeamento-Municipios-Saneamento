@@ -11,7 +11,7 @@ Este parecer reúne, à medida que forem calculados, todos os métodos do trabal
 | ABES | Pesos iguais + soma simples das notas brutas | Incluído (pesos e ranking) | *relatorio ABES 2026 NE.ods* |
 | AHP Clássico | Pesos (Saaty) + soma ponderada normalizada | Incluído (pesos e ranking) | *AHP Classico.ods* |
 | AHP Gaussiano | Pesos (coeficiente de variação) + soma ponderada normalizada | Incluído (pesos e ranking) | *AHP Gaussiano.ods* |
-| CRITIC | Só pesos (dispersão + conflito) | Incluído (pesos) | *CRITIC.ods* |
+| CRITIC | Só pesos (dispersão + conflito); a soma ponderada com esses pesos fica na mesma planilha | Incluído (pesos) | *CRITIC.ods* |
 | Pesos iguais na escala normalizada | Só pesos | A incluir | — |
 | TOPSIS | Só agregação (proximidade relativa ao ideal, compensação total) | Incluído (ranking nos quatro esquemas de pesos) | *TOPSIS.ods* |
 | VIKOR | Só agregação (solução de compromisso, compensação parcial) | Incluído (ranking nos quatro esquemas de pesos) | *VIKOR.ods* |
@@ -466,11 +466,11 @@ Este parecer não elege um método. Ele registra em que os métodos diferem, par
 - **Pesos contra agregação.** No PROMETHEE II, trocar os pesos muda mais o ranking (ρ de 0,60 a 0,94 entre esquemas) do que trocar a soma ponderada pelo PROMETHEE II com os mesmos pesos (ρ de 0,90 a 0,97). O VIKOR repete o padrão, com faixa ainda mais larga entre esquemas (ρ de 0,48 a 0,95) e de 0,90 a 0,98 contra a soma ponderada e o PROMETHEE II de mesmos pesos. O TOPSIS também: de 0,45 a 0,95 entre esquemas e de 0,88 a 0,99 contra os outros três métodos com os mesmos pesos.
 
 
-**Cobertura do desenho métodos × pesos.** Com o TOPSIS, 15 dos 16 rankings estão calculados em planilha. Falta a soma ponderada com os pesos CRITIC (normalização min-max), que ainda não tem planilha própria.
+**Cobertura do desenho métodos × pesos.** Os 16 rankings estão calculados em planilha. O último foi a soma ponderada com os pesos CRITIC (normalização min-max), na aba PONTUAÇÃO E RANKING de *CRITIC.ods*, com ρ = 0,950 em relação à ABES.
 
 | Método de agregação | Pesos iguais | CRITIC | AHP Gaussiano | AHP clássico |
 | --- | --- | --- | --- | --- |
-| Soma ponderada | Calculado (é a ABES) | A calcular | Calculado (*AHP Gaussiano.ods*) | Calculado (*AHP Classico.ods*) |
+| Soma ponderada | Calculado (é a ABES) | Calculado (*CRITIC.ods*) | Calculado (*AHP Gaussiano.ods*) | Calculado (*AHP Classico.ods*) |
 | TOPSIS | Calculado (*TOPSIS.ods*) | Calculado | Calculado | Calculado |
 | VIKOR | Calculado (*VIKOR.ods*) | Calculado | Calculado | Calculado |
 | PROMETHEE II | Calculado (*PROMETHEE II.ods*) | Calculado | Calculado | Calculado |
