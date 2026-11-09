@@ -131,7 +131,7 @@ O trabalho é feito nas planilhas de `planilhas/` (LibreOffice Calc), que partem
 
 - `01_rankings.ipynb`: recalcula os pesos e os 16 rankings (funções em `mcda.py`), a concordância entre eles (ρ e τ) e as mudanças de quartil em relação ao ABES. As pontuações coincidem com as das planilhas até a 15ª casa decimal.
 - `02_validade_drsai.ipynb`: aplica o protocolo de validade externa com a DRSAI (seção 7 do log), com o bootstrap, o teste de Steiger e o controle por UF e porte, que não cabem numa planilha.
-- `03_compensacao_perfil.ipynb`: responde à PS2 e à PS4. Cruza a mudança de posição com a desigualdade entre os indicadores e testa se a DRSAI acompanha o pior indicador. Também compara, município a município, o ranking mais associado à DRSAI com o ABES.
+- `03_compensacao_perfil.ipynb`: responde à PS2 e à PS4. Cruza a mudança de posição com a desigualdade entre os indicadores e testa se a DRSAI acompanha o pior indicador. Também compara, município a município, o ranking mais associado à DRSAI com o ABES. Na seção 7, exploratória, monta a lista de prioridade de consenso: os municípios no pior quartil em todos os rankings que passam no filtro da DRSAI e têm compensação parcial ou limitada (seção 10 do log).
 
 A robustez ainda será feita.
 
