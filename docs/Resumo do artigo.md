@@ -80,3 +80,43 @@ Escolha dois ou três destes. Comece pelo que responde à pergunta.
 ## Título
 
 O guia sugere 12 a 16 palavras, com a fórmula *[o que o método faz] + [objeto] + [contexto] + [sinal metodológico]*. Decida se o título anuncia o achado ("os pesos importam mais que o método") ou a pergunta ("o método de agregação importa para a saúde?"). Com o achado já em mãos, um título que o anuncia tende a funcionar melhor.
+
+## Proposta escrita a partir do roteiro
+
+### Títulos
+
+| | Inglês | Português |
+| --- | --- | --- |
+| **A (achado, recomendado)** | *Weights matter more than methods: multicriteria rankings of municipal sanitation and sanitation-related hospitalisations in Northeast Brazil* | *Os pesos importam mais que o método: rankings multicritério de saneamento municipal e internações por DRSAI no Nordeste brasileiro* |
+| **B (pergunta)** | *Does the aggregation method matter for health? Comparing multicriteria rankings of sanitation against sanitation-related hospitalisations in Northeast Brazil* | *O método de agregação importa para a saúde? Rankings multicritério de saneamento comparados às internações por DRSAI no Nordeste brasileiro* |
+| **C (política pública)** | *Same data, different priorities: how weighting and aggregation shape a public sanitation ranking in Northeast Brazil* | *Mesmos dados, prioridades diferentes: como pesos e agregação moldam um ranking público de saneamento no Nordeste brasileiro* |
+
+O título A anuncia o achado principal. O B é o que estava no guia e funciona se você preferir não adiantar o resultado. O C combina com a trilha de políticas públicas, mas não menciona a saúde.
+
+### Resumo em inglês (261 palavras)
+
+As Brazil approaches its 2033 legal deadline for universal sanitation, municipal rankings such as the ABES Sanitation Universalisation Ranking steer public attention and investment, yet they rest on weighting, normalisation and aggregation choices that are rarely examined. It is unclear how much these choices change the ordering, or whether any of them yields rankings more consistent with health outcomes. This study asks to what extent the multicriteria method changes the ranking of municipalities in Northeast Brazil, and which ranking is most strongly associated with hospitalisations for diseases related to inadequate environmental sanitation (DRSAI). The 505 municipalities eligible for the 2026 ABES ranking were ranked on its five indicators (SINISA 2025) by crossing four weighting schemes (equal, CRITIC, Gaussian AHP and classic AHP) with four aggregation methods (weighted sum, TOPSIS, VIKOR and PROMETHEE II). With all parameters fixed in advance, the 16 rankings were correlated (Spearman) with the DRSAI rate in 360 municipalities, using bootstrap intervals for the differences. Weights changed the ordering more than aggregation did (mean ρ of 0.78 across weighting schemes and 0.95 across methods), and up to 300 municipalities changed quartile relative to the official ranking. The association with DRSAI was weak in every ranking (ρ from −0.11 to −0.23) and shrank after controlling for state and municipality size. No ranking was significantly more associated than the official one, and seven were significantly less. For public policy, the choice of weights deserves more scrutiny than the choice of method. Methodologically, the study offers a design that separates weighting from aggregation effects and tests rankings against an external health outcome.
+
+
+**Keywords:** multicriteria decision aid; PROMETHEE; TOPSIS; VIKOR; AHP; sanitation-related diseases
+
+### Resumo em português (275 palavras)
+
+Com o prazo legal de universalização do saneamento fixado em 2033, rankings municipais como o Ranking ABES da Universalização do Saneamento orientam a atenção pública e o investimento, mas dependem de escolhas de pesos, normalização e agregação raramente examinadas. Não se sabe quanto essas escolhas alteram a ordenação nem se alguma delas gera rankings mais coerentes com a saúde. Este estudo pergunta em que medida o método multicritério altera a ordenação dos municípios do Nordeste brasileiro e qual ordenação se associa mais fortemente às internações por doenças relacionadas ao saneamento ambiental inadequado (DRSAI). Os 505 municípios habilitados no Ranking ABES 2026 foram ordenados pelos seus cinco indicadores (SINISA 2025), cruzando quatro esquemas de pesos (iguais, CRITIC, AHP gaussiano e AHP clássico) com quatro métodos de agregação (soma ponderada, TOPSIS, VIKOR e PROMETHEE II). Com os parâmetros fixados antes, os 16 rankings foram correlacionados (Spearman) com a taxa de DRSAI em 360 municípios, com intervalos bootstrap para as diferenças. Os pesos alteraram a ordenação mais que a agregação (ρ médio de 0,78 entre esquemas de pesos e de 0,95 entre métodos), e até 300 municípios mudaram de quartil em relação ao ranking oficial. A associação com a DRSAI foi fraca em todos os rankings (ρ de −0,11 a −0,23) e diminuiu com o controle por estado e porte. Nenhum ranking se associou significativamente mais que o oficial, e sete se associaram significativamente menos. Para a política pública, a definição dos pesos merece mais escrutínio que a escolha do método. Como contribuição metodológica, o estudo propõe um desenho que separa o efeito dos pesos do efeito da agregação e avalia rankings contra um desfecho de saúde externo.
+
+
+**Palavras-chave:** apoio multicritério à decisão; PROMETHEE; TOPSIS; VIKOR; AHP; doenças relacionadas ao saneamento
+
+### Correspondência com o roteiro
+
+| Movimento | Começa em (inglês) |
+| --- | --- |
+| 1. Contexto | "As Brazil approaches..." |
+| 2. Lacuna | "It is unclear..." |
+| 3. Objetivo | "This study asks..." |
+| 4. Método | "The 505 municipalities..." e "With all parameters fixed..." |
+| 5. Resultados | "Weights changed..." até "...seven were significantly less." |
+| 6. Implicação | "For public policy..." |
+| 7. Contribuição | "Methodologically..." |
+
+Com o título A, as palavras-chave não repetem nenhuma palavra do título, como pede o guia.
