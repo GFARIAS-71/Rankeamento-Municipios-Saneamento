@@ -8,7 +8,7 @@ Este parecer reúne todos os métodos do trabalho, separados em métodos de peso
 
 | Método | Papel | Situação neste parecer | Planilha |
 | --- | --- | --- | --- |
-| ABES | Pesos iguais + soma simples das notas brutas | Incluído (pesos e ranking) | *relatorio ABES 2026 NE.ods* |
+| ABES | Pesos iguais + soma simples das notas brutas | Incluído (pesos e ranking) | *Relatorio ABES 2026 NE.ods* |
 | AHP Clássico | Pesos (Saaty) + soma ponderada normalizada | Incluído (pesos e ranking) | *AHP Classico.ods* |
 | AHP Gaussiano | Pesos (coeficiente de variação) + soma ponderada normalizada | Incluído (pesos e ranking) | *AHP Gaussiano.ods* |
 | CRITIC | Só pesos (dispersão + conflito); a soma ponderada com esses pesos fica na mesma planilha | Incluído (pesos e ranking pela soma ponderada) | *CRITIC.ods* |
