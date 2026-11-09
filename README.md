@@ -8,20 +8,20 @@ O estudo será submetido como artigo ao [Rii Forum 2027](https://rii-forum.org) 
 
 ## Situação
 
-Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. Os 16 rankings foram calculados primeiro em planilhas e comparados no [parecer técnico](docs/Parecer%20técnico%20dos%20métodos%20multicritério.md), e depois portados para notebook, com as mesmas pontuações. As decisões metodológicas foram congeladas no [log de decisões](docs/log_decisoes.md) antes do teste com a DRSAI, e o teste de validade externa já rodou (notebook 03). Falta a robustez.
+Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta. Os 16 rankings foram calculados primeiro em planilhas e comparados no [parecer técnico](docs/Parecer%20técnico%20dos%20métodos%20multicritério.md), e depois portados para notebook, com as mesmas pontuações. As decisões metodológicas foram congeladas no [log de decisões](docs/Log%20de%20decisoes.md) antes do teste com a DRSAI, e o teste de validade externa já rodou (notebook 03). Falta a robustez.
 
 | Etapa | Situação |
 | --- | --- |
 | Dados do SINISA 2025 baixados | Concluída |
 | Dados do ABES 2026 para o Nordeste baixados | Concluída |
-| Matriz de decisão montada (505 habilitados no ABES, em `planilhas/relatorio ABES 2026 NE.ods`) | Concluída |
+| Matriz de decisão montada (505 habilitados no ABES, em `planilhas/Relatorio ABES 2026 NE.ods`) | Concluída |
 | AHP clássico e AHP Gaussiano em planilha, com parecer técnico comparando-os ao ABES | Concluída |
 | Pesos CRITIC em planilha (normalização min-max) e no parecer técnico | Concluída |
 | PROMETHEE II em planilha nos quatro esquemas de pesos, e no parecer técnico | Concluída |
 | VIKOR em planilha nos quatro esquemas de pesos (v = 0,5), e no parecer técnico | Concluída |
 | TOPSIS em planilha nos quatro esquemas de pesos (normalização vetorial), e no parecer técnico | Concluída |
 | Soma ponderada com pesos CRITIC (min-max) em planilha | Concluída |
-| Decisões e parâmetros congelados no `docs/log_decisoes.md` antes do teste com a DRSAI | Concluída |
+| Decisões e parâmetros congelados no `docs/Log de decisoes.md` antes do teste com a DRSAI | Concluída |
 | Pesos e os 16 rankings portados para notebook (02), conferidos com as planilhas | Concluída |
 | Validade externa com a DRSAI (Spearman, bootstrap das diferenças, controle por UF e porte; notebook 03) | Concluída |
 | Robustez (SMAA, sensibilidade a q e p) e comparação com o ABES | A fazer |
@@ -70,7 +70,7 @@ Em andamento. Os dados brutos foram baixados e a matriz de decisão está pronta
 - **Leitura detalhada:** o PROMETHEE II com pesos CRITIC é o ranking de referência para o plano GAIA, o PROMETHEE I (diagnóstico) e o SMAA-PROMETHEE.
 - **Fora do escopo:** o ajuste por renda, cobertura da atenção primária e acesso hospitalar exigiria novas bases (IBGE, e-Gestor AB, CNES, SIH/SUS) e fica como limitação e trabalho futuro. Os resultados são lidos como associação, e não como efeito.
 
-O roteiro do artigo está em [docs/guia_escrita.md](docs/guia_escrita.md), e cada decisão metodológica, com os parâmetros fixados antes do teste com a DRSAI, em [docs/log_decisoes.md](docs/log_decisoes.md).
+O roteiro do artigo está em [docs/Guia de escrita.md](docs/Guia%20de%20escrita.md), e cada decisão metodológica, com os parâmetros fixados antes do teste com a DRSAI, em [docs/Log de decisoes.md](docs/Log%20de%20decisoes.md).
 
 ## Estrutura do repositório
 
@@ -78,8 +78,8 @@ O roteiro do artigo está em [docs/guia_escrita.md](docs/guia_escrita.md), e cad
 .
 ├── README.md
 ├── docs/
-│   ├── guia_escrita.md              Guia de escrita do artigo e decisões metodológicas
-│   ├── log_decisoes.md              Registro das decisões (bases, amostra, critérios, parâmetros, pesos, protocolo da DRSAI e robustez), congelado antes do teste com a DRSAI
+│   ├── Guia de escrita.md              Guia de escrita do artigo e decisões metodológicas
+│   ├── Log de decisoes.md              Registro das decisões (bases, amostra, critérios, parâmetros, pesos, protocolo da DRSAI e robustez), congelado antes do teste com a DRSAI
 │   ├── Parecer técnico dos métodos multicritério.md   Comparação dos métodos de pesos e de agregação (hoje: ABES, AHP clássico, AHP Gaussiano, CRITIC, PROMETHEE II, VIKOR e TOPSIS)
 │   └── imagens/                     Figuras dos documentos (pesos do ABES e dos AHP)
 ├── jupyter notebooks/
@@ -88,7 +88,7 @@ O roteiro do artigo está em [docs/guia_escrita.md](docs/guia_escrita.md), e cad
 │   ├── 03_validade_drsai.ipynb         Validade externa dos 16 rankings com a taxa de DRSAI
 │   └── mcda.py                         Pesos e métodos de agregação, com os parâmetros do log
 ├── planilhas/                       Cálculos feitos no LibreOffice Calc
-│   ├── relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos e a taxa de DRSAI; base de todas as planilhas e dos notebooks 02 e 03
+│   ├── Relatorio ABES 2026 NE.ods       Os 505 habilitados do ABES 2026, com os números convertidos e a taxa de DRSAI; base de todas as planilhas e dos notebooks 02 e 03
 │   ├── AHP Classico.ods                 Matriz de Saaty, pesos, consistência, ranking e comparação com o ABES
 │   ├── AHP Gaussiano.ods                Pesos gaussianos, ranking e comparação com o ABES
 │   ├── CRITIC.ods                       Normalizações min-max e pela soma, correlação entre critérios, pesos CRITIC e soma ponderada com esses pesos
@@ -118,11 +118,11 @@ Cuidados ao usar os dados:
 - Os números estão gravados como texto, com vírgula decimal e ponto de milhar (por exemplo, `10.220,55` na taxa de DRSAI).
 - As planilhas do SINISA são nacionais; filtre os municípios do Nordeste pela coluna `Macrorregião` (valor `Nordeste`). Nem todo município aparece em todas as planilhas: a de indicadores de água traz 1.528 dos 1.794 municípios nordestinos, e só 36 dos 224 do Piauí.
 - Para o abastecimento de água, use a versão retificada da planilha (`SINISA_AGUA_Indicadores_Base Municipal_2024_Retificação.xlsx`).
-- As datas de extração de cada base estão no [`docs/log_decisoes.md`](docs/log_decisoes.md) (7 nov. 2026 para as duas).
+- As datas de extração de cada base estão no [`docs/Log de decisoes.md`](docs/Log%20de%20decisoes.md) (7 nov. 2026 para as duas).
 
 ## Como reproduzir
 
-O trabalho é feito nas planilhas de `planilhas/` (LibreOffice Calc), que partem de `relatorio ABES 2026 NE.ods`. Os notebooks de `jupyter notebooks/` leem essa mesma planilha e não gravam arquivos:
+O trabalho é feito nas planilhas de `planilhas/` (LibreOffice Calc), que partem de `Relatorio ABES 2026 NE.ods`. Os notebooks de `jupyter notebooks/` leem essa mesma planilha e não gravam arquivos:
 
 - `02_rankings.ipynb`: recalcula os pesos e os 16 rankings (funções em `mcda.py`), a concordância entre eles (ρ e τ) e as mudanças de quartil em relação ao ABES. As pontuações coincidem com as das planilhas até a 15ª casa decimal.
 - `03_validade_drsai.ipynb`: aplica o protocolo de validade externa com a DRSAI (seção 7 do log), com o bootstrap, o teste de Steiger e o controle por UF e porte, que não cabem numa planilha.

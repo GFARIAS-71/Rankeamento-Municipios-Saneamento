@@ -2,7 +2,7 @@
 
 Guilherme de Farias · iniciado em 9 nov. 2026
 
-Este arquivo registra cada escolha metodológica do trabalho, com a justificativa e a data. Ele vira a seção de Metodologia do artigo e a base das respostas aos revisores. O [guia de escrita](guia_escrita.md) explica o porquê de cada regra; aqui fica só o que foi decidido.
+Este arquivo registra cada escolha metodológica do trabalho, com a justificativa e a data. Ele vira a seção de Metodologia do artigo e a base das respostas aos revisores. O [guia de escrita](Guia%20de%20escrita.md) explica o porquê de cada regra; aqui fica só o que foi decidido.
 
 **Congelamento antes da DRSAI.** Tudo o que está nas seções 1 a 7 foi fixado em 9 nov. 2026, antes de calcular qualquer correlação entre os rankings e a taxa de internações por DRSAI. Até essa data, a DRSAI aparece nas planilhas só como coluna copiada do arquivo do ABES, sem entrar em nenhum cálculo. Nenhum método, peso, limiar ou normalização será alterado depois do teste de validade externa. Se algum ajuste for inevitável (um erro de cálculo, por exemplo), ele entra na seção 9 com data, motivo e o resultado antes e depois da correção.
 
@@ -23,7 +23,7 @@ As duas bases foram baixadas em 7 nov. 2026, data informada pelo autor.
 
 **Regra.** Entram os municípios que autodeclararam ao SINISA 2025 os quatro indicadores contabilizados (IAG0001, IES0001, IES2003 e IRS0001). Quem não tem algum deles fica fora. Município que não aparece numa planilha conta como ausente em todos os indicadores dela. "Zero declarado" é valor válido, e não ausência. Se o IRS3002 estiver ausente, assume-se disposição final inadequada (valor adaptado 0), e ele não conta como faltante.
 
-**Resultado** (levantado com o notebook `01_filtragem_municipios.ipynb`, hoje fora de uso; a base de trabalho é `planilhas/relatorio ABES 2026 NE.ods`, com os mesmos 505 municípios):
+**Resultado** (levantado com o notebook `01_filtragem_municipios.ipynb`, hoje fora de uso; a base de trabalho é `planilhas/Relatorio ABES 2026 NE.ods`, com os mesmos 505 municípios):
 
 | Indicadores faltantes (dos quatro contabilizados) | Municípios | Habilitados no ABES |
 | --- | --- | --- |
