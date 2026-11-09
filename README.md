@@ -83,7 +83,6 @@ O roteiro do artigo está em [docs/Guia de escrita.md](docs/Guia%20de%20escrita.
 │   ├── Parecer técnico dos métodos multicritério.md   Comparação dos métodos de pesos e de agregação (hoje: ABES, AHP clássico, AHP Gaussiano, CRITIC, PROMETHEE II, VIKOR e TOPSIS)
 │   └── imagens/                     Figuras dos documentos (pesos do ABES e dos AHP)
 ├── jupyter notebooks/
-│   ├── 01_filtragem_municipios.ipynb   Fora de uso: a base passou a ser a planilha do ABES em planilhas/
 │   ├── 02_rankings.ipynb               Pesos, os 16 rankings e a concordância entre eles
 │   ├── 03_validade_drsai.ipynb         Validade externa dos 16 rankings com a taxa de DRSAI
 │   └── mcda.py                         Pesos e métodos de agregação, com os parâmetros do log
@@ -127,7 +126,7 @@ O trabalho é feito nas planilhas de `planilhas/` (LibreOffice Calc), que partem
 - `02_rankings.ipynb`: recalcula os pesos e os 16 rankings (funções em `mcda.py`), a concordância entre eles (ρ e τ) e as mudanças de quartil em relação ao ABES. As pontuações coincidem com as das planilhas até a 15ª casa decimal.
 - `03_validade_drsai.ipynb`: aplica o protocolo de validade externa com a DRSAI (seção 7 do log), com o bootstrap, o teste de Steiger e o controle por UF e porte, que não cabem numa planilha.
 
-O `01_filtragem_municipios.ipynb` ficou fora de uso. A robustez ainda será feita.
+A robustez ainda será feita.
 
 As dependências estão em `requirements.txt`, com as versões fixadas (`pip install -r requirements.txt`).
 

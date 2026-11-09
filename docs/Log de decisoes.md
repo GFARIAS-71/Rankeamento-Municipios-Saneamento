@@ -23,7 +23,7 @@ As duas bases foram baixadas em 7 nov. 2026, data informada pelo autor.
 
 **Regra.** Entram os municípios que autodeclararam ao SINISA 2025 os quatro indicadores contabilizados (IAG0001, IES0001, IES2003 e IRS0001). Quem não tem algum deles fica fora. Município que não aparece numa planilha conta como ausente em todos os indicadores dela. "Zero declarado" é valor válido, e não ausência. Se o IRS3002 estiver ausente, assume-se disposição final inadequada (valor adaptado 0), e ele não conta como faltante.
 
-**Resultado** (levantado com o notebook `01_filtragem_municipios.ipynb`, hoje fora de uso; a base de trabalho é `planilhas/Relatorio ABES 2026 NE.ods`, com os mesmos 505 municípios):
+**Resultado** (levantado com um notebook de filtragem já removido do repositório; a base de trabalho é `planilhas/Relatorio ABES 2026 NE.ods`, com os mesmos 505 municípios):
 
 | Indicadores faltantes (dos quatro contabilizados) | Municípios | Habilitados no ABES |
 | --- | --- | --- |
